@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Htpp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <ul>
+    <li class="navText">Welcome to Headache Tracker!</li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">Log</a></li>
+    <li><a href="#contact">Graphs</a></li>
+    <li style="float:right"><a href="#about">Account</a></li>
+    <li style="float:right"><a href="#about">Logout</a></li>
+  </ul>
+
+  <body>
+    <div class="body">
+    <%= yield %>
+    </div>
+  </body>
+</html>
