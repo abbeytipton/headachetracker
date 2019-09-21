@@ -9,18 +9,37 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<!-- Top navigation bar begins -->
   <ul>
-    <li class="navText">Welcome to Headache Tracker!</li>
+    <!-- If the user is logged in, they are called by username, otherwise a general greeting is shown -->
+    <% if current_user %>
+        <li class="navText">Welcome to Headache Tracker, <%= current_user.username %>!</li>
+    <% else %>
+        <li class="navText">Welcome to Headache Tracker!</li>
+    <% end %>
+
+    <!-- General links shown on the left of the bar -->
     <li><a href="#home">Home</a></li>
     <li><a href="#news">Log</a></li>
     <li><a href="#contact">Graphs</a></li>
-    <li style="float:right"><a href="#about">Account</a></li>
-    <li style="float:right"><a href="#about">Logout</a></li>
+
+    <!-- Right side links depend on if the user is logged in; if they are, they will see their account or log out, otherwise they will see signup or login -->
+    <% if current_user %>
+        <li style="float:right"><a href="#about">Account</a></li>
+        <li style="float:right"><%= link_to 'Log Out', logout_path %></li>
+    <% else %>
+        <li style="float:right"><%= link_to 'Sign Up', signup_path %></li>
+       <li style="float:right"><%= link_to 'Log In', login_path %></li>
+    <% end %>
+  <!-- End of nav bar -->
   </ul>
 
   <body>
+    
+    <!-- Styled div for main content -->
     <div class="body">
-    <%= yield %>
+        <%= yield %>
     </div>
+
   </body>
 </html>
