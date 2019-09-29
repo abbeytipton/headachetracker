@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_213920) do
+ActiveRecord::Schema.define(version: 2019_09_28_232508) do
+
+  create_table "logs", force: :cascade do |t|
+    t.integer "userid"
+    t.datetime "date_started"
+    t.datetime "date_ended"
+    t.boolean "period"
+    t.boolean "dehydration"
+    t.boolean "exercise"
+    t.boolean "eye_strain"
+    t.boolean "lights"
+    t.boolean "sleep"
+    t.boolean "stress"
+    t.boolean "overeating"
+    t.string "medicine"
+    t.boolean "medicine_helped"
+    t.boolean "weather"
+    t.boolean "alcohol"
+    t.boolean "chocolate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"

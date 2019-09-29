@@ -1,6 +1,7 @@
 
 
 Rails.application.routes.draw do
+  get 'log/index'
   root 'home#index'
 
   resources :users
