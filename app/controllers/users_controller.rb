@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  set_primary_key :id
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
