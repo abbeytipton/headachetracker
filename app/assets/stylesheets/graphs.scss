@@ -1,0 +1,25 @@
+// Place all the styles related to the graphs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.graphTable {
+  width: 500px;
+  border: 2px solid black;
+}
+
+.graphTable th {
+  background-color: #c5d5c5;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 10px;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+}
+
+.graphTable td {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 10px;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+}

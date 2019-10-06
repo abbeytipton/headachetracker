@@ -4,8 +4,8 @@
 
 <!-- Form for adding a new headache, connects to logs controller -->
 <%= form_for :logs, url: logs_path do |f| %>
-  Date Started:<br><%= f.date_field :date_started, required: true %> <br/>
-  Date Ended:<br><%= f.date_field :date_ended, required: true %> <br/>
+  Date Started:<br><%= f.datetime_field :date_started, required: true %> <br/>
+  Date Ended:<br><%= f.datetime_field :date_ended, required: true %> <br/>
   Period:<%= f.check_box :period %> <br />
   Dehydration:<%= f.check_box :dehydration %> <br />
   Exercise:<%= f.check_box :exercise %> <br />
@@ -17,7 +17,7 @@
   Weather:<%= f.check_box :weather %> <br />
   Alcohol:<%= f.check_box :alcohol %> <br />
   Chocolate:<%= f.check_box :chocolate %> <br />
-  Medicine:<%= f.check_box :medicine %> <br />
+  Medicine:<%= f.text_field :medicine %> <br />
   Medicine Helped:<%= f.check_box :medicine_helped %> <br />
 
   <!-- Hidden field sets the userid of the headache to the current logged in user's id -->

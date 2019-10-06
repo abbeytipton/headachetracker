@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'graphs/index'
   # Sets up home page of entire app
   root 'home#index'
 
@@ -14,5 +15,9 @@ Rails.application.routes.draw do
   get 'logs/index'
   resources :logs
   get 'newlog', to: 'logs#new', as: 'newlog'
-  
+
+  # Graphs routes
+  get 'graphs/index'
+  resources :graphs
+
 end
