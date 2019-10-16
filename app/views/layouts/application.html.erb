@@ -4,9 +4,11 @@
     <title>Htpp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
   </head>
 
 <!-- Top navigation bar begins -->
@@ -40,6 +42,8 @@
     <div class="body">
         <%= yield %>
     </div>
+
+    <script src="/assets/javascripts/index.js"></script>
 
   </body>
 </html>
