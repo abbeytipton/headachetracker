@@ -2,33 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Setting font for entire page //
 body {
   font-family: 'Poppins', sans-serif;
 }
 
+// All the image buttons have this class //
 .button {
   outline: none;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
-#two {
+// Input boxes (text) //
+input {
+  padding: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+
+// This field needs a little margin //
+#fourteenField {
+  margin-left: 10px;
+}
+
+// Hides the question divs until they are clicked on //
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
   display: none;
 }
 
-h2 {
+// Sets a margin at the top of all the question divs to move them down the page a little //
+#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
+  margin-top: 80px;
+}
+
+// h2 and h3 settings //
+h2, h3 {
   text-align: center;
 }
 
+h2 {
+  line-height: 1.5;
+}
+
+// The question divs //
 .logDivs {
   margin: 0 auto;
-  width: 30%;
+  width: 35%;
   padding: 15px;
   border-radius: 8px;
 }
 
+// Flex divs and then left and right divs, hold the images and questions next to each other //
 .flex {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .leftDiv {
@@ -42,7 +72,8 @@ h2 {
   margin-top: 5px;
 }
 
-.oneField {
+// These fields are input fields and need different settings //
+.oneField, .twoField {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   border: 1px solid black;
@@ -50,6 +81,7 @@ h2 {
   margin-left: 10%;
 }
 
+// The next buttons (look like a hand) //
 .nextBtns {
   margin-left: 38%;
   margin-top: 10px;
@@ -62,4 +94,118 @@ h2 {
   background-color: #c5d5c5;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
+}
+
+// This section is for the checkboxes - they look like a round check or a round x - these settings make them seem to turn green or red when clicked //
+.checkbox {
+  display: none;
+}
+
+label {
+  padding: 10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+label:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.2s;
+  transform: scale(0);
+}
+
+label img {
+  transition-duration: 0.1s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ffffff;
+}
+
+// Makes the yes checkboxes green when clicked //
+:checked + label:before {
+  content: "✓";
+  background-color: green;
+  color: green;
+  transform: scale(1);
+}
+
+// Makes the no checkboxes red instead of green //
+:checked + label[for='threeFieldNo']:before,
+:checked + label[for='fourFieldNo']:before,
+:checked + label[for='fiveFieldNo']:before,
+:checked + label[for='sixFieldNo']:before,
+:checked + label[for='sevenFieldNo']:before,
+:checked + label[for='eightFieldNo']:before,
+:checked + label[for='nineFieldNo']:before,
+:checked + label[for='tenFieldNo']:before,
+:checked + label[for='elevenFieldNo']:before,
+:checked + label[for='twelveFieldNo']:before,
+:checked + label[for='thirteenFieldNo']:before,
+:checked + label[for='fourteenFieldNo']:before,
+:checked + label[for='fifteenFieldNo']:before {
+  content: "✓";
+  background-color: red;
+  color: red;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+// This field needs a little margin //
+.textBox {
+  margin-left: 20%;
+}
+
+// The final button has a background image and needed to be done differently because it's the final submit button //
+.button_with_image_save {
+    background: url("iconFinish.png") no-repeat;
+    height: 120px;
+    width: 120px;
+    outline: none;
+    border: 0;
+    display:block;
+    cursor: pointer;
+    margin-left: 30%;
+}
+
+// This section handles the hourglass rotation for the start button //
+.rotate {
+	-webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+
+    overflow: hidden;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.rotate:hover {
+	-webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+}
+
+// Hides the medicine yes check box - it is shown only if the user types in information in the proceeding text box //
+.toHide {
+  display: none;
 }
