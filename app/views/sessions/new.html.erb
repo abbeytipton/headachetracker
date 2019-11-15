@@ -1,15 +1,31 @@
-<p id='alert'><%= alert %></p>
+
 <h1>Login</h1>
+<h3>Enter your information below to login to your account.</h3>
+
+<!-- Flex div holds everything in the center of the screen, next to each other -->
+<div class="flex">
+<!-- Start of form to log in -->
 <%= form_tag sessions_path do |form| %>
-  <div class='field'>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+
+  <!-- This div holds the label and text box for the email next to each other -->
+  <div class="flex">
+    <div class="label"><%= label_tag :email %></div>
+    <div><%= text_field_tag :email, '', :required => true %></div>
   </div>
-  <div class='field'>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+
+  <!-- This div holds the label and the text box for the password next to each other -->
+  <div class="flex">
+    <div class="label"><%= label_tag :password %></div>
+    <div><%= password_field_tag :password, '', :required => true %></div>
   </div>
+
+  <!-- Alert for wrong email/password combo, this will show between the boxes and the button when it does show -->
+  <p id='alert'><%= alert %></p>
+
+  <!-- Button to submit form -->
   <div class='actions'>
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', :class => 'btn' %>
   </div>
+
 <% end %>
+</div>

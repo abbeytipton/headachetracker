@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # Method to require teacher users to be logged in before accessing certain pages, redirects to their login pages and flashes error messages if they are not logged in
+    def require_user
+      redirect_to '/login' unless current_user
+      flash[:danger] = 'Please log in first.'
+    end
+
 end
