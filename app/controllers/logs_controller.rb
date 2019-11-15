@@ -12,7 +12,7 @@ class LogsController < ApplicationController
     @logs = Logs.new(logs_params)
     if @logs.save
         redirect_to '/graphs/index'
-        flash[:notice] = " Log added successfully! "
+        flash[:notice] = " Your log has been added successfully. Check out your updated graphs below. "
       else
         redirect_to '/logs/index'
     end
