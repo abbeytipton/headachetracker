@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
   end
+
+  # Redirects if a user is logged in and tries to access these pages
+  before_action :logged_in, only: [:create, :new]
+
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])

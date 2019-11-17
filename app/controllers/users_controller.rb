@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
-  set_primary_key :id
+  #set_primary_key :id
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  # Require admin login (me) before users can access this page #
+  before_action :require_admin, only: [:index]
+
+  # Require admin login (me) before users can access this page #
+  before_action :require_admin_id, only: [:index]
+
+  # Redirects if a user is logged in and tries to access these pages
+  before_action :logged_in, only: [:new, :index]
 
   # GET /users
   # GET /users.json
@@ -29,7 +38,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to '/home/index', notice: 'Thanks for signing up for Headache Tracker! Check out your homepage below.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

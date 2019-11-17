@@ -1,37 +1,37 @@
+<!-- Begins form -->
 <%= form_with(model: user, local: true) do |form| %>
+  <!-- Adds errors to the top of the page if they are encountered -->
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
       <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <h2><%= message %>.</h2>
       <% end %>
-      </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+<!-- Each div for each piece of information -->
+  <div class="flex">
+    <div class="label"><%= form.label :email %></div>
+    <div><%= form.text_field :email, :required => true  %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+  <div class="flex">
+    <div class="label"><%= form.label :username %></div>
+    <div><%= form.text_field :username, :required => true  %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="flex">
+    <div class="label"><%= form.label :password %></div>
+    <div><%= form.password_field :password, :required => true  %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+  <div class="flex">
+    <div class="label"><%= form.label :password_confirmation %></div>
+    <div><%= form.password_field :password_confirmation, :required => true  %></div>
   </div>
 
+  <!-- Submit button -->
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Complete Sign Up', :class => 'btn' %>
   </div>
 <% end %>

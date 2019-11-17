@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   get 'graphs/index'
   resources :graphs
 
+  # Graphs routes
+  get 'home/index'
+  resources :home
+
 end
