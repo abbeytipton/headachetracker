@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :home
 
+  # Home routes
+  get 'welcome/index'
+
+
 end

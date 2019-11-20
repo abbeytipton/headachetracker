@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/home/index', notice: 'Thanks for signing up for Headache Tracker! Check out your homepage below.' }
+        format.html { redirect_to '/welcome/index', notice: 'Thanks for signing up for Headache Tracker! Check out your homepage below.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

@@ -1,2 +1,25 @@
-<h1>Welcome, Abbey</h1>
-<p>What would you like to do today?</p>
+<p class="notice"><%= notice %></p>
+<h1>Welcome, <%= current_user.username %>!</h1>
+
+<div class="flex-horizontal">
+
+  <div class="flex-vertical">
+    <div class="pictures">
+      <%= link_to '/logs/index' do %>
+        <%= image_tag 'homeLogs.png', class: 'button' %>
+      <% end %>
+    </div>
+    <div class="labels"><h3>Add a Headache Log</h3></div>
+  </div>
+
+  <div class="flex-vertical">
+    <div class="pictures"><%= image_tag 'homeGraphs.png', class: 'button' %></div>
+    <div class="labels"><h3>View Your Graphs</h3></div>
+  </div>
+
+  <div class="flex-vertical">
+    <div class="pictures"><%= image_tag 'homeAccount.png', class: 'button' %></div>
+    <div class="labels"><h3>Edit Your Account</h3></div>
+  </div>
+
+</div>
