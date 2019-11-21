@@ -1,25 +1,20 @@
-<p class="notice"><%= notice %></p>
+<!-- Welcome, calls user by name -->
 <h1>Welcome, <%= current_user.username %>!</h1>
 
+<!-- Horizontal flex div holds the pictures and labels next to each other, in the center of the page -->
 <div class="flex-horizontal">
 
-  <div class="flex-vertical">
-    <div class="pictures">
-      <%= link_to '/logs/index' do %>
-        <%= image_tag 'homeLogs.png', class: 'button' %>
-      <% end %>
-    </div>
-    <div class="labels"><h3>Add a Headache Log</h3></div>
+<!-- Each div holds a picture and a label underneath -->
+  <div class="child">
+      <%= link_to image_tag("homeLogs.png", border: 0), {action: 'index', controller: 'logs'}, {class: 'button'} %>
   </div>
 
-  <div class="flex-vertical">
-    <div class="pictures"><%= image_tag 'homeGraphs.png', class: 'button' %></div>
-    <div class="labels"><h3>View Your Graphs</h3></div>
+  <div class="child">
+      <%= link_to image_tag("homeGraphs.png", border: 0), {action: 'index', controller: 'graphs'}, {class: 'button'} %>
   </div>
 
-  <div class="flex-vertical">
-    <div class="pictures"><%= image_tag 'homeAccount.png', class: 'button' %></div>
-    <div class="labels"><h3>Edit Your Account</h3></div>
+  <div>
+    <%= link_to image_tag("homeAccount.png", border: 0), {action: 'edit', controller: 'users'}, {class: 'button'} %>
   </div>
 
 </div>

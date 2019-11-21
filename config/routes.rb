@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   # Home routes
   get 'welcome/index'
 
+  # Edit Account
+  get 'users/edit'
 
 end

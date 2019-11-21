@@ -2,33 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Flex div make everything line up horizontally */
 .flex-horizontal {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 30px;
-  margin-left: 50px;
-  height: 350px;
+  margin-top: 50px;
+  align-content: center;
 }
 
-.flex-vertical {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 300px;
+/* Removes hover from button pictures */
+a.button {
+  &:hover {
+    background: none;
+  }
 }
 
-.labels {
-  text-align: center;
-  margin-right: 90px;
+.child {
+  margin-right: 100px;
 }
-
-.pictures {
-  margin-right: 80px;
-}
-
-:focus {outline:0;}
-
-a:hover {text-decoration:none; outline:0;}
-
-img, img:hover {border:0; outline:0;}
