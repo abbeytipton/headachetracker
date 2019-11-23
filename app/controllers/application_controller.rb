@@ -6,9 +6,16 @@ class ApplicationController < ActionController::Base
   # Helper methods
   helper_method [:current_user]
   helper_method [:logs]
+  helper_method [:user_headaches]
 
+  # Get the current user
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  # Get the total number of headaches logged by this user
+  def user_headaches
+    @user_headaches ||= Logs.where(:userid => current_user.id).count
   end
 
   # Method to require users to be logged in before accessing certain pages, redirects to login pages and flashes error messages if they are not logged in
