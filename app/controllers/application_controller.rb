@@ -7,6 +7,16 @@ class ApplicationController < ActionController::Base
   helper_method [:current_user]
   helper_method [:logs]
   helper_method [:user_headaches]
+  helper_method [:user_chocolate]
+  helper_method [:user_dehydrated]
+  helper_method [:user_alcohol]
+  helper_method [:user_overeating]
+  helper_method [:user_stressed]
+  helper_method [:user_sleep]
+  helper_method [:user_lights]
+  helper_method [:user_eye_strain]
+  helper_method [:user_exercise]
+  helper_method [:user_period]
 
   # Get the current user
   def current_user
@@ -16,6 +26,47 @@ class ApplicationController < ActionController::Base
   # Get the total number of headaches logged by this user
   def user_headaches
     @user_headaches ||= Logs.where(:userid => current_user.id).count
+  end
+
+  # Get the total number of each symptom for the current user
+  def user_chocolate
+    @user_chocolate ||= Logs.where(:userid => current_user.id, :chocolate => true).count
+  end
+
+  def user_dehydrated
+    @user_dehydrated ||= Logs.where(:userid => current_user.id, :dehydration => true).count
+  end
+
+  def user_alcohol
+    @user_alcohol ||= Logs.where(:userid => current_user.id, :alcohol => true).count
+  end
+
+  def user_overeating
+    @user_overeating ||= Logs.where(:userid => current_user.id, :overeating => true).count
+  end
+
+  def user_stressed
+    @user_stressed ||= Logs.where(:userid => current_user.id, :stress => true).count
+  end
+
+  def user_sleep
+    @user_sleep ||= Logs.where(:userid => current_user.id, :sleep => true).count
+  end
+
+  def user_lights
+    @user_lights ||= Logs.where(:userid => current_user.id, :lights => true).count
+  end
+
+  def user_eye_strain
+    @user_eye_strain ||= Logs.where(:userid => current_user.id, :eye_strain => true).count
+  end
+
+  def user_exercise
+    @user_exercise ||= Logs.where(:userid => current_user.id, :exercise => true).count
+  end
+
+  def user_period
+    @user_period ||= Logs.where(:userid => current_user.id, :period => true).count
   end
 
   # Method to require users to be logged in before accessing certain pages, redirects to login pages and flashes error messages if they are not logged in

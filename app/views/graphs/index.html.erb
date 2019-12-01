@@ -101,4 +101,23 @@
 
 </table>
 
-<%= column_chart Logs.group(:chocolate).count %>
+<!-- Charts -->
+<h2>All Symptoms</h2>
+<div id="allSymptoms" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+
+
+<!-- These spans hold the user's info so it can be accessed by the JS file, they are hidden by CSS -->
+<span class="toHide" id="alcohol"><%= user_alcohol %></span>
+<span class="toHide" id="overeating"><%= user_overeating %></span>
+<span class="toHide" id="stressed"><%= user_stressed %></span>
+<span class="toHide" id="sleep"><%= user_sleep %></span>
+<span class="toHide" id="lights"><%= user_lights %></span>
+<span class="toHide" id="eye_strain"><%= user_eye_strain %></span>
+<span class="toHide" id="exercise"><%= user_exercise %></span>
+<span class="toHide" id="period"><%= user_period %></span>
+<span class="toHide" id="chocolate"><%= user_chocolate %></span>
+<span class="toHide" id="dehydrated"><%= user_dehydrated %></span>
+<span class="toHide" id="total"><%= user_headaches %></span>
+<!-- Include the jQuery plugins -->
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
