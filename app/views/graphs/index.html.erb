@@ -102,9 +102,22 @@
 </table>
 
 <!-- Charts -->
-<h2>All Symptoms</h2>
-<div id="allSymptoms" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
 
+<!-- Row 1 -->
+<div class="flexgraphs">
+<div class="children">
+  <h2>All Symptoms</h2>
+  <div id="allSymptoms" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+</div>
+<div class="children">
+  <h2>Medicine</h2>
+  <div id="medicineSymptoms" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+</div>
+<div class="children">
+  <h2>Alcohol</h2>
+  <div id="alcoholSymptoms" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+</div>
+</div>
 
 <!-- These spans hold the user's info so it can be accessed by the JS file, they are hidden by CSS -->
 <span class="toHide" id="alcohol"><%= user_alcohol %></span>
@@ -118,6 +131,8 @@
 <span class="toHide" id="chocolate"><%= user_chocolate %></span>
 <span class="toHide" id="dehydrated"><%= user_dehydrated %></span>
 <span class="toHide" id="total"><%= user_headaches %></span>
+<span class="toHide" id="medicine"><%= user_medicine %></span>
+<span class="toHide" id="medicine_helped"><%= user_medicine_helped %></span>
 <!-- Include the jQuery plugins -->
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>

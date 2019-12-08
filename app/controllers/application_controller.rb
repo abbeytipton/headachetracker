@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   helper_method [:user_eye_strain]
   helper_method [:user_exercise]
   helper_method [:user_period]
+  helper_method [:user_medicine]
+  helper_method [:user_medicine_helped]
 
   # Get the current user
   def current_user
@@ -67,6 +69,14 @@ class ApplicationController < ActionController::Base
 
   def user_period
     @user_period ||= Logs.where(:userid => current_user.id, :period => true).count
+  end
+
+  def user_medicine
+    @user_medicine ||= Logs.where(:userid => current_user.id).where.not(:medicine => "").count
+  end
+
+  def user_medicine_helped
+    @user_medicine_helped ||= Logs.where(:userid => current_user.id, :medicine_helped => true).count
   end
 
   # Method to require users to be logged in before accessing certain pages, redirects to login pages and flashes error messages if they are not logged in

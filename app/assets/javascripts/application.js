@@ -18,6 +18,11 @@
 
 window.onload = function () {
 
+// Hover function for the divs holding each graph //
+//$('.children').hover(function() {
+//	$(this).toggleClass("childrenHover");
+//});
+
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
 var total = $('#total').text();
@@ -31,6 +36,10 @@ var eye_strain = $('#eye_strain').text() / total * 100;
 var exercise = $('#exercise').text() / total * 100;
 var period = $('#period').text() / total * 100;
 var overeating = $('#overeating').text() / total * 100;
+var medicine = $('#medicine').text();
+var medicine_helped = $('#medicine_helped').text() / medicine * 100;
+var medicine_didnt_help = 100 - medicine_helped;
+var no_alcohol = 100 - alcohol;
 
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
@@ -55,9 +64,7 @@ var allSymptoms = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-      console.log(e.dataPoint.y);
 				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
-
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -76,5 +83,77 @@ var allSymptoms = {
 	}]
 };
 $("#allSymptoms").CanvasJSChart(allSymptoms);
+
+// Medicine chart set up and push to the right div //
+var medicineGraph = {
+
+	animationEnabled: true,
+  backgroundColor: "transparent",
+
+	title: {
+		text: ""
+	},
+  legend: {
+		maxWidth: 350,
+		itemWidth: 120
+	},
+  toolTip:{
+    enabled: false,
+  },
+	data: [{
+		type: "doughnut",
+    percentFormatString: "#",
+		innerRadius: "30%",
+		showInLegend: true,
+		legendText: "{label}",
+    indexLabelFormatter: function(e){
+				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+
+			},
+    total: total,
+		indexLabel: "{label}: ",
+		dataPoints: [
+			{ label: "Medicine Helped", y: medicine_helped },
+			{ label: "Medicine Didn't Help", y: medicine_didnt_help }
+		]
+	}]
+};
+$("#medicineSymptoms").CanvasJSChart(medicineGraph);
+
+// Alcohol chart set up and push to the right div //
+var alcoholGraph = {
+
+	animationEnabled: true,
+  backgroundColor: "transparent",
+
+	title: {
+		text: ""
+	},
+  legend: {
+		maxWidth: 350,
+		itemWidth: 120
+	},
+  toolTip:{
+    enabled: false,
+  },
+	data: [{
+		type: "doughnut",
+    percentFormatString: "#",
+		innerRadius: "30%",
+		showInLegend: true,
+		legendText: "{label}",
+    indexLabelFormatter: function(e){
+				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+
+			},
+    total: total,
+		indexLabel: "{label}: ",
+		dataPoints: [
+			{ label: "You Had Alcohol Before the Headache", y: alcohol },
+			{ label: "You Didn't Have Alcohol Before the Headache", y: no_alcohol }
+		]
+	}]
+};
+$("#alcoholSymptoms").CanvasJSChart(alcoholGraph);
 
 }
