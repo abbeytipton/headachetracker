@@ -50,6 +50,13 @@ var allSymptoms = {
 	title: {
 		text: ""
 	},
+	width:500,
+	height: 400,
+
+	options: {
+		responsive: true,
+		maintainAspectRatio: false
+	},
   legend: {
 		maxWidth: 350,
 		itemWidth: 120
@@ -70,7 +77,7 @@ var allSymptoms = {
 		indexLabel: "{label}: ",
 		dataPoints: [
 			{ label: "Chocolate", y: chocolate },
-      { label: "Alcohol", y: alcohol },
+      { label: "Alcohol", y: alcohol, click: clickAlcohol},
       { label: "Stress", y: stressed },
       { label: "Lack of Sleep", y: sleep },
       { label: "Bright Lights", y: lights },
@@ -93,9 +100,16 @@ var medicineGraph = {
 	title: {
 		text: ""
 	},
+	width:500,
+	height: 400,
+
   legend: {
 		maxWidth: 350,
 		itemWidth: 120
+	},
+	options: {
+		responsive: true,
+		maintainAspectRatio: false
 	},
   toolTip:{
     enabled: false,
@@ -129,9 +143,16 @@ var alcoholGraph = {
 	title: {
 		text: ""
 	},
+	width:500,
+	height: 400,
+
   legend: {
 		maxWidth: 350,
 		itemWidth: 120
+	},
+	options: {
+		responsive: true,
+		maintainAspectRatio: false
 	},
   toolTip:{
     enabled: false,
@@ -144,7 +165,6 @@ var alcoholGraph = {
 		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
-
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -155,5 +175,13 @@ var alcoholGraph = {
 	}]
 };
 $("#alcoholSymptoms").CanvasJSChart(alcoholGraph);
+
+// Click functions for each piece of the all triggers pie //
+function clickAlcohol(e) {
+	$("#triggerHolder").fadeOut(function () {
+    $("#alcoholHolder").fadeIn(1000);
+		$("#triggerHolder").fadeIn(1000);
+});
+};
 
 }
