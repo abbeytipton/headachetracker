@@ -39,8 +39,14 @@
   margin: 0 auto;
 }
 
-#medicineHolder, #alcoholHolder {
+#medicineHolder, #alcoholHolder, #chocolateHolder, #dehydratedHolder, #overeatingHolder,
+#periodHolder, #exerciseHolder, #eyestrainHolder, #lightsHolder, #sleepHolder, #stressHolder {
   display: none;
+}
+
+.fadeMessage {
+  text-align: center;
+  font-size: 16px;
 }
 
 h2 {
