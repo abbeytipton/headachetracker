@@ -1,8 +1,7 @@
 current directory: /Users/abbeytipton/Desktop/htpp/vendor/bundle/ruby/2.5.0/gems/pg-1.2.0/ext
-/Users/abbeytipton/.rvm/rubies/ruby-2.5.7/bin/ruby -r ./siteconf20191229-71048-1h0wwyl.rb extconf.rb --with-pg-config=/Applications/Postgres.app/Contents/Versions/11/bin/pg_config
-Using config values from /Applications/Postgres.app/Contents/Versions/11/bin/pg_config
-sh: /Applications/Postgres.app/Contents/Versions/11/bin/pg_config: No such file or directory
-sh: /Applications/Postgres.app/Contents/Versions/11/bin/pg_config: No such file or directory
+/Users/abbeytipton/.rvm/rubies/ruby-2.5.7/bin/ruby -r ./siteconf20191229-1796-5nsmc9.rb extconf.rb
+checking for pg_config... yes
+Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
 checking for libpq/libpq-fs.h... yes
 checking for pg_config_manual.h... yes
@@ -148,8 +147,7 @@ pg_util.c:119:24: warning: implicit conversion loses integer precision: 'long' t
         ~~~~~~ ~~~~~~~~~~~~~~~^~~~~
 1 warning generated.
 linking shared-object pg_ext.bundle
-ld: file not found: dynamic_lookup
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-make: *** [pg_ext.bundle] Error 1
 
-make failed, exit code 2
+current directory: /Users/abbeytipton/Desktop/htpp/vendor/bundle/ruby/2.5.0/gems/pg-1.2.0/ext
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 pg_ext.bundle ./.gem.20191229-1796-1g4jbu1

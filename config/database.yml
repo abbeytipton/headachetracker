@@ -1,23 +1,26 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: test_postgres_development
+  database: htpp_development
   pool: 5
-  username: test_postgres
+  username: abbeytipton
   password:
+  timeout: 5000
 
-test:
+  test:
   adapter: postgresql
   encoding: unicode
-  database: test_postgres_test
+  database: htpp_test
   pool: 5
-  username: test_postgres
+  username: abbeytipton
   password:
+  timeout: 5000
 
 production:
   adapter: postgresql
-  encoding: unicode
-  database: test_postgres_production
-  pool: 5
-  username: test_postgres
+  encoding: utf8
+  database: headachetracker
+  username:
   password:
+  host: postgres://ivspuvfmaybwzh:5db25dcec8c6cb4c5f9a280cec7e960d45ee17b2eca4fec9b37b72a6192b7597@ec2-184-73-216-48.compute-1.amazonaws.com:5432/d9tmom50paf9sd
+  sslmode: require

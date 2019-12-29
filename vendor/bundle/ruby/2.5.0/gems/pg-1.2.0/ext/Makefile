@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20191229-71048-21hlw6
-sitelibdir = $(DESTDIR)./.gem.20191229-71048-21hlw6
+sitearchdir = $(DESTDIR)./.gem.20191229-1796-1g4jbu1
+sitelibdir = $(DESTDIR)./.gem.20191229-1796-1g4jbu1
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -85,9 +85,9 @@ CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\"  -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -I/usr/local/include  -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl@1.1/lib -Wl,-rpath,
+ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl@1.1/lib -Wl,-rpath,/usr/local/lib
 dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl@1.1/lib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
@@ -123,8 +123,8 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
-libpath = . $(libdir) /usr/local/opt/libyaml/lib /usr/local/opt/readline/lib /usr/local/opt/libksba/lib /usr/local/opt/openssl@1.1/lib
-LIBPATH =  -L. -L$(libdir) -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl@1.1/lib
+libpath = . $(libdir) /usr/local/lib /usr/local/opt/libyaml/lib /usr/local/opt/readline/lib /usr/local/opt/libksba/lib /usr/local/opt/openssl@1.1/lib
+LIBPATH =  -L. -L$(libdir) -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl@1.1/lib
 DEFFILE = 
 
 CLEANFILES = mkmf.log
