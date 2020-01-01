@@ -97,7 +97,7 @@ setTimeout(function(){
 	}]
 };
 $("#allSymptoms").CanvasJSChart(allSymptoms);
-},1000);
+},2000);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
