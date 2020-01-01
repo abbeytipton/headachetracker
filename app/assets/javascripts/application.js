@@ -74,10 +74,9 @@ var allSymptoms = {
  includeZero: true,
  },
 	data: [{
-		type: "doughnut",
+		type: "column",
 		explodeOnClick: false,
     percentFormatString: "#",
-		innerRadius: "30%",
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
