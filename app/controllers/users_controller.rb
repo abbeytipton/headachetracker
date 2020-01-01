@@ -38,9 +38,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        session[:user_id] = @user.id
-        redirect_to '/welcome/index'
-        #format.json { render :show, status: :created, location: @user }
+        format.html { redirect_to '/welcome/index', notice: 'Thanks for signing up for Headache Tracker! Check out your homepage below.' }
+        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
