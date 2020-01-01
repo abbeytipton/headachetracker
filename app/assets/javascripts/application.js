@@ -46,8 +46,7 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 // All Symptoms chart set up and push to the right div //
-setTimeout(function(){
-	var allSymptoms = {
+var allSymptoms = {
 
 	animationEnabled: true,
   backgroundColor: "transparent",
@@ -97,7 +96,6 @@ setTimeout(function(){
 	}]
 };
 $("#allSymptoms").CanvasJSChart(allSymptoms);
-},2000);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
