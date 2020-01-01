@@ -30,7 +30,7 @@
     <div>
       <h2>When did this headache start?</h2>
       <!-- Rails form connected question, required before moving on -->
-      <%= f.datetime_field :date_started, required: true, class: 'oneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
+      <%= f.datetime_field :date_started, required: true, class: 'oneField', value: Time.zone.now.strftime('%Y-%m-%dT%H:%M') %><br/>
     </div>
   </div>
   <!-- This div is under the previous two divs, holds the next image and button -->
@@ -51,7 +51,7 @@
     <div>
       <h2>When did this headache end?</h2>
       <!-- Rails form connected question, required before moving on -->
-      <%= f.datetime_field :date_ended, required: true, class: 'twoField', value: DateTime.current.strftime(date + 'Pacific Time (US & Canada)', '%Y-%m-%dT%H:%M')%><br/>
+      <%= f.datetime_field :date_ended, required: true, class: 'twoField', value: Time.zone.now.strftime('%Y-%m-%dT%H:%M')%><br/>
     </div>
   </div>
   <!-- This div is under the previous two divs, holds the next image and button -->
