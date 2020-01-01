@@ -18,11 +18,6 @@
 
 window.onload = function () {
 
-// Hover function for the divs holding each graph //
-//$('.children').hover(function() {
-//	$(this).toggleClass("childrenHover");
-//});
-
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
 var total = $('#total').text();
@@ -51,7 +46,8 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 // All Symptoms chart set up and push to the right div //
-var allSymptoms = {
+setTimeout(function(){
+	var allSymptoms = {
 
 	animationEnabled: true,
   backgroundColor: "transparent",
@@ -101,6 +97,7 @@ var allSymptoms = {
 	}]
 };
 $("#allSymptoms").CanvasJSChart(allSymptoms);
+},3000);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
