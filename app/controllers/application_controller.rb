@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  converted_time = Time.now.utc
+
   # Protection from hackers
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
