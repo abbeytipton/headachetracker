@@ -70,6 +70,9 @@ var allSymptoms = {
   toolTip:{
     enabled: false,
   },
+	axisY:{
+ includeZero: true,
+ },
 	data: [{
 		type: "doughnut",
 		explodeOnClick: false,
