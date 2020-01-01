@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        session[:user_id] = @user.id
+        session[:user_id] = user.id
         redirect_to '/welcome/index'
         format.json { render :show, status: :created, location: @user }
       else
