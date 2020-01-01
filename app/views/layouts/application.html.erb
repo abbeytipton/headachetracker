@@ -23,9 +23,9 @@
     <!-- If the user is logged in, show links to items they need. Otherwise, do not show these items. -->
     <% if current_user %>
       <!-- General links shown on the left of the bar -->
-      <li><a href="/welcome/index">Home</a></li>
-      <li><a href="/logs/index">Log</a></li>
-      <li><a href="/graphs/index">Graphs</a></li>
+      <li><a href="/welcome/index" onclick="location.reload()">Home</a></li>
+      <li><a href="/logs/index" onclick="location.reload()">Log</a></li>
+      <li><a href="/graphs/index" onclick="location.reload()">Graphs</a></li>
     <% end %>
 
     <!-- Right side links depend on if the user is logged in; if they are, they will see their account or log out, otherwise they will see signup or login -->
