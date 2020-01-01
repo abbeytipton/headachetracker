@@ -3,6 +3,10 @@
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
+  <% if user_headaches < 2 %>
+  <h2>Please log more than one headache to see your graphs.</h2>
+  <% else %>
+
 <div class="children">
 <h1>Your Graphs</h1>
 <div class="fadeMessage">Click any item in the graph to load just that trigger.</div>
@@ -157,6 +161,8 @@
   <div id="stressSymptoms" style="height: 370px;"></div>
 </div>
 </div>
+
+<% end %>
 
 <!-- These spans hold the user's info so it can be accessed by the JS file, they are hidden by CSS -->
 <span class="toHide" id="alcohol"><%= user_alcohol %></span>
