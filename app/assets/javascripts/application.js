@@ -85,17 +85,17 @@ var allSymptoms = {
     total: total,
 		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "Chocolate", y: chocolate, click: clickChocolate },
-      { label: "Alcohol", y: alcohol, click: clickAlcohol},
-      { label: "Stress", y: stressed, click: clickStress },
-      { label: "Lack of Sleep", y: sleep, click: clickSleep },
-      { label: "Bright Lights", y: lights, click: clickLights },
-      { label: "Eye Strain", y: eye_strain, click: clickEyestrain },
-      { label: "Over Exercising", y: exercise, click: clickExercise },
-      { label: "During Period", y: period, click: clickPeriod },
-      { label: "Overeating", y: overeating, click: clickOvereating },
-			{ label: "Dehydration", y: dehydrated, click: clickDehydrated },
-			{ label: "Medicine", y: medicine_helped, click: clickMedicine }
+			{ x: 1, label: "Chocolate", y: chocolate, click: clickChocolate },
+      { x: 2, label: "Alcohol", y: alcohol, click: clickAlcohol},
+      { x: 3, label: "Stress", y: stressed, click: clickStress },
+      { x: 4, label: "Lack of Sleep", y: sleep, click: clickSleep },
+      { x: 5, label: "Bright Lights", y: lights, click: clickLights },
+      { x: 6, label: "Eye Strain", y: eye_strain, click: clickEyestrain },
+      { x: 7, label: "Over Exercising", y: exercise, click: clickExercise },
+      { x: 8, label: "During Period", y: period, click: clickPeriod },
+      { x: 9, label: "Overeating", y: overeating, click: clickOvereating },
+			{ x: 10, label: "Dehydration", y: dehydrated, click: clickDehydrated },
+			{ x: 11, label: "Medicine", y: medicine_helped, click: clickMedicine }
 		]
 	}]
 };
