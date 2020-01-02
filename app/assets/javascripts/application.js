@@ -54,8 +54,8 @@ var allSymptoms = {
 	title: {
 		text: ""
 	},
-	width:500,
-	height: 400,
+	width:600,
+	height:500,
 
 	options: {
 		responsive: true,
@@ -64,6 +64,9 @@ var allSymptoms = {
   toolTip:{
     enabled: false
   },
+	axisX:{
+   interval: 1,
+ },
 	axisY:{
  includeZero: true,
  interval: 3
