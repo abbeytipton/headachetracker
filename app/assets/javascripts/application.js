@@ -68,10 +68,11 @@ var allSymptoms = {
 		itemWidth: 120
 	},
   toolTip:{
-    enabled: false,
+    enabled: false
   },
 	axisY:{
  includeZero: true,
+ interval: total
  },
 	data: [{
 		type: "column",
