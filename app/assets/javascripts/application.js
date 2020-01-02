@@ -72,7 +72,7 @@ var allSymptoms = {
   },
 	axisY:{
  includeZero: true,
- interval: total
+ interval: 3
  },
 	data: [{
 		type: "column",
