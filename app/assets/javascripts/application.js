@@ -45,9 +45,6 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-console.log(chocolate);
-console.log(total);
-
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
 
@@ -64,8 +61,8 @@ var allSymptoms = {
   },
 	axisX:{
         minimum: 1,
-        maximum: total,
-      	interval: 2
+        maximum: 100,
+      	interval: 10
       },
 	axisY:{
  includeZero: true,
