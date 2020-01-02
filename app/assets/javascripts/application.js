@@ -45,6 +45,8 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
+console.log(chocolate);
+
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
 
@@ -65,8 +67,10 @@ var allSymptoms = {
     enabled: false
   },
 	axisX:{
-   interval: 1,
- },
+        minimum: 1,
+        maximum: total,
+      	interval: 2
+      },
 	axisY:{
  includeZero: true,
  interval: 3
@@ -75,7 +79,7 @@ var allSymptoms = {
 		type: "column",
 		showInLegend: false,
 		dataPoints: [
-			{ label: "Chocolate", y: 3, click: clickChocolate },
+			{ label: "Chocolate", y: chocolate, click: clickChocolate },
       { label: "Alcohol", y: alcohol, click: clickAlcohol},
       { label: "Stress", y: stressed, click: clickStress },
       { label: "Lack of Sleep", y: sleep, click: clickSleep },
