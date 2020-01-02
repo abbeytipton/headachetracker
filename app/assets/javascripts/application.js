@@ -46,6 +46,7 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 console.log(chocolate);
+console.log(total);
 
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
@@ -58,11 +59,6 @@ var allSymptoms = {
 	},
 	width:500,
 	height:400,
-
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
   toolTip:{
     enabled: false
   },
@@ -73,7 +69,6 @@ var allSymptoms = {
       },
 	axisY:{
  includeZero: true,
- interval: 3
  },
 	data: [{
 		type: "column",
