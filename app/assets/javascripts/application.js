@@ -71,7 +71,6 @@ var allSymptoms = {
 	data: [{
 		type: "column",
 		showInLegend: false,
-		indexLabel: "{label}: ",
 		dataPoints: [
 			{ label: "Chocolate", y: chocolate, click: clickChocolate },
       { label: "Alcohol", y: alcohol, click: clickAlcohol},
