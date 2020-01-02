@@ -63,10 +63,6 @@ var allSymptoms = {
 		responsive: true,
 		maintainAspectRatio: false
 	},
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
-	},
   toolTip:{
     enabled: false
   },
@@ -76,14 +72,7 @@ var allSymptoms = {
  },
 	data: [{
 		type: "column",
-		explodeOnClick: false,
-    percentFormatString: "#",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
-			},
-    total: total,
+		showInLegend: false,
 		indexLabel: "{label}: ",
 		dataPoints: [
 			{ x: 1, label: "Chocolate", y: chocolate, click: clickChocolate },
