@@ -54,8 +54,8 @@ var allSymptoms = {
 	title: {
 		text: ""
 	},
-	width:600,
-	height:500,
+	width:500,
+	height:400,
 
 	options: {
 		responsive: true,
@@ -75,7 +75,7 @@ var allSymptoms = {
 		type: "column",
 		showInLegend: false,
 		dataPoints: [
-			{ label: "Chocolate", y: chocolate, click: clickChocolate },
+			{ label: "Chocolate", y: 3, click: clickChocolate },
       { label: "Alcohol", y: alcohol, click: clickAlcohol},
       { label: "Stress", y: stressed, click: clickStress },
       { label: "Lack of Sleep", y: sleep, click: clickSleep },
