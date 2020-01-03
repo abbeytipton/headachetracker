@@ -71,7 +71,6 @@ var allSymptoms = {
 	axisX:{
  		labelFontSize: 12,
  		interval: 1,
-		title: "Triggers",
     labelAngle: -70
  },
 	data: [{
