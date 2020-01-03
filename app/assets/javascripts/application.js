@@ -66,7 +66,8 @@ var allSymptoms = {
       },
 	axisX:{
  labelFontSize: 10,
- interval: 20
+ interval: 1,
+    labelAngle: -70
  },
 	data: [{
 		type: "column",
