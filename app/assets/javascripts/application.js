@@ -63,7 +63,7 @@ var allSymptoms = {
         minimum: 1,
         maximum: 100,
       	interval: 10,
-				titleFontSize: 12,
+				titleFontSize: 13,
 				title: "Percentage of the Time This Trigger Contributed to Headaches",
 				labelFormatter: function(e){
 				return  e.value + "%";
