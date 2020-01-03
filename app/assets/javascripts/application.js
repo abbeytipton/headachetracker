@@ -64,7 +64,10 @@ var allSymptoms = {
         maximum: 100,
       	interval: 10
       },
-
+	axisX:{
+ labelFontSize: 10,
+ interval: 20
+ },
 	data: [{
 		type: "column",
 		showInLegend: false,
