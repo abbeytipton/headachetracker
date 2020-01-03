@@ -61,8 +61,8 @@ var allSymptoms = {
   },
 	axisX:{
         minimum: 1,
-        maximum: 100,
-      	interval: 10
+        maximum: 10,
+      	interval: 100
       },
 	axisY:{
  includeZero: true,
