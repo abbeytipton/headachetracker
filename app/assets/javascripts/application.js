@@ -59,11 +59,12 @@ var allSymptoms = {
   toolTip:{
     enabled: false
   },
-	axisX:{
+	axisY:{
         minimum: 1,
         maximum: 100,
       	interval: 10
       },
+
 	data: [{
 		type: "column",
 		showInLegend: false,
