@@ -62,7 +62,10 @@ var allSymptoms = {
 	axisY:{
         minimum: 1,
         maximum: 100,
-      	interval: 10
+      	interval: 10,
+				labelFormatter: function(e){
+				return  e.value + "%";
+			}
       },
 	axisX:{
  		labelFontSize: 12,
