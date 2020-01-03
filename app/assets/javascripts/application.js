@@ -63,6 +63,7 @@ var allSymptoms = {
         minimum: 1,
         maximum: 100,
       	interval: 10,
+				title: "Percentage of the Time This Trigger Contributed to Headaches",
 				labelFormatter: function(e){
 				return  e.value + "%";
 			}
@@ -70,6 +71,7 @@ var allSymptoms = {
 	axisX:{
  		labelFontSize: 12,
  		interval: 1,
+		title: "Triggers",
     labelAngle: -70
  },
 	data: [{
