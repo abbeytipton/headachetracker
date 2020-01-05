@@ -527,10 +527,12 @@ var stressGraph = {
 	data: [{
 		type: "doughnut",
 		innerRadius: "30%",
-    total: total,
+		indexLabelFormatter: function(e){
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
+			},
 		dataPoints: [
-			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time", label: "You experienced stress before the headache {y}% of the time" },
-			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time", label: "You experienced stress before the headache {y}% of the time" }
+			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time", label: "You experienced stress before the headache" },
+			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time", label: "You didn't experience stress before the headache" }
 		]
 	}]
 };
