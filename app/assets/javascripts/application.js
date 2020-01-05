@@ -635,4 +635,4 @@ function clickMedicine(e) {
 });
 };
 
-}
+});
