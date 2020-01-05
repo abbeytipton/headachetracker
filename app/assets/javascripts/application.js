@@ -523,7 +523,7 @@ var stressGraph = {
 	title: {
 		text: ""
 	},
-	width:500,
+	width:400,
 	height: 400,
 
 	options: {
@@ -531,7 +531,7 @@ var stressGraph = {
 		maintainAspectRatio: false
 	},
   toolTip:{
-    enabled: false,
+    enabled: true,
   },
 	data: [{
 		type: "doughnut",
