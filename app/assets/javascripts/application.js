@@ -64,7 +64,7 @@ var allSymptoms = {
         maximum: 100,
       	interval: 10,
 				titleFontSize: 13,
-				title: "Percentage of the Time This Trigger Contributed to Headaches",
+				title: "Percentage of the Time This Trigger Was Present Before or During a Headache",
 				labelFormatter: function(e){
 				return  e.value + "%";
 			}
@@ -124,8 +124,7 @@ var medicineGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
-
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -209,7 +208,7 @@ var chocolateGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -251,7 +250,7 @@ var dehydratedGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -293,7 +292,7 @@ var overeatingGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -335,7 +334,7 @@ var periodGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -377,7 +376,7 @@ var exerciseGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -419,7 +418,7 @@ var eyestrainGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -461,7 +460,7 @@ var lightsGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -503,7 +502,7 @@ var sleepGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
@@ -545,7 +544,7 @@ var stressGraph = {
 		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
     total: total,
 		indexLabel: "{label}: ",
