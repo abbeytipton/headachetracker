@@ -121,7 +121,7 @@ var medicineGraph = {
 		type: "doughnut",
     percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: false,
+		showInLegend: true,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
@@ -139,12 +139,19 @@ $("#medicineSymptoms").CanvasJSChart(medicineGraph);
 // Alcohol chart set up and push to the right div //
 var alcoholGraph = {
 
-	animationEnabled: false,
+	animationEnabled: true,
   backgroundColor: "transparent",
 
-	width:400,
+	title: {
+		text: ""
+	},
+	width:500,
 	height: 400,
 
+  legend: {
+		maxWidth: 350,
+		itemWidth: 120
+	},
 	options: {
 		responsive: true,
 		maintainAspectRatio: false
@@ -155,8 +162,9 @@ var alcoholGraph = {
 	data: [{
 		type: "doughnut",
     percentFormatString: "#",
-		innerRadius: "35%",
-		showInLegend: false,
+		innerRadius: "30%",
+		showInLegend: true,
+		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
 			},
@@ -518,10 +526,6 @@ var stressGraph = {
 	width:500,
 	height: 400,
 
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
-	},
 	options: {
 		responsive: true,
 		maintainAspectRatio: false
@@ -533,8 +537,6 @@ var stressGraph = {
 		type: "doughnut",
     percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
