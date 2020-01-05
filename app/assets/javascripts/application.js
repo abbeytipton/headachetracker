@@ -535,7 +535,6 @@ var stressGraph = {
   },
 	data: [{
 		type: "doughnut",
-		indexLabel: none,
 		toolTipContent: "{label}: {y}% of the time",
 		innerRadius: "30%",
     total: total,
