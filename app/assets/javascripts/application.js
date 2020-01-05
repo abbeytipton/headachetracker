@@ -139,19 +139,12 @@ $("#medicineSymptoms").CanvasJSChart(medicineGraph);
 // Alcohol chart set up and push to the right div //
 var alcoholGraph = {
 
-	animationEnabled: true,
+	animationEnabled: false,
   backgroundColor: "transparent",
 
-	title: {
-		text: ""
-	},
-	width:500,
+	width:400,
 	height: 400,
 
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
-	},
 	options: {
 		responsive: true,
 		maintainAspectRatio: false
@@ -162,9 +155,8 @@ var alcoholGraph = {
 	data: [{
 		type: "doughnut",
     percentFormatString: "#",
-		innerRadius: "30%",
+		innerRadius: "35%",
 		showInLegend: false,
-		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
 			},
