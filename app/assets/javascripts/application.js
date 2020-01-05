@@ -519,28 +519,18 @@ var stressGraph = {
 
 	animationEnabled: false,
   backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
 	width: 600,
 	height: 400,
-
-	options: {
-		responsive: false,
-		maintainAspectRatio: false
-	},
   toolTip:{
     enabled: true,
   },
 	data: [{
 		type: "doughnut",
-		toolTipContent: ": {y}% of the time",
 		innerRadius: "30%",
     total: total,
 		dataPoints: [
-			{  y: stressed },
-			{  y: no_stress }
+			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time" },
+			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time" }
 		]
 	}]
 };
