@@ -121,7 +121,7 @@ var medicineGraph = {
 		type: "doughnut",
     percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
+		showInLegend: false,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
@@ -163,7 +163,7 @@ var alcoholGraph = {
 		type: "doughnut",
     percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
+		showInLegend: false,
 		legendText: "{label}",
     indexLabelFormatter: function(e){
 				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
