@@ -532,12 +532,13 @@ var stressGraph = {
 	},
   toolTip:{
     enabled: true,
-		content: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
+
   },
 	data: [{
 		type: "doughnut",
+		toolTipContent: function(e){
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
+			},
     percentFormatString: "#",
 		innerRadius: "30%",
     total: total,
