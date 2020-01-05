@@ -517,7 +517,7 @@ $("#sleepSymptoms").CanvasJSChart(sleepGraph);
 // Stress chart set up and push to the right div //
 var stressGraph = {
 
-	animationEnabled: true,
+	animationEnabled: false,
   backgroundColor: "transparent",
 
 	title: {
@@ -527,7 +527,7 @@ var stressGraph = {
 	height: 400,
 
 	options: {
-		responsive: true,
+		responsive: false,
 		maintainAspectRatio: false
 	},
   toolTip:{
@@ -537,13 +537,11 @@ var stressGraph = {
 	data: [{
 		type: "doughnut",
 		toolTipContent: "{label} : {y} % of the time",
-    percentFormatString: "#",
 		innerRadius: "30%",
     total: total,
-		indexLabel: "",
 		dataPoints: [
 			{ label: "You Experienced Stress Before the Headache", y: stressed },
-			{ label: "You Didnt't Experience Stress Before the Headache", y: no_stress }
+			{ label: "You Didn't Experience Stress Before the Headache", y: no_stress }
 		]
 	}]
 };
