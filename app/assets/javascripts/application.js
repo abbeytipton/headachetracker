@@ -523,7 +523,7 @@ var stressGraph = {
 	title: {
 		text: ""
 	},
-	width:400,
+	width: 600,
 	height: 400,
 
 	options: {
@@ -532,16 +532,15 @@ var stressGraph = {
 	},
   toolTip:{
     enabled: true,
+		content: function(e){
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
+			},
   },
 	data: [{
 		type: "doughnut",
     percentFormatString: "#",
 		innerRadius: "30%",
-    indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
     total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
 			{ label: "You Experienced Stress Before the Headache", y: stressed },
 			{ label: "You Didnt't Experience Stress Before the Headache", y: no_stress }
