@@ -535,12 +535,12 @@ var stressGraph = {
   },
 	data: [{
 		type: "doughnut",
-		toolTipContent: "{label}: {y}% of the time",
+		toolTipContent: ": {y}% of the time",
 		innerRadius: "30%",
     total: total,
 		dataPoints: [
-			{ label: "You Experienced Stress Before the Headache", y: stressed },
-			{ label: "You Didn't Experience Stress Before the Headache", y: no_stress }
+			{  y: stressed },
+			{  y: no_stress }
 		]
 	}]
 };
