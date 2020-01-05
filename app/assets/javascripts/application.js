@@ -529,8 +529,8 @@ var stressGraph = {
 		innerRadius: "30%",
     total: total,
 		dataPoints: [
-			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time" },
-			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time" }
+			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time", label: "You experienced stress before the headache {y}% of the time" },
+			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time", label: "You experienced stress before the headache {y}% of the time" }
 		]
 	}]
 };
