@@ -541,6 +541,7 @@ var stressGraph = {
     percentFormatString: "#",
 		innerRadius: "30%",
     total: total,
+		indexLabel: "{label}: ",
 		dataPoints: [
 			{ label: "You Experienced Stress Before the Headache", y: stressed },
 			{ label: "You Didnt't Experience Stress Before the Headache", y: no_stress }
