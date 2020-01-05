@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-window.onload = function () {
+$(document).on('turbolinks:load', function() {
 
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
