@@ -271,7 +271,7 @@ var eyestrainGraph = {
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
 		dataPoints: [
-			{  y: eyestrain, toolTipContent: "You experienced eyestrain before the headache {y}% of the time", label: "You experienced eyestrain before the headache" },
+			{  y: eye_strain, toolTipContent: "You experienced eyestrain before the headache {y}% of the time", label: "You experienced eyestrain before the headache" },
 			{  y: no_eyestrain,toolTipContent: "You didn't experience eyestrain before the headache {y}% of the time", label: "You didn't experience eyestrain before the headache" }
 		]
 	}]
