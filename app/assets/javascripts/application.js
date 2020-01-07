@@ -96,427 +96,236 @@ $("#allSymptoms").CanvasJSChart(allSymptoms);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "Medicine Helped", y: medicine_helped },
-			{ label: "Medicine Didn't Help", y: medicine_didnt_help }
+			{  y: medicine_helped, toolTipContent: "Medicine helped your headache {y}% of the time", label: "Medicine helped your headache" },
+			{  y: medicine_didnt_help,toolTipContent: "Medicine didn't help your headache {y}% of the time", label: "Medicine helped your headache" }
 		]
 	}]
-};
+	};
 $("#medicineSymptoms").CanvasJSChart(medicineGraph);
 
 // Alcohol chart set up and push to the right div //
 var alcoholGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
-				return e.dataPoint.label + " " + Math.round(e.dataPoint.y) + "%";
+		indexLabelFormatter: function(e){
+				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Had Alcohol Before the Headache", y: alcohol },
-			{ label: "You Didn't Have Alcohol Before the Headache", y: no_alcohol }
+			{  y: alcohol, toolTipContent: "You drank alcohol before the headache {y}% of the time", label: "You drank alcohol before the headache" },
+			{  y: no_alcohol,toolTipContent: "You didn't drink alcohol before the headache {y}% of the time", label: "You didn't drink alcohol before the headache" }
 		]
 	}]
-};
+	};
 $("#alcoholSymptoms").CanvasJSChart(alcoholGraph);
 
 // Chocolate chart set up and push to the right div //
 var chocolateGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Had Chocolate Before the Headache", y: chocolate },
-			{ label: "You Didn't Have Chocolate Before the Headache", y: no_chocolate }
+			{  y: chocolate, toolTipContent: "You ate chocolate before the headache {y}% of the time", label: "You ate chocolate before the headache" },
+			{  y: no_chocolate,toolTipContent: "You didn't eat chocolate before the headache {y}% of the time", label: "You didn't eat chocolate before the headache" }
 		]
 	}]
-};
+	};
 $("#chocolateSymptoms").CanvasJSChart(chocolateGraph);
 
 // Dehydrated chart set up and push to the right div //
 var dehydratedGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Were Dehydrated Before the Headache", y: dehydrated },
-			{ label: "You Weren't Dehydrated Before the Headache", y: no_dehydrated }
+			{  y: dehydrated, toolTipContent: "You experienced dehydration before the headache {y}% of the time", label: "You experienced dehydration before the headache" },
+			{  y: no_dehydrated,toolTipContent: "You didn't experience dehydration before the headache {y}% of the time", label: "You didn't experience dehydration before the headache" }
 		]
 	}]
-};
+	};
 $("#dehydratedSymptoms").CanvasJSChart(dehydratedGraph);
 
 // Overeating chart set up and push to the right div //
 var overeatingGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Were Overeating Before the Headache", y: overeating },
-			{ label: "You Weren't Overeating Before the Headache", y: no_overeating }
+			{  y: overeating, toolTipContent: "You were overeating before the headache {y}% of the time", label: "You were overeating before the headache" },
+			{  y: no_overeating,toolTipContent: "You weren't overeating before the headache {y}% of the time", label: "You weren't overeating before the headache" }
 		]
 	}]
-};
+	};
 $("#overeatingSymptoms").CanvasJSChart(overeatingGraph);
 
 // Period chart set up and push to the right div //
 var periodGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Were on Your Period Before/During the Headache", y: period },
-			{ label: "You Weren't on Your Period Before/During the Headache", y: no_period }
+			{  y: period, toolTipContent: "You were on your period before/during the headache {y}% of the time", label: "You were on your period before/during the headache" },
+			{  y: no_period,toolTipContent: "You weren't on your period before/during the headache {y}% of the time", label: "You weren't on your period before/during the headache" }
 		]
 	}]
-};
+	};
 $("#periodSymptoms").CanvasJSChart(periodGraph);
 
 // Exercise chart set up and push to the right div //
 var exerciseGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Were Over Excercising Before the Headache", y: exercise },
-			{ label: "You Weren't Over Exercising Before the Headache", y: no_exercise }
+			{  y: exercise, toolTipContent: "You exercised before the headache {y}% of the time", label: "You exercised before the headache" },
+			{  y: no_exercise,toolTipContent: "You didn't exercise before the headache {y}% of the time", label: "You didn't exercise before the headache" }
 		]
 	}]
-};
+	};
 $("#exerciseSymptoms").CanvasJSChart(exerciseGraph);
 
 // Eyestrain chart set up and push to the right div //
 var eyestrainGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Experienced Eyestrain Before the Headache", y: eye_strain },
-			{ label: "You Didnt't Experience Eyestrain Before the Headache", y: no_eyestrain }
+			{  y: eyestrain, toolTipContent: "You experienced eyestrain before the headache {y}% of the time", label: "You experienced eyestrain before the headache" },
+			{  y: no_eyestrain,toolTipContent: "You didn't experience eyestrain before the headache {y}% of the time", label: "You didn't experience eyestrain before the headache" }
 		]
 	}]
-};
+	};
 $("#eyestrainSymptoms").CanvasJSChart(eyestrainGraph);
 
 // Lights chart set up and push to the right div //
 var lightsGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Experienced Bright Lights Before the Headache", y: lights },
-			{ label: "You Didnt't Experience Bright Lights Before the Headache", y: no_lights }
+			{  y: lights, toolTipContent: "You experienced bright lights before the headache {y}% of the time", label: "You experienced bright lights before the headache" },
+			{  y: no_lights,toolTipContent: "You didn't experience bright lights before the headache {y}% of the time", label: "You didn't experience bright lights before the headache" }
 		]
 	}]
-};
+	};
 $("#lightsSymptoms").CanvasJSChart(lightsGraph);
 
 // Sleep chart set up and push to the right div //
 var sleepGraph = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
+	animationEnabled: false,
+	backgroundColor: "transparent",
+	width: 600,
 	height: 400,
-
-  legend: {
-		maxWidth: 350,
-		itemWidth: 120
+	toolTip:{
+		enabled: true,
 	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false
-	},
-  toolTip:{
-    enabled: false,
-  },
 	data: [{
 		type: "doughnut",
-    percentFormatString: "#",
 		innerRadius: "30%",
-		showInLegend: true,
-		legendText: "{label}",
-    indexLabelFormatter: function(e){
+		indexLabelFormatter: function(e){
 				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
 			},
-    total: total,
-		indexLabel: "{label}: ",
 		dataPoints: [
-			{ label: "You Experienced Lack of Sleep Before the Headache", y: sleep },
-			{ label: "You Didnt't Experience Lack of Sleep Before the Headache", y: no_sleep }
+			{  y: sleep, toolTipContent: "You experienced lack of sleep before the headache {y}% of the time", label: "You experienced lack of sleep before the headache" },
+			{  y: no_sleep,toolTipContent: "You didn't experience lack of sleep before the headache {y}% of the time", label: "You didn't experience lack of sleep before the headache" }
 		]
 	}]
-};
+	};
 $("#sleepSymptoms").CanvasJSChart(sleepGraph);
 
 // Stress chart set up and push to the right div //
 var stressGraph = {
-
 	animationEnabled: false,
   backgroundColor: "transparent",
 	width: 600,
