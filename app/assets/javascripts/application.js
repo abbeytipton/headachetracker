@@ -111,7 +111,7 @@ var medicineGraph = {
 			},
 		dataPoints: [
 			{  y: medicine_helped, toolTipContent: "Medicine helped your headache {y}% of the time", label: "Medicine helped your headache" },
-			{  y: medicine_didnt_help,toolTipContent: "Medicine didn't help your headache {y}% of the time", label: "Medicine helped your headache" }
+			{  y: medicine_didnt_help,toolTipContent: "Medicine didn't help your headache {y}% of the time", label: "Medicine didn't help your headache" }
 		]
 	}]
 	};
