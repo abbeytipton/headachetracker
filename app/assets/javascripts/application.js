@@ -425,6 +425,9 @@ function clickMedicine(e) {
 });
 };
 
+// Get the dropdown menu
+var moreBtn = document.getElementById("moreClick");
+
 // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
 $(document).on("click", "#moreClick", function(e){
   $("#dropdownMenu").toggle();
@@ -450,6 +453,9 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+	else if (event.target == moreBtn) {
+		$("#dropdownMenu").toggle();
+	}
 }
 
 // Click function for instructions link from drop down menu //
