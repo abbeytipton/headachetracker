@@ -19,10 +19,9 @@
           <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
           <div id="dropdownMenu" class="dropdown-content">
             <ul>
-              <li>Instructions</li>
-              <li>List of All Logs</li>
-              <li>Edit/Delete Logs</li>
-              <li>Total Number of Logs</li>
+              <li id="instructionsClick">Instructions</li>
+              <li id="listClick">Edit/Delete Logs</li>
+              <li id="totalClick">Total Number of Logs</li>
             </ul>
           </div>
         </div>
@@ -180,6 +179,15 @@
     <% end %>
 
 </table>
+
+<!-- Modal - hidden unless instructions of total headaches is clicked on -->
+<div id="Modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="pInsideModal"></p>
+  </div>
+</div>
 
 <!-- These spans hold the user's info so it can be accessed by the JS file, they are hidden by CSS -->
 <span class="toHide" id="alcohol"><%= user_alcohol %></span>

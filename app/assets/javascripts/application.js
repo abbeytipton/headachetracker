@@ -430,4 +430,32 @@ $(document).on("click", "#moreClick", function(e){
   $("#dropdownMenu").toggle();
 });
 
+// Modal functions for the instructions and total headaches links //
+// Get the modal
+var modal = document.getElementById("Modal");
+
+// Get the p inside the modal for text to be placed in //
+var p = document.getElementById("pInsideModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Click function for instructions link from drop down menu //
+$(document).on("click", "#instructionsClick", function(e){
+  modal.style.display = "block";
+	p.innerHTML = "You have logged " + total + " headaches so far.";
+});
+
 });
