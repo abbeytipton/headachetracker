@@ -42,6 +42,7 @@
 .header, .right {
   flex: 1;
   width: 100px;
+  border: 2px solid yellow;
 }
 
 .children {
@@ -76,6 +77,7 @@ h2 {
   position: relative;
   display: inline-block;
   width: 300px;
+  border: 2px solid red;
 }
 
 /* Dropdown content - hidden until clicked */
@@ -108,11 +110,8 @@ h2 {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-ul, li {
+.dropdownLi {
   text-decoration: none;
-}
-
-li {
   padding: 10px;
   font-size: 12px;
   margin: 5px;
