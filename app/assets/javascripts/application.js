@@ -453,7 +453,7 @@ window.onclick = function(event) {
 }
 
 // Click function for instructions link from drop down menu //
-$(document).on("click", "#instructionsClick", function(e){
+$(document).on("click", "#totalClick", function(e){
   modal.style.display = "block";
 	p.innerHTML = "You have logged " + total + " headaches so far.";
 });

@@ -46,7 +46,6 @@
 .right {
   flex: 1;
   width: 100px;
-  border: 2px solid yellow;
 }
 
 .children {
@@ -81,7 +80,6 @@ h2 {
   position: relative;
   display: inline-block;
   width: 100px;
-  border: 2px solid red;
   flex: 1;
 }
 
@@ -90,7 +88,7 @@ h2 {
   display: none;
   position: absolute;
   background-color: #e3e0cc;
-  min-width: 160px;
+  min-width: 250px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   font-family: 'Poppins', sans-serif;
@@ -120,7 +118,7 @@ h2 {
   padding: 10px;
   font-size: 12px;
   margin: 5px;
-  cursor: hand;
+  cursor: pointer;
 }
 
 /* Modal styling for popup of instructions and total headaches logged */
@@ -140,11 +138,12 @@ h2 {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #e3e0cc;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* The Close Button */
