@@ -34,14 +34,8 @@
   margin-left: 12%;
 }
 
-.flexMenuAndGraphs {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.graphFlex {
-  flex-grow: 3;
+.inner {
+  position: absolute;
 }
 
 .children {
