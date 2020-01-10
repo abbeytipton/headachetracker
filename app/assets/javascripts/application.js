@@ -425,15 +425,9 @@ function clickMedicine(e) {
 });
 };
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
+// Toggle the dropdown menu button to show/hide the menu when the button is clicked //
 $(document).on("click", "#moreClick", function(e){
-  $("#myDropdown").toggle();
+  $("#dropdownMenu").toggle();
 });
 
 });
