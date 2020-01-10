@@ -34,6 +34,16 @@
   margin-left: 12%;
 }
 
+.flexMenuAndGraphs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.graphFlex {
+  flex-grow: 3;
+}
+
 .children {
   width: 50%;
   margin: 0 auto;
@@ -64,6 +74,7 @@ h2 {
 /* Dropdown button on hover & focus */
 .moreClick:hover, .moreClick:focus {
   background-color: #e3e0cc;
+  transform: scale(1);
 }
 
 /* The container */
