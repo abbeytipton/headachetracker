@@ -44,6 +44,10 @@
   border: 2px solid red;
 }
 
+.header {
+  border: 2px solid green;
+}
+
 .children {
   width: 50%;
   margin: 0 auto;
@@ -81,7 +85,7 @@ h2 {
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 50%;
+  border: 2px solid yellow;
 }
 
 /* Dropdown content - hidden until clicked */
