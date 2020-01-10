@@ -426,7 +426,7 @@ function clickMedicine(e) {
 };
 
 // Get the dropdown menu
-var moreBtn = document.getElementById("moreClick");
+var moreBtn = document.getElementById("dropdownMenu");
 
 // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
 $(document).on("click", "#moreClick", function(e){
