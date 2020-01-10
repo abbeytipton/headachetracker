@@ -7,16 +7,8 @@
   <h2>Please log more than one headache to see your graphs.</h2>
   <% else %>
 
-  <div>
-    <!-- Drop down more menu -->
-    <div class="dropdown">
-      <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
-      <div id="dropdownMenu" class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div>
+
+
 
 
 
@@ -27,12 +19,25 @@
 <!-- This chart is always show on page load -->
   <div class="flexgraphs">
     <div class="children" id="triggerHolder">
+      <div class="flex">
+      <!-- Drop down more menu -->
+      <div class="dropdown">
+        <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
+        <div id="dropdownMenu" class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div>
       <h2>All Triggers</h2>
+      </div>
+      </div>
       <div id="allSymptoms" style="height: 370px"></div>
     </div>
   </div>
   </div>
-  </div>
+
 
 <!-- These charts have to be clicked to be shown -->
 <div class="children" id="medicineHolder">

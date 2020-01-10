@@ -34,8 +34,9 @@
   margin-left: 12%;
 }
 
-.inner {
-  position: absolute;
+.flex {
+  display: flex;
+  flex-direction: row;
 }
 
 .children {
