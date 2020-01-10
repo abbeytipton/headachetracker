@@ -425,9 +425,6 @@ function clickMedicine(e) {
 });
 };
 
-// Get the dropdown menu
-var moreBtn = document.getElementById("dropdownMenu");
-
 // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
 $(document).on("click", "#moreClick", function(e){
   $("#dropdownMenu").toggle();
@@ -453,15 +450,13 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-	else if (event.target == moreBtn) {
-		$("#dropdownMenu").toggle();
-	}
 }
 
 // Click function for instructions link from drop down menu //
 $(document).on("click", "#totalClick", function(e){
   modal.style.display = "block";
 	p.innerHTML = "You have logged " + total + " headaches so far.";
+	p.style.fontFamily = "'Poppins', sans-serif;"
 });
 
 });
