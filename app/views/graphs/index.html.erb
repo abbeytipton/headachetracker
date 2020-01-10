@@ -7,12 +7,18 @@
   <h2>Please log more than one headache to see your graphs.</h2>
   <% else %>
 
-<div class="children">
-<%= image_tag('iconMore.png') %>
+<!-- Drop down more menu -->
+<div class="dropdown">
+  <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
 </div>
 
 
-
+<!-- This table is hidden unless the user chooses to look at it in the more menu -->
 <table class="graphTable">
   <tr>
     <th>Headache Started</th>
@@ -111,12 +117,14 @@
 
 <!-- Charts -->
 
-<!-- Row 1 -->
+<!-- This chart is always show on page load -->
 <div class="flexgraphs">
 <div class="children" id="triggerHolder">
   <h2>All Triggers</h2>
   <div id="allSymptoms" style="height: 370px"></div>
 </div>
+
+<!-- These charts have to be clicked to be shown -->
 <div class="children" id="medicineHolder">
   <h2>Medicine</h2>
   <div id="medicineSymptoms" style="height: 370px;"></div>
