@@ -456,7 +456,6 @@ window.onclick = function(event) {
 $(document).on("click", "#totalClick", function(e){
   modal.style.display = "block";
 	p.innerHTML = "You have logged " + total + " headaches so far.";
-	p.style.fontFamily = "'Poppins', sans-serif;"
 });
 
 });
