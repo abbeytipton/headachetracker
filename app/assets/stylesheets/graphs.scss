@@ -28,7 +28,6 @@
 .flexgraphs {
   display: flex;
   height: 450px;
-  border: 2px solid green;
   justify-content: space-between;
   align-items: center;
   margin-left: 12%;
@@ -56,11 +55,6 @@
 #medicineHolder, #alcoholHolder, #chocolateHolder, #dehydratedHolder, #overeatingHolder,
 #periodHolder, #exerciseHolder, #eyestrainHolder, #lightsHolder, #sleepHolder, #stressHolder {
   display: none;
-  border: 2px solid red;
-}
-
-#triggerHolder {
-  border: 2px solid orange;
 }
 
 .fadeMessage {
