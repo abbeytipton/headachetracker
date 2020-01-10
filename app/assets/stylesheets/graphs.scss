@@ -56,6 +56,11 @@
 #medicineHolder, #alcoholHolder, #chocolateHolder, #dehydratedHolder, #overeatingHolder,
 #periodHolder, #exerciseHolder, #eyestrainHolder, #lightsHolder, #sleepHolder, #stressHolder {
   display: none;
+  border: 2px solid red;
+}
+
+#triggerHolder {
+  border: 2px solid orange;
 }
 
 .fadeMessage {
