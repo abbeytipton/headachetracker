@@ -39,7 +39,11 @@
   width: 500px;
 }
 
-.header, .right {
+.header {
+  width: 300px;
+}
+
+.right {
   flex: 1;
   width: 100px;
   border: 2px solid yellow;
@@ -76,8 +80,9 @@ h2 {
 .dropdown {
   position: relative;
   display: inline-block;
-  width: 300px;
+  width: 100px;
   border: 2px solid red;
+  flex: 1;
 }
 
 /* Dropdown content - hidden until clicked */
@@ -92,7 +97,7 @@ h2 {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content li {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -100,7 +105,7 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-.dropdown-content a:hover:not(.active) {
+.dropdown-content li:hover:not(.active) {
   background-color: #e4d1d1;
 }
 
@@ -115,6 +120,7 @@ h2 {
   padding: 10px;
   font-size: 12px;
   margin: 5px;
+  cursor: hand;
 }
 
 /* Modal styling for popup of instructions and total headaches logged */
