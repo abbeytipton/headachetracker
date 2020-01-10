@@ -443,6 +443,6 @@ $(document).on("click", "#moreClick", function(e){
       }
     }
   }
-}
+});
 
 });
