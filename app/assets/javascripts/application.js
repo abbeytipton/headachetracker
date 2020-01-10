@@ -433,16 +433,7 @@ function myFunction() {
 
 // Close the dropdown menu if the user clicks outside of it
 $(document).on("click", "#moreClick", function(e){
-  if (!event.target.matches('.moreBtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
+  $("#myDropdown").toggle();
 });
 
 });
