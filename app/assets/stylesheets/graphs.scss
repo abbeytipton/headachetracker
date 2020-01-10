@@ -95,7 +95,7 @@ h2 {
 }
 
 /* Links inside the dropdown */
-.dropdown-content li {
+.dropdown-content span {
   color: black;
   display: block;
   font-family: 'Poppins', sans-serif;
@@ -130,6 +130,7 @@ h2 {
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Modal Content */
@@ -142,6 +143,7 @@ h2 {
   font-family: 'Poppins', sans-serif;
   color: black;
   border-radius: 11px;
+  font-size: 13px;
 }
 
 /* The Close Button */
