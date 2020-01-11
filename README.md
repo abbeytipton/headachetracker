@@ -9,7 +9,6 @@ Left to do:
 - Make editing/deleting function work in the table of logs
 - When creating a log, medicine checkmark isn't showing right
 - When finishing a log, the save image isn't showing
-- Graphs - when an item has a 0% for its amount, it doesn't show up right
-- Graphs - some aren't showing percentages correctly on the outside label
+- Graphs - finish redoing them with the new plugin and remove old plugin files
 - Testing, general organization
-- Add instructions based on bool for first time user looks at graphs 
+- Add instructions based on bool for first time user looks at graphs
