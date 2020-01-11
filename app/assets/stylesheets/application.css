@@ -86,11 +86,3 @@
 #allSymptoms .modebar:hover {
  background: transparent;
 }
-
-#allSymptoms modebar--hover > :not(.watermark) {
-   display: none;
-}
-
-#allSymptoms &:hover .modebar--hover .modebar-group {
-    display: none;
-}
