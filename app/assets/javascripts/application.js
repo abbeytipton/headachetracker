@@ -67,7 +67,7 @@ layout = {
 			autosize: false,
   		width: 600,
   		height: 400,
-			font: 'Poppins',
+			font: {family: 'Poppins'}
 			title: "All Triggers",
 			hovermode: "closest",
       hoverlabel: {
@@ -76,19 +76,22 @@ layout = {
 										bgcolor: "#e3e0cc",
 										bordercolor: "#e3e0cc",
 										font: {color: 'black',
-													font: 'Poppins'}
+													family: 'Poppins'}
 										},
 		 yaxis: {
 				 fixedrange: true,
 				 range: [0, 100],
 				 showTickLabels: false,
 				 tickmode: "linear",
+				 showgrid: false,
     		tick0: 0,
     		dtick: 10,
+				automargin: true,
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"
 		 },
 		 xaxis: {
-			  tickangle: 0
+			  tickangle: 75,
+				automargin: true
 		 },
  },
  options = {
