@@ -46,6 +46,9 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 var myPlot = document.getElementById('allSymptoms'),
+x = [0, 1, 2],
+y = [0, 1, 0],
+text = ['one', 'two', 'three'];
 data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
@@ -58,10 +61,10 @@ data = [
 layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
-			modebar_bgcolor:"transparent",
 			autosize: false,
   		width: 500,
   		height: 400,
+			bargap: 1,
 			hovermode: "closest",
       hoverlabel: {
 										width: 100,
@@ -72,7 +75,7 @@ layout = {
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
-
+			  showTickLabels: false
 		 },
  },
  options = {
@@ -98,9 +101,9 @@ layout = {
  };
 
 Plotly.newPlot('allSymptoms', data, layout, options);
-myPlot.on('plotly_click', function(data){
-	
-	    alert('%{x}');
+myPlot.on('plotly_click', function(d){
+
+	    alert(d.points[0].data.text[d.points[0].pointNumber]);
 });
 
 // All Symptoms chart set up and push to the right div //

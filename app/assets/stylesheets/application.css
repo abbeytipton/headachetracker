@@ -86,8 +86,3 @@
 #allSymptoms .modebar:hover {
  background: transparent;
 }
-
-#allSymptoms .hoverlabel {
-  background: orange;
-  padding: 10px;
-}
