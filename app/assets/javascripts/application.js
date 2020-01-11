@@ -48,7 +48,7 @@ var no_stress = 100 - stressed;
 var myPlot = document.getElementById('allSymptoms'),
 x = [0, 1, 2],
 y = [0, 1, 0],
-text = ['one', 'two', 'three'];
+text = ['one', 'two', 'three'],
 data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
@@ -68,6 +68,8 @@ layout = {
 			hovermode: "closest",
       hoverlabel: {
 										width: 100,
+										backgroundcolor: "#e3e0cc",
+										bordercolor: "#e3e0cc"
 										},
 		 yaxis: {
 				 fixedrange: true,
