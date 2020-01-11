@@ -65,12 +65,13 @@ layout = {
       hoverlabel: {
 										width: 100,
 										height: 100,
-										backgroundcolor: "#e3e0cc",
+										bgcolor: "#e3e0cc",
 										bordercolor: "#e3e0cc"
 										},
 		 yaxis: {
 				 fixedrange: true,
 				 range: [0, 100],
+				 showTickLabels: false,
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
