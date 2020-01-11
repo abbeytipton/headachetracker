@@ -54,6 +54,9 @@ data = [
     x: x,
     y: y,
     type: 'bar',
+		marker:{
+    color: ['red', 'green', 'blue']
+  },
 		hovertemplate:
             "%{x} was a trigger %{y} % of the time.<extra></extra>"
   }
@@ -108,7 +111,7 @@ layout = {
 Plotly.newPlot('allSymptoms', data, layout, options);
 myPlot.on('plotly_click', function(d){
 
-	    alert(d.points[0].data.text[d.points[0].pointNumber]);
+	    alert(d.points[0].data.x[d.points[0].pointNumber]);
 });
 
 // All Symptoms chart set up and push to the right div //
