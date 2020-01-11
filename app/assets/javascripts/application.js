@@ -49,7 +49,9 @@ var data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
     y: [chocolate, alcohol, stressed],
-    type: 'bar'
+    type: 'bar',
+		hovertemplate:
+            "%{yaxis.title.text}: %{y} % of the time."
   }
 ];
 
@@ -59,9 +61,12 @@ var layout = {
 			autosize: false,
   		width: 500,
   		height: 400,
+			hovermode: "closest",
+      hoverlabel: { bgcolor: "#e3e0cc" },
 		 yaxis: {
 				 fixedrange: true,
-				 range: [0, 100]
+				 range: [0, 100],
+				 title: "Percentage of the Time This Trigger Was Present Before or During a Headache"
 		 },
 		 xaxis: {
 
