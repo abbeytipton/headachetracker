@@ -80,6 +80,9 @@ layout = {
 				 fixedrange: true,
 				 range: [0, 100],
 				 showTickLabels: false,
+				 tickmode: "linear",
+    		tick0: 0,
+    		dtick: 10,
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
