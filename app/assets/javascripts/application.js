@@ -45,9 +45,9 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-var myPlot = document.getElementById('allSymptoms');
-var text = ['one', 'two', 'three'];
-var data = [
+var myPlot = document.getElementById('allSymptoms'),
+text = ['one', 'two', 'three'],
+data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
     y: [chocolate, alcohol, stressed],
@@ -55,8 +55,8 @@ var data = [
 		hovertemplate:
             "<br>%{x} was a trigger %{y} % of the time.<br>"
   }
-];
-var layout = {
+],
+layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
 			autosize: false,
@@ -78,8 +78,8 @@ var layout = {
 		 xaxis: {
 			  showTickLabels: false
 		 },
- };
- var options = {
+ },
+ options = {
 		 scrollZoom: false,
 		 showLink: false,
 		 displaylogo: false,
