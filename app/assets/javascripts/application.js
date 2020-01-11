@@ -52,7 +52,8 @@ data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "%{x} was a trigger %{y} % of the time."
+            "%{x} was a trigger %{y} % of the time.",
+		hoverinfo: ""
   }
 ],
 layout = {
@@ -63,10 +64,11 @@ layout = {
   		height: 400,
 			hovermode: "closest",
       hoverlabel: {
-										width: 100,
-										height: 100,
+										width: 75,
+										height: 150,
 										bgcolor: "#e3e0cc",
-										bordercolor: "#e3e0cc"
+										bordercolor: "#e3e0cc",
+										font: {color: 'black'}
 										},
 		 yaxis: {
 				 fixedrange: true,
