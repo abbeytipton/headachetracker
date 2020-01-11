@@ -65,7 +65,7 @@ layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
 			autosize: false,
-  		width: 500,
+  		width: 600,
   		height: 400,
 
 			hovermode: "closest",
@@ -86,7 +86,7 @@ layout = {
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
-			  showTickLabels: false
+			  tickangle: 25
 		 },
  },
  options = {
@@ -118,7 +118,38 @@ var passedData = d.points[0].data.x[d.points[0].pointNumber];
 if (passedData == "Alcohol") {
 	clickAlcohol();
 }
+else if (passedData == "Medicine Helped") {
+	clickMedicine();
+}
+else if (passedData == "Chocolate") {
+	clickChocolate();
+}
+else if (passedData == "Stress") {
+	clickStress();
+}
+else if (passedData == "Bright Lights") {
+	clickLights();
+}
+else if (passedData == "Eye Strain") {
+	clickEyestrain();
+}
+else if (passedData == "Over Exercising") {
+	clickExercise();
+}
+else if (passedData == "During Period") {
+	clickPeriod();
+}
+else if (passedData == "Overeating") {
+	clickOvereating();
+}
+else if (passedData == "Dehydration") {
+	clickDehydrated();
+}
+else if (passedData == "Dehydration") {
+	clickDehydrated();
+}
 });
+
 dragLayer = document.getElementsByClassName('nsewdrag')[0]
 
 myPlot.on('plotly_hover', function(data){
@@ -128,55 +159,6 @@ myPlot.on('plotly_hover', function(data){
 myPlot.on('plotly_unhover', function(data){
   dragLayer.style.cursor = ''
 });
-
-// All Symptoms chart set up and push to the right div //
-// var allSymptoms = {
-//
-// 	animationEnabled: true,
-//   backgroundColor: "transparent",
-//
-// 	title: {
-// 		text: ""
-// 	},
-// 	width:500,
-// 	height:400,
-//   toolTip:{
-//     enabled: false
-//   },
-// 	axisY:{
-//         minimum: 1,
-//         maximum: 100,
-//       	interval: 10,
-// 				titleFontSize: 13,
-// 				title: "Percentage of the Time This Trigger Was Present Before or During a Headache",
-// 				labelFormatter: function(e){
-// 				return  e.value + "%";
-// 			}
-//       },
-// 	axisX:{
-//  		labelFontSize: 12,
-//  		interval: 1,
-//     labelAngle: -70
-//  },
-// 	data: [{
-// 		type: "column",
-// 		showInLegend: false,
-// 		dataPoints: [
-// 			{ label: "Chocolate", y: chocolate, click: clickChocolate },
-//       { label: "Alcohol", y: alcohol, click: clickAlcohol},
-//       { label: "Stress", y: stressed, click: clickStress },
-//       { label: "Lack of Sleep", y: sleep, click: clickSleep },
-//       { label: "Bright Lights", y: lights, click: clickLights },
-//       { label: "Eye Strain", y: eye_strain, click: clickEyestrain },
-//       { label: "Over Exercising", y: exercise, click: clickExercise },
-//       { label: "During Period", y: period, click: clickPeriod },
-//       { label: "Overeating", y: overeating, click: clickOvereating },
-// 			{ label: "Dehydration", y: dehydrated, click: clickDehydrated },
-// 			{ label: "Medicine Helped", y: medicine_helped, click: clickMedicine }
-// 		]
-// 	}]
-// };
-// $("#allSymptoms").CanvasJSChart(allSymptoms);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
