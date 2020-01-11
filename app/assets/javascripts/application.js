@@ -45,54 +45,64 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
+var data = [
+  {
+    x: ['Chocolate', 'Alcohol', 'Stress'],
+    y: [chocolate, alcohol, stress],
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('allSymptoms', data);
+
 // All Symptoms chart set up and push to the right div //
-var allSymptoms = {
-
-	animationEnabled: true,
-  backgroundColor: "transparent",
-
-	title: {
-		text: ""
-	},
-	width:500,
-	height:400,
-  toolTip:{
-    enabled: false
-  },
-	axisY:{
-        minimum: 1,
-        maximum: 100,
-      	interval: 10,
-				titleFontSize: 13,
-				title: "Percentage of the Time This Trigger Was Present Before or During a Headache",
-				labelFormatter: function(e){
-				return  e.value + "%";
-			}
-      },
-	axisX:{
- 		labelFontSize: 12,
- 		interval: 1,
-    labelAngle: -70
- },
-	data: [{
-		type: "column",
-		showInLegend: false,
-		dataPoints: [
-			{ label: "Chocolate", y: chocolate, click: clickChocolate },
-      { label: "Alcohol", y: alcohol, click: clickAlcohol},
-      { label: "Stress", y: stressed, click: clickStress },
-      { label: "Lack of Sleep", y: sleep, click: clickSleep },
-      { label: "Bright Lights", y: lights, click: clickLights },
-      { label: "Eye Strain", y: eye_strain, click: clickEyestrain },
-      { label: "Over Exercising", y: exercise, click: clickExercise },
-      { label: "During Period", y: period, click: clickPeriod },
-      { label: "Overeating", y: overeating, click: clickOvereating },
-			{ label: "Dehydration", y: dehydrated, click: clickDehydrated },
-			{ label: "Medicine Helped", y: medicine_helped, click: clickMedicine }
-		]
-	}]
-};
-$("#allSymptoms").CanvasJSChart(allSymptoms);
+// var allSymptoms = {
+//
+// 	animationEnabled: true,
+//   backgroundColor: "transparent",
+//
+// 	title: {
+// 		text: ""
+// 	},
+// 	width:500,
+// 	height:400,
+//   toolTip:{
+//     enabled: false
+//   },
+// 	axisY:{
+//         minimum: 1,
+//         maximum: 100,
+//       	interval: 10,
+// 				titleFontSize: 13,
+// 				title: "Percentage of the Time This Trigger Was Present Before or During a Headache",
+// 				labelFormatter: function(e){
+// 				return  e.value + "%";
+// 			}
+//       },
+// 	axisX:{
+//  		labelFontSize: 12,
+//  		interval: 1,
+//     labelAngle: -70
+//  },
+// 	data: [{
+// 		type: "column",
+// 		showInLegend: false,
+// 		dataPoints: [
+// 			{ label: "Chocolate", y: chocolate, click: clickChocolate },
+//       { label: "Alcohol", y: alcohol, click: clickAlcohol},
+//       { label: "Stress", y: stressed, click: clickStress },
+//       { label: "Lack of Sleep", y: sleep, click: clickSleep },
+//       { label: "Bright Lights", y: lights, click: clickLights },
+//       { label: "Eye Strain", y: eye_strain, click: clickEyestrain },
+//       { label: "Over Exercising", y: exercise, click: clickExercise },
+//       { label: "During Period", y: period, click: clickPeriod },
+//       { label: "Overeating", y: overeating, click: clickOvereating },
+// 			{ label: "Dehydration", y: dehydrated, click: clickDehydrated },
+// 			{ label: "Medicine Helped", y: medicine_helped, click: clickMedicine }
+// 		]
+// 	}]
+// };
+// $("#allSymptoms").CanvasJSChart(allSymptoms);
 
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
