@@ -51,7 +51,7 @@ var data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "%{yaxis.title.text}: %{y} % of the time."
+            "%{x} was a trigger %{y} % of the time."
   }
 ];
 
@@ -64,7 +64,7 @@ var layout = {
   		height: 400,
 			hovermode: "closest",
       hoverlabel: { bgcolor: "#e3e0cc",
-										width: 200,
+										width: 100,
 										padding: 8
 										},
 		 yaxis: {
@@ -101,7 +101,7 @@ var layout = {
 
 Plotly.newPlot('allSymptoms', data, layout, options);
 
-newPlot.on('plotly_click', function(data){
+data.on('plotly_click', function(data){
 
     alert('x');
 });
