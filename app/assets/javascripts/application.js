@@ -58,13 +58,14 @@ var data = [
 var layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
+			modebar_bgcolor:"transparent",
 			autosize: false,
   		width: 500,
   		height: 400,
 			hovermode: "closest",
       hoverlabel: { bgcolor: "#e3e0cc",
 										width: 200,
-										bordercolor: none,
+										bordercolor: transparent,
 										padding: 8
 										},
 		 yaxis: {
