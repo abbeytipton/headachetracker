@@ -48,7 +48,7 @@ var no_stress = 100 - stressed;
 var data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
-    y: [chocolate, alcohol, stress],
+    y: [chocolate, alcohol, stressed],
     type: 'bar'
   }
 ];
