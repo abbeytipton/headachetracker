@@ -51,18 +51,14 @@ var data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar'
   }
+	layout= {
+      plot_bgcolor:"black",
+      paper_bgcolor:"#FFF3"
+}
 ];
 
-var layout = [
-  {
-    title: 'All Triggers',
-    xaxis: "",
-		yaxis: "Percentage of the time the trigger was present before or during a headache.",
-    paper_bgcolor: "transparent"
-	}
-];
 
-Plotly.newPlot('allSymptoms', data, layout, {displaylogo: false}, {scrollZoom: false}, {editable: false});
+Plotly.newPlot('allSymptoms', data, {displaylogo: false}, {scrollZoom: false}, {editable: false});
 
 // All Symptoms chart set up and push to the right div //
 // var allSymptoms = {
