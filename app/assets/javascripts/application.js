@@ -52,7 +52,7 @@ data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "%{x} was a trigger %{y} % of the time."
+            "%{x} was a trigger %{y} % of the time.<extra></extra>"
   }
 ],
 layout = {
@@ -67,7 +67,6 @@ layout = {
 										height: 150,
 										bgcolor: "#e3e0cc",
 										bordercolor: "#e3e0cc",
-										namelength: 0,
 										font: {color: 'black'}
 										},
 		 yaxis: {
