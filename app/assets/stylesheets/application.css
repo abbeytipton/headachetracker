@@ -78,3 +78,7 @@
  .toHide {
    display: none;
  }
+
+ #allSymptoms .modebar {
+  background: orange;
+}

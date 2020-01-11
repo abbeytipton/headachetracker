@@ -45,24 +45,28 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-var data = [
+var myPlot = document.getElementById('allSymptoms'),
+d3 = Plotly.d3,
+    N = 16,
+    x = d3.range(N),
+    y = d3.range(N).map( d3.random.normal() ),
+data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "{x} was a trigger {y} % of the time."
+            "%{x} was a trigger %{y} % of the time."
   }
-];
-
-var layout = {
+],
+layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
 			modebar_bgcolor:"transparent",
 			autosize: false,
   		width: 500,
   		height: 400,
-			hovermode: "closest",
+			hovermode: "x",
       hoverlabel: { bgcolor: "#e3e0cc",
 										width: 100,
 										padding: 8
@@ -75,8 +79,8 @@ var layout = {
 		 xaxis: {
 
 		 },
- };
- var options = {
+ },
+ options = {
 		 scrollZoom: false,
 		 showLink: false,
 		 displaylogo: false,
@@ -98,12 +102,14 @@ var layout = {
 		 ]
  };
 
-
 Plotly.newPlot('allSymptoms', data, layout, options);
-var myPlot = document.getElementById('allSymptoms');
 myPlot.on('plotly_click', function(data){
-
-    alert('x');
+	var pts = '';
+	    for(var i=0; i < data.points.length; i++){
+	        pts = 'x = '+data.points[i].x +'\ny = '+
+	            data.points[i].y.toPrecision(4) + '\n\n';
+	    }
+	    alert('\n');
 });
 
 // All Symptoms chart set up and push to the right div //
