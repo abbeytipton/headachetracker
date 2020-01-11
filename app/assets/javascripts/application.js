@@ -104,9 +104,9 @@ var layout = {
  };
 
 Plotly.newPlot('allSymptoms', data, layout, options);
-myPlot.on('plotly_click', function(d){
+myPlot.on('plotly_click', function(data){
 
-	    alert(d.points[0].data.text[d.points[0].pointNumber]);
+	    alert(data.points[0].data.text[data.points[0].pointNumber]);
 });
 
 // All Symptoms chart set up and push to the right div //
