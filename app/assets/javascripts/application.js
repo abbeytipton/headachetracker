@@ -45,8 +45,8 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-var x = ['Chocolate', 'Alcohol', 'Stress'];
-var y = [chocolate, alcohol, stressed];
+var x = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
+var y = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
 
 var myPlot = document.getElementById('allSymptoms'),
 data = [
@@ -55,7 +55,7 @@ data = [
     y: y,
     type: 'bar',
 		marker:{
-    color: ['red', 'green', 'blue']
+    color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']
   },
 		hovertemplate:
             "%{x} was a trigger %{y} % of the time.<extra></extra>"
@@ -114,7 +114,7 @@ layout = {
 Plotly.newPlot('allSymptoms', data, layout, options);
 myPlot.on('plotly_click', function(d){
 
-var passedData = alert(d.points[0].data.x[d.points[0].pointNumber]);
+var passedData = d.points[0].data.x[d.points[0].pointNumber];
 if (passedData == "Alcohol") {
 	clickAlcohol();
 }
