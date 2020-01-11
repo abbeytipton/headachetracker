@@ -90,7 +90,7 @@ layout = {
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"
 		 },
 		 xaxis: {
-			  tickangle: 75,
+			  tickangle: 80,
 				automargin: true
 		 },
  },
