@@ -45,7 +45,7 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-//console.log(alcohol);
+alert(alcohol);
 
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
