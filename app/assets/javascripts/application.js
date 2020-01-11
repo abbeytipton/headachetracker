@@ -46,14 +46,13 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 var myPlot = document.getElementById('allSymptoms'),
-text = ['one', 'two', 'three'],
 data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "<br>%{x} was a trigger %{y} % of the time.<br>"
+            "%{x} was a trigger %{y} % of the time."
   }
 ],
 layout = {
@@ -62,10 +61,9 @@ layout = {
 			autosize: false,
   		width: 500,
   		height: 400,
-			bargap: 1,
 			hovermode: "closest",
       hoverlabel: {
-										width: 150,
+										width: 100,
 										height: 100,
 										backgroundcolor: "#e3e0cc",
 										bordercolor: "#e3e0cc"
@@ -104,7 +102,7 @@ layout = {
 Plotly.newPlot('allSymptoms', data, layout, options);
 myPlot.on('plotly_click', function(data){
 
-	    alert(data.points[0].data.text[data.points[0].pointNumber]);
+	    alert('%{x}');
 });
 
 // All Symptoms chart set up and push to the right div //
