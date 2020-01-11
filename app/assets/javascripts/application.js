@@ -165,6 +165,8 @@ myPlot.on('plotly_unhover', function(data){
   dragLayer.style.cursor = ''
 });
 
+document.getElementsByClassName('ytitle')[0].y.baseVal[0].value *= 2.1;
+
 // Medicine chart set up and push to the right div //
 var medicineGraph = {
 	animationEnabled: false,
