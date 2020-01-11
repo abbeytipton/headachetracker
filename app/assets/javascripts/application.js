@@ -58,7 +58,7 @@ data = [
     color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']
   },
 		hovertemplate:
-            "%{x} was a trigger %{y} % of the time.<extra></extra>"
+            "You experienced %{x} before or during a headache %{y} % of the time.<extra></extra>"
   }
 ],
 layout = {
@@ -86,7 +86,7 @@ layout = {
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
-			  tickangle: 25
+			  tickangle: 90
 		 },
  },
  options = {
