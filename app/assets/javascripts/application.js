@@ -51,7 +51,7 @@ var data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "%{x} was a trigger %{y} % of the time."
+            "{x} was a trigger {y} % of the time."
   }
 ];
 
@@ -100,8 +100,8 @@ var layout = {
 
 
 Plotly.newPlot('allSymptoms', data, layout, options);
-
-data.on('plotly_click', function(data){
+var myPlot = document.getElementById('allSymptoms');
+myPlot.on('plotly_click', function(data){
 
     alert('x');
 });
