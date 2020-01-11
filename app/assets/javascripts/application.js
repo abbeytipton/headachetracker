@@ -67,7 +67,7 @@ layout = {
 			autosize: false,
   		width: 600,
   		height: 400,
-			font: {family: 'Poppins'}
+			font: {family: 'Poppins'},
 			title: "All Triggers",
 			hovermode: "closest",
       hoverlabel: {
