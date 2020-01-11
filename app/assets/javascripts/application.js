@@ -65,7 +65,6 @@ var layout = {
 			hovermode: "closest",
       hoverlabel: { bgcolor: "#e3e0cc",
 										width: 200,
-										bordercolor: transparent,
 										padding: 8
 										},
 		 yaxis: {
@@ -101,6 +100,11 @@ var layout = {
 
 
 Plotly.newPlot('allSymptoms', data, layout, options);
+
+newPlot.on('plotly_click', function(data){
+
+    alert('x');
+});
 
 // All Symptoms chart set up and push to the right div //
 // var allSymptoms = {
