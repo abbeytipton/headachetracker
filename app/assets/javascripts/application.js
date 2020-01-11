@@ -46,10 +46,6 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 var myPlot = document.getElementById('allSymptoms'),
-d3 = Plotly.d3,
-    N = 16,
-    x = d3.range(N),
-    y = d3.range(N).map( d3.random.normal() ),
 data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
@@ -66,10 +62,9 @@ layout = {
 			autosize: false,
   		width: 500,
   		height: 400,
-			hovermode: "x",
-      hoverlabel: { bgcolor: "#e3e0cc",
+			hovermode: "closest",
+      hoverlabel: {
 										width: 100,
-										padding: 8
 										},
 		 yaxis: {
 				 fixedrange: true,
@@ -104,12 +99,8 @@ layout = {
 
 Plotly.newPlot('allSymptoms', data, layout, options);
 myPlot.on('plotly_click', function(data){
-	var pts = '';
-	    for(var i=0; i < data.points.length; i++){
-	        pts = 'x = '+data.points[i].x +'\ny = '+
-	            data.points[i].y.toPrecision(4) + '\n\n';
-	    }
-	    alert('\n');
+	
+	    alert('%{x}');
 });
 
 // All Symptoms chart set up and push to the right div //
