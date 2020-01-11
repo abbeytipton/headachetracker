@@ -67,7 +67,7 @@ layout = {
 			autosize: false,
   		width: 600,
   		height: 400,
-
+			title: "All Triggers",
 			hovermode: "closest",
       hoverlabel: {
 										width: 75,
@@ -83,7 +83,7 @@ layout = {
 				 tickmode: "linear",
     		tick0: 0,
     		dtick: 10,
-				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
+				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"
 		 },
 		 xaxis: {
 			  tickangle: 90
