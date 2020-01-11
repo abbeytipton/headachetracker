@@ -45,20 +45,20 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-var myPlot = document.getElementById('allSymptoms'),
-x = [0, 1, 2],
-y = [0, 1, 0],
-text = ['one', 'two', 'three'],
-data = [
+var myPlot = document.getElementById('allSymptoms');
+var x = [0, 1, 2];
+var y = [0, 1, 0];
+var text = ['one', 'two', 'three'];
+var data = [
   {
     x: ['Chocolate', 'Alcohol', 'Stress'],
     y: [chocolate, alcohol, stressed],
     type: 'bar',
 		hovertemplate:
-            "%{x} was a trigger %{y} % of the time."
+            "<br>%{x} was a trigger %{y} % of the time.<br>"
   }
-],
-layout = {
+];
+var layout = {
 			plot_bgcolor:"transparent",
       paper_bgcolor:"transparent",
 			autosize: false,
@@ -67,7 +67,8 @@ layout = {
 			bargap: 1,
 			hovermode: "closest",
       hoverlabel: {
-										width: 100,
+										width: 150,
+										height: 100,
 										backgroundcolor: "#e3e0cc",
 										bordercolor: "#e3e0cc"
 										},
@@ -79,8 +80,8 @@ layout = {
 		 xaxis: {
 			  showTickLabels: false
 		 },
- },
- options = {
+ };
+ var options = {
 		 scrollZoom: false,
 		 showLink: false,
 		 displaylogo: false,
