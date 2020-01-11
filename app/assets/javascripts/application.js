@@ -45,13 +45,14 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-
+var x = ['Chocolate', 'Alcohol', 'Stress'];
+var y = [chocolate, alcohol, stressed];
 
 var myPlot = document.getElementById('allSymptoms'),
 data = [
   {
-    x: ['Chocolate', 'Alcohol', 'Stress'],
-    y: [chocolate, alcohol, stressed],
+    x: x,
+    y: y,
     type: 'bar',
 		hovertemplate:
             "%{x} was a trigger %{y} % of the time.<extra></extra>"
@@ -63,7 +64,7 @@ layout = {
 			autosize: false,
   		width: 500,
   		height: 400,
-			bargap: 1,
+
 			hovermode: "closest",
       hoverlabel: {
 										width: 75,
