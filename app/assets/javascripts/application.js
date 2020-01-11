@@ -46,8 +46,6 @@ var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
 var myPlot = document.getElementById('allSymptoms');
-var x = [0, 1, 2];
-var y = [0, 1, 0];
 var text = ['one', 'two', 'three'];
 var data = [
   {
@@ -104,9 +102,9 @@ var layout = {
  };
 
 Plotly.newPlot('allSymptoms', data, layout, options);
-myPlot.on('plotly_click', function(data){
+myPlot.on('plotly_click', function(d){
 
-	    alert(data.points[0].data.text[data.points[0].pointNumber]);
+	    alert(d.points[0].data.text[d.points[0].pointNumber]);
 });
 
 // All Symptoms chart set up and push to the right div //
