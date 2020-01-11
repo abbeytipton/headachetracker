@@ -62,11 +62,15 @@ var layout = {
   		width: 500,
   		height: 400,
 			hovermode: "closest",
-      hoverlabel: { bgcolor: "#e3e0cc" },
+      hoverlabel: { bgcolor: "#e3e0cc",
+										width: 200,
+										bordercolor: none,
+										padding: 8
+										},
 		 yaxis: {
 				 fixedrange: true,
 				 range: [0, 100],
-				 title: "Percentage of the Time This Trigger Was Present Before or During a Headache"
+				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache"
 		 },
 		 xaxis: {
 
@@ -75,6 +79,7 @@ var layout = {
  var options = {
 		 scrollZoom: false,
 		 showLink: false,
+		 displaylogo: false,
 		 modeBarButtonsToRemove: [
 				 'sendDataToCloud',
 				 'zoom2d',
