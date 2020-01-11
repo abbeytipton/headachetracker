@@ -45,8 +45,6 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-alert(alcohol);
-
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
 
@@ -132,7 +130,7 @@ var alcoholGraph = {
 		type: "doughnut",
 		innerRadius: "30%",
 		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
+				return e.dataPoint.label + ": " + e.dataPoint.y + "% of the time";
 			},
 		dataPoints: [
 			{  y: alcohol, toolTipContent: "You drank alcohol before the headache {y}% of the time", label: "You drank alcohol before the headache" },
