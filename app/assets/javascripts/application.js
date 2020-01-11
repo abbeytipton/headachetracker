@@ -111,7 +111,19 @@ layout = {
 Plotly.newPlot('allSymptoms', data, layout, options);
 myPlot.on('plotly_click', function(d){
 
-	    alert(d.points[0].data.x[d.points[0].pointNumber]);
+var passedData = alert(d.points[0].data.x[d.points[0].pointNumber]);
+if (passedData == "Alcohol") {
+	clickAlcohol();
+}
+});
+dragLayer = document.getElementsByClassName('nsewdrag')[0]
+
+myPlot.on('plotly_hover', function(data){
+  dragLayer.style.cursor = 'pointer'
+});
+
+myPlot.on('plotly_unhover', function(data){
+  dragLayer.style.cursor = ''
 });
 
 // All Symptoms chart set up and push to the right div //
