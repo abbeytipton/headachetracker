@@ -51,14 +51,38 @@ var data = [
     y: [chocolate, alcohol, stressed],
     type: 'bar'
   }
-	layout= {
-      plot_bgcolor:"black",
-      paper_bgcolor:"#FFF3"
-}
 ];
 
+var layout = {
+			plot_bgcolor:"black",
+      paper_bgcolor:"#FFF3",
+		 yaxis: {
+				 fixedrange: true,
+				 range: [0, 100]
+		 },
+		 xaxis: {
 
-Plotly.newPlot('allSymptoms', data, {displaylogo: false}, {scrollZoom: false}, {editable: false});
+		 },
+ };
+ var options = {
+		 scrollZoom: false,
+		 showLink: false,
+		 modeBarButtonsToRemove: [
+				 'sendDataToCloud',
+				 'zoom2d',
+				 'pan',
+				 'pan2d',
+				 'autoScale2d',
+				 'lasso2d',
+				 'autoScale2d',
+				 'resetScale2d',
+				 'toggleSpikelines',
+				 'dragmode'
+		 ]
+ };
+
+
+Plotly.newPlot('allSymptoms', data, layout, options);
 
 // All Symptoms chart set up and push to the right div //
 // var allSymptoms = {
