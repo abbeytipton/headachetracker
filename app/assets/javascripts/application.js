@@ -45,6 +45,8 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
+console.log(alcohol);
+
 // All Symptoms chart set up and push to the right div //
 var allSymptoms = {
 
@@ -88,7 +90,7 @@ var allSymptoms = {
       { label: "During Period", y: period, click: clickPeriod },
       { label: "Overeating", y: overeating, click: clickOvereating },
 			{ label: "Dehydration", y: dehydrated, click: clickDehydrated },
-			{ label: "Medicine", y: medicine_helped, click: clickMedicine }
+			{ label: "Medicine Helped", y: medicine_helped, click: clickMedicine }
 		]
 	}]
 };

@@ -12,3 +12,4 @@ Left to do:
 - Graphs - when an item has a 0% for its amount, it doesn't show up right
 - Graphs - some aren't showing percentages correctly on the outside label
 - Testing, general organization
+- Add instructions based on bool for first time user looks at graphs 
