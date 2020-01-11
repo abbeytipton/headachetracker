@@ -54,8 +54,11 @@ var data = [
 ];
 
 var layout = {
-			plot_bgcolor:"black",
-      paper_bgcolor:"#FFF3",
+			plot_bgcolor:"transparent",
+      paper_bgcolor:"transparent",
+			autosize: false,
+  		width: 500,
+  		height: 400,
 		 yaxis: {
 				 fixedrange: true,
 				 range: [0, 100]
@@ -77,7 +80,11 @@ var layout = {
 				 'autoScale2d',
 				 'resetScale2d',
 				 'toggleSpikelines',
-				 'dragmode'
+				 'dragmode',
+				 'select2d',
+				 'hoverClosestCartesian',
+				 'hoverCompareCartesian',
+				 'displaylogo'
 		 ]
  };
 
