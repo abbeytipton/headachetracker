@@ -162,8 +162,8 @@ var datamedicineSymptoms = [{
 var layoutmedicineSymptoms = {
   height: 500,
   width: 600,
-  margin: 0,
   hovermode: "closest",
+  xaxis: { domain: 400 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
