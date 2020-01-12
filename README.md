@@ -12,3 +12,4 @@ Left to do:
 - Graphs - finish redoing them with the new plugin and remove old plugin files
 - Testing, general organization
 - Add instructions based on bool for first time user looks at graphs
+- Mobile optimization 
