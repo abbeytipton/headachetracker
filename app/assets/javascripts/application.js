@@ -60,7 +60,7 @@ dataAllSymptoms = [
     type: 'bar',
 		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
   // Set the hover template to show the right data //
-		hovertemplate: "You experienced %{x} before or during a headache %{y} % of the time.<extra></extra>"
+		hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>"
   }
 ],
 layoutAllSymptoms = {
@@ -152,12 +152,23 @@ AllSymptoms.on('plotly_unhover', function(data){
 // Medicine chart set up and push to the right div //
 var datamedicineSymptoms = [{
   values: [medicine_helped, medicine_didnt_help],
-  labels: ['Medicine helped your headache %{y}% of the time', 'Medicine didn\'t help your headache %{y}% of the time'],
-  type: 'pie'
+  labels: ['Medicine helped your headache ', 'Medicine didn\'t help your headache '],
+  text: ' of the time'
+  type: 'pie',
+  textinfo: "label+percent+text",
+  textposition: "outside",
+  automargin: true
 }];
 var layoutmedicineSymptoms = {
   height: 400,
-  width: 600
+  width: 600,
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: false,
+  font: {family: 'Poppins'},
+  title: "All Triggers",
 };
 Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms);
 
