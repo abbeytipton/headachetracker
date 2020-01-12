@@ -45,7 +45,7 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-medine_helped = 1;
+medicine_helped = 1;
 
 // All Symptoms (Trigger) graph - these are x and y coordinates //
 var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
