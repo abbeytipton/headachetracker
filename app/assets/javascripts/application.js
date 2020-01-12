@@ -152,16 +152,19 @@ AllSymptoms.on('plotly_unhover', function(data){
 // Medicine chart set up and push to the right div //
 var datamedicineSymptoms = [{
   values: [medicine_helped, medicine_didnt_help],
-  labels: ['Medicine helped your headache ', 'Medicine didn\'t help your headache '],
-  text: ' of the time',
+  labels: ['Medicine helped your headache', 'Medicine didn\'t help your headache'],
+  text: ' % of the time',
   type: 'pie',
-  textinfo: "label+percent+text",
+  textinfo: "label + text",
   textposition: "outside",
-  automargin: true
+  automargin: true,
+  hovertemplate: "label + text <extra></extra>"
 }];
 var layoutmedicineSymptoms = {
   height: 400,
   width: 600,
+  hovermode: "closest",
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
   paper_bgcolor: "transparent",
@@ -170,7 +173,11 @@ var layoutmedicineSymptoms = {
   font: {family: 'Poppins'},
   title: "Medicine Helped",
 };
-Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms);
+var optionsmedicineSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms, optionsmedicineSymptoms);
 
 
 
