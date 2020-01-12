@@ -58,7 +58,7 @@ dataAllSymptoms = [{
     type: 'bar',
     transforms: [{
     type: 'filter',
-    target: 'x',
+    target: 'y',
     operation: '>',
     value: 1}],
 		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
