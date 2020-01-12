@@ -45,122 +45,104 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-var x = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
-var y = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
-
-var myPlot = document.getElementById('allSymptoms'),
-data = [
+// All Symptoms (Trigger) graph - these are x and y coordinates //
+var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
+var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
+// Get the div where the graph goes //
+var AllSymptoms = document.getElementById('allSymptoms'),
+// Set up data set coordinates, set to bar graph, set colors of bars //
+dataAllSymptoms = [
   {
-    x: x,
-    y: y,
+    x: xAllSymptoms,
+    y: yAllSymptoms,
     type: 'bar',
-		marker:{
-    color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']
-  },
-		hovertemplate:
-            "You experienced %{x} before or during a headache %{y} % of the time.<extra></extra>"
+		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
+  // Set the hover template to show the right data //
+		hovertemplate: "You experienced %{x} before or during a headache %{y} % of the time.<extra></extra>"
   }
 ],
-layout = {
-			plot_bgcolor:"transparent",
-      paper_bgcolor:"transparent",
+layoutAllSymptoms = {
+      // Set background color, size, font //
+			plot_bgcolor: "transparent",
+      paper_bgcolor: "transparent",
 			autosize: false,
   		width: 600,
   		height: 400,
 			font: {family: 'Poppins'},
 			title: "All Triggers",
+      // Set the hovermode to only show the x coordinate and set label styling //
 			hovermode: "closest",
-      hoverlabel: {
-										width: 75,
-										height: 150,
-										bgcolor: "#e3e0cc",
-										bordercolor: "#e3e0cc",
-										font: {color: 'black',
-													family: 'Poppins'}
-										},
+      hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
 		 yaxis: {
+         // Set up y axis, set to linear and set tick0 and dtick so the intervals will be right //
 				 fixedrange: true,
 				 range: [0, 100],
 				 showTickLabels: false,
 				 tickmode: "linear",
 				 showgrid: false,
-    		tick0: 0,
-    		dtick: 10,
-				automargin: true,
+    		 tick0: 0,
+    		 dtick: 10,
+				 automargin: true,
 				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"
-		 },
+		   },
 		 xaxis: {
+        // Set the angle so the labels all fit //
 			  tickangle: 80,
 				automargin: true
-		 },
+		  },
  },
- options = {
+ optionsAllSymptoms = {
+     // Turn off certain mode bar buttons //
 		 scrollZoom: false,
 		 showLink: false,
 		 displaylogo: false,
-		 modeBarButtonsToRemove: [
-				 'sendDataToCloud',
-				 'zoom2d',
-				 'pan',
-				 'pan2d',
-				 'autoScale2d',
-				 'lasso2d',
-				 'autoScale2d',
-				 'resetScale2d',
-				 'toggleSpikelines',
-				 'dragmode',
-				 'select2d',
-				 'hoverClosestCartesian',
-				 'hoverCompareCartesian',
-				 'displaylogo'
-		 ]
+		 modeBarButtonsToRemove: [ 'sendDataToCloud', 'zoom2d', 'pan', 'pan2d','autoScale2d', 'lasso2d', 'autoScale2d','resetScale2d', 'toggleSpikelines','dragmode', 'select2d', 'hoverClosestCartesian','hoverCompareCartesian', 'displaylogo']
  };
-
-Plotly.newPlot('allSymptoms', data, layout, options);
-myPlot.on('plotly_click', function(d){
-
-var passedData = d.points[0].data.x[d.points[0].pointNumber];
-if (passedData == "Alcohol") {
-	clickAlcohol();
-}
-else if (passedData == "Medicine Helped") {
-	clickMedicine();
-}
-else if (passedData == "Chocolate") {
-	clickChocolate();
-}
-else if (passedData == "Stress") {
-	clickStress();
-}
-else if (passedData == "Bright Lights") {
-	clickLights();
-}
-else if (passedData == "Eye Strain") {
-	clickEyestrain();
-}
-else if (passedData == "Over Exercising") {
-	clickExercise();
-}
-else if (passedData == "During Period") {
-	clickPeriod();
-}
-else if (passedData == "Overeating") {
-	clickOvereating();
-}
-else if (passedData == "Dehydration") {
-	clickDehydrated();
-}
-else if (passedData == "Dehydration") {
-	clickDehydrated();
-}
+// Set up the new graph with the data, layout, and options //
+Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymptoms);
+// Click function on the bars - get the x axis of what is clicked //
+AllSymptoms.on('plotly_click', function(d){
+  var passedData = d.points[0].data.x[d.points[0].pointNumber];
+  // If statements for each possible bar - call that click function when it's that item //
+  if (passedData == "Alcohol") {
+	   clickAlcohol();
+   }
+  else if (passedData == "Medicine Helped") {
+  	clickMedicine();
+  }
+  else if (passedData == "Chocolate") {
+  	clickChocolate();
+  }
+  else if (passedData == "Stress") {
+  	clickStress();
+  }
+  else if (passedData == "Bright Lights") {
+  	clickLights();
+  }
+  else if (passedData == "Eye Strain") {
+  	clickEyestrain();
+  }
+  else if (passedData == "Over Exercising") {
+  	clickExercise();
+  }
+  else if (passedData == "During Period") {
+  	clickPeriod();
+  }
+  else if (passedData == "Overeating") {
+  	clickOvereating();
+  }
+  else if (passedData == "Dehydration") {
+  	clickDehydrated();
+  }
+  else if (passedData == "Dehydration") {
+  	clickDehydrated();
+  }
 });
-
+// Sets the cursor to be a pointer when you mouseover a bar //
 dragLayer = document.getElementsByClassName('nsewdrag')[0]
-
 myPlot.on('plotly_hover', function(data){
   dragLayer.style.cursor = 'pointer'
 });
-
 myPlot.on('plotly_unhover', function(data){
   dragLayer.style.cursor = ''
 });
