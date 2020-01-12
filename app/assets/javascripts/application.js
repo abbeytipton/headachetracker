@@ -155,10 +155,10 @@ var datamedicineSymptoms = [{
   labels: ['Medicine helped your headache', 'Medicine didn\'t help your headache'],
   text: ' % of the time',
   type: 'pie',
-  textinfo: "label + text",
+  textinfo: "%{label} %{value} %{text}",
   textposition: "outside",
   automargin: true,
-  hovertemplate: "label + text <extra></extra>"
+  hovertemplate: "%{label} %{value} %{text} <extra></extra>"
 }];
 var layoutmedicineSymptoms = {
   height: 400,
