@@ -192,7 +192,6 @@ var dataalcoholSymptoms = [{
 var layoutalcoholSymptoms = {
   height: 500,
   width: 600,
-  margin: 0,
   hovermode: "closest",
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
@@ -211,27 +210,33 @@ var optionsalcoholSymptoms = {
 Plotly.newPlot('alcoholSymptoms', dataalcoholSymptoms, layoutalcoholSymptoms, optionsalcoholSymptoms);
 
 // Chocolate chart set up and push to the right div //
-var chocolateGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: chocolate, toolTipContent: "You ate chocolate before the headache {y}% of the time", label: "You ate chocolate before the headache" },
-			{  y: no_chocolate,toolTipContent: "You didn't eat chocolate before the headache {y}% of the time", label: "You didn't eat chocolate before the headache" }
-		]
-	}]
-	};
-$("#chocolateSymptoms").CanvasJSChart(chocolateGraph);
+var datachocolateSymptoms = [{
+  values: [chocolate, no_chocolate],
+  labels: ['You had chocolate before the headache', 'You didn\'t have chocolate before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutchocolateSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Chocolate",
+};
+var optionschocolateSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('chocolateSymptoms', datachocolateSymptoms, layoutchocolateSymptoms, optionschocolateSymptoms);
 
 // Dehydrated chart set up and push to the right div //
 var dehydratedGraph = {
