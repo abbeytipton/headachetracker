@@ -154,6 +154,7 @@ var datamedicineSymptoms = [{
   values: [medicine_helped, medicine_didnt_help],
   labels: ['Medicine helped your headache', 'Medicine didn\'t help your headache'],
   type: 'pie',
+  textinfo: "",
   hovertemplate: "%{label} %{value} % of the time <extra></extra>"
 }];
 var layoutmedicineSymptoms = {
@@ -167,6 +168,7 @@ var layoutmedicineSymptoms = {
   paper_bgcolor: "transparent",
   autosize: false,
   showlegend: true,
+	legend: {"orientation": "h"},
   font: {family: 'Poppins'},
   title: "Medicine Helped",
 };
