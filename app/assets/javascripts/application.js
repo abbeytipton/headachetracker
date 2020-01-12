@@ -53,16 +53,14 @@ var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, 
 // Get the div where the graph goes //
 var AllSymptoms = document.getElementById('allSymptoms'),
 // Set up data set coordinates, set to bar graph, set colors of bars //
-dataAllSymptoms = [
-  {
+dataAllSymptoms = [{
     x: xAllSymptoms,
     y: yAllSymptoms,
     type: 'bar',
 		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
   // Set the hover template to show the right data //
 		hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>"
-  }
-],
+  }],
 layoutAllSymptoms = {
       // Set background color, size, font //
 			plot_bgcolor: "transparent",
@@ -75,7 +73,7 @@ layoutAllSymptoms = {
       // Set the hovermode to only show the x coordinate and set label styling //
 			hovermode: "closest",
       hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
-		 yaxis: {
+		  yaxis: {
          // Set up y axis, set to linear and set tick0 and dtick so the intervals will be right //
 				 fixedrange: true,
 				 range: [0, 100],
@@ -85,13 +83,11 @@ layoutAllSymptoms = {
     		 tick0: 0,
     		 dtick: 10,
 				 automargin: true,
-				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"
-		   },
-		 xaxis: {
+				 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
+		   xaxis: {
         // Set the angle so the labels all fit //
 			  tickangle: 80,
-				automargin: true
-		  },
+				automargin: true },
  },
  optionsAllSymptoms = {
      // Turn off certain mode bar buttons //
@@ -156,9 +152,7 @@ var datamedicineSymptoms = [{
   type: 'pie',
   textinfo: 'none',
   hovertemplate: "%{label} %{value}% of the time <extra></extra>",
-  marker: {
-    colors: 'purple', 'teal'
-  }
+  marker: { colors: ['purple', 'teal']}
 }];
 var layoutmedicineSymptoms = {
   height: 500,
