@@ -163,7 +163,7 @@ var layoutmedicineSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -193,7 +193,7 @@ var layoutalcoholSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -223,7 +223,7 @@ var layoutchocolateSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -253,7 +253,7 @@ var layoutdehydratedSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -283,7 +283,7 @@ var layoutovereatingSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -313,7 +313,7 @@ var layoutperiodSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -343,7 +343,7 @@ var layoutexerciseSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -373,7 +373,7 @@ var layouteyestrainSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -403,7 +403,7 @@ var layoutlightsSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -433,7 +433,7 @@ var layoutsleepSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -463,7 +463,7 @@ var layoutstressSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
-  xaxis: { domain: 400 },
+  xaxis: { domain: 550 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
