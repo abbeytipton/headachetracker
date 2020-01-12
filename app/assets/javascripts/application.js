@@ -140,10 +140,10 @@ AllSymptoms.on('plotly_click', function(d){
 });
 // Sets the cursor to be a pointer when you mouseover a bar //
 dragLayer = document.getElementsByClassName('nsewdrag')[0]
-myPlot.on('plotly_hover', function(data){
+AllSymptoms.on('plotly_hover', function(data){
   dragLayer.style.cursor = 'pointer'
 });
-myPlot.on('plotly_unhover', function(data){
+AllSymptoms.on('plotly_unhover', function(data){
   dragLayer.style.cursor = ''
 });
 
