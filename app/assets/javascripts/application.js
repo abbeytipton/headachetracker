@@ -155,10 +155,13 @@ var datamedicineSymptoms = [{
   labels: ['Medicine helped your headache', 'Medicine didn\'t help your headache'],
   type: 'pie',
   textinfo: 'none',
-  hovertemplate: "%{label} %{value} % of the time <extra></extra>"
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: {
+    colors: 'purple', 'teal'
+  }
 }];
 var layoutmedicineSymptoms = {
-  height: 600,
+  height: 500,
   width: 600,
   margin: 0,
   hovermode: "closest",
