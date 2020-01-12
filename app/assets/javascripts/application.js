@@ -45,6 +45,8 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
+medine_helped = 1;
+
 // All Symptoms (Trigger) graph - these are x and y coordinates //
 var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
 var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
@@ -67,7 +69,7 @@ layoutAllSymptoms = {
       paper_bgcolor: "transparent",
 			autosize: false,
   		width: 600,
-  		height: 400,
+  		height: 500,
 			font: {family: 'Poppins'},
 			title: "All Triggers",
       // Set the hovermode to only show the x coordinate and set label styling //
