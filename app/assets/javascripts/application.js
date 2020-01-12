@@ -301,27 +301,34 @@ var optionsovereatingSymptoms = {
 Plotly.newPlot('overeatingSymptoms', dataovereatingSymptoms, layoutovereatingSymptoms, optionsovereatingSymptoms);
 
 // Period chart set up and push to the right div //
-var periodGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: period, toolTipContent: "You were on your period before/during the headache {y}% of the time", label: "You were on your period before/during the headache" },
-			{  y: no_period,toolTipContent: "You weren't on your period before/during the headache {y}% of the time", label: "You weren't on your period before/during the headache" }
-		]
-	}]
-	};
-$("#periodSymptoms").CanvasJSChart(periodGraph);
+var dataperiodSymptoms = [{
+  values: [period, no_period],
+  labels: ['You were on your period before the headache', 'You weren\'t on your period before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutperiodSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Period",
+};
+var optionsperiodSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('periodSymptoms', dataperiodSymptoms, layoutperiodSymptoms, optionsperiodSymptoms);
 
 // Exercise chart set up and push to the right div //
 var exerciseGraph = {
