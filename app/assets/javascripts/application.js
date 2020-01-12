@@ -362,7 +362,7 @@ Plotly.newPlot('exerciseSymptoms', dataexerciseSymptoms, layoutexerciseSymptoms,
 
 // Eyestrain chart set up and push to the right div //
 var dataeyestrainSymptoms = [{
-  values: [eyestrain, no_eyestrain],
+  values: [eye_strain, no_eyestrain],
   labels: ['You experienced eyestrain before the headache', 'You didnt\'t experience eyestrain before the headache'],
   type: 'pie',
   textinfo: 'none',
