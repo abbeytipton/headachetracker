@@ -67,7 +67,7 @@ layoutAllSymptoms = {
       paper_bgcolor: "transparent",
 			autosize: false,
   		width: 600,
-  		height: 600,
+  		height: 500,
 			font: {family: 'Poppins'},
 			title: "All Triggers",
       // Set the hovermode to only show the x coordinate and set label styling //
