@@ -45,7 +45,6 @@ var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
 
-medicine_helped = null;
 
 // All Symptoms (Trigger) graph - these are x and y coordinates //
 var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
@@ -57,6 +56,11 @@ dataAllSymptoms = [{
     x: xAllSymptoms,
     y: yAllSymptoms,
     type: 'bar',
+    transforms: [{
+    type: 'filter',
+    target: 'x',
+    operation: '>',
+    value: 1}],
 		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
   // Set the hover template to show the right data //
 		hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>"
