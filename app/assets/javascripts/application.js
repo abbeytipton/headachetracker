@@ -153,7 +153,7 @@ AllSymptoms.on('plotly_unhover', function(data){
 var datamedicineSymptoms = [{
   values: [medicine_helped, medicine_didnt_help],
   labels: ['Medicine helped your headache ', 'Medicine didn\'t help your headache '],
-  text: ' of the time'
+  text: ' of the time',
   type: 'pie',
   textinfo: "label+percent+text",
   textposition: "outside",
@@ -168,7 +168,7 @@ var layoutmedicineSymptoms = {
   autosize: false,
   showlegend: false,
   font: {family: 'Poppins'},
-  title: "All Triggers",
+  title: "Medicine Helped",
 };
 Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms);
 
