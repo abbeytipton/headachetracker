@@ -193,6 +193,7 @@ var layoutalcoholSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
+  xaxis: { domain: 400 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -222,6 +223,7 @@ var layoutchocolateSymptoms = {
   height: 500,
   width: 600,
   hovermode: "closest",
+  xaxis: { domain: 400 },
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
@@ -239,27 +241,34 @@ var optionschocolateSymptoms = {
 Plotly.newPlot('chocolateSymptoms', datachocolateSymptoms, layoutchocolateSymptoms, optionschocolateSymptoms);
 
 // Dehydrated chart set up and push to the right div //
-var dehydratedGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: dehydrated, toolTipContent: "You experienced dehydration before the headache {y}% of the time", label: "You experienced dehydration before the headache" },
-			{  y: no_dehydrated,toolTipContent: "You didn't experience dehydration before the headache {y}% of the time", label: "You didn't experience dehydration before the headache" }
-		]
-	}]
-	};
-$("#dehydratedSymptoms").CanvasJSChart(dehydratedGraph);
+var datadehydratedSymptoms = [{
+  values: [dehydrated, no_dehydrated],
+  labels: ['You were dehydrated before the headache', 'You weren\'t dehydrated before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutdehydratedSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Dehydration",
+};
+var optionsdehydratedSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('dehydratedSymptoms', datadehydratedSymptoms, layoutdehydratedSymptoms, optionsdehydratedSymptoms);
 
 // Overeating chart set up and push to the right div //
 var overeatingGraph = {

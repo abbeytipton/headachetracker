@@ -8,30 +8,29 @@
   <% else %>
 
 <!-- Charts -->
+<!-- Flex for dropdown menu and header of all triggers graph -->
+<div class="flexMenuAndTitle">
+  <!-- Drop down more menu -->
+  <div class="dropdown">
+    <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
+    <div id="dropdownMenu" class="dropdown-content">
+        <span id="instructionsClick" class="dropdownLi">Instructions</span>
+        <span id="listClick" class="dropdownLi">Edit/Delete Logs</span>
+    </div>
+  </div>
+<div class="header">
+  <h2>Your Graphs</h2>
+  <h4>You have logged <%= user_headaches %> headaches so far.</h4>
+</div>
+  <div class="right"></div>
+<!-- End of flex graph for the menu and title -->
+</div>
 
 <!-- This chart is always show on page load -->
-  <div class="flexgraphs">
-    <div class="children" id="triggerHolder">
-      <!-- Flex for dropdown menu and header of all triggers graph -->
-      <div class="flexMenuAndTitle">
-        <!-- Drop down more menu -->
-        <div class="dropdown">
-          <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
-          <div id="dropdownMenu" class="dropdown-content">
-              <span id="instructionsClick" class="dropdownLi">Instructions</span>
-              <span id="listClick" class="dropdownLi">Edit/Delete Logs</span>
-          </div>
-        </div>
-      <div class="header">
-        <h2>Your Graphs</h2>
-        <h4>You have logged <%= user_headaches %> headaches so far.</h4>
-      </div>
-      <div class="right"></div>
-      <!-- End of flex graph for the menu and title -->
-    </div>
-      <div id="allSymptoms" style="height: 370px"></div>
-    </div>
-
+<div class="flexgraphs">
+<div class="children" id="triggerHolder">
+  <div id="allSymptoms" style="height: 370px"></div>
+</div>
 <!-- These charts have to be clicked to be shown -->
 <div class="children" id="medicineHolder">
   <div id="medicineSymptoms" style="height: 370px;"></div>
