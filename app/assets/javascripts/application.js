@@ -153,23 +153,20 @@ AllSymptoms.on('plotly_unhover', function(data){
 var datamedicineSymptoms = [{
   values: [medicine_helped, medicine_didnt_help],
   labels: ['Medicine helped your headache', 'Medicine didn\'t help your headache'],
-  text: ' % of the time',
   type: 'pie',
-  textinfo: "label+value % of the time",
-  textposition: "outside",
-  automargin: true,
   hovertemplate: "%{label} %{value} % of the time <extra></extra>"
 }];
 var layoutmedicineSymptoms = {
   height: 400,
   width: 600,
+  margin: 0,
   hovermode: "closest",
   hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
   // Set background color, size, font //
   plot_bgcolor: "transparent",
   paper_bgcolor: "transparent",
   autosize: false,
-  showlegend: false,
+  showlegend: true,
   font: {family: 'Poppins'},
   title: "Medicine Helped",
 };
