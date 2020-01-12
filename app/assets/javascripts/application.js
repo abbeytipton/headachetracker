@@ -148,27 +148,19 @@ AllSymptoms.on('plotly_unhover', function(data){
 });
 
 // Medicine chart set up and push to the right div //
-var medicineGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: medicine_helped, toolTipContent: "Medicine helped your headache {y}% of the time", label: "Medicine helped your headache" },
-			{  y: medicine_didnt_help,toolTipContent: "Medicine didn't help your headache {y}% of the time", label: "Medicine didn't help your headache" }
-		]
-	}]
-	};
-$("#medicineSymptoms").CanvasJSChart(medicineGraph);
+var datamedicineSymptoms = [{
+  values: [medicine_helped, medicine_didnt_help],
+  labels: ['Medicine helped your headache %{y}% of the time', 'Medicine didn\'t help your headache %{y}% of the time'],
+  type: 'pie'
+}];
+var layoutmedicineSymptoms = {
+  height: 400,
+  width: 600
+};
+Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms);
+
+
+
 
 // Alcohol chart set up and push to the right div //
 var alcoholGraph = {
