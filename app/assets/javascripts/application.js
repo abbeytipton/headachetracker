@@ -331,119 +331,154 @@ var optionsperiodSymptoms = {
 Plotly.newPlot('periodSymptoms', dataperiodSymptoms, layoutperiodSymptoms, optionsperiodSymptoms);
 
 // Exercise chart set up and push to the right div //
-var exerciseGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: exercise, toolTipContent: "You exercised before the headache {y}% of the time", label: "You exercised before the headache" },
-			{  y: no_exercise,toolTipContent: "You didn't exercise before the headache {y}% of the time", label: "You didn't exercise before the headache" }
-		]
-	}]
-	};
-$("#exerciseSymptoms").CanvasJSChart(exerciseGraph);
+var dataexerciseSymptoms = [{
+  values: [exercise, no_exercise],
+  labels: ['You were over exercising before the headache', 'You weren\'t over exercising before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutexerciseSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Over Exercising",
+};
+var optionsexerciseSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('exerciseSymptoms', dataexerciseSymptoms, layoutexerciseSymptoms, optionsexerciseSymptoms);
 
 // Eyestrain chart set up and push to the right div //
-var eyestrainGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: eye_strain, toolTipContent: "You experienced eyestrain before the headache {y}% of the time", label: "You experienced eyestrain before the headache" },
-			{  y: no_eyestrain,toolTipContent: "You didn't experience eyestrain before the headache {y}% of the time", label: "You didn't experience eyestrain before the headache" }
-		]
-	}]
-	};
-$("#eyestrainSymptoms").CanvasJSChart(eyestrainGraph);
+var dataeyestrainSymptoms = [{
+  values: [eyestrain, no_eyestrain],
+  labels: ['You experienced eyestrain before the headache', 'You didnt\'t experience eyestrain before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layouteyestrainSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Eye Strain",
+};
+var optionseyestrainSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('eyestrainSymptoms', dataeyestrainSymptoms, layouteyestrainSymptoms, optionseyestrainSymptoms);
 
 // Lights chart set up and push to the right div //
-var lightsGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: lights, toolTipContent: "You experienced bright lights before the headache {y}% of the time", label: "You experienced bright lights before the headache" },
-			{  y: no_lights,toolTipContent: "You didn't experience bright lights before the headache {y}% of the time", label: "You didn't experience bright lights before the headache" }
-		]
-	}]
-	};
-$("#lightsSymptoms").CanvasJSChart(lightsGraph);
+var datalightsSymptoms = [{
+  values: [lights, no_lights],
+  labels: ['You experienced bright lights before the headache', 'You didnt\'t experience bright lights before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutlightsSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Bright Lights",
+};
+var optionslightsSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('lightsSymptoms', datalightsSymptoms, layoutlightsSymptoms, optionslightsSymptoms);
 
 // Sleep chart set up and push to the right div //
-var sleepGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: sleep, toolTipContent: "You experienced lack of sleep before the headache {y}% of the time", label: "You experienced lack of sleep before the headache" },
-			{  y: no_sleep,toolTipContent: "You didn't experience lack of sleep before the headache {y}% of the time", label: "You didn't experience lack of sleep before the headache" }
-		]
-	}]
-	};
-$("#sleepSymptoms").CanvasJSChart(sleepGraph);
+var datasleepSymptoms = [{
+  values: [sleep, no_sleep],
+  labels: ['You experienced lack of sleep before the headache', 'You didnt\'t experience lack of sleep before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutsleepSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Lack of Sleep",
+};
+var optionssleepSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('sleepSymptoms', datasleepSymptoms, layoutsleepSymptoms, optionssleepSymptoms);
 
 // Stress chart set up and push to the right div //
-var stressGraph = {
-	animationEnabled: false,
-  backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-  toolTip:{
-    enabled: true,
-  },
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + Math.round(e.dataPoint.y) + "% of the time";
-			},
-		dataPoints: [
-			{  y: stressed, toolTipContent: "You experienced stress before the headache {y}% of the time", label: "You experienced stress before the headache" },
-			{  y: no_stress,toolTipContent: "You didn't experience stress before the headache {y}% of the time", label: "You didn't experience stress before the headache" }
-		]
-	}]
+var datastressSymptoms = [{
+  values: [stress, no_stress],
+  labels: ['You experienced stress before the headache', 'You didnt\'t experience stress before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutstressSymptoms = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 400 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Stress",
 };
-$("#stressSymptoms").CanvasJSChart(stressGraph);
+var optionsstressSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optionsstressSymptoms);
 
 // Click functions for each piece of the all triggers pie //
 function clickAlcohol(e) {

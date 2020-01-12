@@ -37,19 +37,14 @@
 
 .flexMenuAndTitle {
   display: flex;
+  align-content: center;
   align-items: center;
   justify-content: center;
   margin: 0;
   border: 2px solid orange;
 }
 
-.header {
-  width: 300px;
-}
-
 .right {
-  flex: 1;
-  width: 100px;
 }
 
 .children {
@@ -85,8 +80,6 @@ h2, h4 {
 .dropdown {
   position: relative;
   display: inline-block;
-  width: 100px;
-  flex: 1;
 }
 
 /* Dropdown content - hidden until clicked */
