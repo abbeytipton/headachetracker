@@ -452,7 +452,7 @@ Plotly.newPlot('sleepSymptoms', datasleepSymptoms, layoutsleepSymptoms, optionss
 
 // Stress chart set up and push to the right div //
 var datastressSymptoms = [{
-  values: [stress, no_stress],
+  values: [stressed, no_stress],
   labels: ['You experienced stress before the headache', 'You didnt\'t experience stress before the headache'],
   type: 'pie',
   textinfo: 'none',
