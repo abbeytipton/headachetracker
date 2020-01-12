@@ -56,6 +56,7 @@ dataAllSymptoms = [{
     x: xAllSymptoms,
     y: yAllSymptoms,
     type: 'bar',
+    // Filter out items that are less than 1 - this means all triggers that aren't included by this user and items that are at 0 //
     transforms: [{
     type: 'filter',
     target: 'y',
@@ -179,31 +180,35 @@ var optionsmedicineSymptoms = {
 };
 Plotly.newPlot('medicineSymptoms', datamedicineSymptoms, layoutmedicineSymptoms, optionsmedicineSymptoms);
 
-
-
-
 // Alcohol chart set up and push to the right div //
-var alcoholGraph = {
-	animationEnabled: false,
-	backgroundColor: "transparent",
-	width: 600,
-	height: 400,
-	toolTip:{
-		enabled: true,
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: "30%",
-		indexLabelFormatter: function(e){
-				return e.dataPoint.label + ": " + e.dataPoint.y + "% of the time";
-			},
-		dataPoints: [
-			{  y: alcohol, toolTipContent: "You drank alcohol before the headache {y}% of the time", label: "You drank alcohol before the headache" },
-			{  y: no_alcohol,toolTipContent: "You didn't drink alcohol before the headache {y}% of the time", label: "You didn't drink alcohol before the headache" }
-		]
-	}]
-	};
-$("#alcoholSymptoms").CanvasJSChart(alcoholGraph);
+var dataalcoholSymptoms = [{
+  values: [alcohol, no_alcohol],
+  labels: ['You had alcohol before the headache', 'You didn\'t have alcohol before the headache'],
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutalcoholSymptoms = {
+  height: 500,
+  width: 600,
+  margin: 0,
+  hovermode: "closest",
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: "Alcohol",
+};
+var optionsalcoholSymptoms = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+Plotly.newPlot('alcoholSymptoms', dataalcoholSymptoms, layoutalcoholSymptoms, optionsalcoholSymptoms);
 
 // Chocolate chart set up and push to the right div //
 var chocolateGraph = {
