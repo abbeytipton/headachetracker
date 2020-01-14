@@ -1,0 +1,2 @@
+class LogCustomization < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module LogCustomizationHelper
+end

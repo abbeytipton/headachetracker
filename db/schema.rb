@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_232508) do
+ActiveRecord::Schema.define(version: 2020_01_14_233316) do
+
+  create_table "log_customizations", force: :cascade do |t|
+    t.integer "userID"
+    t.boolean "trigger1"
+    t.string "trigger1Name"
+    t.boolean "trigger2"
+    t.string "trigger2Name"
+    t.boolean "trigger3"
+    t.string "trigger3Name"
+    t.boolean "trigger4"
+    t.string "trigger4Name"
+    t.boolean "trigger5"
+    t.string "trigger5Name"
+    t.string "trigger6"
+    t.string "boolean"
+    t.string "trigger6Name"
+    t.boolean "trigger7"
+    t.string "trigger7Name"
+    t.boolean "trigger8"
+    t.string "trigger8Name"
+    t.boolean "trigger9"
+    t.string "trigger9Name"
+    t.boolean "trigger10"
+    t.string "trigger10Name"
+    t.boolean "alcohol"
+    t.boolean "overeating"
+    t.boolean "stress"
+    t.boolean "sleep"
+    t.boolean "lights"
+    t.boolean "eyestrain"
+    t.boolean "exercise"
+    t.boolean "period"
+    t.boolean "chocolate"
+    t.boolean "dehydrated"
+    t.boolean "medicine"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "logs", force: :cascade do |t|
     t.integer "userid"

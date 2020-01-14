@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'log_customization/new'
+  get 'log_customization/create'
+  get 'log_customization_controller/new'
+  get 'log_customization_controller/create'
   get 'graphs/index'
   # Sets up home page of entire app
   root 'home#index'
