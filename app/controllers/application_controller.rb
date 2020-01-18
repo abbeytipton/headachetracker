@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   # Determine if a user has customized their triggers
   def customized
-    @customized ||= Log_customizations.where(:userid => current_user.id).count
+    @customized ||= Log_customization.where(:userid => current_user.id).count
   end
 
   # Get the total number of headaches logged by this user
