@@ -29,9 +29,9 @@ class ApplicationController < ActionController::Base
   # Determine if a user has customized their triggers
   def customized
     if Log_customizations.where(:userid => current_truck.id).blank?
-      return false
+      @customized = 0
     else
-      return true
+      @customized = 1
   end
 
   # Get the total number of headaches logged by this user
