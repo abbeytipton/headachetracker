@@ -1,9 +1,19 @@
 <!-- First, we'll check to see if this is their first log. If it is, we need to see what triggers they want to use. -->
 <% if customized == 0 %>
-<h1>Let's customize your logging experience.</h1>
+<h2>Welcome to Logging!</h2>
+<h3>When you have a headace, you can come here to log information about it, such as the time and date that it
+  started and ended. You will also be asked a series of questions about different triggers. After you've logged
+  a few headaches, you will see graphs of these triggers showing how often they appeared before a headache.
+  This information will help you identify which triggers are affecting you, and which aren't.<br><br>
+  Before we log your first headache, let's take the time to look at the list of suggested triggers and make
+  sure you want to include all of them. You will also be able to add up to 10 of your own triggers, if the
+  suggested triggers do not include one you're looking for.</h3>
+
+<h3>Let's get started!</h3>
+  <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
 <% else %>
-<h1>Already customized.</h1>
-<% end %>
+
+
 
 <!-- Heading and intro -->
 <!-- Form for adding a new headache, connects to logs controller -->
@@ -427,3 +437,4 @@
   </div>
   <!-- This div is under the previous two divs, holds the next image and button -->
 </div>
+<% end %>
