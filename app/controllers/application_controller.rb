@@ -19,10 +19,19 @@ class ApplicationController < ActionController::Base
   helper_method [:user_period]
   helper_method [:user_medicine]
   helper_method [:user_medicine_helped]
+  helper_method [:customized]
 
   # Get the current user
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  # Determine if a user has customized their triggers
+  def customized
+    if Log_customizations.where(:userid => current_truck.id).blank?
+      return false
+    else
+      return true
   end
 
   # Get the total number of headaches logged by this user
