@@ -1,6 +1,7 @@
 <!-- First, we'll check to see if this is their first log. If it is, we need to see what triggers they want to use. -->
 <% if customized == 0 %>
 <h2>Welcome to Logging!</h2>
+<div id="start" class="logDivs">
 <div class="flex">
 <div class="leftDiv">
 <h3>When you have a headace, you can come here to log information about it, such as the time and date that it
@@ -13,6 +14,7 @@
 </div>
 <h3>Let's get started!</h3>
   <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
+</div>
 </div>
 <% else %>
 
