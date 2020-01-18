@@ -1,9 +1,9 @@
 <!-- First, we'll check to see if this is their first log. If it is, we need to see what triggers they want to use. -->
-<% customized %>
+<% if customized == 0 %>
 <h1>Let's customize your logging experience.</h1>
-
+<% else %>
 <h1>Already customized.</h1>
-
+<% end %>
 
 <!-- Heading and intro -->
 <!-- Form for adding a new headache, connects to logs controller -->
