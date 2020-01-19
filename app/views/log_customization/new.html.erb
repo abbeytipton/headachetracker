@@ -19,25 +19,21 @@
                             :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
                             :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine %>
 
-<div id="three" class="logDivs">
+<div id="one" class="logDivs">
   <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconPeriod.png") %>
-    </div>
     <!-- This div holds the text and question -->
     <div>
-      <h2>Do you want to include alcohol as a trigger?</h2>
+      <h2>Do you want to include drinking alcohol as a trigger?</h2>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div>
-          <%= f.check_box :alcohol, id: 'threeFieldYes', class: 'checkbox' %>
-          <label for="threeFieldYes"><%= image_tag 'iconYes.png', id: 'threeNextYes' %></label>
+          <%= f.check_box :alcohol, id: 'oneFieldYes', class: 'checkbox' %>
+          <label for="oneFieldYes"><%= image_tag 'iconYes.png', id: 'oneNextYes' %></label>
         </div>
         <div>
-          <input type="checkbox" id="threeFieldNo" class="checkbox">
-          <label for="threeFieldNo"><%= image_tag 'iconNo.png', id: 'threeNextNo'%></label>
+          <input type="checkbox" id="oneFieldNo" class="checkbox">
+          <label for="oneFieldNo"><%= image_tag 'iconNo.png', id: 'oneNextNo'%></label>
         </div>
       </div>
     </div>

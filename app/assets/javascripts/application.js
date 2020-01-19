@@ -597,7 +597,7 @@ $(document).on("click", "#totalClick", function(e){
 $(document).on("click", "#startBtn", function(e){
     // Fade out the first div and fade in the second //
     $("#startDiv").fadeOut(function() {
-    //$("#one").fadeIn(1500);
+    $("#one").fadeIn(1500);
 });
 });
 
