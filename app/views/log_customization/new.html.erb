@@ -1,2 +1,64 @@
-<h1>LogCustomization#new</h1>
-<p>Find me in app/views/log_customization/new.html.erb</p>
+
+<%= form_for :logcustomization, url: logcustomization_path do |f| %>
+<div id="start" class="customDiv">
+<div class="flex">
+<div>
+<h3>When you have a headace, you can come here to log information about it, such as the time and date that it
+  started and ended. You will also be asked a series of questions about different triggers. After you've logged
+  a few headaches, you will see graphs of these triggers showing how often they appeared before a headache.
+  This information will help you identify which triggers are affecting you, and which aren't.<br><br>
+  Before we log your first headache, let's take the time to look at the list of suggested triggers and make
+  sure you want to include all of them. You will also be able to add up to 10 of your own triggers, if the
+  suggested triggers do not include one you're looking for.</h3>
+
+<h3>Let's get started!</h3>
+</div>
+  <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
+</div>
+</div>
+
+<div id="three" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- Left div holds the image -->
+    <div class="leftDiv">
+      <%= image_tag("iconPeriod.png") %>
+    </div>
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include alcohol as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :alcohol, id: 'threeFieldYes', class: 'checkbox' %>
+          <label for="threeFieldYes"><%= image_tag 'iconYes.png', id: 'threeNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="threeFieldNo" class="checkbox">
+          <label for="threeFieldNo"><%= image_tag 'iconNo.png', id: 'threeNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Main div to hold the question -->
+<div id="sixteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- Left div holds the image -->
+    <div class="leftDiv">
+    </div>
+    <!-- This div holds the text and question -->
+    <div>
+      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
+      <%= f.hidden_field :userid, :value => current_user.id %>
+      <!-- Submit button and end of ERB -->
+      <h1>Save this log!</h1>
+      <%= f.submit '', :class => 'button_with_image_save' %>
+    <% end %>
+    </div>
+  </div>
+  <!-- This div is under the previous two divs, holds the next image and button -->
+</div>
