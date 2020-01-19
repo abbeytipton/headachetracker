@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   helper_method [:user_medicine]
   helper_method [:user_medicine_helped]
   helper_method [:customized]
+  helper_method [:customized_redirect]
 
   # Get the current user
   def current_user
@@ -29,6 +30,14 @@ class ApplicationController < ActionController::Base
   # Determine if a user has customized their triggers
   def customized
     @customized ||= LogCustomization.where(:userID => current_user.id).count
+  end
+
+  def customized_redirect
+    if @customized == 0
+      redirect_to '/log_customization/create'
+    else
+      
+    end
   end
 
   # Get the total number of headaches logged by this user
