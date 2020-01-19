@@ -32,14 +32,6 @@ class ApplicationController < ActionController::Base
     @customized ||= LogCustomization.where(:userID => current_user.id).count
   end
 
-  def customized_redirect
-    if @customized == 0
-      redirect_to '/log_customization/create'
-    else
-      
-    end
-  end
-
   # Get the total number of headaches logged by this user
   def user_headaches
     @user_headaches ||= Logs.where(:userid => current_user.id).count
