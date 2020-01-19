@@ -141,6 +141,8 @@ label img {
 }
 
 // Makes the no checkboxes red instead of green //
+:checked + label[for='oneFieldNo']:before,
+:checked + label[for='twoFieldNo']:before,
 :checked + label[for='threeFieldNo']:before,
 :checked + label[for='fourFieldNo']:before,
 :checked + label[for='fiveFieldNo']:before,

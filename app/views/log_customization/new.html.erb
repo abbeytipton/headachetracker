@@ -1,5 +1,6 @@
 <%= form_for :logcustomizations, url: logcustomizations_path do |f| %>
 
+<!-- Introduction div -->
 <div id="startDiv" class="customDiv">
     <h3>When you have a headace, you can come here to log information about it. You will also be asked a series
         of questions about different triggers. After you've logged
@@ -16,7 +17,7 @@
 
 <%# :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
                             :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
-                            :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
+                            :trigger9Name, :trigger10, :trigger10Name, :stress, :sleep,
                             :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine %>
 
 <div id="one" class="logDivs">
@@ -34,6 +35,27 @@
         <div>
           <input type="checkbox" id="oneFieldNo" class="checkbox">
           <label for="oneFieldNo"><%= image_tag 'iconNo.png', id: 'oneNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="two" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include overeating as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :overeating, id: 'twoFieldYes', class: 'checkbox' %>
+          <label for="twoFieldYes"><%= image_tag 'iconYes.png', id: 'twoNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="twoFieldNo" class="checkbox">
+          <label for="twoFieldNo"><%= image_tag 'iconNo.png', id: 'twoNextNo'%></label>
         </div>
       </div>
     </div>

@@ -603,4 +603,12 @@ $(document).on("click", "#startBtn", function(e){
 });
 });
 
+// When the one next button is clicked, start this function //
+$(document).on("click", "#oneNextYes, #oneNextNo", function(e){
+    // Fade out the first div and fade in the second //
+    $("#one").fadeOut(function() {
+    $("#two").fadeIn(1500);
+  });
+});
+
 });
