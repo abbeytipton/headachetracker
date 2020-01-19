@@ -5,7 +5,7 @@ class LogsController < ApplicationController
 
 
   def index
-    if @customized == 0
+    if customized == 0
       redirect_to '/log_customization/create'
     else
     end
