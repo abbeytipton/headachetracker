@@ -50,6 +50,7 @@ var no_stress = 100 - stressed;
 var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
 var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
 // Get the div where the graph goes //
+if (document.getElementById('allSymptoms') != null) {
 var AllSymptoms = document.getElementById('allSymptoms'),
 // Set up data set coordinates, set to bar graph, set colors of bars //
 dataAllSymptoms = [{
@@ -590,6 +591,7 @@ $(document).on("click", "#totalClick", function(e){
   modal.style.display = "block";
 	p.innerHTML = "You have logged " + total + " headaches so far.";
 });
+}
 
 // Log customization page starts here //
 
