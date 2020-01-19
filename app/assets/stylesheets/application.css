@@ -86,3 +86,12 @@
 #allSymptoms .modebar:hover {
  background: transparent;
 }
+
+/* Divs for log custom page */
+.customDiv {
+  margin: 0 auto;
+  width: 45%;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: justify;
+}
