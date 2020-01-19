@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   resources :logs
   get 'newlog', to: 'logs#new', as: 'newlog'
 
+  # Log custom routes
+  get 'log_customization/create'
+  resources :logcustomization
+  get 'newlogcustomization', to: 'logcustomization#new', as: 'newlogcustomization'
+
   # Graphs routes
   get 'graphs/index'
   resources :graphs
