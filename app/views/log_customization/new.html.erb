@@ -167,27 +167,6 @@
   </div>
 </div>
 
-<div id="seven" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Do you want to include over exercising as a trigger?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :exercise, id: 'sevenFieldYes', class: 'checkbox' %>
-          <label for="sevenFieldYes"><%= image_tag 'iconYes.png', id: 'sevenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="sevenFieldNo" class="checkbox">
-          <label for="sevenfieldNo"><%= image_tag 'iconNo.png', id: 'sevenNextNo'%></label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div id="eight" class="logDivs">
   <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
@@ -266,6 +245,27 @@
         <div>
           <input type="checkbox" id="elevenFieldNo" class="checkbox">
           <label for="elevenfieldNo"><%= image_tag 'iconNo.png', id: 'elevenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="twelve" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include over exercising as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :exercise, id: 'twelveFieldYes', class: 'checkbox' %>
+          <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="twelveFieldNo" class="checkbox">
+          <label for="twelvefieldNo"><%= image_tag 'iconNo.png', id: 'twelveNextNo'%></label>
         </div>
       </div>
     </div>
