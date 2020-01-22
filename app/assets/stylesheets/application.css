@@ -99,3 +99,25 @@
 .customDiv h3 {
   text-align: justify;
 }
+
+// Makes the no checkboxes red instead of green //
+:checked + label[for='oneFieldNo']:before,
+:checked + label[for='twoFieldNo']:before,
+:checked + label[for='threeFieldNo']:before,
+:checked + label[for='fourFieldNo']:before,
+:checked + label[for='fiveFieldNo']:before,
+:checked + label[for='sixFieldNo']:before,
+:checked + label[for='sevenFieldNo']:before,
+:checked + label[for='eightFieldNo']:before,
+:checked + label[for='nineFieldNo']:before,
+:checked + label[for='tenFieldNo']:before,
+:checked + label[for='elevenFieldNo']:before,
+:checked + label[for='twelveFieldNo']:before,
+:checked + label[for='thirteenFieldNo']:before,
+:checked + label[for='fourteenFieldNo']:before,
+:checked + label[for='fifteenFieldNo']:before {
+  content: "✓";
+  background-color: red;
+  color: red;
+  transform: scale(1);
+}
