@@ -598,9 +598,9 @@ $(document).on("click", "#totalClick", function(e){
 // Start button click function //
 
 // When the one next button is clicked, start this function //
-$(document).on("click", "#startNext", function(e){
+$(document).on("click", "#startBtn", function(e){
     // Fade out the first div and fade in the second //
-    $("#start").fadeOut(function() {
+    $("#startDiv").fadeOut(function() {
     $("#one").fadeIn(1500);
 });
 });
