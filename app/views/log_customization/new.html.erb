@@ -251,6 +251,29 @@
   </div>
 </div>
 
+<div id="twelve" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Would you like to add custom triggers? You can add up to ten.</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <input type="checkbox" id="twelveFieldYes" class="checkbox">
+          <label for="elevenFieldYes"><%= image_tag 'iconYes.png', id: 'elevenNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="twelveFieldNo" class="checkbox">
+          <label for="elevenFieldNo"><%= image_tag 'iconNo.png', id: 'elevenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= f.check_box :trigger1 %>
+<%= form.text_field :trigger1Name, :required => true  %>
 
 <!-- Main div to hold the question -->
 <div id="sixteen" class="logDivs">
