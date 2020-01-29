@@ -281,17 +281,16 @@
     <div>
       <h2>Name your first custom trigger:</h2>
       <%= f.hidden_field :trigger1, :value => '1' %>
-      <%= f.text_field :trigger1Name, :required => true  %>
+      <%= f.text_field :trigger1Name, :required => true, class: 'customInput' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
-        <div>
+        <div class="customTriggerText">
           <h3>Add another trigger:</h3>
           <%= f.check_box :trigger2, id: 'thirteenieldYes', class: 'checkbox' %>
           <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
         </div>
         <div>
-          <h3>Finish and save:</h3>
-          <%= f.submit '', :class => 'button_with_image_save' %>
+          <h3>Finished adding triggers:</h3>
           <label for="thirteenNextNo"><%= image_tag 'iconNo.png', id: 'thirteenextNo'%></label>
         </div>
       </div>
@@ -299,4 +298,22 @@
   </div>
 </div>
 
-<% end %>
+<!-- Main div to hold the question -->
+<div id="finish" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- Left div holds the image -->
+    <div class="leftDiv">
+    </div>
+    <!-- This div holds the text and question -->
+    <div>
+      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
+      <%= f.hidden_field :userid, :value => current_user.id %>
+      <!-- Submit button and end of ERB -->
+      <h1>Save and start logging!</h1>
+      <%= f.submit '', :class => 'button_with_image_save' %>
+    <% end %>
+    </div>
+  </div>
+  <!-- This div is under the previous two divs, holds the next image and button -->
+</div>
