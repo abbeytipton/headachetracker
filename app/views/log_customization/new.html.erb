@@ -15,6 +15,8 @@
   </div>
 </div>
 
+<%= f.hidden_field :userid, :value => current_user.id %>
+
 <%# :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
                             :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
                             :trigger9Name, :trigger10, :trigger10Name,
@@ -261,7 +263,7 @@
       <div class="flex">
         <div>
           <input type="checkbox" id="twelveFieldYes" class="checkbox">
-          <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveFieldYes' %></label>
+          <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveNextYes' %></label>
         </div>
         <div>
           <input type="checkbox" id="twelveFieldNo" class="checkbox">
@@ -272,25 +274,27 @@
   </div>
 </div>
 
-<%= f.check_box :trigger1 %>
-<%= f.text_field :trigger1Name, :required => true  %>
-
-<!-- Main div to hold the question -->
-<div id="sixteen" class="logDivs">
+<div id="thirteen" class="logDivs">
   <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-    </div>
     <!-- This div holds the text and question -->
     <div>
-      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
-      <%= f.hidden_field :userid, :value => current_user.id %>
-      <!-- Submit button and end of ERB -->
-      <h1>Save this log!</h1>
-      <%= f.submit '', :class => 'button_with_image_save' %>
-    <% end %>
+      <h2>Name your first custom trigger:</h2>
+      <%= f.hidden_field :trigger1, :value => true %>
+      <%= f.text_field :trigger1Name, :required => true  %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger2, id: 'thirteenieldYes', class: 'checkbox' %>
+          <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
+        </div>
+        <div>
+          <h3>Finish and save:</h3>
+          <%= f.submit '', :class => 'button_with_image_save' %>
+          <label for="thirteenNextNo"><%= image_tag 'iconNo.png', id: 'thirteenextNo'%></label>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- This div is under the previous two divs, holds the next image and button -->
 </div>
