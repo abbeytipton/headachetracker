@@ -15,8 +15,6 @@
   </div>
 </div>
 
-<%= f.hidden_field :userid, :value => current_user.id %>
-
 <%# :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
                             :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
                             :trigger9Name, :trigger10, :trigger10Name,
@@ -262,7 +260,7 @@
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div>
-          <input type="checkbox" id="twelveFieldYes" class="checkbox">
+          <%= f.check_box :trigger1, id: 'twelveFieldYes', class: 'checkbox' %>
           <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveNextYes' %></label>
         </div>
         <div>
@@ -280,18 +278,41 @@
     <!-- This div holds the text and question -->
     <div>
       <h2>Name your first custom trigger:</h2>
-      <%= f.hidden_field :trigger1, :value => '1' %>
       <%= f.text_field :trigger1Name, :required => true, class: 'customInput' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div class="customTriggerText">
           <h3>Add another trigger:</h3>
-          <%= f.check_box :trigger2, id: 'thirteenieldYes', class: 'checkbox' %>
+          <%= f.check_box :trigger2, id: 'thirteenFieldYes', class: 'checkbox' %>
           <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
         </div>
-        <div>
+        <div class="customTriggerText">
           <h3>Finished adding triggers:</h3>
-          <label for="thirteenNextNo"><%= image_tag 'iconNo.png', id: 'thirteenextNo'%></label>
+          <input type="checkbox" id="thirteenFieldNo" class="checkbox">
+          <label for="thirteenNextNo"><%= image_tag 'iconNo.png', id: 'thirteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fourteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your second custom trigger:</h2>
+      <%= f.text_field :trigger2Name, :required => true, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger3, id: 'fourteenFieldYes', class: 'checkbox' %>
+          <label for="fourteenFieldYes"><%= image_tag 'iconYes.png', id: 'fourteenNextYes' %></label>
+        </div>
+        <div>
+          <h3 class="customTriggerText">Finished adding triggers:</h3>
+          <label for="fourteenNextNo"><%= image_tag 'iconNo.png', id: 'fourteenNextNo'%></label>
         </div>
       </div>
     </div>
