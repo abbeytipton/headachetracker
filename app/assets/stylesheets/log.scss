@@ -33,7 +33,7 @@ input {
 }
 
 // Sets a margin at the top of all the question divs to move them down the page a little //
-#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
+#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finish {
   margin-top: 80px;
 }
 
@@ -215,8 +215,8 @@ label img {
 }
 
 .customInput {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .customTriggerText {
