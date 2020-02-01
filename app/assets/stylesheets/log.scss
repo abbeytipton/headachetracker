@@ -106,6 +106,8 @@ label {
   display: block;
   position: relative;
   cursor: pointer;
+  margin-left: 30%;
+  margin-right: 30%; 
 }
 
 label:before {
@@ -219,6 +221,6 @@ label img {
 
 .customTriggerText {
   margin-right: 8%;
-  width: 400px;
+  width: 200px;
   border: 2px solid green;
 }
