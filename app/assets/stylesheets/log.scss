@@ -28,7 +28,7 @@ input {
 }
 
 // Hides the question divs until they are clicked on //
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finished {
   display: none;
 }
 
@@ -213,10 +213,10 @@ label img {
 }
 
 .customInput {
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .customTriggerText {
-  margin-right: 20%;
+  margin-right: 8%;
 }

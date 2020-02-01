@@ -699,7 +699,7 @@ $(document).on("click", "#elevenNextYes, #elevenNextNo", function(e){
 });
 });
 
-// When the eleven next button is clicked, start this function //
+// When the twelve yes button is clicked, start this function //
 $(document).on("click", "#twelveNextYes", function(e){
     // Fade out the first div and fade in the second //
     $("#twelve").fadeOut(function() {
@@ -707,7 +707,7 @@ $(document).on("click", "#twelveNextYes", function(e){
 });
 });
 
-// When the eleven next button is clicked, start this function //
+// When the twelveo no button is clicked, start this function //
 $(document).on("click", "#twelveNextNo", function(e){
     // Fade out the first div and fade in the second //
     $("#twelve").fadeOut(function() {
