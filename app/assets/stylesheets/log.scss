@@ -28,7 +28,7 @@ input {
 }
 
 // Hides the question divs until they are clicked on //
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finished {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finish {
   display: none;
 }
 
@@ -49,7 +49,7 @@ h2 {
 // The question divs //
 .logDivs {
   margin: 0 auto;
-  width: 35%;
+  width: 40%;
   padding: 15px;
   border-radius: 8px;
 }
@@ -219,4 +219,5 @@ label img {
 
 .customTriggerText {
   margin-right: 8%;
+  width: 100%;
 }

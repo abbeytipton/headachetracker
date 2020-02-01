@@ -715,5 +715,21 @@ $(document).on("click", "#twelveNextNo", function(e){
 });
 });
 
+// When the twelve yes button is clicked, start this function //
+$(document).on("click", "#thirteenNextYes", function(e){
+    // Fade out the first div and fade in the second //
+    $("#thirteen").fadeOut(function() {
+    $("#fourteen").fadeIn(1500);
+});
+});
+
+// When the twelveo no button is clicked, start this function //
+$(document).on("click", "#thirteenNextNo", function(e){
+    // Fade out the first div and fade in the second //
+    $("#thirteen").fadeOut(function() {
+    $("#finish").fadeIn(1500);
+});
+});
+
 
 });
