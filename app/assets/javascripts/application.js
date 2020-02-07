@@ -14,7 +14,7 @@
 //= require activestorage
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).on('ready:load', function() {
 
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
