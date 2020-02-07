@@ -12,10 +12,11 @@
 //
 //= require jquery3
 //= require activestorage
+//= require turbolinks
 //= require_tree .
 
-$(document).on('ready:load', function() {
-
+$(document).on('ready turbolinks:load', function(){
+  
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
 var total = $('#total').text();
