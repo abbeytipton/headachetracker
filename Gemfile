@@ -76,3 +76,4 @@ gem "chartkick"
 
 # Jquery
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
