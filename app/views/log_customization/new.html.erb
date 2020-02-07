@@ -348,12 +348,12 @@
     <!-- This div holds the text and question -->
     <div>
       <h2>Name your fourth custom trigger:</h2>
-      <%= f.text_field :trigger4Name, :required => true, class: 'customInput' %>
+      <%= f.text_field :trigger4Name, :required => true, class: 'customInput', id: 'trigger4NameText' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div class="customTriggerText">
           <h3>Add another trigger:</h3>
-          <%= f.check_box :trigger5, id: 'sixteenFieldYes', class: 'checkbox' %>
+          <%= f.check_box :trigger5, id: 'sixteenFieldYes', class: 'checkbox', :disabled => true %>
           <label for="sixteenFieldYes"><%= image_tag 'iconYes.png', id: 'sixteenNextYes' %></label>
         </div>
         <div class="customTriggerText">

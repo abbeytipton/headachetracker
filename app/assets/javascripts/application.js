@@ -877,8 +877,6 @@ $(document).on("click", "#twentytwoNextNo", function(e){
 });
 });
 
-if $('#trigger4NameText').Text == "" {
-  $('#sixteenNextYes').disabled = true;
-}
+
 
 });
