@@ -607,24 +607,18 @@ $(document).on("click", "#startBtn", function(e){
 
 // When the one next button is clicked, start this function //
 $(document).on("click", "#oneNextYes, #oneNextNo", function(e){
-  // Checking for null values //
-  if ($(".oneField").val() != "") {
     // Fade out the first div and fade in the second //
     $("#one").fadeOut(function() {
     $("#two").fadeIn(1500);
 });
-  }
 });
 
 // When the two next button is clicked, start this function //
 $(document).on("click", "#twoNextYes, #twoNextNo", function(e){
-  // Checking for null values //
-  if ($(".twoField").val() != "") {
     // Fade out the first div and fade in the second //
     $("#two").fadeOut(function() {
     $("#three").fadeIn(1500);
 });
-  }
 });
 
 // When the three next button is clicked, start this function //
