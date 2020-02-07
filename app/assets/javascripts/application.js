@@ -12,7 +12,6 @@
 //
 //= require jquery3
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
