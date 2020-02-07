@@ -278,7 +278,7 @@
     <!-- This div holds the text and question -->
     <div>
       <h2>Name your first custom trigger:</h2>
-      <%= f.text_field :trigger1Name, :required => true, class: 'customInput' %>
+      <%= f.text_field :trigger1Name, :required => true, class: 'customInput', id: 'trigger1NameText' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div class="customTriggerText">
@@ -348,7 +348,7 @@
     <!-- This div holds the text and question -->
     <div>
       <h2>Name your fourth custom trigger:</h2>
-      <%= f.text_field :trigger4Name, :required => true, class: 'customInput', id: 'trigger4NameText' %>
+      <%= f.text_field :trigger4Name, :required => true, class: 'customInput' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <div class="customTriggerText">

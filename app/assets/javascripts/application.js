@@ -718,9 +718,14 @@ $(document).on("click", "#twelveNextNo", function(e){
 
 // When the thirteen yes button is clicked, start this function //
 $(document).on("click", "#thirteenNextYes", function(e){
+     if ($('#trigger1NameText').val() == "") {
+       alert("Enter a name thx");
+     }
+     else {
     // Fade out the first div and fade in the second //
     $("#thirteen").fadeOut(function() {
     $("#fourteen").fadeIn(1500);
+  }
 });
 });
 
@@ -876,9 +881,5 @@ $(document).on("click", "#twentytwoNextNo", function(e){
     $("#finish").fadeIn(1500);
 });
 });
-
-if $('#trigger4NameText').val() == "" {
-  $('#sixteenNextYes').disabled = true;
-}
 
 });
