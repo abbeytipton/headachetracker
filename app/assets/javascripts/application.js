@@ -724,6 +724,9 @@ $(document).on("click", "#thirteenNextYes", function(e){
     $("#fourteen").fadeIn(1500);
 });
 }
+else {
+  alert("hey");
+}
 });
 
 // When the thirteen no button is clicked, start this function //

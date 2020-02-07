@@ -25,9 +25,9 @@ So far, I have:
 - Created route for this page
 - Begun creating actual page with questions for user to answer (will mirror CSS of logging page)
 - Added JS for questions added so far
+- Finish questions/JS for questions
 
 Left to do:
-- Finish questions/JS for questions
 - Handle creation and make sure it's working
 - Make page off limits if user has answered the questions already
 - Make page off limits if user is not logged in
