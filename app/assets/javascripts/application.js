@@ -725,8 +725,8 @@ $(document).on("click", "#thirteenNextYes", function(e){
     // Fade out the first div and fade in the second //
     $("#thirteen").fadeOut(function() {
     $("#fourteen").fadeIn(1500);
-  }
 });
+}
 });
 
 // When the thirteen no button is clicked, start this function //
