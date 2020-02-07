@@ -319,6 +319,29 @@
   </div>
 </div>
 
+<div id="fifteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your second custom trigger:</h2>
+      <%= f.text_field :trigger3Name, :required => true, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger4, id: 'fifteenFieldYes', class: 'checkbox' %>
+          <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', id: 'fifteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', id: 'fifteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Main div to hold the question -->
 <div id="finish" class="logDivs">
   <!-- Flex div to hold the next two divs next to each other -->

@@ -716,7 +716,7 @@ $(document).on("click", "#twelveNextNo", function(e){
 });
 });
 
-// When the twelve yes button is clicked, start this function //
+// When the thirteen yes button is clicked, start this function //
 $(document).on("click", "#thirteenNextYes", function(e){
     // Fade out the first div and fade in the second //
     $("#thirteen").fadeOut(function() {
@@ -724,12 +724,29 @@ $(document).on("click", "#thirteenNextYes", function(e){
 });
 });
 
-// When the twelve no button is clicked, start this function //
+// When the thirteen no button is clicked, start this function //
 $(document).on("click", "#thirteenNextNo", function(e){
     // Fade out the first div and fade in the second //
     $("#thirteen").fadeOut(function() {
     $("#finish").fadeIn(1500);
     $("#fourteen").hide();
+});
+});
+
+// When the fourteen yes button is clicked, start this function //
+$(document).on("click", "#fourteenNextYes", function(e){
+    // Fade out the first div and fade in the second //
+    $("#fourteen").fadeOut(function() {
+    $("#fifteen").fadeIn(1500);
+});
+});
+
+// When the fourteen no button is clicked, start this function //
+$(document).on("click", "#fourteenNextNo", function(e){
+    // Fade out the first div and fade in the second //
+    $("#fourteen").fadeOut(function() {
+    $("#finish").fadeIn(1500);
+    $("#fifteen").hide();
 });
 });
 
