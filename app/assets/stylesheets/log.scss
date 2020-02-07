@@ -28,12 +28,12 @@ input {
 }
 
 // Hides the question divs until they are clicked on //
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finish {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #seventeen, #eighteen, #nineteen, #twenty, #twentyone, #twentytwo, #finish {
   display: none;
 }
 
 // Sets a margin at the top of all the question divs to move them down the page a little //
-#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #finish {
+#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #seventeen, #eighteen, #nineteen, #twenty, #twentyone, #twentytwo, #finish {
   margin-top: 80px;
 }
 
@@ -157,7 +157,14 @@ label img {
 :checked + label[for='twelveFieldNo']:before,
 :checked + label[for='thirteenFieldNo']:before,
 :checked + label[for='fourteenFieldNo']:before,
-:checked + label[for='fifteenFieldNo']:before {
+:checked + label[for='fifteenFieldNo']:before,
+:checked + label[for='sixteenFieldNo']:before,
+:checked + label[for='seventeenFieldNo']:before,
+:checked + label[for='eighteenFieldNo']:before,
+:checked + label[for='nineteenFieldNo']:before,
+:checked + label[for='twentyFieldNo']:before,
+:checked + label[for='twentyoneFieldNo']:before,
+:checked + label[for='twentytwoFieldNo']:before {
   content: "✓";
   background-color: red;
   color: red;
