@@ -277,7 +277,7 @@
       <%= f.text_field :trigger1Name, class: 'customInput', id: 'trigger1NameText' %>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
-        <div class="customTriggerText">
+        <div class="customTriggerText" id="clickTest">
           <h3>Add another trigger:</h3>
           <%= f.check_box :trigger2, id: 'thirteenFieldYes', class: 'checkbox' %>
           <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
