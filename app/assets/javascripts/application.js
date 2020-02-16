@@ -10,13 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
+//= require jquery3
 //= require activestorage
-//= require jquery
-//= require jquery_ujs
+//= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 
 // Access the spans in the HTML to get each piece of info about the user //
 // Multiply by 100 so it will show up as percentage correctly //
@@ -712,14 +711,14 @@ $(document).on("click", "#twelveNextNo", function(e){
 
 // When the thirteen yes button is clicked, start this function //
 $(document).on("click", "#thirteenNextYes", function(e){
-     if ($('#trigger1NameText').val() != "") {
+     if ($('#trigger1NameText').val() == "") {
+       alert("hey");
+     }
+     else {
     // Fade out the first div and fade in the second //
     $("#thirteen").fadeOut(function() {
     $("#fourteen").fadeIn(1500);
 });
-}
-else {
-  alert("hey");
 }
 });
 
