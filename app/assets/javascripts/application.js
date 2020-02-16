@@ -711,7 +711,7 @@ $(document).on("click", "#twelveNextNo", function(e){
 
 // When the thirteen yes button is clicked, start this function //
 //$(document).on("click", "#thirteenNextYes", function(e){
-  $('#clickTest').click(function () {
+  $('#clickTest').unbind().click(function () {
      if ($('#trigger1NameText').val() == "") {
        alert("hey");
      }
