@@ -614,7 +614,7 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
   var checkboxToShow = erbCheckboxes[counter];
   $("#checkboxDiv").append(checkboxToShow);
   $("#question").empty();
-  $('#question').html($(questions[counter])).html());
+  $('#question').html($(questions[counter]).html());
   counter++;
 });
 
