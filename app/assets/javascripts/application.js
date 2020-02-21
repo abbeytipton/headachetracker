@@ -606,14 +606,15 @@ $(document).on("click", "#startBtn", function(e){
 });
 
 var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?"];
-var erbCheckboxes = ["placeholder", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %><label for='checkBox2'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>", "<%= f.check_box :stress, id: 'checkBox3', class: 'checkbox' %><label for='checkBox3'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>"];
+var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
   alert(counter);
   $("#checkboxDiv").empty();
   var checkboxToShow = erbCheckboxes[counter];
   $("#checkboxDiv").append(checkboxToShow);
-  $("#question").Text = questions[counter];
+  $("#question").empty();
+  $("#question").append(questions[counter]);
   counter++;
 });
 
