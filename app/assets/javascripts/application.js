@@ -612,9 +612,9 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
   alert(counter);
   $("#checkboxDiv").empty();
   var checkboxToShow = erbCheckboxes[counter];
-  $("#checkboxDiv").append(checkboxToShow);
+  $('#checkboxDiv').html($(checkboxToShow).html());
   $("#question").empty();
-  $('#question').html($(questions[counter]).html());
+  $("#question").append(questions[counter]);
   counter++;
 });
 
