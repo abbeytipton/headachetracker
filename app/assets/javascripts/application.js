@@ -593,287 +593,31 @@ $(document).on("click", "#totalClick", function(e){
 }
 
 // Log customization page starts here //
-
-// Start button click function //
+// Click functions for the next buttons that make the logging form visible item by item to the user //
+var counter = 0;
 
 // When the one next button is clicked, start this function //
 $(document).on("click", "#startBtn", function(e){
     // Fade out the first div and fade in the second //
     $("#startDiv").fadeOut(function() {
-    $("#one").fadeIn(1500);
+    $("#questions").fadeIn(1500);
+    counter++;
 });
 });
 
-// When the one next button is clicked, start this function //
-$(document).on("click", "#oneNextYes, #oneNextNo", function(e){
+var questions = ["placeholder", "Do you want to include drinking alcohol as a trigger?", "Do you want to include overeating as a trigger?"]
+var erbCheckboxes = ["<%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>"]
+
+$(document).on("click", "#nextYes, #nextNo", function(e){
+  var checkboxToHide = "#checkbox" + counter;
+  var checkboxToShow = erbCheckboxes[counter + 1];
     // Fade out the first div and fade in the second //
-    $("#one").fadeOut(function() {
-    $("#two").fadeIn(1500);
+    $(checkboxToHide).hide(function() {
+        $(checkboxToShow).show();
+        $("#question").Text = questions[counter]
+        counter++
 });
 });
 
-// When the two next button is clicked, start this function //
-$(document).on("click", "#twoNextYes, #twoNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#two").fadeOut(function() {
-    $("#three").fadeIn(1500);
-});
-});
-
-// When the three next button is clicked, start this function //
-$(document).on("click", "#threeNextYes, #threeNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#three").fadeOut(function() {
-    $("#four").fadeIn(1500);
-  });
-});
-
-// When the four next button is clicked, start this function //
-$(document).on("click", "#fourNextYes, #fourNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#four").fadeOut(function() {
-        $("#five").fadeIn(1500);
-});
-});
-
-// When the five next button is clicked, start this function //
-$(document).on("click", "#fiveNextYes, #fiveNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#five").fadeOut(function() {
-        $("#six").fadeIn(1500);
-});
-});
-
-// When the six next button is clicked, start this function //
-$(document).on("click", "#sixNextYes, #sixNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#six").fadeOut(function() {
-        $("#seven").fadeIn(1500);
-});
-});
-
-// When the seven next button is clicked, start this function //
-$(document).on("click", "#sevenNextYes, #sevenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#seven").fadeOut(function() {
-        $("#eight").fadeIn(1500);
-});
-});
-
-// When the eight next button is clicked, start this function //
-$(document).on("click", "#eightNextYes, #eightNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#eight").fadeOut(function() {
-        $("#nine").fadeIn(1500);
-});
-});
-
-// When the nine next button is clicked, start this function //
-$(document).on("click", "#nineNextYes, #nineNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#nine").fadeOut(function() {
-        $("#ten").fadeIn(1500);
-});
-});
-
-// When the ten next button is clicked, start this function //
-$(document).on("click", "#tenNextYes, #tenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#ten").fadeOut(function() {
-    $("#eleven").fadeIn(1500);
-});
-});
-
-// When the eleven next button is clicked, start this function //
-$(document).on("click", "#elevenNextYes, #elevenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#eleven").fadeOut(function() {
-    $("#twelve").fadeIn(1500);
-});
-});
-
-// When the twelve yes button is clicked, start this function //
-$(document).on("click", "#twelveNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twelve").fadeOut(function() {
-    $("#thirteen").fadeIn(1500);
-});
-});
-
-// When the twelveo no button is clicked, start this function //
-$(document).on("click", "#twelveNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twelve").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#thirteen").hide();
-});
-});
-
-// When the thirteen yes button is clicked, start this function //
-//$(document).on("click", "#thirteenNextYes", function(e){
-$("#thirteenNextYes").off().on('click', function() {
-     if ($('#trigger1NameText').val() == "") {
-       alert("hey");
-     }
-     else {
-    // Fade out the first div and fade in the second //
-    $("#thirteen").fadeOut(function() {
-    $("#fourteen").fadeIn(1500);
-});
-}
-});
-
-// When the thirteen no button is clicked, start this function //
-$(document).on("click", "#thirteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#thirteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#fourteen").hide();
-});
-});
-
-// When the fourteen yes button is clicked, start this function //
-$(document).on("click", "#fourteenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#fourteen").fadeOut(function() {
-    $("#fifteen").fadeIn(1500);
-});
-});
-
-// When the fourteen no button is clicked, start this function //
-$(document).on("click", "#fourteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#fourteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#fifteen").hide();
-});
-});
-
-// When the fifteen yes button is clicked, start this function //
-$(document).on("click", "#fifteenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#fifteen").fadeOut(function() {
-    $("#sixteen").fadeIn(1500);
-});
-});
-
-// When the fifteen no button is clicked, start this function //
-$(document).on("click", "#fifteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#fifteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#sixteen").hide();
-});
-});
-
-// When the sixteen yes button is clicked, start this function //
-$(document).on("click", "#sixteenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#sixteen").fadeOut(function() {
-    $("#seventeen").fadeIn(1500);
-});
-});
-
-// When the sixteen no button is clicked, start this function //
-$(document).on("click", "#sixteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#sixteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#seventeen").hide();
-});
-});
-
-// When the seventeen yes button is clicked, start this function //
-$(document).on("click", "#seventeenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#seventeen").fadeOut(function() {
-    $("#eighteen").fadeIn(1500);
-});
-});
-
-// When the seventeen no button is clicked, start this function //
-$(document).on("click", "#seventeenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#seventeen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#eighteen").hide();
-});
-});
-
-// When the eighteen yes button is clicked, start this function //
-$(document).on("click", "#eighteenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#eighteen").fadeOut(function() {
-    $("#nineteen").fadeIn(1500);
-});
-});
-
-// When the eighteen no button is clicked, start this function //
-$(document).on("click", "#eighteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#eighteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#nineteen").hide();
-});
-});
-
-// When the nineteen yes button is clicked, start this function //
-$(document).on("click", "#nineteenNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#nineteen").fadeOut(function() {
-    $("#twenty").fadeIn(1500);
-});
-});
-
-// When the nineteen no button is clicked, start this function //
-$(document).on("click", "#nineteenNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#nineteen").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#twenty").hide();
-});
-});
-
-// When the twenty yes button is clicked, start this function //
-$(document).on("click", "#twentyNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twenty").fadeOut(function() {
-    $("#twentyone").fadeIn(1500);
-});
-});
-
-// When the twenty no button is clicked, start this function //
-$(document).on("click", "#twentyNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twenty").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#twentyone").hide();
-});
-});
-
-// When the twentyone yes button is clicked, start this function //
-$(document).on("click", "#twentyoneNextYes", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twentyone").fadeOut(function() {
-    $("#twentytwo").fadeIn(1500);
-});
-});
-
-// When the twentyone no button is clicked, start this function //
-$(document).on("click", "#twentyoneNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twentyone").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-    $("#twentytwo").hide();
-});
-});
-
-// When the twentytwo no button is clicked, start this function //
-$(document).on("click", "#twentytwoNextNo", function(e){
-    // Fade out the first div and fade in the second //
-    $("#twentytwo").fadeOut(function() {
-    $("#finish").fadeIn(1500);
-});
-});
 
 });
