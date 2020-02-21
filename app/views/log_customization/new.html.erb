@@ -24,7 +24,7 @@
       <h2 id="question">Do you want to include drinking alcohol as a trigger?</h2>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
-        <div>
+        <div id="checkboxDiv">
           <%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>
           <label for="checkBox1"><%= image_tag 'iconYes.png', id: 'nextYes' %></label>
         </div>
