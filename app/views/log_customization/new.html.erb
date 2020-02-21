@@ -36,3 +36,23 @@
     </div>
   </div>
 </div>
+
+<!-- Main div to hold the question -->
+<div id="finish" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- Left div holds the image -->
+    <div class="leftDiv">
+    </div>
+    <!-- This div holds the text and question -->
+    <div>
+      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
+      <%= f.hidden_field :userid, :value => current_user.id %>
+      <!-- Submit button and end of ERB -->
+      <h1>Save and start logging!</h1>
+      <%= f.submit '', :class => 'button_with_image_save' %>
+    <% end %>
+    </div>
+  </div>
+  <!-- This div is under the previous two divs, holds the next image and button -->
+</div>
