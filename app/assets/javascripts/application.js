@@ -605,11 +605,11 @@ $(document).on("click", "#startBtn", function(e){
 });
 });
 
-var questions = ["placeholder", "Do you want to include drinking alcohol as a trigger?", "Do you want to include overeating as a trigger?"];
-var erbCheckboxes = ["<%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>"];
+var questions = ["placeholder", "Do you want to include overeating as a trigger?"];
+var erbCheckboxes = ["placeholder", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
-  alert('hey');
+  alert(counter);
   var checkboxToHide = "#checkbox" + counter;
   var checkboxToShow = erbCheckboxes[counter + 1];
     // Fade out the first div and fade in the second //
