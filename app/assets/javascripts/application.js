@@ -609,6 +609,7 @@ var questions = ["placeholder", "Do you want to include drinking alcohol as a tr
 var erbCheckboxes = ["<%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
+  alert('hey');
   var checkboxToHide = "#checkbox" + counter;
   var checkboxToShow = erbCheckboxes[counter + 1];
     // Fade out the first div and fade in the second //
