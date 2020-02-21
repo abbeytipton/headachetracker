@@ -605,19 +605,16 @@ $(document).on("click", "#startBtn", function(e){
 });
 });
 
-var checkboxesToHide = ["placeholder", "#checkBox1", "checkBox2"];
-var questions = ["placeholder", "Do you want to include overeating as a trigger?"];
-var erbCheckboxes = ["placeholder", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>"];
+var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?"];
+var erbCheckboxes = ["placeholder", "<%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %><label for='checkBox2'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>", "<%= f.check_box :stress, id: 'checkBox3', class: 'checkbox' %><label for='checkBox3'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
   alert(counter);
-  var checkboxToHide = checkboxesToHide[counter];
+  $("#checkboxDiv").empty();
   var checkboxToShow = erbCheckboxes[counter];
-    // Fade out the first div and fade in the second //
-    $(checkboxToHide).hide();
-        $("checkboxDiv").append(checkboxToShow);
-        $("#question").Text = questions[counter];
-        counter++;
+  $("checkboxDiv").append(checkboxToShow);
+  $("#question").Text = questions[counter];
+  counter++;
 });
 
 
