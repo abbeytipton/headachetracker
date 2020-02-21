@@ -614,8 +614,8 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
     // Fade out the first div and fade in the second //
     $(checkboxToHide).hide(function() {
         $("checkboxDiv").append(checkboxToShow);
-        $("#question").Text = questions[counter]
-        counter++
+        $("#question").Text = questions[counter];
+        counter++;
 });
 });
 
