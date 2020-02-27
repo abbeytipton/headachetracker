@@ -609,7 +609,7 @@ var questions = ["placeholder", "Do you want to include overeating as a trigger?
 var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
-  $("#checkboxDiv").empty((function() {
+  $("#checkboxDiv").empty(function() {
   var checkboxToShow = erbCheckboxes[counter];
   $('#checkboxDiv').html($(checkboxToShow).html());
 });
