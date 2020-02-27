@@ -633,7 +633,7 @@ function showNewQuestion() {
   ShowNoCheckBox();
 }
 
-ShowNoCheckBox() {
+function ShowNoCheckBox() {
   $("noCheckboxDiv").show();
 }
 
