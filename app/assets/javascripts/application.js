@@ -610,6 +610,7 @@ var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3"];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
   $("#checkboxDiv").empty();
+  $("noCheckboxDiv").hide();
   showNewCheckBox();
 });
 
@@ -629,6 +630,11 @@ function emptyQuestion() {
 function showNewQuestion() {
   $("#question").append(questions[counter]);
   counter++;
+  ShowNoCheckBox();
+}
+
+ShowNoCheckBox() {
+  $("noCheckboxDiv").show();
 }
 
 });
