@@ -1,0 +1,436 @@
+
+
+<div id="four" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include lack of sleep as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :sleep, id: 'fourFieldYes', class: 'checkbox' %>
+          <label for="fourFieldYes"><%= image_tag 'iconYes.png', id: 'fourNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="fourFieldNo" class="checkbox">
+          <label for="fourFieldNo"><%= image_tag 'iconNo.png', id: 'fourNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="five" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include bright lights as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :lights, id: 'fiveFieldYes', class: 'checkbox' %>
+          <label for="fiveFieldYes"><%= image_tag 'iconYes.png', id: 'fiveNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="fiveFieldNo" class="checkbox">
+          <label for="fiveFieldNo"><%= image_tag 'iconNo.png', id: 'fiveNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="six" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include eyestrain as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
+          <label for="sixFieldYes"><%= image_tag 'iconYes.png', id: 'sixNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="sixFieldNo" class="checkbox">
+          <label for="sixFieldNo"><%= image_tag 'iconNo.png', id: 'sixNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="seven" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include over exercising as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :exercise, id: 'sevenFieldYes', class: 'checkbox' %>
+          <label for="sevenFieldYes"><%= image_tag 'iconYes.png', id: 'sevenNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="sevenFieldNo" class="checkbox">
+          <label for="sevenFieldNo"><%= image_tag 'iconNo.png', id: 'sevenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="eight" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include being on your period as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :period, id: 'eightFieldYes', class: 'checkbox' %>
+          <label for="eightFieldYes"><%= image_tag 'iconYes.png', id: 'eightNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="eightFieldNo" class="checkbox">
+          <label for="eightFieldNo"><%= image_tag 'iconNo.png', id: 'eightNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="nine" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include eating chocolate as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :chocolate, id: 'nineFieldYes', class: 'checkbox' %>
+          <label for="nineFieldYes"><%= image_tag 'iconYes.png', id: 'nineNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="nineFieldNo" class="checkbox">
+          <label for="nineFieldNo"><%= image_tag 'iconNo.png', id: 'nineNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ten" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to include being dehydrated as a trigger?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :dehydrated, id: 'tenFieldYes', class: 'checkbox' %>
+          <label for="tenFieldYes"><%= image_tag 'iconYes.png', id: 'tenNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="tenFieldNo" class="checkbox">
+          <label for="tenFieldNo"><%= image_tag 'iconNo.png', id: 'tenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="eleven" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Do you want to log whether you have taken medicine/whether it helped?</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :medicine, id: 'elevenFieldYes', class: 'checkbox' %>
+          <label for="elevenFieldYes"><%= image_tag 'iconYes.png', id: 'elevenNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="elevenFieldNo" class="checkbox">
+          <label for="elevenFieldNo"><%= image_tag 'iconNo.png', id: 'elevenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="twelve" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Would you like to add custom triggers? You can add up to ten.</h2>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div>
+          <%= f.check_box :trigger1, id: 'twelveFieldYes', class: 'checkbox' %>
+          <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveNextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="twelveFieldNo" class="checkbox">
+          <label for="twelveFieldNo"><%= image_tag 'iconNo.png', id: 'twelveNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="thirteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your first custom trigger:</h2>
+      <%= f.text_field :trigger1Name, class: 'customInput', id: 'trigger1NameText' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText" id="clickTest">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger2, id: 'thirteenFieldYes', class: 'checkbox' %>
+          <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <input type="checkbox" id="thirteenFieldNo" class="checkbox">
+          <label for="thirteenFieldNo"><%= image_tag 'iconNo.png', id: 'thirteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fourteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your second custom trigger:</h2>
+      <%= f.text_field :trigger2Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger3, id: 'fourteenFieldYes', class: 'checkbox' %>
+          <label for="fourteenFieldYes"><%= image_tag 'iconYes.png', id: 'fourteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', id: 'fourteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fifteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your third custom trigger:</h2>
+      <%= f.text_field :trigger3Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger4, id: 'fifteenFieldYes', class: 'checkbox' %>
+          <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', id: 'fifteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', id: 'fifteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sixteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your fourth custom trigger:</h2>
+      <%= f.text_field :trigger4Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger5, id: 'sixteenFieldYes', class: 'checkbox'%>
+          <label for="sixteenFieldYes"><%= image_tag 'iconYes.png', id: 'sixteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="sixteenFieldNo"><%= image_tag 'iconNo.png', id: 'sixteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="seventeen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your fifth custom trigger:</h2>
+      <%= f.text_field :trigger5Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger6, id: 'seventeenFieldYes', class: 'checkbox' %>
+          <label for="seventeenFieldYes"><%= image_tag 'iconYes.png', id: 'seventeenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="seventeenFieldNo"><%= image_tag 'iconNo.png', id: 'seventeenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="eighteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your sixth custom trigger:</h2>
+      <%= f.text_field :trigger6Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger7, id: 'eighteenFieldYes', class: 'checkbox' %>
+          <label for="eighteenFieldYes"><%= image_tag 'iconYes.png', id: 'eighteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="eighteenFieldNo"><%= image_tag 'iconNo.png', id: 'eighteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="nineteen" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your seventh custom trigger:</h2>
+      <%= f.text_field :trigger7Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger8, id: 'nineteenFieldYes', class: 'checkbox' %>
+          <label for="nineteenFieldYes"><%= image_tag 'iconYes.png', id: 'nineteenNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="nineteenFieldNo"><%= image_tag 'iconNo.png', id: 'nineteenNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="twenty" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your eighth custom trigger:</h2>
+      <%= f.text_field :trigger8Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger9, id: 'twentyFieldYes', class: 'checkbox' %>
+          <label for="twentyFieldYes"><%= image_tag 'iconYes.png', id: 'twentyNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="twentyFieldNo"><%= image_tag 'iconNo.png', id: 'twentyNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="twentyone" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your ninth custom trigger:</h2>
+      <%= f.text_field :trigger9Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Add another trigger:</h3>
+          <%= f.check_box :trigger10, id: 'twentyoneFieldYes', class: 'checkbox' %>
+          <label for="twentyoneFieldYes"><%= image_tag 'iconYes.png', id: 'twentyoneNextYes' %></label>
+        </div>
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="twentyoneFieldNo"><%= image_tag 'iconNo.png', id: 'twentyoneNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="twentytwo" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- This div holds the text and question -->
+    <div>
+      <h2>Name your tenth custom trigger:</h2>
+      <%= f.text_field :trigger10Name, class: 'customInput' %>
+      <!-- Rails form connected question, required before moving on -->
+      <div class="flex">
+        <div class="customTriggerText">
+          <h3>Finished adding triggers:</h3>
+          <label for="twentytwoFieldNo"><%= image_tag 'iconNo.png', id: 'twentytwoNextNo'%></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main div to hold the question -->
+<div id="finish" class="logDivs">
+  <!-- Flex div to hold the next two divs next to each other -->
+  <div class="flex">
+    <!-- Left div holds the image -->
+    <div class="leftDiv">
+    </div>
+    <!-- This div holds the text and question -->
+    <div>
+      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
+      <%= f.hidden_field :userid, :value => current_user.id %>
+      <!-- Submit button and end of ERB -->
+      <h1>Save and start logging!</h1>
+      <%= f.submit '', :class => 'button_with_image_save' %>
+    <% end %>
+    </div>
+  </div>
+  <!-- This div is under the previous two divs, holds the next image and button -->
+</div>
