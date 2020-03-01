@@ -605,14 +605,14 @@ $(document).on("click", "#startBtn", function(e){
 });
 });
 
-var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?"];
-var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3"];
+var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?"];
+var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4"];
 
 
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
   var checkboxToShow = erbCheckboxes[counter];
-  $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
+  $("#checkboxDiv, #checkboxNoOriginal, #question").empty().delay(2000);
   $('#checkboxDiv').html($(checkboxToShow).html());
   $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
   $("#question").append(questions[counter]);
