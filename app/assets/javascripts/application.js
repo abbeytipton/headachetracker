@@ -616,10 +616,14 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
   setTimeout(function () {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
-
+    $("#question").append(questions[counter]);
     counter++;
   }, 1000);
-$("#question").append(questions[counter]);
+
+  setTimeout(function () {
+    counter++;
+  }, 1000);
+
 });
 
 function showNewCheckBox() {
