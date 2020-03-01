@@ -613,15 +613,15 @@ var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4",
 $(document).on("click", "#nextYes, #nextNo", function(e){
   var checkboxToShow = erbCheckboxes[counter];
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
-  $("#waitIcon").fadeIn(1000);
-  $("#waitIcon").fadeOut(1000);
+  $("#waitIcon").fadeIn(500);
+  $("#waitIcon").fadeOut(500);
   setTimeout(function () {
 
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     counter++;
-  }, 2100);
+  }, 1100);
 
   setTimeout(function () {
     counter++;
