@@ -611,7 +611,7 @@ var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3"];
 var checkboxToShow = erbCheckboxes[counter];
 
 $(document).on("click", "#nextYes, #nextNo", function(e){
-  $("#checkboxDiv, #checkboxNoOriginal").empty();
+  $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
   showNewCheckBox();
 });
 
