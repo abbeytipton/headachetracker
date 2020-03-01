@@ -621,7 +621,7 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     counter++;
-  }, 100);
+  }, 2100);
 
   setTimeout(function () {
     counter++;
