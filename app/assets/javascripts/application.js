@@ -614,13 +614,14 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
   var checkboxToShow = erbCheckboxes[counter];
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
   $("#waitIcon").fadeIn(1000);
+  $("#waitIcon").fadeOut(1000);
   setTimeout(function () {
-    $("#waitIcon").fadeOut(1000);
+
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     counter++;
-  }, 1000);
+  }, 100);
 
   setTimeout(function () {
     counter++;
