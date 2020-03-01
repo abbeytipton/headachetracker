@@ -623,6 +623,5 @@ function showNewCheckBox() {
   $("#question").append(questions[counter]);
   counter++;
 }
-}
 
 });
