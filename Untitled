@@ -1,47 +1,5 @@
 
 
-<div id="four" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Do you want to include lack of sleep as a trigger?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :sleep, id: 'fourFieldYes', class: 'checkbox' %>
-          <label for="fourFieldYes"><%= image_tag 'iconYes.png', id: 'fourNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fourFieldNo" class="checkbox">
-          <label for="fourFieldNo"><%= image_tag 'iconNo.png', id: 'fourNextNo'%></label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="five" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Do you want to include bright lights as a trigger?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :lights, id: 'fiveFieldYes', class: 'checkbox' %>
-          <label for="fiveFieldYes"><%= image_tag 'iconYes.png', id: 'fiveNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fiveFieldNo" class="checkbox">
-          <label for="fiveFieldNo"><%= image_tag 'iconNo.png', id: 'fiveNextNo'%></label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div id="six" class="logDivs">
   <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
