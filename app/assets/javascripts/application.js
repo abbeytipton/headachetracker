@@ -608,9 +608,9 @@ $(document).on("click", "#startBtn", function(e){
 var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?"];
 var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5"];
 
+$(document).off("click", "#nextYes, #nextNo");
+$(document).on('click', "#nextYes, #nextNo", function(event){
 
-
-$(document).on("click", "#nextYes, #nextNo", function(e){
   var checkboxToShow = erbCheckboxes[counter];
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
   $("#waitIcon").fadeIn(500);
