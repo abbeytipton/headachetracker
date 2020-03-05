@@ -621,11 +621,11 @@ $(document).on("click", "#nextYes, #nextNo", function(e){
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     counter++;
-  }, 1100);
+  }, 1300);
 
   setTimeout(function () {
     counter++;
-  }, 1000);
+  }, 1300);
 
 });
 
