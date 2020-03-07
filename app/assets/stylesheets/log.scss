@@ -164,7 +164,8 @@ label img {
 :checked + label[for='nineteenFieldNo']:before,
 :checked + label[for='twentyFieldNo']:before,
 :checked + label[for='twentyoneFieldNo']:before,
-:checked + label[for='twentytwoFieldNo']:before {
+:checked + label[for='twentytwoFieldNo']:before,
+:checked + label[for='checkboxNo']:before {
   content: "✓";
   background-color: red;
   color: red;
@@ -233,4 +234,8 @@ label img {
 
 #questions, #hiddenERB2, #hiddenERB3, #checkboxNoReplacement, #hiddenERB4, #hiddenERB5, #waitIcon, #hiddenERB6, #hiddenERB7, #hiddenERB8, #hiddenERB9, #hiddenERB10, #hiddenERB11 {
   display: none;
+}
+
+#questions {
+  margin-top: 50px;
 }
