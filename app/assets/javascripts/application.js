@@ -605,14 +605,34 @@ $(document).on("click", "#startBtn", function(e){
 });
 });
 
-var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
-"Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?", "Do you want to log whether you have taken medicine/whether it helped?"];
-var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11"];
+var questions = ["Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
+"Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
+"Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to ten."];
+var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12"];
 
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
+  if (counter == 11) {
+    $("#question").append("#trigger1NameText");
+  }
+  if (counter >= 11) {
+    if (event.target.id == "#checkBoxNo")
+    {
+      $("#questions").fadeOut();
+      $("#finish").fadeIn();
+    }
+    else {
+      ShowNextQuestion();
+    }
+  }
+  else {
+    ShowNextQuestion();
+  }
+});
+
+function ShowNextQuestion() {
   // Get the next checkbox to shoow //
   var checkboxToShow = erbCheckboxes[counter];
   // Empty out the yes and no checkboxes and the question //
@@ -620,10 +640,8 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   // Fade in and then out the wait icon //
   $("#waitIcon").fadeIn(500);
   $("#waitIcon").fadeOut(500);
-
   // This timeout function happens after 1100, so after the wait icon fades out //
   setTimeout(function () {
-
     // Show the new checkboxes and question //
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
@@ -631,8 +649,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
     // Increase the counter for the next click //
     counter++;
   }, 1100);
-
-});
+}
 
 
 });
