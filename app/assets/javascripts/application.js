@@ -614,7 +614,7 @@ var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5",
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
-  console.log(count);
+  console.log(counter);
   if (counter == 11) {
     $("#question").append("#trigger1NameText");
   }
