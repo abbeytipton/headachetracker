@@ -607,16 +607,18 @@ $(document).on("click", "#startBtn", function(e){
 
 var questions = ["Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
 "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
-"Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to ten."];
-var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12"];
+"Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to ten.", "Name your first custom trigger:", "Name your second custom trigger:"];
+var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13"];
 
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
-  console.log(counter);
+  // Empty out the yes and no checkboxes and the question //
+  $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
+
   if (counter == 11) {
-    $("#question").append("#trigger1NameText");
+    $("#triggerTextBoxP").empty();
   }
   if (counter >= 11) {
     if (event.target.id == "#checkBoxNo")
@@ -636,8 +638,6 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
 function ShowNextQuestion() {
   // Get the next checkbox to shoow //
   var checkboxToShow = erbCheckboxes[counter];
-  // Empty out the yes and no checkboxes and the question //
-  $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
   // Fade in and then out the wait icon //
   $("#waitIcon").fadeIn(500);
   $("#waitIcon").fadeOut(500);
@@ -647,6 +647,7 @@ function ShowNextQuestion() {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
+    $("#triggerTextBoxP").html($("#trigger1NameText"));
     // Increase the counter for the next click //
     counter++;
   }, 1100);
