@@ -609,7 +609,7 @@ var questions = ["Do you want to include overeating as a trigger?", "Do you want
 "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
 "Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to ten.", "Name your first custom trigger:", "Name your second custom trigger:"];
 var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13"];
-
+var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText"]
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
@@ -625,7 +625,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
     }
     else {
       $("#triggerTextBoxP").empty();
-      $("#triggerTextBoxP").html("hey");
+
       ShowNextQuestion();
     }
   }
@@ -646,6 +646,9 @@ function ShowNextQuestion() {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
+    if (counter >= 11) {
+      $("#triggerTextBoxP").append(textboxes[counter]);
+    }
     // Increase the counter for the next click //
     counter++;
   }, 1100);
