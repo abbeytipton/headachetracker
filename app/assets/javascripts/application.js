@@ -647,7 +647,7 @@ function ShowNextQuestion() {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
-    $("#triggerTextBoxP").html($("#trigger1NameText"));
+    $("#triggerTextBoxP").html("hey");
     // Increase the counter for the next click //
     counter++;
   }, 1100);
