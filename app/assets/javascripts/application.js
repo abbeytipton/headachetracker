@@ -617,9 +617,6 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   // Empty out the yes and no checkboxes and the question //
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
 
-  if (counter == 11) {
-    $("#triggerTextBoxP").empty();
-  }
   if (counter >= 11) {
     if (event.target.id == "#checkBoxNo")
     {
@@ -627,6 +624,8 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       $("#finish").fadeIn();
     }
     else {
+      $("#triggerTextBoxP").empty();
+      $("#triggerTextBoxP").html("hey");
       ShowNextQuestion();
     }
   }
@@ -647,7 +646,6 @@ function ShowNextQuestion() {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
-    $("#triggerTextBoxP").html("hey");
     // Increase the counter for the next click //
     counter++;
   }, 1100);
