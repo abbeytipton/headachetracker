@@ -22,6 +22,7 @@ label:before {
   position: absolute;
   top: 25px;
   left: 50%;
+  border: 2px solid orange;
   width: 1000px;
   height: 1000px;
   border-radius: 50%;
@@ -123,4 +124,8 @@ label img {
 
 #questions {
   margin-top: 100px;
+}
+
+.flex {
+  margin-left: 0;
 }

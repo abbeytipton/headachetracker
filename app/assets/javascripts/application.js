@@ -643,8 +643,11 @@ function ShowNextQuestion() {
   // This timeout function happens after 1100, so after the wait icon fades out //
   setTimeout(function () {
     // Show the new checkboxes and question //
+
+    (counter != 21) {
+      $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
+    }
     $('#checkboxDiv').html($(checkboxToShow).html());
-    $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       alert(counter);
