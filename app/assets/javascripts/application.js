@@ -649,7 +649,7 @@ function ShowNextQuestion() {
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
-      $("#triggerTextBoxP").html($(textboxToShow.html());
+      $("#triggerTextBoxP").html($(textboxToShow).html());
     }
     // Increase the counter for the next click //
     counter++;
