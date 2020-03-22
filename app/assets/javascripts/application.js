@@ -618,7 +618,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
 
   if (counter >= 11) {
-    if (event.target.id == "#checkBoxNo")
+    if (event.target.id == "#nextNo")
     {
       $("#questions").fadeOut();
       $("#finish").fadeIn();
