@@ -637,6 +637,8 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
 function ShowNextQuestion() {
   // Get the next checkbox to shoow //
   var checkboxToShow = erbCheckboxes[counter];
+  var textboxToShow = textboxes[counter];
+  console.log(textboxToShow);
   // Fade in and then out the wait icon //
   $("#waitIcon").fadeIn(500);
   $("#waitIcon").fadeOut(500);
@@ -647,7 +649,7 @@ function ShowNextQuestion() {
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
-      $("#triggerTextBoxP").html($(textboxes[counter]).html());
+      $("#triggerTextBoxP").html($()textboxToShow.html());
     }
     // Increase the counter for the next click //
     counter++;
