@@ -22,7 +22,7 @@
     <!-- This div holds the text and question -->
     <div>
       <h2 id="question">Do you want to include drinking alcohol as a trigger?</h2>
-      <div id="triggerTextBoxP"></div>
+      <p id="triggerTextBoxP"></p>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <%= image_tag 'iconWait.png', id: 'waitIcon' %>
@@ -81,7 +81,15 @@
 </div>
 
 <div id="trigger1NameText"><%= f.text_field :trigger1Name, class: 'customInput' %></div>
-<%= f.text_field :trigger2Name, id: 'trigger2NameText', class: 'customInput' %>
+<div id="trigger2NameText"><%= f.text_field :trigger2Name, class: 'customInput' %></div>
+<div id="trigger3NameText"><%= f.text_field :trigger3Name, class: 'customInput' %></div>
+<div id="trigger4NameText"><%= f.text_field :trigger4Name, class: 'customInput' %></div>
+<div id="trigger5NameText"><%= f.text_field :trigger5Name, class: 'customInput' %></div>
+<div id="trigger6NameText"><%= f.text_field :trigger6Name, class: 'customInput' %></div>
+<div id="trigger7NameText"><%= f.text_field :trigger7Name, class: 'customInput' %></div>
+<div id="trigger8NameText"><%= f.text_field :trigger8Name, class: 'customInput' %></div>
+<div id="trigger9NameText"><%= f.text_field :trigger9Name, class: 'customInput' %></div>
+<div id="trigger10NameText"><%= f.text_field :trigger10Name, class: 'customInput' %></div>
 
 
 <!-- Main div to hold the question -->
