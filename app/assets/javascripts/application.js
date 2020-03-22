@@ -644,7 +644,7 @@ function ShowNextQuestion() {
   setTimeout(function () {
     // Show the new checkboxes and question //
 
-    (counter != 21) {
+    if (counter != 21) {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     }
     $('#checkboxDiv').html($(checkboxToShow).html());
