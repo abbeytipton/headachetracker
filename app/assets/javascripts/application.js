@@ -618,15 +618,13 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
 
   if (counter >= 11) {
-    alert(event.target.id);
-    if (event.target.id == "#nextNo")
+    if (event.target.id == "nextNo")
     {
       $("#questions").fadeOut();
       $("#finish").fadeIn();
     }
     else {
       $("#triggerTextBoxP").empty();
-
       ShowNextQuestion();
     }
   }
@@ -649,6 +647,7 @@ function ShowNextQuestion() {
     $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
+      alert(counter);
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
     // Increase the counter for the next click //
