@@ -22,7 +22,8 @@
     <!-- This div holds the text and question -->
     <div>
       <h2 id="question">Do you want to include drinking alcohol as a trigger?</h2>
-      <div id="triggerTextBoxP"></div>
+      <div id="triggerTextBoxP"><%= f.text_field :trigger1Name, class: 'customInput', id: 'trigger1NameText' %>
+</div>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <%= image_tag 'iconWait.png', id: 'waitIcon' %>
@@ -80,7 +81,6 @@
   <%= f.check_box :trigger2, id: 'checkBox12', class: 'checkbox' %><label for='checkBox12'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>
 </div>
 
-<%= f.text_field :trigger1Name, class: 'customInput', id: 'trigger1NameText' %>
 <%= f.text_field :trigger2Name, class: 'customInput', id: 'trigger2NameText' %>
 
 
