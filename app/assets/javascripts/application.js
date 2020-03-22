@@ -650,7 +650,6 @@ function ShowNextQuestion() {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
-      alert(counter);
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
     // Increase the counter for the next click //
