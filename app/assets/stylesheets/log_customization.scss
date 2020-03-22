@@ -14,17 +14,17 @@ label {
   cursor: pointer;
   margin-left: 30%;
   margin-right: 30%;
+  border: 2px solid orange;
 }
 
 label:before {
   content: " ";
   display: block;
   position: absolute;
-  top: 25px;
-  left: 50%;
-  border: 2px solid orange;
-  width: 1000px;
-  height: 1000px;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50;
   border-radius: 50%;
   text-align: center;
   line-height: 28px;
