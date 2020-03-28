@@ -26,18 +26,6 @@ label img {
   text-align: center;
 }
 
-// The final button has a background image and needed to be done differently because it's the final submit button //
-.button_with_image_save {
-    background: url("/assets/images/iconFinish.png") no-repeat;
-    height: 120px;
-    width: 120px;
-    outline: none;
-    border: 0;
-    display:block;
-    cursor: pointer;
-    margin-left: 30%;
-}
-
 // This section handles the hourglass rotation for the start button //
 .rotate {
 	-webkit-transition-duration: 0.8s;
@@ -67,9 +55,9 @@ label img {
 }
 
 .customInput {
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 65%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 75%;
 }
 
 .customTriggerText {
