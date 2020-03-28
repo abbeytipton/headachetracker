@@ -645,7 +645,7 @@ function ShowNextQuestion() {
     // Show the new checkboxes and question //
 
     if (counter != 21) {
-      if (count <= 11)
+      if (counter <= 11)
       {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
     } else {
