@@ -16,21 +16,6 @@ label {
   margin-right: 30%;
 }
 
-label:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 28px;
-  transition-duration: 0.2s;
-  transform: scale(0);
-}
-
 label img {
   transition-duration: 0.1s;
   transform-origin: 50% 50%;

@@ -110,73 +110,10 @@ label {
   margin-right: 30%;
 }
 
-label:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 28px;
-  transition-duration: 0.2s;
-  transform: scale(0);
-}
-
 label img {
   transition-duration: 0.1s;
   transform-origin: 50% 50%;
 }
-
-:checked + label {
-  border-color: #ffffff;
-}
-
-// Makes the yes checkboxes green when clicked //
-:checked + label:before {
-  content: "✓";
-  background-color: green;
-  color: green;
-  transform: scale(1);
-}
-
-// Makes the no checkboxes red instead of green //
-:checked + label[for='oneFieldNo']:before,
-:checked + label[for='twoFieldNo']:before,
-:checked + label[for='threeFieldNo']:before,
-:checked + label[for='fourFieldNo']:before,
-:checked + label[for='fiveFieldNo']:before,
-:checked + label[for='sixFieldNo']:before,
-:checked + label[for='sevenFieldNo']:before,
-:checked + label[for='eightFieldNo']:before,
-:checked + label[for='nineFieldNo']:before,
-:checked + label[for='tenFieldNo']:before,
-:checked + label[for='elevenFieldNo']:before,
-:checked + label[for='twelveFieldNo']:before,
-:checked + label[for='thirteenFieldNo']:before,
-:checked + label[for='fourteenFieldNo']:before,
-:checked + label[for='fifteenFieldNo']:before,
-:checked + label[for='sixteenFieldNo']:before,
-:checked + label[for='seventeenFieldNo']:before,
-:checked + label[for='eighteenFieldNo']:before,
-:checked + label[for='nineteenFieldNo']:before,
-:checked + label[for='twentyFieldNo']:before,
-:checked + label[for='twentyoneFieldNo']:before,
-:checked + label[for='twentytwoFieldNo']:before,
-:checked + label[for='checkboxNo']:before {
-  content: "✓";
-  background-color: red;
-  color: red;
-  transform: scale(1);
-}
-
-:checked + label img {
-  transform: scale(0.9);
-  z-index: -1;
-}
-
 // This field needs a little margin //
 .textBox {
   text-align: center;
