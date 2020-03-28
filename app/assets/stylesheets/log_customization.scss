@@ -9,6 +9,7 @@
 
 label {
   padding: 10px;
+  margin-right: 10px; 
   display: block;
   position: relative;
   cursor: pointer;
@@ -36,31 +37,6 @@ label:before {
 label img {
   transition-duration: 0.1s;
   transform-origin: 50% 50%;
-}
-
-:checked + label {
-  border-color: #ffffff;
-}
-
-// Makes the yes checkboxes green when clicked //
-:checked + label:before {
-  content: "✓";
-  background-color: green;
-  color: green;
-  transform: scale(1);
-}
-
-// Makes the no checkboxes red instead of green //
-:checked + label[for='nextNo']:before {
-  content: "✓";
-  background-color: red;
-  color: red;
-  transform: scale(1);
-}
-
-:checked + label img {
-  transform: scale(0.9);
-  z-index: -1;
 }
 
 // This field needs a little margin //
