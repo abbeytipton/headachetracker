@@ -129,7 +129,7 @@
       <%= f.hidden_field :userid, :value => current_user.id %>
       <!-- Submit button and end of ERB -->
       <h1>Save and start logging!</h1>
-      <%= f.submit '', :type => :image, :src => "/images/iconFinish.png" %>
+      <%= image_submit_tag("iconFinish.png") %>
     <% end %>
     </div>
   </div>
