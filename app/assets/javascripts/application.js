@@ -620,8 +620,12 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   if (counter >= 11) {
     if (event.target.id == "nextNo")
     {
-      $("#questions").fadeOut();
+      $("#questions").empty();
+      $("#waitIcon").fadeIn(500);
+      $("#waitIcon").fadeOut(500);
+        setTimeout(function () {
       $("#finish").fadeIn();
+    }, 1100);
     }
     else {
       $("#triggerTextBoxP").empty();
@@ -645,7 +649,6 @@ function ShowNextQuestion() {
     // Show the new checkboxes and question //
 
     if (counter != 21) {
-      console.log(counter);
       if (counter <= 10)
       {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
