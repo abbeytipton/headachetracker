@@ -14,7 +14,7 @@
 
 label img {
   margin-right: 20%;
-  margin-left: 20%;
+  margin-left: 0%;
 }
 
 .submitPic {
@@ -76,8 +76,12 @@ label img {
   display: none;
 }
 
-#questions, #finish {
+#questions {
   margin-top: 100px;
+}
+
+#finish {
+  margin-top: 10px;
 }
 
 .flexQuestions {
