@@ -28,7 +28,7 @@
         <%= image_tag 'iconWait.png', id: 'waitIcon' %>
         <div id="checkboxDiv">
           <%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>
-          <label for="checkBox1"><%= image_tag 'iconYes.png', id: 'nextYes' %></label>
+          <label for="checkBox1"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
         </div>
         <div id="checkboxNoOriginal">
           <input type="checkbox" id="checkBoxNo" class="checkbox">
@@ -78,7 +78,7 @@
   <%= f.check_box :medicine, id: 'checkBox11', class: 'checkbox' %><label for='checkBox11'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>
 </div>
 <div id="hiddenERB12">
-  <%= f.check_box :trigger1, id: 'checkBox12', class: 'checkbox' %><label for='checkBox12'><%= image_tag 'iconAddAnother.png', id: 'nextYes' %></label>
+  <%= f.check_box :trigger1, id: 'checkBox12', class: 'checkbox' %><label for='checkBox12'><%= image_tag 'iconYes.png', id: 'nextYes' %></label>
 </div>
 <div id="hiddenERB13">
   <%= f.check_box :trigger2, id: 'checkBox13', class: 'checkbox' %><label for='checkBox13'><%= image_tag 'iconAddAnother.png', id: 'nextYes' %></label>
