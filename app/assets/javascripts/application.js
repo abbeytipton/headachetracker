@@ -629,8 +629,9 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       $("#triggerTextBoxP").empty();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
-      $("#questions").empty();
+
         setTimeout(function () {
+      $("#questions").empty();
       $("#finish").show();
     }, 1100);
     }
