@@ -665,6 +665,7 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + previous);
       }
+      alert($(textboxes[previous].val()));
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
   }
