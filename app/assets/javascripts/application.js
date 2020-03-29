@@ -656,11 +656,17 @@ function ShowNextQuestion() {
     if (counter == 20) {
       $("#question").append(questions[counter]);
       $('#checkboxDiv').remove();
+      var previous = counter - 10;
+      if ($(textboxes[previous]).val() == "")
+      {
+        $(textboxes[previous]).val("Customer Trigger " + previous);
+      }
+      alert($(textboxes[previous]).val());
     } else {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
-      var previous = counter - 1;
+      var previous = counter - 10;
       if ($(textboxes[previous]).val() == "")
       {
         $(textboxes[previous]).val("Customer Trigger " + previous);
