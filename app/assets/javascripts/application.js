@@ -626,9 +626,10 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $("#questions").empty();
+      $("#triggerTextBoxP").empty();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
+      $("#questions").empty();
         setTimeout(function () {
       $("#finish").show();
     }, 1100);
