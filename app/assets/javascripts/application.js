@@ -653,11 +653,16 @@ function ShowNextQuestion() {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacementCustom").html());
     }
     }
+    if (counter == 20) {
+      $("#question").append(questions[counter]);
+      $('#checkboxDiv').remove();
+    } else {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
+  }
     // Increase the counter for the next click //
     counter++;
   }, 1100);
