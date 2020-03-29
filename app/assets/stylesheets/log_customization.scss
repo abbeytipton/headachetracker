@@ -10,11 +10,8 @@
 .label {
   cursor: pointer;
   width: 0%;
-}
-
-label img {
+  margin-left: 20%;
   margin-right: 20%;
-  margin-left: 0%;
 }
 
 .submitPic {
@@ -82,10 +79,4 @@ label img {
 
 #finish {
   margin-top: 10px;
-}
-
-.flexQuestions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
