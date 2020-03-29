@@ -661,9 +661,9 @@ function ShowNextQuestion() {
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       var previous = counter - 1;
-      if (textboxes[previous].val() == "")
+      if ($(textboxes[previous]).val() == "")
       {
-        textboxes[previous].val("Customer Trigger " + previous);
+        $(textboxes[previous]).val("Customer Trigger " + previous);
       }
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
