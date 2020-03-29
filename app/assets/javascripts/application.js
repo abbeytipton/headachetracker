@@ -621,9 +621,10 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
     if (event.target.id == "nextNo")
     {
       var previous = counter - 1;
+      var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
-        $(textboxes[previous]).val("Customer Trigger " + previous - 10);
+        $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
       $("#questions").empty();
       $("#waitIcon").fadeIn(500);
@@ -665,9 +666,10 @@ function ShowNextQuestion() {
       $("#question").append(questions[counter]);
       $('#checkboxDiv').remove();
       var previous = counter - 1;
+      var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
-        $(textboxes[previous]).val("Customer Trigger " + previous - 10);
+        $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
       alert($(textboxes[previous]).val());
     } else {
@@ -675,9 +677,10 @@ function ShowNextQuestion() {
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       var previous = counter - 1;
+      var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
-        $(textboxes[previous]).val("Customer Trigger " + previous - 10);
+        $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
       alert($(textboxes[previous]).val());
       $("#triggerTextBoxP").html($(textboxToShow).html());
