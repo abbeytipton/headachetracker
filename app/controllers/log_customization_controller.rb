@@ -10,7 +10,7 @@ class LogCustomizationController < ApplicationController
     if @logcustomization.save
         redirect_to '/logs/index'
       else
-        redirect_to '/log_customization/create'
+        redirect_to '/log_customization/new'
     end
   end
 
