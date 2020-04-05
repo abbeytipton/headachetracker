@@ -6,7 +6,7 @@ class LogCustomizationController < ApplicationController
 
 # Defines what new log is and saves
   def create
-    @logcustomization = LogCustomization.new(logcustomization_params)
+    @logcustomization = LogCustomization.new(logcustomizations_params)
     if @logcustomization.save
         redirect_to '/logs/index'
       else
