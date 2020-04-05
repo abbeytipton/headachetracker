@@ -673,7 +673,6 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      alert($(textboxes[previous]).val());
     } else {
     $('#checkboxDiv').html($(checkboxToShow).html());
     $("#question").append(questions[counter]);
@@ -684,7 +683,6 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      alert($(textboxes[previous]).val());
       $("#triggerTextBoxP").html($(textboxToShow).html());
     }
   }
