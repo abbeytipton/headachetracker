@@ -657,6 +657,10 @@ function ShowNextQuestion() {
     // Show the new checkboxes and question //
 
     if (counter != 21) {
+      $("#checkBox2").change(function () {
+    if ($(this).prop("checked")) {
+        alert('hey');
+    }
       if (counter <= 10)
       {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
