@@ -661,6 +661,9 @@ function ShowNextQuestion() {
     if ($(this).prop("checked")) {
         alert('hey');
     }
+    else {
+      
+    }
       if (counter <= 10)
       {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
