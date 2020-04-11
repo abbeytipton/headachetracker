@@ -616,6 +616,9 @@ $(document).off("click", "#nextYes, #nextNo");
 $(document).on('click', "#nextYes, #nextNo", function(event){
   // Empty out the yes and no checkboxes and the question //
   $("#checkboxNoOriginal, #question").empty();
+  var checkboxToHide = erbCheckboxes[counter - 1];
+  alert(checkboxToHide);
+  $('#checkboxDiv', checkboxToHide).hide();
 
   if (counter >= 11) {
     if (event.target.id == "nextNo")
@@ -649,7 +652,6 @@ function ShowNextQuestion() {
   // Get the next checkbox to shoow //
   var checkboxToShow = erbCheckboxes[counter];
   var textboxToShow = textboxes[counter];
-  var checkboxToHide = erbCheckboxes[counter - 1];
   // Fade in and then out the wait icon //
   $("#waitIcon").fadeIn(500);
   $("#waitIcon").fadeOut(500);
@@ -675,7 +677,6 @@ function ShowNextQuestion() {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
     } else {
-    $('#checkboxDiv', checkboxToHide).hide();
     $(checkboxToShow).show();
     $("#question").append(questions[counter]);
     if (counter >= 11) {
