@@ -1,4 +1,7 @@
 class LogCustomizationController < ApplicationController
+  def index
+  end
+
   # Creates new log instance
   def new
     @logcustomization = LogCustomization.new
@@ -8,7 +11,7 @@ class LogCustomizationController < ApplicationController
   def create
     @logcustomization = LogCustomization.new(logcustomizations_params)
     if @logcustomization.save
-        redirect_to '/logs/create'
+        redirect_to '/logs/index'
       else
         redirect_to '/log_customization/new'
     end
