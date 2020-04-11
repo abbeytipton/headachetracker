@@ -649,6 +649,7 @@ function ShowNextQuestion() {
   // Get the next checkbox to shoow //
   var checkboxToShow = erbCheckboxes[counter];
   var textboxToShow = textboxes[counter];
+  var checkboxToHide = erbCheckboxes[counter - 1];
   // Fade in and then out the wait icon //
   $("#waitIcon").fadeIn(500);
   $("#waitIcon").fadeOut(500);
@@ -674,8 +675,8 @@ function ShowNextQuestion() {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
     } else {
-    $('#checkboxDiv').hide();
-    $("#hiddenERB2").show();
+    $('#checkboxDiv', checkboxToHide).hide();
+    $(checkboxToShow).show();
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       var previous = counter - 1;
