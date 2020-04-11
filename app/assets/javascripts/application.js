@@ -618,7 +618,8 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   $("#checkboxNoOriginal, #question").empty();
   var checkboxToHide = erbCheckboxes[counter - 1];
   alert(checkboxToHide);
-  $('#checkboxDiv', checkboxToHide).hide();
+  $('#checkboxDiv').hide();
+  $(checkboxToHide).hide();
 
   if (counter >= 11) {
     if (event.target.id == "nextNo")
