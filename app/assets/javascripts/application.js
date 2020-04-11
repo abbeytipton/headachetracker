@@ -615,7 +615,7 @@ $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
   // Empty out the yes and no checkboxes and the question //
-  $("#checkboxDiv, #checkboxNoOriginal, #question").empty();
+  $("#checkboxNoOriginal, #question").empty();
 
   if (counter >= 11) {
     if (event.target.id == "nextNo")
@@ -657,9 +657,6 @@ function ShowNextQuestion() {
     // Show the new checkboxes and question //
 
     if (counter != 21) {
-    if ($("#checkBox2").is(':checked'))  {
-        alert('hey');
-    }
       if (counter <= 10)
       {
       $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
@@ -677,7 +674,8 @@ function ShowNextQuestion() {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
     } else {
-    $('#checkboxDiv').html($(checkboxToShow).html());
+    $('#checkboxDiv').hide();
+    $("#hiddenERB2").show();
     $("#question").append(questions[counter]);
     if (counter >= 11) {
       var previous = counter - 1;

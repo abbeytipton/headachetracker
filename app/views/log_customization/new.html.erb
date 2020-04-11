@@ -30,6 +30,9 @@
           <%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>
           <label for="checkBox1" class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
         </div>
+        <div id="hiddenERB2">
+          <%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %><label for='checkBox2' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        </div>
         <div id="checkboxNoOriginal">
           <input type="checkbox" id="checkBoxNo" class="checkbox">
           <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconNo.png', id: 'nextNo', class: 'rotate' %></label>
