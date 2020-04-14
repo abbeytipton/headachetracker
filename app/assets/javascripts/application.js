@@ -624,7 +624,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   var checkboxToHide = erbCheckboxes[counter - 1];
   $('#checkboxDiv').hide();
   $(checkboxToHide).hide();
-  $('#checkBoxNo').hide();
+  $('#checkboxNoOriginal').hide();
    // If it's more than 11 then we're on custom triggers //
   if (counter >= 11) {
     // If they click the no button, then go to the finish //
@@ -672,7 +672,7 @@ function ShowNextQuestion() {
       // If we're at 10 or less then we need to show the og checkbox //
       if (counter <= 10)
       {
-      $('#checkBoxNo').show();
+      $('#checkboxNoOriginal').show();
       // Otherwise we need the custom trigger checkbox because it has a different picture //
     } else {
       $('#checkboxNoReplacementCustom').show();
