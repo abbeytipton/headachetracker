@@ -22,7 +22,18 @@
     <!-- This div holds the text and question -->
     <div>
       <h2 id="question">Do you want to include drinking alcohol as a trigger?</h2>
-      <p id="triggerTextBoxP"></p>
+      <p id="triggerTextBoxP">
+        <div id="trigger1NameText"><%= f.text_field :trigger1Name, class: 'customInput' %></div>
+        <div id="trigger2NameText"><%= f.text_field :trigger2Name, class: 'customInput' %></div>
+        <div id="trigger3NameText"><%= f.text_field :trigger3Name, class: 'customInput' %></div>
+        <div id="trigger4NameText"><%= f.text_field :trigger4Name, class: 'customInput' %></div>
+        <div id="trigger5NameText"><%= f.text_field :trigger5Name, class: 'customInput' %></div>
+        <div id="trigger6NameText"><%= f.text_field :trigger6Name, class: 'customInput' %></div>
+        <div id="trigger7NameText"><%= f.text_field :trigger7Name, class: 'customInput' %></div>
+        <div id="trigger8NameText"><%= f.text_field :trigger8Name, class: 'customInput' %></div>
+        <div id="trigger9NameText"><%= f.text_field :trigger9Name, class: 'customInput' %></div>
+        <div id="trigger10NameText"><%= f.text_field :trigger10Name, class: 'customInput' %></div>
+      </p>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
         <%= image_tag 'iconWait.png', id: 'waitIcon' %>
@@ -93,33 +104,14 @@
         <div id="checkboxNoOriginal">
           <input type="checkbox" id="checkBoxNo" class="checkbox">
           <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconNo.png', id: 'nextNo', class: 'rotate' %></label>
+          <div id="checkboxNoReplacementCustom">  <input type="checkbox" id="checkBoxNo" class="checkbox">
+            <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconGoToEnd.png', id: 'nextNo', class: 'rotate' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div id="checkboxNoReplacement">  <input type="checkbox" id="checkBoxNo" class="checkbox">
-  <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconNo.png', id: 'nextNo', class: 'rotate' %></label>
-</div>
-
-<div id="checkboxNoReplacementCustom">  <input type="checkbox" id="checkBoxNo" class="checkbox">
-  <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconGoToEnd.png', id: 'nextNo', class: 'rotate' %></label>
-</div>
-
-<
-
-<div id="trigger1NameText"><%= f.text_field :trigger1Name, class: 'customInput' %></div>
-<div id="trigger2NameText"><%= f.text_field :trigger2Name, class: 'customInput' %></div>
-<div id="trigger3NameText"><%= f.text_field :trigger3Name, class: 'customInput' %></div>
-<div id="trigger4NameText"><%= f.text_field :trigger4Name, class: 'customInput' %></div>
-<div id="trigger5NameText"><%= f.text_field :trigger5Name, class: 'customInput' %></div>
-<div id="trigger6NameText"><%= f.text_field :trigger6Name, class: 'customInput' %></div>
-<div id="trigger7NameText"><%= f.text_field :trigger7Name, class: 'customInput' %></div>
-<div id="trigger8NameText"><%= f.text_field :trigger8Name, class: 'customInput' %></div>
-<div id="trigger9NameText"><%= f.text_field :trigger9Name, class: 'customInput' %></div>
-<div id="trigger10NameText"><%= f.text_field :trigger10Name, class: 'customInput' %></div>
-
 
 <!-- Main div to hold the question -->
 <div id="finish">

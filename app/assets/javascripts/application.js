@@ -608,29 +608,36 @@ $(document).on("click", "#startBtn", function(e){
 var questions = ["Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
 "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
 "Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to ten.", "Name your first custom trigger:", "Name your second custom trigger:", "Name your third custom trigger:", "Name your fourth custom trigger:", "Name your fifth custom trigger:", "Name your sixth custom trigger:", "Name your seventh custom trigger:", "Name your eighth custom trigger:", "Name your ninth custom trigger:", "Name your tenth custom trigger:"];
+
 var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13", "#hiddenERB14", "#hiddenERB15", "#hiddenERB16", "#hiddenERB17", "#hiddenERB18", "#hiddenERB19", "#hiddenERB20", "#hiddenERB21"];
+
 var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText", "#trigger6NameText", "#trigger7NameText", "#trigger8NameText", "#trigger9NameText", "#trigger10NameText"]
+
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
-  // Empty out the yes and no checkboxes and the question //
-  $("#checkboxNoOriginal, #question").empty();
+
+  // Empty out the question //
+  $("#question").empty();
+  // Hide the previous text yes checkbox //
   var checkboxToHide = erbCheckboxes[counter - 1];
-  alert(checkboxToHide);
   $('#checkboxDiv').hide();
   $(checkboxToHide).hide();
-
+  $('#checkBoxNo').hide();
+   // If it's more than 11 then we're on custom triggers //
   if (counter >= 11) {
+    // If they click the no button, then go to the finish //
     if (event.target.id == "nextNo")
     {
+      // If the previous trigger didn't get a name, then give it the name Custom Trigger # //
       var previous = counter - 1;
       var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $("#triggerTextBoxP").empty();
+      $("#triggerTextBoxP").hide();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
 
@@ -639,11 +646,13 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       $("#finish").show();
     }, 1100);
     }
+    // If they click the add another button, then hide that trigger textbox and show the next one //
     else {
-      $("#triggerTextBoxP").empty();
+      $(textboxes[previous]).hide();
       ShowNextQuestion();
     }
   }
+  // If it's less than 11, then we're on the regular questions, so show the next one //
   else {
     ShowNextQuestion();
   }
@@ -659,24 +668,27 @@ function ShowNextQuestion() {
   // This timeout function happens after 1100, so after the wait icon fades out //
   setTimeout(function () {
     // Show the new checkboxes and question //
-
     if (counter != 21) {
+      // If we're at 10 or less then we need to show the og checkbox //
       if (counter <= 10)
       {
-      $('#checkboxNoOriginal').html($("#checkboxNoReplacement").html());
+      $('#checkBoxNo').show();
+      // Otherwise we need the custom trigger checkbox because it has a different picture //
     } else {
-      $('#checkboxNoOriginal').html($("#checkboxNoReplacementCustom").html());
+      $('#checkboxNoReplacementCustom').show();
     }
     }
+    // If the counter is 20 then it's the very last question so we don't need the add button //
     if (counter == 20) {
       $("#question").append(questions[counter]);
-      $('#checkboxDiv').remove();
+      $('#checkboxDiv').hide();
       var previous = counter - 1;
       var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
+      // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
     } else {
     $(checkboxToShow).show();
     $("#question").append(questions[counter]);
@@ -687,7 +699,7 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $("#triggerTextBoxP").html($(textboxToShow).html());
+      $(textboxToShow).show();
     }
   }
     // Increase the counter for the next click //
