@@ -623,11 +623,11 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   // Hide the previous text yes checkbox //
   var checkboxToHide = erbCheckboxes[counter - 1];
   $('#checkboxDiv').hide();
+  $(checkboxToHide).hide();
   $('#checkboxNoOriginal, #checkboxNoReplacementCustom').hide();
    // If it's more than 11 then we're on custom triggers //
   if (counter >= 11) {
-    alert(checkboxToHide);
-    $(checkboxToHide).hide();
+
     // If they click the no button, then go to the finish //
     if (event.target.id == "nextNo")
     {
@@ -638,6 +638,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
+      $(textboxes[previous]).hide();
       $("#triggerTextBoxP").hide();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
