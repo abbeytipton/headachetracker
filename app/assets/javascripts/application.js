@@ -690,6 +690,7 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
+      $(textboxes[previous]).hide();
       // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
     } else {
     $(checkboxToShow).show();
