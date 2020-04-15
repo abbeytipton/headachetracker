@@ -702,6 +702,7 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
+      $(textboxes[previous]).hide();
       $(textboxToShow).show();
     }
   }
