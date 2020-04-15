@@ -627,18 +627,17 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   $('#checkboxNoOriginal, #checkboxNoReplacementCustom').hide();
    // If it's more than 11 then we're on custom triggers //
   if (counter >= 11) {
-
+    var previous = counter - 1;
+    $(textboxes[previous]).hide();
     // If they click the no button, then go to the finish //
     if (event.target.id == "nextNo")
     {
       // If the previous trigger didn't get a name, then give it the name Custom Trigger # //
-      var previous = counter - 1;
       var triggerName = previous - 10;
       if ($(textboxes[previous]).val() == "")
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $(textboxes[previous]).hide();
       $("#triggerTextBoxP").hide();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
@@ -650,7 +649,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
     }
     // If they click the add another button, then hide that trigger textbox and show the next one //
     else {
-      $(textboxes[previous]).hide();
+
       ShowNextQuestion();
     }
   }
@@ -690,7 +689,7 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $(textboxes[previous]).hide();
+      $(textboxToShow).show();
       // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
     } else {
     $(checkboxToShow).show();
@@ -702,7 +701,6 @@ function ShowNextQuestion() {
       {
         $(textboxes[previous]).val("Customer Trigger " + triggerName);
       }
-      $(textboxes[previous]).hide();
       $(textboxToShow).show();
     }
   }
