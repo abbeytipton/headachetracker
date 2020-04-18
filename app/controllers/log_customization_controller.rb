@@ -25,7 +25,7 @@ class LogCustomizationController < ApplicationController
                                 :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
                                 :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
                                 :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
-                                :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine)
+                                :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine, :boolean)
   end
 
 end
