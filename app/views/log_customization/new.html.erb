@@ -129,7 +129,8 @@
       <%= f.hidden_field :boolean, :value => current_user.id %>
       <!-- Submit button and end of ERB -->
       <h1>Save and start logging!</h1>
-      <%= image_submit_tag("iconFinish.png", class: 'submitPic' ) %>
+      <%= f.submit 'submit' %>
+
     <% end %>
     </div>
   </div>

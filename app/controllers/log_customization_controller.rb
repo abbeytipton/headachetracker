@@ -17,7 +17,7 @@ class LogCustomizationController < ApplicationController
   def create
     @logcustomization = LogCustomization.new(logcustomization_params)
     if @logcustomization.save
-        redirect_to post_path(@logcustomization)
+        redirect_to '/logs/index'
       else
         redirect_to '/graphs/index'
     end
