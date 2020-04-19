@@ -2,6 +2,12 @@ class LogCustomizationController < ApplicationController
   def index
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   # Creates new log instance
   def new
     @logcustomization = LogCustomization.new
@@ -13,7 +19,26 @@ class LogCustomizationController < ApplicationController
     if @logcustomization.save
         redirect_to '/logs/index'
       else
+        redirect_to '/graphs/index'
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @logcustomization.update(logcustomization_params)
         redirect_to '/logs/index'
+      else
+        redirect_to '/logs/index'
+      end
+    end
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @logcustomization.destroy
+    respond_to do |format|
+      redirect_to '/logs/index'
     end
   end
 
