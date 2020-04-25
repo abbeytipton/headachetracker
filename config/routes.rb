@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   # Log custom routes
   resources :log_customization, only: [:new, :create]
-  get 'log_customization/create', :to => 'log_customization#new'
+  get 'log_customization/create', :to => 'log_customization'
   post 'log_customization/create', :to => 'log_customization#new'
 
   # Graphs routes
