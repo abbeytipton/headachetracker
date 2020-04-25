@@ -643,7 +643,7 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
       $("#waitIcon").fadeOut(500);
 
         setTimeout(function () {
-      $("#questions").empty();
+      $("#questions").hide();
       $("#finish").show();
     }, 1100);
     }
