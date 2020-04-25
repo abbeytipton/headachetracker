@@ -5,10 +5,10 @@ class LogsController < ApplicationController
 
 
   def index
-    #if customized == 0
-      #redirect_to '/log_customization/create'
-    #else
-    #end
+    if customized == 0
+      redirect_to '/log_customization/create'
+    else
+    end
   end
 
   # Creates new log instance
