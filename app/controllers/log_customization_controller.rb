@@ -1,6 +1,6 @@
 class LogCustomizationController < ApplicationController
 
-  before_action :require_user, only: [:new]
+
 
   def index
   end
