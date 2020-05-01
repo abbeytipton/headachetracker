@@ -1,5 +1,12 @@
 class LogCustomizationController < ApplicationController
+
+  before_action :require_user, only: [:new]
+
   def index
+    if customized != 0
+      redirect_to '/logs/index'
+    else
+    end
   end
 
   def show

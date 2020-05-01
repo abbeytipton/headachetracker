@@ -28,8 +28,5 @@ So far, I have:
 - Finish questions/JS for questions
 
 Left to do:
-- Handle creation and make sure it's working
-- Make page off limits if user has answered the questions already
-- Make page off limits if user is not logged in
 - Use information to determine what shows on logging page
 - Use information to determine what shows on graphing page
