@@ -626,18 +626,12 @@ $(document).on('click', "#nextYes, #nextNo", function(event){
   $(checkboxToHide).hide();
   $('#checkboxNoOriginal, #checkboxNoReplacementCustom').hide();
    // If it's more than 11 then we're on custom triggers //
-  if (counter >= 11) {
+  if (counter >= 12) {
     var previous = counter - 1;
     $(textboxes[previous]).hide();
     // If they click the no button, then go to the finish //
     if (event.target.id == "nextNo")
     {
-      // If the previous trigger didn't get a name, then give it the name Custom Trigger # //
-      var triggerName = previous - 10;
-      if ($(textboxes[previous]).val() == "")
-      {
-        $(textboxes[previous]).val("Customer Trigger " + triggerName);
-      }
       $("#triggerTextBoxP").hide();
       $("#waitIcon").fadeIn(500);
       $("#waitIcon").fadeOut(500);
@@ -680,27 +674,15 @@ function ShowNextQuestion() {
     }
     }
     // If the counter is 20 then it's the very last question so we don't need the add button //
-    if (counter == 15) {
+    if (counter == 16) {
       $("#question").append(questions[counter]);
       $('#checkboxDiv').hide();
-      var previous = counter - 1;
-      var triggerName = previous - 10;
-      if ($(textboxes[previous]).val() == "")
-      {
-        $(textboxes[previous]).val("Customer Trigger " + triggerName);
-      }
       $(textboxToShow).show();
       // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
     } else {
     $(checkboxToShow).show();
     $("#question").append(questions[counter]);
-    if (counter >= 11) {
-      var previous = counter - 1;
-      var triggerName = previous - 10;
-      if ($(textboxes[previous]).val() == "")
-      {
-        $(textboxes[previous]).val("Customer Trigger " + triggerName);
-      }
+    if (counter >= 12) {
       $(textboxToShow).show();
     }
   }
