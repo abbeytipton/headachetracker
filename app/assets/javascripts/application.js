@@ -607,11 +607,11 @@ $(document).on("click", "#startBtn", function(e){
 
 var questions = ["Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
 "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
-"Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to five.", "Name your first custom trigger:", "Name your second custom trigger:", "Name your third custom trigger:", "Name your fourth custom trigger:", "Name your fifth custom trigger:";
+"Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to five.", "Name your first custom trigger:", "Name your second custom trigger:", "Name your third custom trigger:", "Name your fourth custom trigger:", "Name your fifth custom trigger:"];
 
 var erbCheckboxes = ["#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13", "#hiddenERB14", "#hiddenERB15", "#hiddenERB16"];
 
-var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"]
+var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"];
 
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
