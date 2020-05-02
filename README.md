@@ -18,15 +18,6 @@ Left to do:
 What's in progress?
 - Currently working on adding customization to the logs
 
-So far, I have:
-- Added a new table to hold this information
-- Created new controller/model/view for the new table
-- Created method for adding a new customization
-- Created route for this page
-- Begun creating actual page with questions for user to answer (will mirror CSS of logging page)
-- Added JS for questions added so far
-- Finish questions/JS for questions
-
 Left to do:
 - Use information to determine what shows on logging page
 - Use information to determine what shows on graphing page
