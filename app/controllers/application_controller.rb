@@ -37,6 +37,12 @@ class ApplicationController < ActionController::Base
     @user_headaches ||= Logs.where(:userid => current_user.id).count
   end
 
+  # Get whether the user wants each of the symptoms/custom triggers to shw
+
+  def include_chocolate?
+    return true if @include_chocolate ||=LogCustomization.where(:userID => current_user.id, :chocolate => true).count
+  end
+
   # Get the total number of each symptom for the current user
   def user_chocolate
     @user_chocolate ||= Logs.where(:userid => current_user.id, :chocolate => true).count
