@@ -663,7 +663,7 @@ function ShowNextQuestion() {
   // This timeout function happens after 1100, so after the wait icon fades out //
   setTimeout(function () {
     // Show the new checkboxes and question //
-    if (counter != 16) {
+    if (counter != 17) {
       // If we're at 10 or less then we need to show the og checkbox //
       if (counter <= 10)
       {
@@ -674,7 +674,7 @@ function ShowNextQuestion() {
     }
     }
     // If the counter is 20 then it's the very last question so we don't need the add button //
-    if (counter == 16) {
+    if (counter == 17) {
       $("#question").append(questions[counter]);
       $('#checkboxDiv').hide();
       $(textboxToShow).show();
