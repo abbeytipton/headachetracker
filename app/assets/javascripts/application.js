@@ -617,7 +617,7 @@ var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "pl
 $(document).off("click", "#nextYes, #nextNo");
 // Yes and no button click functions for non custom questions //
 $(document).on('click', "#nextYes, #nextNo", function(event){
-
+  console.log(counter);
   // Empty out the question //
   $("#question").empty();
   // Hide the previous text yes checkbox //
