@@ -28,11 +28,6 @@
         <div id="trigger3NameText"><%= f.text_field :trigger3Name, class: 'customInput' %></div>
         <div id="trigger4NameText"><%= f.text_field :trigger4Name, class: 'customInput' %></div>
         <div id="trigger5NameText"><%= f.text_field :trigger5Name, class: 'customInput' %></div>
-        <div id="trigger6NameText"><%= f.text_field :trigger6Name, class: 'customInput' %></div>
-        <div id="trigger7NameText"><%= f.text_field :trigger7Name, class: 'customInput' %></div>
-        <div id="trigger8NameText"><%= f.text_field :trigger8Name, class: 'customInput' %></div>
-        <div id="trigger9NameText"><%= f.text_field :trigger9Name, class: 'customInput' %></div>
-        <div id="trigger10NameText"><%= f.text_field :trigger10Name, class: 'customInput' %></div>
       </p>
       <!-- Rails form connected question, required before moving on -->
       <div class="flex">
@@ -54,7 +49,7 @@
           <%= f.check_box :lights, id: 'checkBox5', class: 'checkbox' %><label for='checkBox5' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
         </div>
         <div id="hiddenERB6">
-          <%= f.check_box :eye_strain, id: 'checkBox6', class: 'checkbox' %><label for='checkBox6' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+          <%= f.check_box :eyestrain, id: 'checkBox6', class: 'checkbox' %><label for='checkBox6' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
         </div>
         <div id="hiddenERB7">
           <%= f.check_box :exercise, id: 'checkBox7', class: 'checkbox' %><label for='checkBox7' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
@@ -85,21 +80,6 @@
         </div>
         <div id="hiddenERB16">
           <%= f.check_box :trigger5, id: 'checkBox16', class: 'checkbox' %><label for='checkBox16' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
-        </div>
-        <div id="hiddenERB17">
-          <%= f.text_field :trigger6, class: 'customInput' %>
-        </div>
-        <div id="hiddenERB18">
-          <%= f.check_box :trigger7, id: 'checkBox18', class: 'checkbox' %><label for='checkBox18' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
-        </div>
-        <div id="hiddenERB19">
-          <%= f.check_box :trigger8, id: 'checkBox19', class: 'checkbox' %><label for='checkBox19' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
-        </div>
-        <div id="hiddenERB20">
-          <%= f.check_box :trigger9, id: 'checkBox20', class: 'checkbox' %><label for='checkBox20' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
-        </div>
-        <div id="hiddenERB21">
-          <%= f.check_box :trigger10, id: 'checkBox21', class: 'checkbox' %><label for='checkBox21' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
         </div>
         <div id="checkboxNoOriginal">
           <input type="checkbox" id="checkBoxNo" class="checkbox">
