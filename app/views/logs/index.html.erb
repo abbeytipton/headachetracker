@@ -1,5 +1,4 @@
-<h2>Welcome to Logging!</h2>
-<!-- Heading and intro -->
+
 <!-- Form for adding a new headache, connects to logs controller -->
 <%= form_for :logs, url: logs_path do |f| %>
 
@@ -7,6 +6,7 @@
 
 <!-- Main div to hold the question -->
 <div id="start" class="logDivs">
+  <h2>Welcome to Logging!</h2>
   <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
     <!-- Left div holds the image -->
@@ -20,11 +20,8 @@
 </div>
 
 <% if include_chocolate == 1 %>
-<h1>It is true</h1>
 <% else %>
-<h2> It is false </h2>
 <% end %>
-<h2><% @include_chocolate %></h2>
 
 <!-- Main div to hold the question -->
 <div id="one" class="logDivs">
