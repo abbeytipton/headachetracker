@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   helper_method [:user_medicine_helped]
   helper_method [:customized]
   helper_method [:customized_redirect]
+  helper_method [:include_chocolate]
 
   # Get the current user
   def current_user
