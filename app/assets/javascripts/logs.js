@@ -34,12 +34,9 @@ $(document).on("click", "#twoNext", function(e){
 });
 
 $(document).on("click", ".nextYes, .nextNo", function(e){
-  alert('clicked');
   var currentDiv = $(this).parent().parent().parent().parent().parent().attr('id');
-  alert(currentDiv);
-  var nextDiv = $(currentDiv).next();
-  alert(nextDiv);
-    $(currentDiv).fadeOut(function() {
-    $(nextDiv).fadeIn(1500);
+  var nextDiv = $("#"+currentDiv).next().attr('id');
+    $("#"+currentDiv).fadeOut(function() {
+    $("#"+nextDiv).fadeIn(1500);
   });
 });
