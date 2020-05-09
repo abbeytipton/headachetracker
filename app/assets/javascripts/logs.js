@@ -34,7 +34,7 @@ $(document).on("click", "#twoNext", function(e){
 });
 
 $(document).on("click", ".nextYes, .nextNo", function(e){
-  var currentDiv = $(this).parent().parent().parent().parent().parent().attr('id');
+  var currentDiv = $(this).parent().parent().parent().parent().parent().parent().attr('id');
   alert(currentDiv);
   var nextDiv = $("#"+currentDiv).next().attr('id');
   alert(nextDiv);
