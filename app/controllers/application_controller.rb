@@ -22,6 +22,16 @@ class ApplicationController < ActionController::Base
   helper_method [:customized]
   helper_method [:customized_redirect]
   helper_method [:include_chocolate]
+  helper_method [:include_period]
+  helper_method [:include_dehydrated]
+  helper_method [:include_alcohol]
+  helper_method [:include_overeating]
+  helper_method [:include_stress]
+  helper_method [:include_sleep]
+  helper_method [:include_lights]
+  helper_method [:include_eyestrain]
+  helper_method [:include_exercise]
+  helper_method [:include_medicine]
 
   # Get the current user
   def current_user
@@ -38,10 +48,49 @@ class ApplicationController < ActionController::Base
     @user_headaches ||= Logs.where(:userid => current_user.id).count
   end
 
-  # Get whether the user wants each of the symptoms/custom triggers to shw
-
+  # Get whether the user wants each of the symptoms/custom triggers to show
   def include_chocolate
     @include_chocolate ||= LogCustomization.where(:userID => current_user.id, :chocolate => true).count
+  end
+
+  def include_period
+    @include_period ||= LogCustomization.where(:userID => current_user.id, :period => true).count
+  end
+
+  def include_exercise
+    @include_exercise ||= LogCustomization.where(:userID => current_user.id, :exercise => true).count
+  end
+
+  def include_eyestrain
+    @include_eyestrain ||= LogCustomization.where(:userID => current_user.id, :eyestrain => true).count
+  end
+
+  def include_lights
+    @include_lights ||= LogCustomization.where(:userID => current_user.id, :lights => true).count
+  end
+
+  def include_sleep
+    @include_sleep ||= LogCustomization.where(:userID => current_user.id, :sleep => true).count
+  end
+
+  def include_stress
+    @include_stress ||= LogCustomization.where(:userID => current_user.id, :stress => true).count
+  end
+
+  def include_overeating
+    @include_overeating ||= LogCustomization.where(:userID => current_user.id, :overeating => true).count
+  end
+
+  def include_alcohol
+    @include_alcohol ||= LogCustomization.where(:userID => current_user.id, :alcohol => true).count
+  end
+
+  def include_dehydrated
+    @include_dehydrated ||= LogCustomization.where(:userID => current_user.id, :dehydrated => true).count
+  end
+
+  def include_medicine
+    @include_medicine ||= LogCustomization.where(:userID => current_user.id, :medicine => true).count
   end
 
   # Get the total number of each symptom for the current user

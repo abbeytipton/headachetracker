@@ -4,424 +4,337 @@
 
 <!-- Question divs start next, they fade in and out as the user answers them, so only one shows at a time -->
 
-<!-- Main div to hold the question -->
 <div id="start" class="logDivs">
   <h2>Welcome to Logging!</h2>
-  <!-- Flex div to hold the next two divs next to each other -->
   <div class="flex">
-    <!-- Left div holds the image -->
     <div class="leftDiv">
       <h3>Let's log your headache symptoms as well as your behavior in the hours leading up to your headache.<br>
-          This should take less than five minutes.</h3>
-      <h2>Are you ready to get started?</h2>
-    <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
+        This should take less than five minutes.</h3>
+        <h2>Are you ready to get started?</h2>
+        <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<% if include_chocolate == 1 %>
-<% else %>
-<% end %>
+  <div id="one" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconStart.png") %>
+      </div>
 
-<!-- Main div to hold the question -->
-<div id="one" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconStart.png") %>
+      <div>
+        <h2>When did this headache start?</h2>
+        <%= f.datetime_field :date_started, required: true, class: 'oneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
+      </div>
     </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>When did this headache start?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <%= f.datetime_field :date_started, required: true, class: 'oneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
+    <div class="rightDiv">
+      <div id="oneNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
     </div>
   </div>
-  <!-- This div is under the previous two divs, holds the next image and button -->
-  <div class="rightDiv">
-    <div id="oneNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
-  </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="two" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconStart.png") %>
+  <div id="two" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconStart.png") %>
+      </div>
+      <div>
+        <h2>When did this headache end?</h2>
+        <%= f.datetime_field :date_ended, required: true, class: 'twoField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M')%><br/>
+      </div>
     </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>When did this headache end?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <%= f.datetime_field :date_ended, required: true, class: 'twoField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M')%><br/>
+    <div class="rightDiv">
+      <div id="twoNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
     </div>
   </div>
-  <!-- This div is under the previous two divs, holds the next image and button -->
-  <div class="rightDiv">
-    <div id="twoNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
-  </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="three" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconPeriod.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Were you on your period during this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :period, id: 'threeFieldYes', class: 'checkbox' %>
-          <label for="threeFieldYes"><%= image_tag 'iconYes.png', id: 'threeNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="threeFieldNo" class="checkbox">
-          <label for="threeFieldNo"><%= image_tag 'iconNo.png', id: 'threeNextNo'%></label>
+  <% if include_period == 1 %>
+  <div id="three" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconPeriod.png") %>
+      </div>
+      <div>
+        <h2>Were you on your period during this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :period, id: 'threeFieldYes', class: 'checkbox' %>
+            <label for="threeFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="threeFieldNo" class="checkbox">
+            <label for="threeFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo'%></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <% end %>
 
-<!-- Main div to hold the question -->
-<div id="four" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconDehydrated.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Were you dehydrated during this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :dehydration, id: 'fourFieldYes', class: 'checkbox' %>
-          <label for="fourFieldYes"><%= image_tag 'iconYes.png', id: 'fourNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fourFieldNo" class="checkbox">
-          <label for="fourFieldNo"><%= image_tag 'iconNo.png', id: 'fourNextNo'%></label>
+  <div id="four" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconDehydrated.png") %>
+      </div>
+      <div>
+        <h2>Were you dehydrated during this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :dehydration, id: 'fourFieldYes', class: 'checkbox' %>
+            <label for="fourFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="fourFieldNo" class="checkbox">
+            <label for="fourFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="five" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconExercise.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <h2>Did you exercise the day of, or the day before, this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :exercise, id: 'fiveFieldYes', class: 'checkbox' %>
-          <label for="fiveFieldYes"><%= image_tag 'iconYes.png', id: 'fiveNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fiveFieldNo" class="checkbox">
-          <label for="fiveFieldNo"><%= image_tag 'iconNo.png', id: 'fiveNextNo'%></label>
+  <div id="five" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconExercise.png") %>
+      </div>
+      <div>
+        <h2>Did you exercise the day of, or the day before, this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :exercise, id: 'fiveFieldYes', class: 'checkbox' %>
+            <label for="fiveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="fiveFieldNo" class="checkbox">
+            <label for="fiveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="six" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconEyeStrain.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
-          <label for="sixFieldYes"><%= image_tag 'iconYes.png', id: 'sixNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="sixFieldNo" class="checkbox">
-          <label for="sixFieldNo"><%= image_tag 'iconNo.png', id: 'sixNextNo'%></label>
+  <div id="six" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconEyeStrain.png") %>
+      </div>
+      <div>
+        <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
+            <label for="sixFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="sixFieldNo" class="checkbox">
+            <label for="sixFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="seven" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconLights.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :lights, id: 'sevenFieldYes', class: 'checkbox' %>
-          <label for="sevenFieldYes"><%= image_tag 'iconYes.png', id: 'sevenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="sevenFieldNo" class="checkbox">
-          <label for="sevenFieldNo"><%= image_tag 'iconNo.png', id: 'sevenNextNo'%></label>
+  <div id="seven" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconLights.png") %>
+      </div>
+      <div>
+        <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :lights, id: 'sevenFieldYes', class: 'checkbox' %>
+            <label for="sevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="sevenFieldNo" class="checkbox">
+            <label for="sevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="eight" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconSleep.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :sleep, id: 'eightFieldYes', class: 'checkbox' %>
-          <label for="eightFieldYes"><%= image_tag 'iconYes.png', id: 'eightNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="eightFieldNo" class="checkbox">
-          <label for="eightFieldNo"><%= image_tag 'iconNo.png', id: 'eightNextNo'%></label>
+  <div id="eight" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconSleep.png") %>
+      </div>
+      <div>
+        <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :sleep, id: 'eightFieldYes', class: 'checkbox' %>
+            <label for="eightFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="eightFieldNo" class="checkbox">
+            <label for="eightFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="nine" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconStress.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Have you been under more stress than usual?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :stress, id: 'nineFieldYes', class: 'checkbox' %>
-          <label for="nineFieldYes"><%= image_tag 'iconYes.png', id: 'nineNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="nineFieldNo" class="checkbox">
-          <label for="nineFieldNo"><%= image_tag 'iconNo.png', id: 'nineNextNo'%></label>
+  <div id="nine" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconStress.png") %>
+      </div>
+      <div>
+        <h2>Have you been under more stress than usual?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :stress, id: 'nineFieldYes', class: 'checkbox' %>
+            <label for="nineFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="nineFieldNo" class="checkbox">
+            <label for="nineFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="ten" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconOvereating.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Have you been overeating the day of, or the day before, this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :overeating, id: 'tenFieldYes', class: 'checkbox' %>
-          <label for="tenFieldYes"><%= image_tag 'iconYes.png', id: 'tenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="tenFieldNo" class="checkbox">
-          <label for="tenFieldNo"><%= image_tag 'iconNo.png', id: 'tenNextNo'%></label>
+  <div id="ten" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconOvereating.png") %>
+      </div>
+      <div>
+        <h2>Have you been overeating the day of, or the day before, this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :overeating, id: 'tenFieldYes', class: 'checkbox' %>
+            <label for="tenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="tenFieldNo" class="checkbox">
+            <label for="tenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="eleven" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconWeather.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Has there been a significant change in the weather in the past two days?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :weather, id: 'elevenFieldYes', class: 'checkbox' %>
-          <label for="elevenFieldYes"><%= image_tag 'iconYes.png', id: 'elevenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="elevenFieldNo" class="checkbox">
-          <label for="elevenFieldNo"><%= image_tag 'iconNo.png', id: 'elevenNextNo'%></label>
+  <div id="eleven" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconWeather.png") %>
+      </div>
+      <div>
+        <h2>Has there been a significant change in the weather in the past two days?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :weather, id: 'elevenFieldYes', class: 'checkbox' %>
+            <label for="elevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="elevenFieldNo" class="checkbox">
+            <label for="elevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="twelve" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconAlcohol.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :alcohol, id: 'twelveFieldYes', class: 'checkbox' %>
-          <label for="twelveFieldYes"><%= image_tag 'iconYes.png', id: 'twelveNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="twelveFieldNo" class="checkbox">
-          <label for="twelveFieldNo"><%= image_tag 'iconNo.png', id: 'twelveNextNo'%></label>
+  <div id="twelve" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconAlcohol.png") %>
+      </div>
+      <div>
+        <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :alcohol, id: 'twelveFieldYes', class: 'checkbox' %>
+            <label for="twelveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="twelveFieldNo" class="checkbox">
+            <label for="twelveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="thirteen" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconChocolate.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :chocolate, id: 'thirteenFieldYes', class: 'checkbox' %>
-          <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', id: 'thirteenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="thirteenFieldNo" class="checkbox">
-          <label for="thirteenFieldNo"><%= image_tag 'iconNo.png', id: 'thirteenNextNo'%></label>
+  <div id="thirteen" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconChocolate.png") %>
+      </div>
+      <div>
+        <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :chocolate, id: 'thirteenFieldYes', class: 'checkbox' %>
+            <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="thirteenFieldNo" class="checkbox">
+            <label for="thirteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="fourteen" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconMedicine.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>Did you take medicine for this headache?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="textBox">
+  <div id="fourteen" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconMedicine.png") %>
+      </div>
+      <div>
+        <h2>Did you take medicine for this headache?</h2>
+        <div class="textBox">
           Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
-      </div>
-     <div class="flex">
-        <div class="toHide">
-          <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
-          <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', id: 'fourteenNextYes' %></label>
         </div>
-        <div>
-          <input type="checkbox" id="fourteenFieldNo" class="checkbox">
-          <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', id: 'fourteenNextNo'%></label>
+        <div class="flex">
+          <div class="toHide">
+            <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
+            <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="fourteenFieldNo" class="checkbox">
+            <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="fifteen" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-      <%= image_tag("iconMedicineHelped.png") %>
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-    <h2>If you took medicine, did it help?</h2>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <div>
-          <%= f.check_box :medicine_helped, id: 'fifteenFieldYes', class: 'checkbox' %>
-          <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', id: 'fifteenNextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fifteenFieldNo" class="checkbox">
-          <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', id: 'fifteenNextNo'%></label>
+  <div id="fifteen" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+        <%= image_tag("iconMedicineHelped.png") %>
+      </div>
+      <div>
+        <h2>If you took medicine, did it help?</h2>
+        <div class="flex">
+          <div>
+            <%= f.check_box :medicine_helped, id: 'fifteenFieldYes', class: 'checkbox' %>
+            <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+          </div>
+          <div>
+            <input type="checkbox" id="fifteenFieldNo" class="checkbox">
+            <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Main div to hold the question -->
-<div id="sixteen" class="logDivs">
-  <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- Left div holds the image -->
-    <div class="leftDiv">
-    </div>
-    <!-- This div holds the text and question -->
-    <div>
-      <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
-      <%= f.hidden_field :userid, :value => current_user.id %>
-      <!-- Submit button and end of ERB -->
-      <h1>Save this log!</h1>
-      <%= f.submit '', :class => 'button_with_image_save' %>
-    <% end %>
+  <div id="sixteen" class="logDivs">
+    <div class="flex">
+      <div class="leftDiv">
+      </div>
+      <div>
+        <%= f.hidden_field :userid, :value => current_user.id %>
+        <!-- Submit button and end of ERB -->
+        <h1>Save this log!</h1>
+        <%= f.submit '', :class => 'button_with_image_save' %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <!-- This div is under the previous two divs, holds the next image and button -->
-</div>
