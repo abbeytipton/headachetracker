@@ -222,7 +222,7 @@
 
   <% if include_trigger1 == 1 %>
     <div id="fifteen" class="logDivs">
-      <h2><% user_trigger1 %></h2>
+      <h2><%= user_trigger1 %></h2>
       <div class="flex">
         <div>
           <%= f.check_box :chocolate, id: 'fifteenFieldYes', class: 'checkbox' %>
@@ -234,22 +234,6 @@
         </div>
       </div>
     </div>
-  <% end %>
-
-  <% if include_medicine == 1 %>
-  <div id="sixteen" class="logDivs">
-    <h2>If you took medicine, did it help?</h2>
-    <div class="flex">
-      <div>
-        <%= f.check_box :medicine_helped, id: 'fifteenFieldYes', class: 'checkbox' %>
-        <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-      </div>
-      <div>
-        <input type="checkbox" id="fifteenFieldNo" class="checkbox">
-        <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-      </div>
-    </div>
-  </div>
   <% end %>
 
   <div id="sixteen" class="logDivs">
