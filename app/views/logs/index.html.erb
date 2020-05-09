@@ -6,7 +6,7 @@
 
 <div id="start" class="logDivs">
     <div class="leftDiv">
-        <h2>Are you ready to get log your headache?</h2>
+        <h2>Are you ready to log your headache?</h2><br>
         <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
       </div>
 </div>
@@ -236,7 +236,71 @@
     </div>
   <% end %>
 
-  <div id="sixteen" class="logDivs">
+  <% if include_trigger2 == 1 %>
+    <div id="sixteen" class="logDivs">
+      <h2><%= user_trigger2 %></h2>
+      <div class="flex">
+        <div>
+          <%= f.check_box :chocolate, id: 'sixteenFieldYes', class: 'checkbox' %>
+          <label for="sixteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="sixteenFieldNo" class="checkbox">
+          <label for="sixteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if include_trigger3 == 1 %>
+    <div id="seventeen" class="logDivs">
+      <h2><%= user_trigger3 %></h2>
+      <div class="flex">
+        <div>
+          <%= f.check_box :chocolate, id: 'seventeenFieldYes', class: 'checkbox' %>
+          <label for="seventeenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="seventeenFieldNo" class="checkbox">
+          <label for="seventeenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if include_trigger4== 1 %>
+    <div id="eighteen" class="logDivs">
+      <h2><%= user_trigger4 %></h2>
+      <div class="flex">
+        <div>
+          <%= f.check_box :chocolate, id: 'eighteenFieldYes', class: 'checkbox' %>
+          <label for="eighteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="eighteenFieldNo" class="checkbox">
+          <label for="eighteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if include_trigger5 == 1 %>
+    <div id="nineteen" class="logDivs">
+      <h2><%= user_trigger5 %></h2>
+      <div class="flex">
+        <div>
+          <%= f.check_box :chocolate, id: 'nineteenFieldYes', class: 'checkbox' %>
+          <label for="nineteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="nineteenFieldNo" class="checkbox">
+          <label for="nineteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div id="twenty" class="logDivs">
     <div class="flex">
       <div class="leftDiv">
       </div>
@@ -244,7 +308,7 @@
         <%= f.hidden_field :userid, :value => current_user.id %>
         <!-- Submit button and end of ERB -->
         <h1>Save this log!</h1>
-        <%= f.submit '', :class => 'button_with_image_save' %>
+        <%= image_submit_tag('iconFinish.png', class: 'finishButton') %>
         <% end %>
       </div>
     </div>

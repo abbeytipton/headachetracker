@@ -34,6 +34,14 @@ class ApplicationController < ActionController::Base
   helper_method [:include_medicine]
   helper_method [:include_trigger1]
   helper_method [:user_trigger1]
+  helper_method [:include_trigger2]
+  helper_method [:user_trigger2]
+  helper_method [:include_trigger3]
+  helper_method [:user_trigger3]
+  helper_method [:include_trigger4]
+  helper_method [:user_trigger4]
+  helper_method [:include_trigger5]
+  helper_method [:user_trigger5]
 
   # Get the current user
   def current_user
@@ -101,6 +109,38 @@ class ApplicationController < ActionController::Base
 
   def user_trigger1
     @user_trigger1 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger1Name).flatten.join(' ')
+  end
+
+  def include_trigger2
+    @include_trigger2 ||= LogCustomization.where(:userID => current_user.id, :trigger2 => true).count
+  end
+
+  def user_trigger2
+    @user_trigger2 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger2Name).flatten.join(' ')
+  end
+
+  def include_trigger3
+    @include_trigger3 ||= LogCustomization.where(:userID => current_user.id, :trigger3 => true).count
+  end
+
+  def user_trigger3
+    @user_trigger3 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger3Name).flatten.join(' ')
+  end
+
+  def include_trigger4
+    @include_trigger4 ||= LogCustomization.where(:userID => current_user.id, :trigger4 => true).count
+  end
+
+  def user_trigger4
+    @user_trigger4 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger4Name).flatten.join(' ')
+  end
+
+  def include_trigger5
+    @include_trigger5 ||= LogCustomization.where(:userID => current_user.id, :trigger5 => true).count
+  end
+
+  def user_trigger5
+    @user_trigger5 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger5Name).flatten.join(' ')
   end
 
   # Get the total number of each symptom for the current user
