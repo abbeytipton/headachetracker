@@ -5,16 +5,11 @@
 <!-- Question divs start next, they fade in and out as the user answers them, so only one shows at a time -->
 
 <div id="start" class="logDivs">
-  <h2>Welcome to Logging!</h2>
-  <div class="flex">
     <div class="leftDiv">
-      <h3>Let's log your headache symptoms as well as your behavior in the hours leading up to your headache.<br>
-        This should take less than five minutes.</h3>
-        <h2>Are you ready to get started?</h2>
+        <h2>Are you ready to get log your headache?</h2>
         <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
       </div>
-    </div>
-  </div>
+</div>
 
   <div id="one" class="logDivs">
     <div class="flex">
@@ -62,6 +57,7 @@
   </div>
   <% end %>
 
+  <% if include_dehydrated == 1 %>
   <div id="four" class="logDivs">
     <h2>Were you dehydrated during this headache?</h2>
     <div class="flex">
@@ -75,7 +71,9 @@
       </div>
     </div>
   </div>
+ <% end %>
 
+  <% if include_exercise == 1 %>
   <div id="five" class="logDivs">
     <h2>Did you exercise the day of, or the day before, this headache?</h2>
     <div class="flex">
@@ -89,7 +87,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_eyestrain == 1 %>
   <div id="six" class="logDivs">
     <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
     <div class="flex">
@@ -103,7 +103,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_lights == 1 %>
   <div id="seven" class="logDivs">
     <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
     <div class="flex">
@@ -117,7 +119,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_sleep == 1 %>
   <div id="eight" class="logDivs">
     <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
     <div class="flex">
@@ -131,7 +135,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_stress == 1 %>
   <div id="nine" class="logDivs">
     <h2>Have you been under more stress than usual?</h2>
     <div class="flex">
@@ -145,7 +151,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_overeating == 1 %>
   <div id="ten" class="logDivs">
     <h2>Have you been overeating the day of, or the day before, this headache?</h2>
     <div class="flex">
@@ -159,21 +167,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
-  <div id="eleven" class="logDivs">
-    <h2>Has there been a significant change in the weather in the past two days?</h2>
-    <div class="flex">
-      <div>
-        <%= f.check_box :weather, id: 'elevenFieldYes', class: 'checkbox' %>
-        <label for="elevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-      </div>
-      <div>
-        <input type="checkbox" id="elevenFieldNo" class="checkbox">
-        <label for="elevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-      </div>
-    </div>
-  </div>
-
+  <% if include_alcohol == 1 %>
   <div id="twelve" class="logDivs">
     <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
     <div class="flex">
@@ -187,7 +183,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_chocolate == 1 %>
   <div id="thirteen" class="logDivs">
     <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
     <div class="flex">
@@ -201,7 +199,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_medicine == 1 %>
   <div id="fourteen" class="logDivs">
     <h2>Did you take medicine for this headache?</h2>
     <div class="textBox">
@@ -218,7 +218,9 @@
       </div>
     </div>
   </div>
+  <% end %>
 
+  <% if include_medicine == 1 %>
   <div id="fifteen" class="logDivs">
     <h2>If you took medicine, did it help?</h2>
     <div class="flex">
@@ -232,6 +234,7 @@
       </div>
     </div>
   </div>
+  <% end %>
 
   <div id="sixteen" class="logDivs">
     <div class="flex">
