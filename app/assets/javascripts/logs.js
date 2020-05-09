@@ -3,34 +3,28 @@
 
 // Click functions for the next buttons that make the logging form visible item by item to the user //
 
-// When the one next button is clicked, start this function //
 $(document).on("click", "#startNext", function(e){
-  // Fade out the first div and fade in the second //
   $("#start").fadeOut(function() {
     $("#one").fadeIn(1500);
   });
 });
 
-// When the one next button is clicked, start this function //
 $(document).on("click", "#oneNext", function(e){
   // Checking for null values //
   if ($(".oneField").val() != "") {
-    // Fade out the first div and fade in the second //
     $("#one").fadeOut(function() {
       $("#two").fadeIn(1500);
     });
   }
 });
 
-// When the two next button is clicked, start this function //
 $(document).on("click", "#twoNext", function(e){
   // Checking for null values //
   if ($(".twoField").val() != "") {
     var currentDiv = $(this).parent().parent().attr('id');
     var nextDiv = $("#"+currentDiv).next().attr('id');
-    // Fade out the first div and fade in the second //
     $("#two").fadeOut(function() {
-      $("#three").fadeIn(1500);
+      $("#"+nextDiv).fadeIn(1500);
     });
   }
 });

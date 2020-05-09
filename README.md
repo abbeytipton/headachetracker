@@ -14,11 +14,11 @@ Left to do:
 - Add instructions based on bool for first time user looks at graphs
 - Add ability to remove triggers and add custom ones
 - Mobile optimization
-- Fill custom trigger text if the user doesn't 
+- Fill custom trigger text if the user doesn't
 
 What's in progress?
 - Currently working on adding customization to the logs
 
 Left to do:
-- Use information to determine what shows on logging page
+- Add the custom triggers to the logs schema
 - Use information to determine what shows on graphing page
