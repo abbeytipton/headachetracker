@@ -34,11 +34,12 @@ $(document).on("click", "#twoNext", function(e){
 });
 
 $(document).on("click", ".nextYes, .nextNo", function(e){
-  if (event.target).attr('class') == "nextYes") {
-    var currentDiv = $(this).parent().parent().parent().parent().attr('id');
+  var currentDiv;
+  if ($(event.target).attr('class') == "nextYes") {
+    currentDiv = $(this).parent().parent().parent().parent().attr('id');
   }
   else {
-    var currentDiv = $(this).parent().parent().parent().parent().parent().attr('id');
+     currentDiv = $(this).parent().parent().parent().parent().parent().attr('id');
   }
   alert(currentDiv);
   var nextDiv = $("#"+currentDiv).next().attr('id');
