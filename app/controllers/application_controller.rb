@@ -32,6 +32,8 @@ class ApplicationController < ActionController::Base
   helper_method [:include_eyestrain]
   helper_method [:include_exercise]
   helper_method [:include_medicine]
+  helper_method [:include_trigger1]
+  helper_method [:user_trigger1]
 
   # Get the current user
   def current_user
@@ -91,6 +93,14 @@ class ApplicationController < ActionController::Base
 
   def include_medicine
     @include_medicine ||= LogCustomization.where(:userID => current_user.id, :medicine => true).count
+  end
+
+  def include_trigger1
+    @include_trigger1 ||= LogCustomization.where(:userID => current_user.id, :trigger1 => true).count
+  end
+
+  def user_trigger1
+    @user_trigger1 ||= LogCustomization.select("trigger1Name").where("userID" => current_user.id)
   end
 
   # Get the total number of each symptom for the current user

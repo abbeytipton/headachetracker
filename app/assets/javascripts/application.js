@@ -611,7 +611,7 @@ var questions = ["placeholder", "Do you want to include overeating as a trigger?
 
 var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13", "#hiddenERB14", "#hiddenERB15", "#hiddenERB16"];
 
-var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"];
+var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"];
 
 // Remove Turboklinks from the page so the jQuery will function correctly //
 $(document).off("click", "#nextYes, #nextNo");
