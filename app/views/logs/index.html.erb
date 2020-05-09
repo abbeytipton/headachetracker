@@ -21,7 +21,6 @@
       <div class="leftDiv">
         <%= image_tag("iconStart.png") %>
       </div>
-
       <div>
         <h2>When did this headache start?</h2>
         <%= f.datetime_field :date_started, required: true, class: 'oneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
@@ -49,278 +48,187 @@
 
   <% if include_period == 1 %>
   <div id="three" class="logDivs">
+    <h2>Were you on your period during this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconPeriod.png") %>
+      <div>
+        <%= f.check_box :period, id: 'threeFieldYes', class: 'checkbox' %>
+        <label for="threeFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Were you on your period during this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :period, id: 'threeFieldYes', class: 'checkbox' %>
-            <label for="threeFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="threeFieldNo" class="checkbox">
-            <label for="threeFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo'%></label>
-          </div>
-        </div>
+        <input type="checkbox" id="threeFieldNo" class="checkbox">
+        <label for="threeFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo'%></label>
       </div>
     </div>
   </div>
   <% end %>
 
   <div id="four" class="logDivs">
+    <h2>Were you dehydrated during this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconDehydrated.png") %>
+      <div>
+        <%= f.check_box :dehydration, id: 'fourFieldYes', class: 'checkbox' %>
+        <label for="fourFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Were you dehydrated during this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :dehydration, id: 'fourFieldYes', class: 'checkbox' %>
-            <label for="fourFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="fourFieldNo" class="checkbox">
-            <label for="fourFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="fourFieldNo" class="checkbox">
+        <label for="fourFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="five" class="logDivs">
+    <h2>Did you exercise the day of, or the day before, this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconExercise.png") %>
+      <div>
+        <%= f.check_box :exercise, id: 'fiveFieldYes', class: 'checkbox' %>
+        <label for="fiveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you exercise the day of, or the day before, this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :exercise, id: 'fiveFieldYes', class: 'checkbox' %>
-            <label for="fiveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="fiveFieldNo" class="checkbox">
-            <label for="fiveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="fiveFieldNo" class="checkbox">
+        <label for="fiveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="six" class="logDivs">
+    <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconEyeStrain.png") %>
+      <div>
+        <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
+        <label for="sixFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
-            <label for="sixFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="sixFieldNo" class="checkbox">
-            <label for="sixFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="sixFieldNo" class="checkbox">
+        <label for="sixFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="seven" class="logDivs">
+    <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconLights.png") %>
+      <div>
+        <%= f.check_box :lights, id: 'sevenFieldYes', class: 'checkbox' %>
+        <label for="sevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :lights, id: 'sevenFieldYes', class: 'checkbox' %>
-            <label for="sevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="sevenFieldNo" class="checkbox">
-            <label for="sevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="sevenFieldNo" class="checkbox">
+        <label for="sevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="eight" class="logDivs">
+    <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconSleep.png") %>
+      <div>
+        <%= f.check_box :sleep, id: 'eightFieldYes', class: 'checkbox' %>
+        <label for="eightFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :sleep, id: 'eightFieldYes', class: 'checkbox' %>
-            <label for="eightFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="eightFieldNo" class="checkbox">
-            <label for="eightFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="eightFieldNo" class="checkbox">
+        <label for="eightFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="nine" class="logDivs">
+    <h2>Have you been under more stress than usual?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconStress.png") %>
+      <div>
+        <%= f.check_box :stress, id: 'nineFieldYes', class: 'checkbox' %>
+        <label for="nineFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Have you been under more stress than usual?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :stress, id: 'nineFieldYes', class: 'checkbox' %>
-            <label for="nineFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="nineFieldNo" class="checkbox">
-            <label for="nineFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="nineFieldNo" class="checkbox">
+        <label for="nineFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="ten" class="logDivs">
+    <h2>Have you been overeating the day of, or the day before, this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconOvereating.png") %>
+      <div>
+        <%= f.check_box :overeating, id: 'tenFieldYes', class: 'checkbox' %>
+        <label for="tenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Have you been overeating the day of, or the day before, this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :overeating, id: 'tenFieldYes', class: 'checkbox' %>
-            <label for="tenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="tenFieldNo" class="checkbox">
-            <label for="tenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="tenFieldNo" class="checkbox">
+        <label for="tenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="eleven" class="logDivs">
+    <h2>Has there been a significant change in the weather in the past two days?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconWeather.png") %>
+      <div>
+        <%= f.check_box :weather, id: 'elevenFieldYes', class: 'checkbox' %>
+        <label for="elevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Has there been a significant change in the weather in the past two days?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :weather, id: 'elevenFieldYes', class: 'checkbox' %>
-            <label for="elevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="elevenFieldNo" class="checkbox">
-            <label for="elevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="elevenFieldNo" class="checkbox">
+        <label for="elevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="twelve" class="logDivs">
+    <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconAlcohol.png") %>
+      <div>
+        <%= f.check_box :alcohol, id: 'twelveFieldYes', class: 'checkbox' %>
+        <label for="twelveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :alcohol, id: 'twelveFieldYes', class: 'checkbox' %>
-            <label for="twelveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="twelveFieldNo" class="checkbox">
-            <label for="twelveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="twelveFieldNo" class="checkbox">
+        <label for="twelveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="thirteen" class="logDivs">
+    <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconChocolate.png") %>
+      <div>
+        <%= f.check_box :chocolate, id: 'thirteenFieldYes', class: 'checkbox' %>
+        <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :chocolate, id: 'thirteenFieldYes', class: 'checkbox' %>
-            <label for="thirteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="thirteenFieldNo" class="checkbox">
-            <label for="thirteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="thirteenFieldNo" class="checkbox">
+        <label for="thirteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="fourteen" class="logDivs">
+    <h2>Did you take medicine for this headache?</h2>
+    <div class="textBox">
+      Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
+    </div>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconMedicine.png") %>
+      <div class="toHide">
+        <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
+        <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>Did you take medicine for this headache?</h2>
-        <div class="textBox">
-          Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
-        </div>
-        <div class="flex">
-          <div class="toHide">
-            <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
-            <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="fourteenFieldNo" class="checkbox">
-            <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="fourteenFieldNo" class="checkbox">
+        <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
 
   <div id="fifteen" class="logDivs">
+    <h2>If you took medicine, did it help?</h2>
     <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconMedicineHelped.png") %>
+      <div>
+        <%= f.check_box :medicine_helped, id: 'fifteenFieldYes', class: 'checkbox' %>
+        <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
       </div>
       <div>
-        <h2>If you took medicine, did it help?</h2>
-        <div class="flex">
-          <div>
-            <%= f.check_box :medicine_helped, id: 'fifteenFieldYes', class: 'checkbox' %>
-            <label for="fifteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-          </div>
-          <div>
-            <input type="checkbox" id="fifteenFieldNo" class="checkbox">
-            <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-          </div>
-        </div>
+        <input type="checkbox" id="fifteenFieldNo" class="checkbox">
+        <label for="fifteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
       </div>
     </div>
   </div>
