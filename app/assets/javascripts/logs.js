@@ -26,6 +26,8 @@ $(document).on("click", "#oneNext", function(e){
 $(document).on("click", "#twoNext", function(e){
   // Checking for null values //
   if ($(".twoField").val() != "") {
+    var currentDiv = $(this).parent().parent().attr('id');
+    var nextDiv = $("#"+currentDiv).next().attr('id');
     // Fade out the first div and fade in the second //
     $("#two").fadeOut(function() {
       $("#three").fadeIn(1500);
