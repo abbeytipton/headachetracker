@@ -100,7 +100,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_trigger1
-    @user_trigger1 ||= LogCustomization.select(:trigger1Name).find_by(:userID => current_user.id)
+    @user_trigger1 ||= LogCustomization.where(:userID => current_user.id).pluck(:trigger1Name)
   end
 
   # Get the total number of each symptom for the current user
