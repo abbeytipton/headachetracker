@@ -1,13 +1,10 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: htpp_development
+ development:
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: abbeytipton
-  password:
   timeout: 5000
 
-  test:
+test:
   adapter: postgresql
   encoding: unicode
   database: htpp_test
