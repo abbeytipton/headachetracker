@@ -507,8 +507,44 @@ var optionsstressSymptoms = {
 };
 Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optionsstressSymptoms);
 
+var custom1Labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
+var custom1Title = trigger1Name;
+var clickedGraphLabels;
+var clickedGraphTitle;
+
+var clickedGraph = [{
+  values: [stressed, no_stress],
+  labels: clickedGraphLabels,
+  type: 'pie',
+  textinfo: 'none',
+  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+  marker: { colors: ['purple', 'teal']}
+}];
+var layoutClickedGraph = {
+  height: 500,
+  width: 600,
+  hovermode: "closest",
+  xaxis: { domain: 550 },
+  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+  // Set background color, size, font //
+  plot_bgcolor: "transparent",
+  paper_bgcolor: "transparent",
+  autosize: false,
+  showlegend: true,
+	legend: {"orientation": "h"},
+  font: {family: 'Poppins'},
+  title: clickedGraphTitle,
+};
+var optionsClickedGraph = {
+    // Turn off certain mode bar buttons //
+    displaylogo: false,
+};
+
 function BarClick(divToFadeIn) {
   alert(divToFadeIn);
+  clickedGraphLabels = custom1Labels;
+  clickedGraphTitle = custom1Title;
+  Plotly.newPlot('custom1Holder', clickedGraph, layoutClickedGraph, optionsClickedGraph);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
