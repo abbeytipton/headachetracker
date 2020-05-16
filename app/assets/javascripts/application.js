@@ -96,8 +96,8 @@ $(document).on('turbolinks:load', function() {
 
       // Click function for the bars - change the graph (pass in the clicked on bar), fade out everything, fade in the main graph and clicked graph //
       function BarClick(graphToShow) {
-        changeGraph(graphToShow);
         $('.children').fadeOut().promise().done(function () {
+            changeGraph(graphToShow);
             $("#clickedDiv").fadeIn(1000);
             $("#triggerHolder").fadeIn(1000);
         });
