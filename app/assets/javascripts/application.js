@@ -59,8 +59,6 @@ var no_custom3 = 100 - custom3;
 var no_custom4 = 100 - custom4;
 var no_custom5 = 100 - custom5;
 
-
-
 // All Symptoms (Trigger) graph - these are x and y coordinates //
 var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped', trigger1Name, trigger2Name, trigger3Name, trigger4Name, trigger5Name];
 var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped, custom1, custom2, custom3, custom4, custom5 ];
@@ -120,8 +118,8 @@ layoutAllSymptoms = {
 // Set up the new graph with the data, layout, and options //
 Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymptoms);
 // Click function on the bars - get the x axis of what is clicked //
-AllSymptoms.on('plotly_click', function(d){
-  var passedData = d.points[0].data.x[d.points[0].pointNumber];
+AllSymptoms.on('plotly_click', function(data){
+  var passedData = data.points[0].x;
   // If statements for each possible bar - call that click function when it's that item //
   alert(passedData);
   if (passedData == "Alcohol") {
