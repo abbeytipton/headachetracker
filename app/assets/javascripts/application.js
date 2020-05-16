@@ -19,24 +19,24 @@ $(document).on('turbolinks:load', function() {
 
   // Get each trigger //
   var total = $('#total').text();
-  var chocolate = $('#chocolate').text() / total * 100;
-  var dehydrated = $('#dehydrated').text() / total * 100;
-  var alcohol = $('#alcohol').text() / total * 100;
-  var stressed = $('#stressed').text() / total * 100;
-  var sleep = $('#sleep').text() / total * 100;
-  var lights = $('#lights').text() / total * 100;
-  var eye_strain = $('#eye_strain').text() / total * 100;
-  var exercise = $('#exercise').text() / total * 100;
-  var period = $('#period').text() / total * 100;
-  var overeating = $('#overeating').text() / total * 100;
+  var chocolate = Math.floor($('#chocolate').text() / total * 100);
+  var dehydrated = Math.floor($('#dehydrated').text() / total * 100);
+  var alcohol = Math.floor($('#alcohol').text() / total * 100);
+  var stressed = Math.floor($('#stressed').text() / total * 100);
+  var sleep = Math.floor($('#sleep').text() / total * 100);
+  var lights = Math.floor($('#lights').text() / total * 100);
+  var eye_strain = Math.floor($('#eye_strain').text() / total * 100);
+  var exercise = Math.floor($('#exercise').text() / total * 100);
+  var period = Math.floor($('#period').text() / total * 100);
+  var overeating = Math.floor($('#overeating').text() / total * 100);
   var medicine = $('#medicine').text();
-  var medicine_helped = $('#medicine_helped').text() / total * 100;
+  var medicine_helped = Math.floor($('#medicine_helped').text() / total * 100;
   // Get the custom trigger amounts and names //
-  var custom1 = $('#custom1').text() / total * 100;
-  var custom2 = $('#custom2').text() / total * 100;
-  var custom3 = $('#custom3').text() / total * 100;
-  var custom4 = $('#custom4').text() / total * 100;
-  var custom5 = $('#custom5').text() / total * 100;
+  var custom1 = Math.floor($('#custom1').text() / total * 100);
+  var custom2 = Math.floor($('#custom2').text() / total * 100);
+  var custom3 = Math.floor($('#custom3').text() / total * 100);
+  var custom4 = Math.floor($('#custom4').text() / total * 100);
+  var custom5 = Math.floor($('#custom5').text() / total * 100);
   var trigger1Name = $('#trigger1Name').text();
   var trigger2Name = $('#trigger2Name').text();
   var trigger3Name = $('#trigger3Name').text();
