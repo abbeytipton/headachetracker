@@ -541,11 +541,13 @@ Plotly.newPlot('custom1Symptoms', clickedGraph, layoutClickedGraph, optionsClick
 
 function BarClick(divToFadeIn) {
   var update = {
-    title: custom1Title,
     labels: custom1Labels,
     values: custom1Values
 };
-Plotly.restyle(clickedGraph, update);
+var updateLayout = {
+  title: custom1Title
+};
+Plotly.restyle('custom1Symptoms', update, updateLayout, optionsClickedGraph);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
