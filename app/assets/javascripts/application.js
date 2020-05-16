@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function() {
   var period = Math.floor($('#period').text() / total * 100);
   var overeating = Math.floor($('#overeating').text() / total * 100);
   var medicine = $('#medicine').text();
-  var medicine_helped = Math.floor($('#medicine_helped').text() / total * 100;
+  var medicine_helped = Math.floor($('#medicine_helped').text() / total * 100);
   // Get the custom trigger amounts and names //
   var custom1 = Math.floor($('#custom1').text() / total * 100);
   var custom2 = Math.floor($('#custom2').text() / total * 100);
