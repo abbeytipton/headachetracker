@@ -509,12 +509,13 @@ Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optio
 
 var custom1Labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
 var custom1Title = trigger1Name;
+var custom1Values = custom1, no_custom1
 var clickedGraphLabels;
 var clickedGraphTitle;
 
 var clickedGraph = [{
-  values: [stressed, no_stress],
-  labels: clickedGraphLabels,
+  values: custom1Values,
+  labels: custom1Labels,
   type: 'pie',
   textinfo: 'none',
   hovertemplate: "%{label} %{value}% of the time <extra></extra>",
@@ -544,7 +545,7 @@ function BarClick(divToFadeIn) {
   alert(divToFadeIn);
   clickedGraphLabels = custom1Labels;
   clickedGraphTitle = custom1Title;
-  Plotly.newPlot('custom1Holder', clickedGraph, layoutClickedGraph, optionsClickedGraph);
+  Plotly.newPlot('custom1Symptoms', clickedGraph, layoutClickedGraph, optionsClickedGraph);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
