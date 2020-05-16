@@ -506,53 +506,64 @@ var optionsstressSymptoms = {
 };
 Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optionsstressSymptoms);
 
-var custom1Labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
-var custom1Title = trigger1Name;
-var custom1Values = [custom1, no_custom1]
-
-var clickedGraph = [{
-  values: [],
-  labels: [],
-  type: 'pie',
-  textinfo: 'none',
-  hovertemplate: "%{label} %{value}% of the time <extra></extra>",
-  marker: { colors: ['purple', 'teal']}
-}];
-var layoutClickedGraph = {
-  height: 500,
-  width: 600,
-  hovermode: "closest",
-  xaxis: { domain: 550 },
-  hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
-  // Set background color, size, font //
-  plot_bgcolor: "transparent",
-  paper_bgcolor: "transparent",
-  autosize: false,
-  showlegend: true,
-	legend: {"orientation": "h"},
-  font: {family: 'Poppins'},
-  title: "blank",
-};
-var optionsClickedGraph = {
-    // Turn off certain mode bar buttons //
-    displaylogo: false,
-};
-Plotly.newPlot('custom1Symptoms', clickedGraph, layoutClickedGraph, optionsClickedGraph);
-
 function BarClick(divToFadeIn) {
-  var update = {
-    labels: custom1Labels,
-    values: custom1Values
-};
-var updateLayout = {
-  title: custom1Title
-};
-Plotly.redraw('custom1Symptoms', update, updateLayout, optionsClickedGraph);
+changeGraph(1);
 	$('.children').fadeOut().promise().done(function () {
-    $("#"+divToFadeIn).fadeIn(1000);
+    $("#custom1Holder").fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
 });
 };
+
+function changeGraph(graphType) {
+    var traces = [];
+    var graph_types = [];
+    var title;
+    var labels;
+    var values;
+    var myDiv = document.getElementById("custom1Symptoms");
+    switch (graphType) {
+    case 1:
+        title = trigger1Name
+        labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
+        values = [custom1, no_custom1]
+        break;
+    case 2:
+        graph_types.push("bar");
+        break;
+    default:
+        graph_types.push("scatter");
+    }
+    traces.push({
+      values: values,
+      labels: labels,
+      type: 'pie',
+      textinfo: 'none',
+      hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+      marker: { colors: ['purple', 'teal']}
+    });
+
+    var layout = {
+      height: 500,
+      width: 600,
+      hovermode: "closest",
+      xaxis: { domain: 550 },
+      hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+      // Set background color, size, font //
+      plot_bgcolor: "transparent",
+      paper_bgcolor: "transparent",
+      autosize: false,
+      showlegend: true,
+      legend: {"orientation": "h"},
+      font: {family: 'Poppins'},
+      title: title
+    };
+    var optionsClickedGraph = {
+        // Turn off certain mode bar buttons //
+        displaylogo: false,
+    };
+
+    Plotly.newPlot(myDiv, traces, layout, options);
+}
 
 // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
 $(document).on("click", "#moreClick", function(e){
