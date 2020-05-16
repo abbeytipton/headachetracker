@@ -123,6 +123,7 @@ Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymp
 AllSymptoms.on('plotly_click', function(d){
   var passedData = d.points[0].data.x[d.points[0].pointNumber];
   // If statements for each possible bar - call that click function when it's that item //
+  alert(passedData);
   if (passedData == "Alcohol") {
 	   BarClick("alcoholHolder");
    }
@@ -509,6 +510,7 @@ var optionsstressSymptoms = {
 Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optionsstressSymptoms);
 
 function BarClick(divToFadeIn) {
+  alert(divToFadeIn);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
