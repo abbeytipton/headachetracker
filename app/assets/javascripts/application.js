@@ -557,7 +557,7 @@ function changeGraph(graphType) {
       font: {family: 'Poppins'},
       title: title
     };
-    var optionsClickedGraph = {
+    var options = {
         // Turn off certain mode bar buttons //
         displaylogo: false,
     };
