@@ -547,7 +547,7 @@ function BarClick(divToFadeIn) {
 var updateLayout = {
   title: custom1Title
 };
-Plotly.restyle('custom1Symptoms', update, updateLayout, optionsClickedGraph);
+Plotly.redraw('custom1Symptoms', update, updateLayout, optionsClickedGraph);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
