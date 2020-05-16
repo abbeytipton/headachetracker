@@ -121,7 +121,6 @@ Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymp
 AllSymptoms.on('plotly_click', function(data){
   var passedData = data.points[0].x;
   // If statements for each possible bar - call that click function when it's that item //
-  alert(passedData);
   if (passedData == "Alcohol") {
 	   BarClick("alcoholHolder");
    }
@@ -509,12 +508,12 @@ Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optio
 
 var custom1Labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
 var custom1Title = trigger1Name;
-var custom1Values = custom1, no_custom1
+var custom1Values = [custom1, no_custom1]
 var clickedGraphLabels;
 var clickedGraphTitle;
 
 var clickedGraph = [{
-  values: custom1Values,
+  values: ['Value 1'],
   labels: custom1Labels,
   type: 'pie',
   textinfo: 'none',
@@ -534,7 +533,7 @@ var layoutClickedGraph = {
   showlegend: true,
 	legend: {"orientation": "h"},
   font: {family: 'Poppins'},
-  title: clickedGraphTitle,
+  title: custom1Title,
 };
 var optionsClickedGraph = {
     // Turn off certain mode bar buttons //
@@ -542,10 +541,9 @@ var optionsClickedGraph = {
 };
 
 function BarClick(divToFadeIn) {
-  alert(divToFadeIn);
   clickedGraphLabels = custom1Labels;
   clickedGraphTitle = custom1Title;
-  Plotly.newPlot('custom1Symptoms', clickedGraph, layoutClickedGraph, optionsClickedGraph);
+  Plotly.newPlot('custom1Symptoms', clickedGraph, [custom1Values], layoutClickedGraph, optionsClickedGraph);
 	$('.children').fadeOut().promise().done(function () {
     $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
