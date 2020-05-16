@@ -17,8 +17,7 @@
 
 $(document).on('turbolinks:load', function() {
 
-  // Access the spans in the HTML to get each piece of info about the user //
-  // Multiply by 100 so it will show up as percentage correctly //
+  // Get each trigger //
   var total = $('#total').text();
   var chocolate = $('#chocolate').text() / total * 100;
   var dehydrated = $('#dehydrated').text() / total * 100;
@@ -30,6 +29,9 @@ $(document).on('turbolinks:load', function() {
   var exercise = $('#exercise').text() / total * 100;
   var period = $('#period').text() / total * 100;
   var overeating = $('#overeating').text() / total * 100;
+  var medicine = $('#medicine').text();
+  var medicine_helped = $('#medicine_helped').text() / total * 100;
+  // Get the custom trigger amounts and names //
   var custom1 = $('#custom1').text() / total * 100;
   var custom2 = $('#custom2').text() / total * 100;
   var custom3 = $('#custom3').text() / total * 100;
@@ -40,8 +42,7 @@ $(document).on('turbolinks:load', function() {
   var trigger3Name = $('#trigger3Name').text();
   var trigger4Name = $('#trigger4Name').text();
   var trigger5Name = $('#trigger5Name').text();
-  var medicine = $('#medicine').text();
-  var medicine_helped = $('#medicine_helped').text() / total * 100;
+  // Get the "no" triggers - subtract the trigger amount from 100 to get the percent the trigger didn't happen //
   var medicine_didnt_help = 100 - medicine_helped;
   var no_alcohol = 100 - alcohol;
   var no_chocolate = 100 - chocolate;
@@ -59,52 +60,32 @@ $(document).on('turbolinks:load', function() {
   var no_custom4 = 100 - custom4;
   var no_custom5 = 100 - custom5;
 
-  // All Symptoms (Trigger) graph - these are x and y coordinates //
+  // Set up the main graph for all triggers //
   var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Lack of Sleep', 'Medicine Helped', trigger1Name, trigger2Name, trigger3Name, trigger4Name, trigger5Name];
   var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, sleep, medicine_helped, custom1, custom2, custom3, custom4, custom5 ];
-  // Get the div where the graph goes //
   if (document.getElementById('allSymptoms') != null) {
     var AllSymptoms = document.getElementById('allSymptoms'),
-    // Set up data set coordinates, set to bar graph, set colors of bars //
-    dataAllSymptoms = [{
-      x: xAllSymptoms,
-      y: yAllSymptoms,
-      type: 'bar',
-      // Filter out items that are less than 1 - this means all triggers that aren't included by this user and items that are at 0 //
-      transforms: [{
-        type: 'filter',
-        target: 'y',
-        operation: '>',
-        value: 1}],
-        marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin', 'tomato']},
-        // Set the hover template to show the right data //
-        hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>"
-      }],
-      layoutAllSymptoms = {
-        // Set background color, size, font //
-        plot_bgcolor: "transparent",
-        paper_bgcolor: "transparent",
-        autosize: false,
-        width: 600,
-        height: 500,
-        font: {family: 'Poppins'},
-        title: "All Triggers",
-        // Set the hovermode to only show the x coordinate and set label styling //
-        hovermode: "closest",
-        hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
-        yaxis: { fixedrange: true, range: [0, 100], showTickLabels: false, tickmode: "linear", showgrid: false,
-                 tick0: 0, dtick: 10, automargin: true,
-                 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
-        xaxis: { tickangle: 80, automargin: true },},
-      optionsAllSymptoms = { scrollZoom: false, showLink: false,displaylogo: false,
-                             modeBarButtonsToRemove: [ 'sendDataToCloud', 'zoom2d', 'pan', 'pan2d','autoScale2d', 'lasso2d', 'autoScale2d','resetScale2d', 'toggleSpikelines','dragmode', 'select2d', 'hoverClosestCartesian','hoverCompareCartesian', 'displaylogo'] };
+    dataAllSymptoms = [{ x: xAllSymptoms, y: yAllSymptoms, type: 'bar',
+                        transforms: [{ type: 'filter', target: 'y', operation: '>', value: 1}],
+                        marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin', 'tomato']},
+                        hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>" }],
+      layoutAllSymptoms = { plot_bgcolor: "transparent", paper_bgcolor: "transparent", autosize: false,
+                            width: 600, height: 500, font: {family: 'Poppins'}, title: "All Triggers",
+                            hovermode: "closest", hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+                            yaxis: { fixedrange: true, range: [0, 100], showTickLabels: false, tickmode: "linear", showgrid: false,
+                            tick0: 0, dtick: 10, automargin: true,
+                            title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
+                            xaxis: { tickangle: 80, automargin: true },},
+      optionsAllSymptoms = { scrollZoom: false, showLink: false,displaylogo: false, modeBarButtonsToRemove: [ 'sendDataToCloud', 'zoom2d', 'pan', 'pan2d','autoScale2d', 'lasso2d', 'autoScale2d','resetScale2d', 'toggleSpikelines','dragmode', 'select2d', 'hoverClosestCartesian','hoverCompareCartesian', 'displaylogo'] };
       Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymptoms);
 
+      // Click function on the bars - get the bar clicked on and pass it to BarClick //
       AllSymptoms.on('plotly_click', function(data){
           var passedData = data.points[0].x;
           BarClick(passedData);
       });
 
+      // Show the pointer mouse on hover of the bars //
       dragLayer = document.getElementsByClassName('nsewdrag')[0]
       AllSymptoms.on('plotly_hover', function(data){
           dragLayer.style.cursor = 'pointer'
@@ -113,6 +94,7 @@ $(document).on('turbolinks:load', function() {
           dragLayer.style.cursor = ''
       });
 
+      // Click function for the bars - change the graph (pass in the clicked on bar), fade out everything, fade in the main graph and clicked graph //
       function BarClick(graphToShow) {
         changeGraph(graphToShow);
         $('.children').fadeOut().promise().done(function () {
@@ -121,6 +103,7 @@ $(document).on('turbolinks:load', function() {
         });
       };
 
+      // Set up the clicked on graph - set up title, labels, and values with switch case based on what's been clicked on //
       function changeGraph(graphToShow) {
         var traces = [];
         var title;
