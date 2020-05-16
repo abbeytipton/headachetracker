@@ -20,5 +20,5 @@ What's in progress?
 - Currently working on adding customization to the logs
 
 Left to do:
-- Add the custom triggers to the logs schema
+- Make sure the checkboxes for custom triggers work on the logs page
 - Use information to determine what shows on graphing page
