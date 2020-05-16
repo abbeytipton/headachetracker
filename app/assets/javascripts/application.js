@@ -30,6 +30,16 @@ var eye_strain = $('#eye_strain').text() / total * 100;
 var exercise = $('#exercise').text() / total * 100;
 var period = $('#period').text() / total * 100;
 var overeating = $('#overeating').text() / total * 100;
+var custom1 = $('#custom1').text() / total * 100;
+var custom2 = $('#custom2').text() / total * 100;
+var custom3 = $('#custom3').text() / total * 100;
+var custom4 = $('#custom4').text() / total * 100;
+var custom5 = $('#custom5').text() / total * 100;
+var trigger1Name = $('#trigger1Name').text();
+var trigger2Name = $('#trigger2Name').text();
+var trigger3Name = $('#trigger3Name').text();
+var trigger4Name = $('#trigger4Name').text();
+var trigger5Name = $('#trigger5Name').text();
 var medicine = $('#medicine').text();
 var medicine_helped = $('#medicine_helped').text() / total * 100;
 var medicine_didnt_help = 100 - medicine_helped;
@@ -43,11 +53,17 @@ var no_eyestrain = 100 - eye_strain;
 var no_lights = 100 - lights;
 var no_sleep = 100 - sleep;
 var no_stress = 100 - stressed;
+var no_custom1 = 100 - custom1;
+var no_custom2 = 100 - custom2;
+var no_custom3 = 100 - custom3;
+var no_custom4 = 100 - custom4;
+var no_custom5 = 100 - custom5;
+
 
 
 // All Symptoms (Trigger) graph - these are x and y coordinates //
-var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped'];
-var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped ];
+var xAllSymptoms = ['Chocolate', 'Alcohol', 'Stress', 'Bright Lights', 'Eye Strain', 'Over Exercising', 'During Period', 'Overeating', 'Dehydration', 'Medicine Helped', trigger1Name, trigger2Name, trigger3Name, trigger4Name, trigger5Name];
+var yAllSymptoms = [chocolate, alcohol, stressed, lights, eye_strain, exercise, period, overeating, dehydrated, medicine_helped, custom1, custom2, custom3, custom4, custom5 ];
 // Get the div where the graph goes //
 if (document.getElementById('allSymptoms') != null) {
 var AllSymptoms = document.getElementById('allSymptoms'),
@@ -62,7 +78,7 @@ dataAllSymptoms = [{
     target: 'y',
     operation: '>',
     value: 1}],
-		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal']},
+		marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin']},
   // Set the hover template to show the right data //
 		hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>"
   }],
