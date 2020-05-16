@@ -56,7 +56,7 @@ class LogsController < ApplicationController
   def logs_params
     params.require(:logs).permit(:userid, :date_started, :date_ended, :period, :dehydration,
                                 :exercise, :eye_strain, :lights, :sleep, :stress, :overeating,
-                                :medicine, :medicine_helped, :weather, :alcohol, :chocolate)
+                                :medicine, :medicine_helped, :weather, :alcohol, :chocolate, :custom1, :custom2, :custom3, :custom4, :custom5)
   end
 
 end

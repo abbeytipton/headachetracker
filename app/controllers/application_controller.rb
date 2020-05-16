@@ -19,6 +19,11 @@ class ApplicationController < ActionController::Base
   helper_method [:user_period]
   helper_method [:user_medicine]
   helper_method [:user_medicine_helped]
+  helper_method [:user_custom1]
+  helper_method [:user_custom2]
+  helper_method [:user_custom3]
+  helper_method [:user_custom4]
+  helper_method [:user_custom5]
   helper_method [:customized]
   helper_method [:customized_redirect]
   helper_method [:include_chocolate]
@@ -190,6 +195,26 @@ class ApplicationController < ActionController::Base
 
   def user_medicine_helped
     @user_medicine_helped ||= Logs.where(:userid => current_user.id, :medicine_helped => true).count
+  end
+
+  def user_custom1
+    @user_custom1 ||= Logs.where(:userid => current_user.id, :custom1 => true).count
+  end
+
+  def user_custom2
+    @user_custom2 ||= Logs.where(:userid => current_user.id, :custom2 => true).count
+  end
+
+  def user_custom3
+    @user_custom3 ||= Logs.where(:userid => current_user.id, :custom3 => true).count
+  end
+
+  def user_custom4
+    @user_custom4 ||= Logs.where(:userid => current_user.id, :custom4 => true).count
+  end
+
+  def user_custom5
+    @user_custom5 ||= Logs.where(:userid => current_user.id, :custom5 => true).count
   end
 
   # Method to require users to be logged in before accessing certain pages, redirects to login pages and flashes error messages if they are not logged in
