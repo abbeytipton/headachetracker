@@ -124,37 +124,49 @@ AllSymptoms.on('plotly_click', function(d){
   var passedData = d.points[0].data.x[d.points[0].pointNumber];
   // If statements for each possible bar - call that click function when it's that item //
   if (passedData == "Alcohol") {
-	   clickAlcohol();
+	   BarClick("alcoholHolder");
    }
   else if (passedData == "Medicine Helped") {
-  	clickMedicine();
+  	BarClick("medicineHolder");
   }
   else if (passedData == "Chocolate") {
-  	clickChocolate();
+  	BarClick("chocolateHolder");
   }
   else if (passedData == "Stress") {
-  	clickStress();
+  	BarClick("stressHolder");
   }
   else if (passedData == "Bright Lights") {
-  	clickLights();
+  	BarClick("lightsHolder");
   }
   else if (passedData == "Eye Strain") {
-  	clickEyestrain();
+  	BarClick("eyestrainHolder");
   }
   else if (passedData == "Over Exercising") {
-  	clickExercise();
+  	BarClick("exerciseHolder");
   }
   else if (passedData == "During Period") {
-  	clickPeriod();
+  	BarClick("periodHolder");
   }
   else if (passedData == "Overeating") {
-  	clickOvereating();
+  	BarClick("overeatingHolder");
   }
   else if (passedData == "Dehydration") {
-  	clickDehydrated();
+  	BarClick("dehydratedHolder");
   }
-  else if (passedData == "Dehydration") {
-  	clickDehydrated();
+  else if (passedData == trigger1Name) {
+  	BarClick("custom1Holder");
+  }
+  else if (passedData == trigger2Name) {
+    BarClick("custom2Holder");
+  }
+  else if (passedData == trigger3Name) {
+    BarClick("custom3Holder");
+  }
+  else if (passedData == trigger4Name) {
+    BarClick("custom4Holder");
+  }
+  else if (passedData == trigger5Name) {
+    BarClick("custom5Holder");
   }
 });
 // Sets the cursor to be a pointer when you mouseover a bar //
@@ -496,80 +508,9 @@ var optionsstressSymptoms = {
 };
 Plotly.newPlot('stressSymptoms', datastressSymptoms, layoutstressSymptoms, optionsstressSymptoms);
 
-// Click functions for each piece of the all triggers pie //
-function clickAlcohol(e) {
+function BarClick(divToFadeIn) {
 	$('.children').fadeOut().promise().done(function () {
-    $("#alcoholHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickChocolate(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#chocolateHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickDehydrated(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#dehydratedHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickOvereating(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#overeatingHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickPeriod(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#periodHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickExercise(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#exerciseHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickEyestrain(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#eyestrainHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickLights(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#lightsHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickSleep(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#sleepHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickStress(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#stressHolder").fadeIn(1000);
-		$("#triggerHolder").fadeIn(1000);
-});
-};
-
-function clickMedicine(e) {
-	$('.children').fadeOut().promise().done(function () {
-    $("#medicineHolder").fadeIn(1000);
+    $("#"+divToFadeIn).fadeIn(1000);
 		$("#triggerHolder").fadeIn(1000);
 });
 };
