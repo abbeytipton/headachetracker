@@ -1,20 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require jquery3
-//= require activestorage
-//= require turbolinks
-//= require_tree .
-
 $(document).on('turbolinks:load', function() {
 
   // Access the spans in the HTML to get each piece of info about the user //
@@ -92,306 +75,267 @@ $(document).on('turbolinks:load', function() {
         // Set the hovermode to only show the x coordinate and set label styling //
         hovermode: "closest",
         hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
-        yaxis: {
-          // Set up y axis, set to linear and set tick0 and dtick so the intervals will be right //
-          fixedrange: true,
-          range: [0, 100],
-          showTickLabels: false,
-          tickmode: "linear",
-          showgrid: false,
-          tick0: 0,
-          dtick: 10,
-          automargin: true,
-          title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
-          xaxis: {
-            // Set the angle so the labels all fit //
-            tickangle: 80,
-            automargin: true },
-          },
-          optionsAllSymptoms = {
-            // Turn off certain mode bar buttons //
-            scrollZoom: false,
-            showLink: false,
-            displaylogo: false,
-            modeBarButtonsToRemove: [ 'sendDataToCloud', 'zoom2d', 'pan', 'pan2d','autoScale2d', 'lasso2d', 'autoScale2d','resetScale2d', 'toggleSpikelines','dragmode', 'select2d', 'hoverClosestCartesian','hoverCompareCartesian', 'displaylogo']
-          };
-          // Set up the new graph with the data, layout, and options //
-          Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymptoms);
-          // Click function on the bars - get the x axis of what is clicked //
-          AllSymptoms.on('plotly_click', function(data){
-            var passedData = data.points[0].x;
-            BarClick(passedData);
-          });
+        yaxis: { fixedrange: true, range: [0, 100], showTickLabels: false, tickmode: "linear", showgrid: false,
+                 tick0: 0, dtick: 10, automargin: true,
+                 title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
+        xaxis: { tickangle: 80, automargin: true },},
+      optionsAllSymptoms = { scrollZoom: false, showLink: false,displaylogo: false,
+                             modeBarButtonsToRemove: [ 'sendDataToCloud', 'zoom2d', 'pan', 'pan2d','autoScale2d', 'lasso2d', 'autoScale2d','resetScale2d', 'toggleSpikelines','dragmode', 'select2d', 'hoverClosestCartesian','hoverCompareCartesian', 'displaylogo'] };
+      Plotly.newPlot('allSymptoms', dataAllSymptoms, layoutAllSymptoms, optionsAllSymptoms);
 
-          // Sets the cursor to be a pointer when you mouseover a bar //
-          dragLayer = document.getElementsByClassName('nsewdrag')[0]
-          AllSymptoms.on('plotly_hover', function(data){
-            dragLayer.style.cursor = 'pointer'
-          });
-          AllSymptoms.on('plotly_unhover', function(data){
-            dragLayer.style.cursor = ''
-          });
+      AllSymptoms.on('plotly_click', function(data){
+          var passedData = data.points[0].x;
+          BarClick(passedData);
+      });
 
-          function BarClick(graphToShow) {
-            changeGraph(graphToShow);
-            $('.children').fadeOut().promise().done(function () {
-              $("#clickedDiv").fadeIn(1000);
-              $("#triggerHolder").fadeIn(1000);
-            });
-          };
+      dragLayer = document.getElementsByClassName('nsewdrag')[0]
+      AllSymptoms.on('plotly_hover', function(data){
+          dragLayer.style.cursor = 'pointer'
+      });
+      AllSymptoms.on('plotly_unhover', function(data){
+          dragLayer.style.cursor = ''
+      });
 
-          function changeGraph(graphToShow) {
-            var traces = [];
-            var title;
-            var labels;
-            var values;
-            var clickedDiv = document.getElementById("clickedGraph");
-            switch (graphToShow) {
-              case "Chocolate":
-              title = "Chocolate";
-              labels = ['You had chocolate before the headache', 'You didn\'t have chocolate before the headache'];
-              values = [chocolate, no_chocolate];
-              break;
-              case "Alcohol":
-              title = "Alcohol";
-              labels = ['You had alcohol before the headache', 'You didn\'t have alcohol before the headache'];
-              values = [alcohol, no_alcohol];
-              break;
-              case "Stress":
-              title = "Stress";
-              labels = ['You experienced stress before the headache', 'You didnt\'t experience stress before the headache'];
-              values = [stress, no_stress];
-              break;
-              case "Bright Lights":
-              title = "Bright Lights";
-              labels = ['You experienced bright lights before the headache', 'You didnt\'t experience bright lights before the headache'];
-              values = [lights, no_lights];
-              break;
-              case "Eye Strain":
-              title = "Eye Strain";
-              labels = ['You experienced eyestrain before the headache', 'You didnt\'t experience eyestrain before the headache'];
-              values = [eyestrain, no_eyestrain];
-              break;
-              case "Over Exercising":
-              title = "Over Exercising";
-              labels = ['You were over exercising before the headache', 'You weren\'t over exercising before the headache'];
-              values = [exercising, no_exercise];
-              break;
-              case "During Period":
-              title = "During Period";
-              labels = ['You were on your period before the headache', 'You weren\'t on your period before the headache'];
-              values = [period, no_period];
-              break;
-              case "Overeating":
-              title = "Overeating";
-              labels = ['You were overeating before the headache', 'You weren\'t overeating before the headache'];
-              values = [overeating, no_overeating];
-              break;
-              case "Dehydration":
-              title = "Dehydration";
-              labels = ['You were dehydrated before the headache', 'You weren\'t dehydrated before the headache'];
-              values = [dehydrated, no_dehydrated];
-              break;
-              case "Medicine Helped":
-              title = "Medicine Helped";
-              labels = ['Medicine helped your headache', 'Medicine didn\'t help your headache'];
-              values = [medicine_helped, medicine_didnt_help];
-              break;
-              case "Lack of Sleep":
-              title = "Lack of Sleep";
-              labels = ['You experienced lack of sleep before the headache', 'You didnt\'t experience lack of sleep before the headache'];
-              values = [sleep, no_sleep];
-              break;
-              case trigger1Name:
-              title = trigger1Name;
-              labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
-              values = [custom1, no_custom1];
-              break;
-              case trigger2Name:
-              title = trigger2Name;
-              labels = ['You experienced ' + trigger2Name + ' before the headache', 'You didnt\'t experience ' + trigger2Name + ' before the headache'];
-              values = [custom2, no_custom2];
-              break;
-              case trigger3Name:
-              title = trigger3Name;
-              labels = ['You experienced ' + trigger3Name + ' before the headache', 'You didnt\'t experience ' + trigger3Name + ' before the headache'];
-              values = [custom3, no_custom3];
-              break;
-              case trigger4Name:
-              title = trigger4Name;
-              labels = ['You experienced ' + trigger4Name + ' before the headache', 'You didnt\'t experience ' + trigger4Name + ' before the headache'];
-              values = [custom4, no_custom4];
-              break;
-              case trigger5Name:
-              title = trigger5Name;
-              labels = ['You experienced ' + trigger5Name + ' before the headache', 'You didnt\'t experience ' + trigger5Name + ' before the headache'];
-              values = [custom5, no_custom5];
-              break;
-              default:
-              title = "problem";
-            }
-            traces.push({
-              values: values,
-              labels: labels,
-              type: 'pie',
-              textinfo: 'none',
-              hovertemplate: "%{label} %{value}% of the time <extra></extra>",
-              marker: { colors: ['purple', 'teal']}
-            });
-            var layout = {
-              height: 500,
-              width: 600,
-              hovermode: "closest",
-              xaxis: { domain: 550 },
-              hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
-              // Set background color, size, font //
-              plot_bgcolor: "transparent",
-              paper_bgcolor: "transparent",
-              autosize: false,
-              showlegend: true,
-              legend: {"orientation": "h"},
-              font: {family: 'Poppins'},
-              title: title
-            };
-            var options = {
-              // Turn off certain mode bar buttons //
-              displaylogo: false,
-            };
-            Plotly.newPlot(clickedDiv, traces, layout, options);
-          }
+      function BarClick(graphToShow) {
+        changeGraph(graphToShow);
+        $('.children').fadeOut().promise().done(function () {
+            $("#clickedDiv").fadeIn(1000);
+            $("#triggerHolder").fadeIn(1000);
+        });
+      };
 
-          // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
-          $(document).on("click", "#moreClick", function(e){
-            $("#dropdownMenu").toggle();
-          });
-
-          // Modal functions for the instructions and total headaches links //
-          // Get the modal
-          var modal = document.getElementById("Modal");
-
-          // Get the p inside the modal for text to be placed in //
-          var p = document.getElementById("pInsideModal");
-
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
-
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function() {
-            modal.style.display = "none";
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-
-          // Click function for instructions link from drop down menu //
-          $(document).on("click", "#totalClick", function(e){
-            modal.style.display = "block";
-            p.innerHTML = "You have logged " + total + " headaches so far.";
-          });
+      function changeGraph(graphToShow) {
+        var traces = [];
+        var title;
+        var labels;
+        var values;
+        var clickedDiv = document.getElementById("clickedGraph");
+        switch (graphToShow) {
+          case "Chocolate":
+            title = "Chocolate";
+            labels = ['You had chocolate before the headache', 'You didn\'t have chocolate before the headache'];
+            values = [chocolate, no_chocolate];
+            break;
+          case "Alcohol":
+            title = "Alcohol";
+            labels = ['You had alcohol before the headache', 'You didn\'t have alcohol before the headache'];
+            values = [alcohol, no_alcohol];
+            break;
+          case "Stress":
+            title = "Stress";
+            labels = ['You experienced stress before the headache', 'You didnt\'t experience stress before the headache'];
+            values = [stressed, no_stress];
+            break;
+          case "Bright Lights":
+            title = "Bright Lights";
+            labels = ['You experienced bright lights before the headache', 'You didnt\'t experience bright lights before the headache'];
+            values = [lights, no_lights];
+            break;
+          case "Eye Strain":
+            title = "Eye Strain";
+            labels = ['You experienced eyestrain before the headache', 'You didnt\'t experience eyestrain before the headache'];
+            values = [eye_strain, no_eyestrain];
+            break;
+          case "Over Exercising":
+            title = "Over Exercising";
+            labels = ['You were over exercising before the headache', 'You weren\'t over exercising before the headache'];
+            values = [exercising, no_exercise];
+            break;
+          case "During Period":
+            title = "During Period";
+            labels = ['You were on your period before the headache', 'You weren\'t on your period before the headache'];
+            values = [period, no_period];
+            break;
+          case "Overeating":
+            title = "Overeating";
+            labels = ['You were overeating before the headache', 'You weren\'t overeating before the headache'];
+            values = [overeating, no_overeating];
+            break;
+          case "Dehydration":
+            title = "Dehydration";
+            labels = ['You were dehydrated before the headache', 'You weren\'t dehydrated before the headache'];
+            values = [dehydrated, no_dehydrated];
+            break;
+          case "Medicine Helped":
+            title = "Medicine Helped";
+            labels = ['Medicine helped your headache', 'Medicine didn\'t help your headache'];
+            values = [medicine_helped, medicine_didnt_help];
+            break;
+          case "Lack of Sleep":
+            title = "Lack of Sleep";
+            labels = ['You experienced lack of sleep before the headache', 'You didnt\'t experience lack of sleep before the headache'];
+            values = [sleep, no_sleep];
+            break;
+          case trigger1Name:
+            title = trigger1Name;
+            labels = ['You experienced ' + trigger1Name + ' before the headache', 'You didnt\'t experience ' + trigger1Name + ' before the headache'];
+            values = [custom1, no_custom1];
+            break;
+          case trigger2Name:
+            title = trigger2Name;
+            labels = ['You experienced ' + trigger2Name + ' before the headache', 'You didnt\'t experience ' + trigger2Name + ' before the headache'];
+            values = [custom2, no_custom2];
+            break;
+          case trigger3Name:
+            title = trigger3Name;
+            labels = ['You experienced ' + trigger3Name + ' before the headache', 'You didnt\'t experience ' + trigger3Name + ' before the headache'];
+            values = [custom3, no_custom3];
+            break;
+          case trigger4Name:
+            title = trigger4Name;
+            labels = ['You experienced ' + trigger4Name + ' before the headache', 'You didnt\'t experience ' + trigger4Name + ' before the headache'];
+            values = [custom4, no_custom4];
+            break;
+          case trigger5Name:
+            title = trigger5Name;
+            labels = ['You experienced ' + trigger5Name + ' before the headache', 'You didnt\'t experience ' + trigger5Name + ' before the headache'];
+            values = [custom5, no_custom5];
+            break;
+          default:
+            title = "problem";
         }
+        traces.push({ values: values, labels: labels, type: 'pie', textinfo: 'none', hovertemplate: "%{label} %{value}% of the time <extra></extra>",
+                      marker: { colors: ['purple', 'teal']} });
+        var layout = { height: 500, width: 600, hovermode: "closest", xaxis: { domain: 550 },
+                      hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+                      plot_bgcolor: "transparent", paper_bgcolor: "transparent", autosize: false, showlegend: true,
+                      legend: {"orientation": "h"}, font: {family: 'Poppins'}, title: title };
+        var options = { displaylogo: false, };
+        Plotly.newPlot(clickedDiv, traces, layout, options);
+      }
 
-        // Log customization page starts here //
-        // Click functions for the next buttons that make the logging form visible item by item to the user //
-        var counter = 0;
+      // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
+      $(document).on("click", "#moreClick", function(e){
+        $("#dropdownMenu").toggle();
+      });
 
-        // When the one next button is clicked, start this function //
-        $(document).on("click", "#startBtn", function(e){
-          // Fade out the first div and fade in the second //
-          $("#startDiv").fadeOut(function() {
-            $("#questions").fadeIn(1500);
-            counter++;
-          });
-        });
+      // Modal functions for the instructions and total headaches links //
+      // Get the modal
+      var modal = document.getElementById("Modal");
 
-        var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
-        "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
-        "Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to five.", "Name your first custom trigger:", "Name your second custom trigger:", "Name your third custom trigger:", "Name your fourth custom trigger:", "Name your fifth custom trigger:"];
+      // Get the p inside the modal for text to be placed in //
+      var p = document.getElementById("pInsideModal");
 
-        var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13", "#hiddenERB14", "#hiddenERB15", "#hiddenERB16"];
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
 
-        var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
 
-        // Remove Turboklinks from the page so the jQuery will function correctly //
-        $(document).off("click", "#nextYes, #nextNo");
-        // Yes and no button click functions for non custom questions //
-        $(document).on('click', "#nextYes, #nextNo", function(event){
-          console.log(counter);
-          // Empty out the question //
-          $("#question").empty();
-          // Hide the previous text yes checkbox //
-          var checkboxToHide = erbCheckboxes[counter - 1];
-          $('#checkboxDiv').hide();
-          $(checkboxToHide).hide();
-          $('#checkboxNoOriginal, #checkboxNoReplacementCustom').hide();
-          // If it's more than 11 then we're on custom triggers //
-          if (counter >= 12) {
-            var previous = counter - 1;
-            $(textboxes[previous]).hide();
-            // If they click the no button, then go to the finish //
-            if (event.target.id == "nextNo")
-            {
-              $("#triggerTextBoxP").hide();
-              $("#waitIcon").fadeIn(500);
-              $("#waitIcon").fadeOut(500);
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
 
-              setTimeout(function () {
-                $("#questions").hide();
-                $("#finish").show();
-              }, 1100);
-            }
-            // If they click the add another button, then hide that trigger textbox and show the next one //
-            else {
+      // Click function for instructions link from drop down menu //
+      $(document).on("click", "#totalClick", function(e){
+        modal.style.display = "block";
+        p.innerHTML = "You have logged " + total + " headaches so far.";
+      });
+  }
 
-              ShowNextQuestion();
-            }
-          }
-          // If it's less than 11, then we're on the regular questions, so show the next one //
-          else {
-            ShowNextQuestion();
-          }
-        });
+    // Log customization page starts here //
+    // Click functions for the next buttons that make the logging form visible item by item to the user //
+    var counter = 0;
 
-        function ShowNextQuestion() {
-          // Get the next checkbox to shoow //
-          var checkboxToShow = erbCheckboxes[counter];
-          var textboxToShow = textboxes[counter];
-          // Fade in and then out the wait icon //
+    // When the one next button is clicked, start this function //
+    $(document).on("click", "#startBtn", function(e){
+      // Fade out the first div and fade in the second //
+      $("#startDiv").fadeOut(function() {
+        $("#questions").fadeIn(1500);
+        counter++;
+      });
+    });
+
+    var questions = ["placeholder", "Do you want to include overeating as a trigger?", "Do you want to include stress as a trigger?", "Do you want to include lack of sleep as a trigger?", "Do you want to include bright lights as a trigger?", "Do you want to include eyestrain as a trigger?",
+    "Do you want to include over exercising as a trigger?", "Do you want to include being on your period as a trigger?", "Do you want to include eating chocolate as a trigger?", "Do you want to include being dehydrated as a trigger?",
+    "Do you want to log whether you have taken medicine/whether it helped?", "Would you like to add custom triggers? You can add up to five.", "Name your first custom trigger:", "Name your second custom trigger:", "Name your third custom trigger:", "Name your fourth custom trigger:", "Name your fifth custom trigger:"];
+
+    var erbCheckboxes = ["placeholder", "#hiddenERB2", "#hiddenERB3", "#hiddenERB4", "#hiddenERB5", "#hiddenERB6", "#hiddenERB7", "#hiddenERB8", "#hiddenERB9", "#hiddenERB10", "#hiddenERB11", "#hiddenERB12", "#hiddenERB13", "#hiddenERB14", "#hiddenERB15", "#hiddenERB16"];
+
+    var textboxes = ["placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder", "#trigger1NameText", "#trigger2NameText", "#trigger3NameText", "#trigger4NameText", "#trigger5NameText"];
+
+    // Remove Turboklinks from the page so the jQuery will function correctly //
+    $(document).off("click", "#nextYes, #nextNo");
+    // Yes and no button click functions for non custom questions //
+    $(document).on('click', "#nextYes, #nextNo", function(event){
+      console.log(counter);
+      // Empty out the question //
+      $("#question").empty();
+      // Hide the previous text yes checkbox //
+      var checkboxToHide = erbCheckboxes[counter - 1];
+      $('#checkboxDiv').hide();
+      $(checkboxToHide).hide();
+      $('#checkboxNoOriginal, #checkboxNoReplacementCustom').hide();
+      // If it's more than 11 then we're on custom triggers //
+      if (counter >= 12) {
+        var previous = counter - 1;
+        $(textboxes[previous]).hide();
+        // If they click the no button, then go to the finish //
+        if (event.target.id == "nextNo")
+        {
+          $("#triggerTextBoxP").hide();
           $("#waitIcon").fadeIn(500);
           $("#waitIcon").fadeOut(500);
-          // This timeout function happens after 1100, so after the wait icon fades out //
+
           setTimeout(function () {
-            // Show the new checkboxes and question //
-            if (counter != 17) {
-              // If we're at 10 or less then we need to show the og checkbox //
-              if (counter <= 10)
-              {
-                $('#checkboxNoOriginal').show();
-                // Otherwise we need the custom trigger checkbox because it has a different picture //
-              } else {
-                $('#checkboxNoReplacementCustom').show();
-              }
-            }
-            // If the counter is 20 then it's the very last question so we don't need the add button //
-            if (counter == 17) {
-              $("#question").append(questions[counter]);
-              $('#checkboxDiv').hide();
-              $(textboxToShow).show();
-              // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
-            } else {
-              $(checkboxToShow).show();
-              $("#question").append(questions[counter]);
-              if (counter >= 12) {
-                $(textboxToShow).show();
-              }
-            }
-            // Increase the counter for the next click //
-            counter++;
+            $("#questions").hide();
+            $("#finish").show();
           }, 1100);
         }
+        // If they click the add another button, then hide that trigger textbox and show the next one //
+        else {
+
+          ShowNextQuestion();
+        }
+      }
+      // If it's less than 11, then we're on the regular questions, so show the next one //
+      else {
+        ShowNextQuestion();
+      }
+    });
+
+    function ShowNextQuestion() {
+      // Get the next checkbox to shoow //
+      var checkboxToShow = erbCheckboxes[counter];
+      var textboxToShow = textboxes[counter];
+      // Fade in and then out the wait icon //
+      $("#waitIcon").fadeIn(500);
+      $("#waitIcon").fadeOut(500);
+      // This timeout function happens after 1100, so after the wait icon fades out //
+      setTimeout(function () {
+        // Show the new checkboxes and question //
+        if (counter != 17) {
+          // If we're at 10 or less then we need to show the og checkbox //
+          if (counter <= 10)
+          {
+            $('#checkboxNoOriginal').show();
+            // Otherwise we need the custom trigger checkbox because it has a different picture //
+          } else {
+            $('#checkboxNoReplacementCustom').show();
+          }
+        }
+        // If the counter is 20 then it's the very last question so we don't need the add button //
+        if (counter == 17) {
+          $("#question").append(questions[counter]);
+          $('#checkboxDiv').hide();
+          $(textboxToShow).show();
+          // Otherwise, we're on the trigger questions so we need to fill in the textbox if the user didn't and get the next textbox //
+        } else {
+          $(checkboxToShow).show();
+          $("#question").append(questions[counter]);
+          if (counter >= 12) {
+            $(textboxToShow).show();
+          }
+        }
+        // Increase the counter for the next click //
+        counter++;
+      }, 1100);
+    }
 
 
-      });
+  });
