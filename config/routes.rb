@@ -16,13 +16,11 @@ Rails.application.routes.draw do
   get 'logs/index'
   resources :logs
   get 'logs/edit'
-  resources :logs
   get 'newlog', to: 'logs#new', as: 'newlog'
 
   # Log custom routes
-  resources :log_customization, only: [:new, :create, :edit]
+  resources :log_customization, only: [:new, :create]
   get 'log_customization/create', :to => 'log_customization#new'
-  get 'log_customization/edit', :to => 'log_customization#edit'
 
   # Graphs routes
   get 'graphs/index'
