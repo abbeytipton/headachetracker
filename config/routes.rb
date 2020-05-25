@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   # Graphs routes
   get 'graphs/index'
   resources :graphs
-  get 'graphs/edit'
-  resources :graphs
+  get '/graphs/editlogs', :to => redirect('/graphs/editlogs.html')
+
 
   # Graphs routes
   get 'home/index'
