@@ -9,4 +9,7 @@ before_action :require_user, only: [:index]
   def editlogs
   end
 
+  def show
+  end
+
 end
