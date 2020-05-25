@@ -202,10 +202,11 @@ $(document).on('turbolinks:load', function() {
                       legend: {"orientation": "h"}, font: {family: 'Poppins'}, title: title };
         var options = { displaylogo: false, };
         Plotly.newPlot(clickedDiv, traces, layout, options);
-      }
+      };
 
       // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
       $(document).on("click", "#moreClick", function(e){
+        alert("hey");
         $("#dropdownMenu").toggle();
       });
 
