@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Logs routes
   get 'logs/index'
   resources :logs
+  get 'logs/edit'
+  resources :logs
   get 'newlog', to: 'logs#new', as: 'newlog'
 
   # Log custom routes
