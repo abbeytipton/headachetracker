@@ -1,0 +1,100 @@
+<div>
+  <h2>Edit Logs</h2>
+</div>
+
+<!-- This table is hidden unless the user chooses to look at it in the more menu -->
+<table>
+  <tr>
+    <th>Headache Started</th>
+    <th>Headache Ended</th>
+    <th>Were you on your period?</th>
+    <th>Were you dehydrated?</th>
+    <th>Had you been exercising?</th>
+    <th>Did you have eye strain?</th>
+    <th>Were there bright lights near you?</th>
+    <th>Had you had too little sleep?</th>
+    <th>Were you feeling stressed?</th>
+    <th>Had you been overeating?</th>
+    <th>Had you been drinking alcohol?</th>
+    <th>Had you been eating chocolate?</th>
+    <th>Did you take medicine?</th>
+    <th>Did the medicine help?</th>
+  </tr>
+  <tr>
+    <% @Logs = Logs.all %>
+    <% @Logs.each do |log| %>
+    <% if log[:userid] == current_user.id %>
+    <td><%= log.date_started %></td>
+    <td><%= log.date_ended %></td>
+    <td>
+      <% if log.period == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.dehydration == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.exercise == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.eye_strain == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.lights == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.sleep == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.stress == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.overeating == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.alcohol == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td>
+      <% if log.chocolate == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    <td><%= log.medicine %></td>
+    <td>
+      <% if log.medicine_helped == true %>
+        <%= image_tag("yes.png") %>
+      <% else %>
+        <%= image_tag("no.png") %>
+      <% end %></td>
+    </tr>
+    <% end %>
+    <% end %>
+
+</table>
