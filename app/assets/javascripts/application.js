@@ -206,7 +206,6 @@ $(document).on('turbolinks:load', function() {
 
       // Toggle the dropdown menu button to show/hide the menu when the button is clicked //
       $(document).on("click", "#moreClick", function(e){
-        alert("hey");
         $("#dropdownMenu").toggle();
       });
 

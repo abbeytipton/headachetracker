@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   # Graphs routes
   get 'graphs/index'
   resources :graphs
+  get 'graphs/edit'
+  resources :graphs
 
   # Graphs routes
   get 'home/index'
