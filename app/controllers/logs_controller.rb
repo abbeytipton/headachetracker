@@ -16,6 +16,9 @@ class LogsController < ApplicationController
     @logs = Logs.new
   end
 
+  def show
+  end
+
 # Defines what new log is and saves
   def create
     @logs = Logs.new(logs_params)
