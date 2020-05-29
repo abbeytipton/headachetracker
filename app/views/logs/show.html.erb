@@ -7,7 +7,7 @@
   <tr>
     <th>Headache Started</th>
     <th>Headache Ended</th>
-    
+
     <% if include_period == 1 %>
       <th>Were you on your period?</th>
     <% end %>
@@ -197,7 +197,7 @@
 
     <% if include_trigger1 == 1 %>
       <td>
-        <% if log.trigger1 == true %>
+        <% if log.custom1 == true %>
           <%= image_tag("yes.png") %>
         <% else %>
           <%= image_tag("no.png") %>
@@ -207,7 +207,7 @@
 
     <% if include_trigger2 == 1 %>
       <td>
-        <% if log.trigger2 == true %>
+        <% if log.custom2 == true %>
           <%= image_tag("yes.png") %>
         <% else %>
           <%= image_tag("no.png") %>
@@ -217,7 +217,7 @@
 
     <% if include_trigger3 == 1 %>
       <td>
-        <% if log.trigger3 == true %>
+        <% if log.custom3 == true %>
           <%= image_tag("yes.png") %>
         <% else %>
           <%= image_tag("no.png") %>
@@ -227,7 +227,7 @@
 
     <% if include_trigger4 == 1 %>
       <td>
-        <% if log.trigger4 == true %>
+        <% if log.custom4 == true %>
           <%= image_tag("yes.png") %>
         <% else %>
           <%= image_tag("no.png") %>
@@ -237,7 +237,7 @@
 
     <% if include_trigger5 == 1 %>
       <td>
-        <% if log.trigger5 == true %>
+        <% if log.custom5 == true %>
           <%= image_tag("yes.png") %>
         <% else %>
           <%= image_tag("no.png") %>
