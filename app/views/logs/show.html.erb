@@ -3,22 +3,78 @@
 </div>
 
 <!-- This table is hidden unless the user chooses to look at it in the more menu -->
-<table>
+<table class="graphTable">
   <tr>
     <th>Headache Started</th>
     <th>Headache Ended</th>
-    <th>Were you on your period?</th>
-    <th>Were you dehydrated?</th>
-    <th>Had you been exercising?</th>
-    <th>Did you have eye strain?</th>
-    <th>Were there bright lights near you?</th>
-    <th>Had you had too little sleep?</th>
-    <th>Were you feeling stressed?</th>
-    <th>Had you been overeating?</th>
-    <th>Had you been drinking alcohol?</th>
-    <th>Had you been eating chocolate?</th>
-    <th>Did you take medicine?</th>
-    <th>Did the medicine help?</th>
+    <% if include_period %>
+      <th>Were you on your period?</th>
+    <% end %>
+
+    <% if include_dehydrated %>
+      <th>Were you dehydrated?</th>
+    <% end %>
+
+    <% if include_exercise %>
+      <th>Had you been exercising?</th>
+    <% end %>
+
+    <% if include_eyestrain%>
+      <th>Did you have eye strain?</th>
+    <% end %>
+
+    <% if include_lights %>
+      <th>Were there bright lights near you?</th>
+    <% end %>
+
+    <% if include_sleep %>
+      <th>Had you had too little sleep?</th>
+    <% end %>
+
+    <% if include_stress %>
+      <th>Were you feeling stressed?</th>
+    <% end %>
+
+    <% if include_overeating %>
+      <th>Had you been overeating?</th>
+    <% end %>
+
+    <% if include_alcohol %>
+      <th>Had you been drinking alcohol?</th>
+    <% end %>
+
+    <% if include_chocolate %>
+      <th>Had you been eating chocolate?</th>
+    <% end %>
+
+    <% if include_medicine %>
+      <th>Did you take medicine?</th>
+    <% end %>
+
+    <% if include_medicine %>
+      <th>Did the medicine help?</th>
+    <% end %>
+
+    <% if include_trigger1 %>
+      <th><% user_trigger1 %></th>
+    <% end %>
+
+    <% if include_trigger2 %>
+      <th><% user_trigger2 %></th>
+    <% end %>
+
+    <% if include_trigger3 %>
+      <th><% user_trigger3 %></th>
+    <% end %>
+
+    <% if include_trigger4 %>
+      <th><% user_trigger4 %></th>
+    <% end %>
+
+    <% if include_trigger5 %>
+      <th><% user_trigger5 %></th>
+    <% end %>
+    
   </tr>
   <tr>
     <% @Logs = Logs.all %>
@@ -26,73 +82,168 @@
     <% if log[:userid] == current_user.id %>
     <td><%= log.date_started %></td>
     <td><%= log.date_ended %></td>
-    <td>
-      <% if log.period == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
+
+    <% if include_period %>
+      <td>
+        <% if log.period == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_dehydrated%>
     <td>
       <% if log.dehydration == true %>
         <%= image_tag("yes.png") %>
       <% else %>
         <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.exercise == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.eye_strain == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.lights == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.sleep == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.stress == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.overeating == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.alcohol == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td>
-      <% if log.chocolate == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
-    <td><%= log.medicine %></td>
-    <td>
-      <% if log.medicine_helped == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
-      <% end %></td>
+      <% end %>
+    </td>
+    <% end %>
+
+    <% if include_exercise %>
+      <td>
+        <% if log.exercise == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_eyestrain %>
+      <td>
+        <% if log.eye_strain == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_lights %>
+      <td>
+        <% if log.lights == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_sleep %>
+      <td>
+        <% if log.sleep == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_stress %>
+      <td>
+        <% if log.stress == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_overeating %>
+      <td>
+        <% if log.overeating == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_alcohol %>
+      <td>
+        <% if log.alcohol == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_chocolate %>
+      <td>
+        <% if log.chocolate == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_medicine %>
+      <td><%= log.medicine %></td>
+      <td>
+        <% if log.medicine_helped == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_trigger1 %>
+      <td>
+        <% if log.trigger1 == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_trigger2 %>
+      <td>
+        <% if log.trigger2 == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_trigger3 %>
+      <td>
+        <% if log.trigger3 == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_trigger4 %>
+      <td>
+        <% if log.trigger4 == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
+    <% if include_trigger5 %>
+      <td>
+        <% if log.trigger5 == true %>
+          <%= image_tag("yes.png") %>
+        <% else %>
+          <%= image_tag("no.png") %>
+        <% end %>
+      </td>
+    <% end %>
+
     </tr>
     <% end %>
     <% end %>
