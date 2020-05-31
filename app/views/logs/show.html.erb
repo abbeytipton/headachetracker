@@ -81,8 +81,8 @@
     <% @Logs = Logs.all %>
     <% @Logs.each do |log| %>
     <% if log[:userid] == current_user.id %>
-    <td><%= log.date_started.strftime("%m/%d/%Y %I:%M %p") %></td>
-    <td><%= log.date_ended.strftime("%m/%d/%Y %I:%M %p") %></td>
+    <td><%= log.date_started.strftime("%m/%d/%Y") %><br><%= log.date_started.strftime("%I:%M %p") %></td>
+    <td><%= log.date_ended.strftime("%m/%d/%Y") %><br><%= log.date_ended.strftime("%I:%M %p") %></td>
 
     <% if include_period == 1 %>
       <td>
