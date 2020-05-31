@@ -3,9 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .graphTable {
-  width: 95%;
+  width: 100%;
   border: 2px solid black;
-  margin-left: 2%;
   margin-top: 20px;
 }
 
@@ -16,17 +15,16 @@
   height: 10px;
   font-family: Trebuchet MS;
   font-size: 12px;
-  font-size: 12px;
-  width: 50px;
+  width: 60px;
 }
 
 .graphTable td {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 10px;
   font-family: Trebuchet MS;
   font-size: 12px;
-  width: 50px;
+  width: 60px;
 }
 
 .flexgraphs {
