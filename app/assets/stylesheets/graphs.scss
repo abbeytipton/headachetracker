@@ -19,11 +19,16 @@
 }
 
 .graphTable td {
-  margin-left: 30px;
   height: 10px;
   font-family: Trebuchet MS;
   font-size: 12px;
   width: 60px;
+}
+
+.graphTable td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flexgraphs {
