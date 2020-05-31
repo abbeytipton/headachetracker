@@ -57,23 +57,23 @@
     <% end %>
 
     <% if include_trigger1 == 1 %>
-      <th><% user_trigger1 %></th>
+      <th><%= user_trigger1 %></th>
     <% end %>
 
     <% if include_trigger2 == 1 %>
-      <th><% user_trigger2 %></th>
+      <th><%= user_trigger2 %></th>
     <% end %>
 
     <% if include_trigger3 == 1 %>
-      <th><% user_trigger3 %></th>
+      <th><%= user_trigger3 %></th>
     <% end %>
 
     <% if include_trigger4 == 1 %>
-      <th><% user_trigger4 %></th>
+      <th><%= user_trigger4 %></th>
     <% end %>
 
     <% if include_trigger5 == 1 %>
-      <th><% user_trigger5 %></th>
+      <th><%= user_trigger5 %></th>
     <% end %>
 
   </tr>
@@ -81,7 +81,7 @@
     <% @Logs = Logs.all %>
     <% @Logs.each do |log| %>
     <% if log[:userid] == current_user.id %>
-    <td><%= log.date_started %></td>
+    <td><%= DateTime.parse(log.date_started).strftime("%d/%m/%Y %H:%M") %></td>
     <td><%= log.date_ended %></td>
 
     <% if include_period == 1 %>
