@@ -76,6 +76,9 @@
       <th><%= user_trigger5 %></th>
     <% end %>
 
+    <th>Edit</th>
+    <th>Delete</th>
+
   </tr>
   <tr>
     <% @Logs = Logs.all %>
@@ -244,6 +247,13 @@
         <% end %>
       </td>
     <% end %>
+
+    <td>
+      <%= link_to "Edit Log", log, method: :edit, data: { confirm: "Are you sure?" } %>
+    </td>
+    <td>
+      <%= link_to "Delete Log", log, method: :delete, data: { confirm: "Are you sure?" } %>
+    </td>
 
     </tr>
     <% end %>
