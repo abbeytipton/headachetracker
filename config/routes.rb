@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'logs/edit'
   get 'newlog', to: 'logs#new', as: 'newlog'
   get 'logs/delete'
+  match 'logs/delete' => 'logs#delete', via: :delete
+
 
   # Log custom routes
   resources :log_customization, only: [:new, :create]

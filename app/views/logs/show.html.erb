@@ -252,7 +252,7 @@
       <%= link_to "Edit Log", log, method: :edit, data: { confirm: "Are you sure?" } %>
     </td>
     <td>
-      <%= link_to 'Delete Log',  log_path(@log, log.id),data: { confirm: 'Are you sure?' }, method: :delete %>
+      <%= link_to 'Delete Log', 'delete_path', method: :delete %>
     </td>
 
     </tr>
