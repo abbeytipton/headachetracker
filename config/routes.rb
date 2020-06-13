@@ -17,8 +17,6 @@ Rails.application.routes.draw do
   resources :logs
   get 'logs/edit'
   get 'newlog', to: 'logs#new', as: 'newlog'
-  get 'logs/delete'
-  match 'logs/delete' => 'logs#destroy', via: :delete
 
 
   # Log custom routes
