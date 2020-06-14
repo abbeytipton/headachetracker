@@ -9,51 +9,51 @@
     <th>Headache Ended</th>
 
     <% if include_period == 1 %>
-      <th>Were you on your period?</th>
+      <th>On or Near Period</th>
     <% end %>
 
     <% if include_dehydrated == 1 %>
-      <th>Were you dehydrated?</th>
+      <th>Dehydrated</th>
     <% end %>
 
     <% if include_exercise == 1 %>
-      <th>Had you been exercising?</th>
+      <th>Over Exercising?</th>
     <% end %>
 
     <% if include_eyestrain == 1 %>
-      <th>Did you have eye strain?</th>
+      <th>Eye Strain</th>
     <% end %>
 
     <% if include_lights == 1 %>
-      <th>Were there bright lights near you?</th>
+      <th>Bright Lights</th>
     <% end %>
 
     <% if include_sleep == 1 %>
-      <th>Had you had too little sleep?</th>
+      <th>Lack of Sleep</th>
     <% end %>
 
     <% if include_stress == 1 %>
-      <th>Were you feeling stressed?</th>
+      <th>Stress</th>
     <% end %>
 
     <% if include_overeating == 1 %>
-      <th>Had you been overeating?</th>
+      <th>Overeating</th>
     <% end %>
 
     <% if include_alcohol == 1 %>
-      <th>Had you been drinking alcohol?</th>
+      <th>Alcohol</th>
     <% end %>
 
     <% if include_chocolate == 1 %>
-      <th>Had you been eating chocolate?</th>
+      <th>Chocolate</th>
     <% end %>
 
     <% if include_medicine == 1 %>
-      <th>Did you take medicine?</th>
+      <th>Took Medicine</th>
     <% end %>
 
     <% if include_medicine == 1 %>
-      <th>Did the medicine help?</th>
+      <th>Medicine Helped</th>
     <% end %>
 
     <% if include_trigger1 == 1 %>
@@ -249,10 +249,10 @@
     <% end %>
 
     <td>
-      <%= link_to "Edit Log", log, method: :edit, data: { confirm: "Are you sure?" } %>
+      <%= button_to 'Edit Log', log, method: :edit, class: 'tableBtns' %>
     </td>
     <td>
-      <%= button_to 'Delete Log', log, method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')", class: 'tableBtns' %>
+      <%= button_to 'Delete Log', log, method: :delete, :onclick => "return confirm('Are you sure you want to delete this log?')", class: 'tableBtns' %>
 
 
     </td>
