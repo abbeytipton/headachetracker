@@ -30,19 +30,16 @@ class LogsController < ApplicationController
     end
   end
 
-# Deletes a product
   def destroy
     Logs.find(params[:id]).destroy
     flash[:delete] = " Log deleted successfully! "
     redirect_to '/logs/index'
   end
 
-# Edits a product
   def edit
     @logs = Logs.find(params[:id])
   end
 
-# Updates a product based on user input
   def update
     @logs = Logs.find(params[:id])
     if @logs.update(logs_params)
