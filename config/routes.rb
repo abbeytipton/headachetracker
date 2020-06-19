@@ -14,13 +14,8 @@ Rails.application.routes.draw do
 
   # Logs routes
   get 'logs/index'
-  resources :logs, only: [:show, :edit, :update]
-  get 'logs/edit'
+  resources :logs, only
   get 'newlog', to: 'logs#new', as: 'newlog'
-
-  resources :logs do
-    resources :edit
-end
 
 
   # Log custom routes
