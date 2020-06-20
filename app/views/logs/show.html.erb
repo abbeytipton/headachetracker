@@ -249,7 +249,7 @@
     <% end %>
 
     <td>
-      <%= link_to 'Edit Your Information', edit_log_path(@log), class: 'btn' %>
+      <%= link_to 'Edit Your Information', edit_log_path(log), class: 'btn' %>
     </td>
     <td>
       <%= button_to 'Delete Log', log, method: :delete, :onclick => "return confirm('Are you sure you want to delete this log?')", class: 'tableBtns' %>
