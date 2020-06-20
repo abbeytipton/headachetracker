@@ -37,7 +37,6 @@ class LogsController < ApplicationController
   end
 
   def edit
-    @logs = Logs.find(params[:id])
   end
 
   def update
