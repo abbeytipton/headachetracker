@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :logs, only: [:show, :edit, :update]
   get 'logs/edit'
   get 'newlog', to: 'logs#new', as: 'newlog'
+  post "logs/:id/edit"    => "logs#edit"
 
 
   # Log custom routes
