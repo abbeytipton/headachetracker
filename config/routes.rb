@@ -14,10 +14,10 @@ Rails.application.routes.draw do
 
   # Logs routes
   get 'logs/index'
-  resources :logs, only: [:show, :edit, :update]
+  resources :logs, only: [:index, :show, :new, :create, :edit, :update]
   get 'logs/edit'
   get 'newlog', to: 'logs#new', as: 'newlog'
-  post "logs/:id/edit"    => "logs#edit"
+  post "logs/:id/edit", :to => "logs#edit"
 
 
   # Log custom routes
