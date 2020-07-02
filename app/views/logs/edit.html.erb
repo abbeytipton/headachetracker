@@ -1,8 +1,10 @@
 <h1>Edit Log</h1>
 
 <%= form_for @logs do |f| %>
+<div class="flexLabels">
   <%= f.label 'Date Started' %>
   <%= f.text_field :date_started %><br>
+</div>
 
   <%= f.label 'Date Ended' %>
   <%= f.text_field :date_ended %><br>
