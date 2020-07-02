@@ -117,3 +117,7 @@
   cursor: pointer;
   outline: none;
 }
+
+.flexLabels {
+  display: flex;
+}
