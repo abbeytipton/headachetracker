@@ -120,8 +120,12 @@
 
 .flexLabels {
   display: flex;
-  width: 80%;
-  margin-left: 10%;
+  width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.flexLabels label {
+  width: 200px;
+  font-size: 16px;
 }
