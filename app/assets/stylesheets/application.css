@@ -134,12 +134,12 @@
 }
 
 .flexLabels label {
-  width: 70%;
+  width: 60%;
   font-size: 16px;
 }
 
 .editDate {
-    width: 70%;
+    width: 90%;
     font-size: 14px;
     margin-bottom: 10px;
 }
