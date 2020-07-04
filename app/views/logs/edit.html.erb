@@ -4,12 +4,12 @@
 
 <div class="flexLabels">
   <%= f.label 'Date Started' %>
-  <%= f.datetime_field :date_started, required: true, class: 'oneField', value: log.date_ended.strftime('%Y-%m-%dT%H:%M') %><br/>
+  <%= f.datetime_field :date_started, required: true, class: 'oneField', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %><br/>
 </div>
 
 <div class="flexLabels">
   <%= f.label 'Date Ended' %>
-  <%= f.datetime_field :date_ended, required: true, class: 'oneField', value: log.date_ended.strftime('%Y-%m-%dT%H:%M') %><br/>
+  <%= f.datetime_field :date_ended, required: true, class: 'oneField', value: @logs.date_ended.strftime('%Y-%m-%dT%H:%M') %><br/>
 </div>
 
 <div class="flexLabels">
