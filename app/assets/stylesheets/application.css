@@ -118,14 +118,14 @@
   outline: none;
 }
 
-.flexLabels, .editDate {
+.flexLabels {
   display: flex;
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.flexLabels label {
+.flexLabels label, .editDate {
   width: 200px;
   font-size: 16px;
 }
