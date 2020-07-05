@@ -120,7 +120,8 @@
 
 .parentFlex {
   display: flex;
-  width: 1000px;
+  width: 50%;
+  margin-left: 25%;
   flex-direction: column;
   justify-content: center;
 }
@@ -128,8 +129,7 @@
 .flexLabels {
   display: flex;
   width: 600px;
-  justify-content: center;
-  border: 2px solid red;
+  justify-content: flex-start;
 }
 
 .flexLabels h4 {
