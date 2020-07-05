@@ -128,22 +128,19 @@
   display: flex;
   width: 1000px;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .flexLabels label {
-  width: 600px;
+  width: 500px;
   font-size: 16px;
-  align-self: flex-start;
 }
 
 .editDate {
-    width: 700px;
-    font-size: 14px;
+    width: 500px;
+    font-size: 12px;
     margin-bottom: 10px;
 }
 
 .editCheckbox {
   margin-top: 10px;
-  align-self: flex-start;
 }
