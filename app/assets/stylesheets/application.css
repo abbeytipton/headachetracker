@@ -120,27 +120,27 @@
 
 .parentFlex {
   display: flex;
-  width: 50%;
+  width: 700px;
   margin-left: 10%;
   flex-direction: column;
 }
 
 .flexLabels {
   display: flex;
-  width: 250%;
+  width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
 .flexLabels label {
-  width: 60%;
+  width: 300px;
   font-size: 16px;
   align-self: flex-start;
   border: 2px solid orange;
 }
 
 .editDate {
-    width: 200%;
+    width: 300px;
     font-size: 14px;
     margin-bottom: 10px;
 }
