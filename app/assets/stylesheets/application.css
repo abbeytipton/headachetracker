@@ -136,6 +136,7 @@
   width: 60%;
   font-size: 16px;
   align-self: flex-start;
+  border: 2px solid orange;
 }
 
 .editDate {
@@ -148,4 +149,5 @@
   margin-left: 150px;
   margin-top: 10px;
   align-self: flex-start;
+  border: 2px solid green;
 }
