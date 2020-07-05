@@ -121,13 +121,13 @@
 .parentFlex {
   display: flex;
   width: 50%;
-  margin-left: 20%;
+  margin-left: 10%;
   flex-direction: column;
 }
 
 .flexLabels {
   display: flex;
-  width: 120%;
+  width: 250%;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -140,13 +140,12 @@
 }
 
 .editDate {
-    width: 90%;
+    width: 200%;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
 .editCheckbox {
-  margin-left: 150px;
   margin-top: 10px;
   align-self: flex-start;
 }
