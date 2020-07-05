@@ -82,7 +82,7 @@
   </tr>
   <tr>
     <% @Logs = Logs.all %>
-    <% @Logs.order('id ASC') %>
+    <% @Logs.order('id DESC') %>
     <% @Logs.each do |log| %>
     <% if log[:userid] == current_user.id %>
 
