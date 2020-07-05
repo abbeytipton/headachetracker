@@ -43,10 +43,10 @@ class LogsController < ApplicationController
   def update
     @logs = Logs.find(params[:id])
     if @logs.update(logs_params)
-      redirect_to '/logs/index'
+      redirect_to '/logs/show'
       flash[:notice] = " Log updated successfully! "
     else
-      redirect_to '/logs/index'
+      redirect_to '/logs/show'
     end
   end
 

@@ -81,7 +81,7 @@
 
   </tr>
   <tr>
-    <% @Logs = Logs.all %>
+    <% @Logs = Logs.all(:order => 'DATE(date_started)')%>
     <% @Logs.each do |log| %>
     <% if log[:userid] == current_user.id %>
     <td><%= log.date_started.strftime("%m/%d/%Y") %><br><%= log.date_started.strftime("%I:%M %p") %></td>
