@@ -17,7 +17,6 @@ class LogsController < ApplicationController
   end
 
   def show
-    @logs = Logs.all.order("date_started")
   end
 
 # Defines what new log is and saves
