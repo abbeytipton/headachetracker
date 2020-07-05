@@ -128,7 +128,6 @@
 .flexLabels {
   display: flex;
   width: 120%;
-
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -136,6 +135,7 @@
 .flexLabels label {
   width: 60%;
   font-size: 16px;
+  align-self: flex-start;
 }
 
 .editDate {
@@ -146,5 +146,6 @@
 
 .editCheckbox {
   margin-left: 150px;
-  margin-top: 25px;
+  margin-top: 10px;
+  align-self: flex-start;
 }
