@@ -127,12 +127,12 @@
 .flexLabels {
   display: flex;
   width: 1000px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
 .flexLabels label {
-  width: 500px;
+  width: 600px;
   font-size: 16px;
   align-self: flex-start;
 }
