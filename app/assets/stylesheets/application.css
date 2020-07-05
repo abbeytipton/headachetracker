@@ -121,7 +121,6 @@
 .parentFlex {
   display: flex;
   width: 1000px;
-  margin-left: 10%;
   flex-direction: column;
 }
 
@@ -139,7 +138,7 @@
 }
 
 .editDate {
-    width: 500px;
+    width: 700px;
     font-size: 14px;
     margin-bottom: 10px;
 }
