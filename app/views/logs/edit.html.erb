@@ -2,7 +2,6 @@
 
 <%= form_for @logs do |f| %>
 
-<div class="parentFlex">
 <div class="flexLabels">
   <div><h4>Date Started</h4></div>
   <div><%= f.datetime_field :date_started, required: true, class: 'editDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></div><br/>
@@ -124,7 +123,6 @@
     <div><h4><%= user_trigger5 %></h4></div>
     <div><%= f.check_box :custom5, :class => 'editCheckbox' %></div><br>
   <% end %>
-</div>
 </div>
   <%= f.submit "Save Log", :class => 'btn' %>
 <% end %>
