@@ -128,13 +128,13 @@
 }
 
 .flexLabels h4 {
-  width: 300px;
+  width: 50%;
   font-size: 16px;
   text-align: left;
 }
 
 .editDate {
-    width: 300px;
+    width: 50%;
     font-size: 12px;
     margin-bottom: 10px;
 }
@@ -144,6 +144,6 @@
 }
 
 .flexCheck {
-  width: 300px;
+  width: 50%;
   float: right;
 }
