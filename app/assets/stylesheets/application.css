@@ -118,20 +118,10 @@
   outline: none;
 }
 
-.parentFlex {
-  display: flex;
-  width: 50%;
-  margin-left: 25%;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 2px solid orange;
-  align-items: flex-start;
-}
-
 .flexLabels {
   display: flex;
-  width: 600px;
-  justify-content: flex-start;
+  width: 800px;
+  justify-content: center;
   border: 2px solid green;
   align-items: flex-start;
 }
