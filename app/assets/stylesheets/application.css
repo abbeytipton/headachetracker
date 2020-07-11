@@ -124,12 +124,14 @@
   margin-left: 25%;
   flex-direction: column;
   justify-content: center;
+  border: 2px solid orange;
 }
 
 .flexLabels {
   display: flex;
   width: 600px;
   justify-content: flex-start;
+  border: 2px solid green;
 }
 
 .flexLabels h4 {
