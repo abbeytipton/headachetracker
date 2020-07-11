@@ -125,6 +125,7 @@
   flex-direction: column;
   justify-content: flex-start;
   border: 2px solid orange;
+  align-items: flex-start;
 }
 
 .flexLabels {
@@ -132,6 +133,7 @@
   width: 600px;
   justify-content: flex-start;
   border: 2px solid green;
+  align-items: flex-start;
 }
 
 .flexLabels h4 {
