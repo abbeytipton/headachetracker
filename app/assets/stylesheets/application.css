@@ -120,21 +120,21 @@
 
 .flexLabels {
   display: flex;
-  width: 60%;
-  margin-left: 20%;
+  width: 600px;
+  margin-left: 300px;
   justify-content: flex-start;
   border: 2px solid green;
   align-items: flex-start;
 }
 
 .flexLabels h4 {
-  width: 50%;
+  width: 300px;
   font-size: 16px;
   text-align: left;
 }
 
 .editDate {
-    width: 50%;
+    width: 300px;
     font-size: 12px;
     margin-bottom: 10px;
 }
@@ -144,6 +144,6 @@
 }
 
 .flexCheck {
-  width: 50%;
+  width: 300px;
   float: right;
 }
