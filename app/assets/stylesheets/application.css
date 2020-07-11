@@ -141,5 +141,9 @@
 
 .editCheckbox {
   margin-top: 10px;
+}
+
+.flexCheck {
   width: 300px;
+  float: right;
 }

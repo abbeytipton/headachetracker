@@ -15,70 +15,70 @@
 <% if include_period == 1 %>
 <div class="flexLabels">
     <div><h4>On or Near Period</h4></div>
-    <div><%= f.check_box :period, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :period, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_dehydrated == 1 %>
   <div class="flexLabels">
     <div><h4>Dehydration</h4></div>
-    <div><%= f.check_box :dehydration, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :dehydration, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_exercise == 1 %>
 <div class="flexLabels">
     <div><h4>Over Exercising</h4></div>
-    <div><%= f.check_box :exercise, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :exercise, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
 <div class="flexLabels">
   <% if include_eyestrain == 1 %>
     <div><h4>Eye Strain</h4></div>
-    <div><%= f.check_box :eye_strain, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck">%= f.check_box :eye_strain, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_lights == 1 %>
   <div class="flexLabels">
     <div><h4>Bright Lights</h4></div>
-    <div><%= f.check_box :lights, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :lights, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_sleep == 1 %>
   <div class="flexLabels">
     <div><h4>Lack of Sleep</h4></div>
-    <div><%= f.check_box :sleep, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :sleep, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_stress == 1 %>
   <div class="flexLabels">
     <div><h4>Stress</h4></div>
-    <div><%= f.check_box :stress, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :stress, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_overeating == 1 %>
   <div class="flexLabels">
     <div><h4>Overeating</h4></div>
-    <div><%= f.check_box :overeating, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :overeating, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
 <div class="flexLabels">
   <% if include_alcohol == 1 %>
     <div><h4>Alcohol</h4></div>
-    <div><%= f.check_box :alcohol, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :alcohol, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
 <div class="flexLabels">
   <% if include_chocolate == 1 %>
     <div><h4>Chocolate</h4></div>
-    <div><%= f.check_box :chocolate, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :chocolate, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
@@ -86,42 +86,42 @@
   <div class="flexLabels">
   <div><h4>Medicine Taken/Helped</h4></div>
     <div><%= f.text_field :medicine %></div><br>
-    <div><%= f.check_box :medicine_helped, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :medicine_helped, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_trigger1 == 1 %>
   <div class="flexLabels">
     <div><h4><%= user_trigger1 %></h4></div>
-    <div><%= f.check_box :custom1, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :custom1, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_trigger2 == 1 %>
   <div class="flexLabels">
     <div><h4><%= user_trigger2 %></h4></div>
-    <div><%= f.check_box :custom2, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :custom2, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_trigger3 == 1 %>
   <div class="flexLabels">
     <div><h4><%= user_trigger3 %></h4></div>
-    <div><%= f.check_box :custom3, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :custom3, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_trigger4 == 1 %>
   <div class="flexLabels">
     <div><h4><%= user_trigger4 %></h4></div>
-    <div><%= f.check_box :custom4, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :custom4, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
 
   <% if include_trigger5 == 1 %>
   <div class="flexLabels">
     <div><h4><%= user_trigger5 %></h4></div>
-    <div><%= f.check_box :custom5, :class => 'editCheckbox' %></div><br>
+    <div class="flexCheck"><%= f.check_box :custom5, :class => 'editCheckbox' %></div><br>
   <% end %>
 </div>
   <%= f.submit "Save Log", :class => 'btn' %>
