@@ -68,15 +68,15 @@
   </div>
   <% end %>
 
-<div class="flexLabels">
   <% if include_alcohol == 1 %>
+<div class="flexLabels">
     <div><h4>Alcohol</h4></div>
     <div class="flexCheck"><%= f.check_box :alcohol, :class => 'editCheckbox' %></div><br>
   </div>
   <% end %>
 
-<div class="flexLabels">
   <% if include_chocolate == 1 %>
+<div class="flexLabels">
     <div><h4>Chocolate</h4></div>
     <div class="flexCheck"><%= f.check_box :chocolate, :class => 'editCheckbox' %></div><br>
   </div>
@@ -124,6 +124,6 @@
     <div class="flexCheck"><%= f.check_box :custom5, :class => 'editCheckbox' %></div><br>
   </div>
   <% end %>
-  
+
   <%= f.submit "Save Log", :class => 'btn' %>
 <% end %>

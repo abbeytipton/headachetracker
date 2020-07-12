@@ -122,7 +122,7 @@
   display: flex;
   width: 600px;
   margin-left: 300px;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 2px solid green;
   align-items: flex-end;
 }
