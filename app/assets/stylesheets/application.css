@@ -120,8 +120,7 @@
 
 .flexLabels {
   display: flex;
-  width: 600px;
-  margin-left: 300px;
+  width: 550px;
   justify-content: center;
 }
 
@@ -142,6 +141,6 @@
 
 .flexCheck {
   text-align: left;
-  margin-right: 200px;
   float: left;
+  width: 250px;
 }
