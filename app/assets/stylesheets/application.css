@@ -123,7 +123,6 @@
   width: 600px;
   margin-left: 300px;
   justify-content: space-between;
-  border: 2px solid green;
   align-items: flex-end;
 }
 
@@ -131,6 +130,7 @@
   width: 300px;
   font-size: 16px;
   text-align: left;
+  border: 2px solid orange;
 }
 
 .editDate {
