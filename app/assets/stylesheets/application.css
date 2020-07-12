@@ -140,12 +140,11 @@
 
 .editCheckbox {
   margin-top: 10px;
-    margin-left: 100px;
 }
 
 .flexCheck {
-  float: right;
+  float: left;
   border: 2px solid red;
-  text-align: right;
+  text-align: left;
 
 }
