@@ -4,19 +4,18 @@
 
 <div class="flexLabels">
   <div><h4>Date Started</h4></div>
-  <div class="flexCheck">dfdfdf</div><br/>
+  <div class="flexCheck"><%= f.datetime_field :date_started, required: true, class: 'editDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></div><br>
 </div>
 
 <div class="flexLabels">
   <div><h4>Date Ended</h4></div>
-  <div class="flexCheck"><%= f.datetime_field :date_ended, required: true, class: 'editDate', value: @logs.date_ended.strftime('%Y-%m-%dT%H:%M') %></div><br/>
+  <div class="flexCheck"><%= f.datetime_field :date_ended, required: true, class: 'editDate', value: @logs.date_ended.strftime('%Y-%m-%dT%H:%M') %></div><br>
 </div>
 
-<% if include_period == 1 %>
 <div class="flexLabels">
     <div><h4>On or Near Period</h4></div>
     <div class="flexCheck"><%= f.check_box :period, :class => 'editCheckbox' %></div><br>
-  <% end %>
+
 </div>
 
   <% if include_dehydrated == 1 %>
