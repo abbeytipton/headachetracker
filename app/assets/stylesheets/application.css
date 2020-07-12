@@ -134,9 +134,8 @@
 }
 
 .editDate {
-    width: 300px;
+    width: auto;
     font-size: 12px;
-    margin-bottom: 10px;
 }
 
 .editCheckbox {
