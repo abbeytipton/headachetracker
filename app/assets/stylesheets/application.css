@@ -122,14 +122,15 @@
   display: flex;
   width: 50%;
   margin-left: 25%;
-  justify-content: center;
+  justify-content: flex-start;
   border: 2px solid orange;
 }
 
 .flexLabels h4 {
-  width: 50%;
+  width: 100%;
   font-size: 16px;
   text-align: left;
+  border: 2px solid red;
 }
 
 .editDate {
@@ -144,6 +145,6 @@
 .flexCheck {
   text-align: left;
   float: left;
-  width: 50%;
+  width: 100%;
   border: 2px solid yellow;
 }
