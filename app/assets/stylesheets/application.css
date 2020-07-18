@@ -127,6 +127,8 @@
 
 .flexLabels h4 {
   font-size: 16px;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .editDate {
@@ -136,7 +138,7 @@
 
 .editCheckbox {
   margin-top: 10px;
-  margin-left: -50px;
+  margin-left: -75px;
 }
 
 .flexCheck {
