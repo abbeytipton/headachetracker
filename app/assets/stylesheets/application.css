@@ -120,12 +120,14 @@
 
 .flexLabels {
   display: flex;
-  width: 550px;
+  width: 50%;
+  margin-left: 25%;
   justify-content: center;
+  border: 2px solid orange;
 }
 
 .flexLabels h4 {
-  width: 300px;
+  width: 50%;
   font-size: 16px;
   text-align: left;
 }
@@ -142,5 +144,6 @@
 .flexCheck {
   text-align: left;
   float: left;
-  width: 250px;
+  width: 50%;
+  border: 2px solid yellow;
 }
