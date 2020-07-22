@@ -7,9 +7,8 @@ Left to do:
 - Edit triggers/custom triggers page
 - When creating a log, medicine checkmark isn't showing right
 - Testing, general organization
-- Add instructions based on bool for first time user looks at graphs
 - Mobile optimization
 - Fill custom trigger text if the user doesn't
 
 What's in progress?
-- Adding instructions to the graphs page 
+- Adding instructions to the graphs page
