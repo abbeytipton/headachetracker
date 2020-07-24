@@ -217,6 +217,11 @@ class ApplicationController < ActionController::Base
     @user_custom5 ||= Logs.where(:userid => current_user.id, :custom5 => true).count
   end
 
+  def user_triggers
+    @user_triggers ||= LogCustomization.where(:userID => current_user.id).pluck(:id).flatten.join(' ')
+  end
+
+
   # Method to require users to be logged in before accessing certain pages, redirects to login pages and flashes error messages if they are not logged in
     def require_user
       redirect_to '/login' unless current_user
