@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
   helper_method [:user_trigger4]
   helper_method [:include_trigger5]
   helper_method [:user_trigger5]
+  helper_method [:user_triggers]
 
   # Get the current user
   def current_user

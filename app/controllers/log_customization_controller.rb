@@ -13,6 +13,7 @@ class LogCustomizationController < ApplicationController
   end
 
   def edit
+    @@user_triggers = user_triggers
   end
 
   # Creates new log instance
