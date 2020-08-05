@@ -1,6 +1,85 @@
 <h1>Edit Triggers</h1>
-
 <%= form_for @user_triggers do |f| %>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Alcohol</h4></div>
+  <div class="flexCheck"><%= f.check_box :alcohol, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Overeating</h4></div>
+  <div class="flexCheck"><%= f.check_box :overeating, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Stress</h4></div>
+  <div class="flexCheck"><%= f.check_box :stress, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Lack of Sleep</h4></div>
+  <div class="flexCheck"><%= f.check_box :sleep, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Bright Lights</h4></div>
+  <div class="flexCheck"><%= f.check_box :lights, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Eye Strain</h4></div>
+  <div class="flexCheck"><%= f.check_box :eyestrain, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Exercise</h4></div>
+  <div class="flexCheck"><%= f.check_box :exercise, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Period</h4></div>
+  <div class="flexCheck"><%= f.check_box :period, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Chocolate</h4></div>
+  <div class="flexCheck"><%= f.check_box :chocolate, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Dehydration</h4></div>
+  <div class="flexCheck"><%= f.check_box :dehydrated, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4>Medicine</h4></div>
+  <div class="flexCheck"><%= f.check_box :medicine, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4><%= f.text_field :trigger1Name %></h4></div>
+  <div class="flexCheck"><%= f.check_box :trigger1, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4><%= f.text_field :trigger2Name %></h4></div>
+  <div class="flexCheck"><%= f.check_box :trigger2, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4><%= f.text_field :trigger3Name %></h4></div>
+  <div class="flexCheck"><%= f.check_box :trigger3, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4><%= f.text_field :trigger4Name %></h4></div>
+  <div class="flexCheck"><%= f.check_box :trigger4, :class => 'editCheckbox' %></div><br>
+</div>
+
+<div class="flexLabels">
+  <div class="flexCheck"><h4><%= f.text_field :trigger5Name %></h4></div>
+  <div class="flexCheck"><%= f.check_box :trigger5, :class => 'editCheckbox' %></div><br>
+</div>
 
 <%= f.submit "Save Triggers", :class => 'btn' %>
 <% end %>
