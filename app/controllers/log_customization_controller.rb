@@ -13,7 +13,7 @@ class LogCustomizationController < ApplicationController
   end
 
   def edit
-    @@user_triggers = LogCustomization.find(:all, :conditions => {:userID => session[:user_id]})
+    @@user_triggers = LogCustomization.where(:user_id => current_user.id).limit(1)
   end
 
   # Creates new log instance
