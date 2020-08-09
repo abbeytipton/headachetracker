@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_triggers
-    @user_triggers = LogCustomization.where(:userID => current_user.id).first.id
+    @user_triggers = LogCustomization.where(:userID => current_user.id).first
   end
 
   # Get the total number of headaches logged by this user
