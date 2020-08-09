@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
   helper_method [:user_trigger4]
   helper_method [:include_trigger5]
   helper_method [:user_trigger5]
+  helper_method [:user_triggers]
 
   # Get the current user
   def current_user
@@ -56,6 +57,10 @@ class ApplicationController < ActionController::Base
   # Determine if a user has customized their triggers
   def customized
     @customized ||= LogCustomization.where(:userID => current_user.id).count
+  end
+
+  def user_triggers
+    @user_triggers = LogCustomization.where(:userID => current_user.id).first
   end
 
   # Get the total number of headaches logged by this user

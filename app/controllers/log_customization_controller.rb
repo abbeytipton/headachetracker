@@ -13,7 +13,7 @@ class LogCustomizationController < ApplicationController
   end
 
   def edit
-    @user_triggers = LogCustomization.where(:userID => current_user.id).first
+      @logs = Logs.find(params[:id])
   end
 
   # Creates new log instance
