@@ -32,12 +32,12 @@ class LogCustomizationController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @logcustomization.update(logcustomization_params)
-        redirect_to '/logs/index'
-      else
-        redirect_to '/logs/index'
-      end
+    @logcustomization = LogCustomization.find(params[:id])
+    if @logcustomization.update(logcustomization_params)
+      redirect_to '/graphs/index'
+      flash[:notice] = " Log customizations updated successfully! "
+    else
+      redirect_to '/graphs/index'
     end
   end
 
