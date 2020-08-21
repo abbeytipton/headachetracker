@@ -13,7 +13,7 @@ class LogCustomizationController < ApplicationController
   end
 
   def edit
-      @logs = Logs.find(params[:id])
+      @logcustomization = logcustomization.find(params[:id])
   end
 
   # Creates new log instance

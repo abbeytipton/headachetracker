@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :log_customization, only: [:new, :create, :edit, :update]
   get 'log_customization/create', :to => 'log_customization#new'
   get 'log_customization/edit'
-    post "log_customization/:id/edit", :to => "log_customization#edit"
+  post "log_customization/:id/edit", :to => "log_customization#edit"
 
   # Graphs routes
   get 'graphs/index'
