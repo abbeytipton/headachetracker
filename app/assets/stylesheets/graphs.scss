@@ -169,6 +169,14 @@ h2, h4 {
   cursor: pointer;
 }
 
-.dropdownLi a {
+.dropdownLi a, .dropdownLi {
   text-decoration: none;
+  background: transparent;
+  color: black;
+}
+
+.dropdownLi a:hover, .dropdownLi:hover {
+  text-decoration: none;
+  background: transparent;
+  color: black;
 }
