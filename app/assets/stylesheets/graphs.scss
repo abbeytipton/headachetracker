@@ -109,13 +109,6 @@ h2, h4 {
   cursor: pointer;
 }
 
-.dropdown-content li:hover:not(.active) {
-  background-color: #e4d1d1;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
@@ -177,5 +170,4 @@ h2, h4 {
   text-align: left;
   border: 0;
   margin: 0;
-  padding: 0;
 }
