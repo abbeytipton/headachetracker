@@ -165,7 +165,7 @@ h2, h4 {
   cursor: pointer;
 }
 
-.dropdownLi:hover, .dropdownLi, .dropdownLi:active, .dropdownLi:visited {
+.dropdownLi a:hover, .dropdownLi a, .dropdownLi a:active, .dropdownLi a:visited {
   text-decoration: none;
   background: transparent;
   color: black;
