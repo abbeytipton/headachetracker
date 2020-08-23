@@ -1,7 +1,7 @@
 <h1>Edit Triggers</h1>
 <%= form_for @logcustomization do |f| %>
 
-<h3>Check the items you would like to include:</h3>
+<h3 class="graphsHeader">Check the items you would like to include:</h3>
 
 <div class="flexLabels">
   <div class="flexCheck"><h4>Alcohol</h4></div>
@@ -58,33 +58,33 @@
   <div class="flexCheck"><%= f.check_box :medicine, :class => 'editCheckbox' %></div><br>
 </div>
 
-<h3>Check and Name the Custom Triggers you would like to include. Remember to name Custom Triggers in the form of a question. For example, "Did you have a severe weather change in your area before or during the headache?"</h3>
+<h3 class="graphsHeader">Check and Name the Custom Triggers you would like to include. Remember to name Custom Triggers in the form of a question. For example, "Did you have a severe weather change in your area before or during the headache?"</h3>
 
-<h3>Custom Trigger 1:</h3>
+<h3 class="graphsHeader">Custom Trigger 1:</h3>
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger1Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger1, :class => 'editCheckbox' %></div><br>
 </div>
 
-<h3>Custom Trigger 2:</h3>
+<h3 class="graphsHeader">Custom Trigger 2:</h3>
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger2Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger2, :class => 'editCheckbox' %></div><br>
 </div>
 
-<h3>Custom Trigger 3:</h3>
+<h3 class="graphsHeader">Custom Trigger 3:</h3>
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger3Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger3, :class => 'editCheckbox' %></div><br>
 </div>
 
-<h3>Custom Trigger 4:</h3>
+<h3 class="graphsHeader">Custom Trigger 4:</h3>
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger4Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger4, :class => 'editCheckbox' %></div><br>
 </div>
 
-<h3>Custom Trigger 5:</h3>
+<h3 class="graphsHeader">Custom Trigger 5:</h3>
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger5Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger5, :class => 'editCheckbox' %></div><br>
