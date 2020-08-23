@@ -8,6 +8,3 @@ Left to do:
 - Testing, general organization
 - Mobile optimization
 - Fill custom trigger text if the user doesn't
-
-What's in progress?
-- Edit triggers/custom triggers page
