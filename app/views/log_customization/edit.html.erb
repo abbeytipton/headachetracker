@@ -1,6 +1,7 @@
 <h1>Edit Triggers</h1>
 <%= form_for @logcustomization do |f| %>
 
+<div class="triggerBody">
 <h3 class="graphsHeader">Check the items you would like to include:</h3>
 
 <div class="flexLabels">
@@ -88,6 +89,8 @@
 <div class="flexLabels">
   <div class="flexCheck"><h4><%= f.text_field :trigger5Name %></h4></div>
   <div class="flexCheck"><%= f.check_box :trigger5, :class => 'editCheckbox' %></div><br>
+</div>
+
 </div>
 
 <%= f.submit "Save Triggers", :class => 'btn' %>
