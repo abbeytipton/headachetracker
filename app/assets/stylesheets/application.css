@@ -125,6 +125,12 @@
   justify-content: flex-start;
 }
 
+.flexLabelsLeft {
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+}
+
 .flexLabels h4 {
   font-size: 16px;
   text-align: left;
