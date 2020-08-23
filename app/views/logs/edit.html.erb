@@ -84,10 +84,13 @@
 
   <% if include_medicine == 1 %>
   <div class="flexLabels">
-  <div class="flexCheck"><h4>Medicine Taken/Helped</h4></div>
+  <div class="flexCheck"><h4>Medicine Helped</h4></div>
     <div><%= f.text_field :medicine %></div><br>
-    <div class="flexCheck"><%= f.check_box :medicine_helped, :class => 'editCheckbox' %></div><br>
   </div>
+    <div class="flexLabels">
+      <div class="flexCheck"><h4>Medicine Taken</h4></div>
+    <div><%= f.check_box :medicine_helped, :class => 'editCheckbox' %></div><br>
+    </div>
   <% end %>
 
   <% if include_trigger1 == 1 %>
