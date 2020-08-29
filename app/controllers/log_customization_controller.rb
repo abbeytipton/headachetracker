@@ -33,7 +33,7 @@ class LogCustomizationController < ApplicationController
 
   def update
     @logcustomization = LogCustomization.find(params[:id])
-    if params[:trigger1] == true && params[:trigger1Name].blank?
+    if params[:trigger1Name].blank?
     redirect_to '/graphs/index'
     flash[:notice] = " You didn't enter any info idiot"
     end
