@@ -39,11 +39,12 @@ class LogCustomizationController < ApplicationController
       flash[:notice] = " Log customizations updated successfully! "
     else
       redirect_to '/graphs/index'
-    end
+
 
     if params[:trigger1] == true && params[:trigger1Name] == ''
       params[:trigger1Name] = 'Have you experience Custom Trigger 1 before or during the headache?'
     end
+      end
   end
 
   # DELETE /users/1
