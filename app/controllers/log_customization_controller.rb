@@ -36,7 +36,7 @@ class LogCustomizationController < ApplicationController
     if params[:trigger1Name].blank?
     redirect_to '/graphs/index'
     flash[:notice] = " You didn't enter any info idiot"
-    end
+  else
     if @logcustomization.update(logcustomization_params)
       redirect_to '/graphs/index'
       flash[:notice] = " Log customizations updated successfully! "
