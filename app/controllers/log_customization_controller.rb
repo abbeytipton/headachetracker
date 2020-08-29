@@ -44,7 +44,7 @@ class LogCustomizationController < ApplicationController
       redirect_to '/graphs/index'
 
 
-
+end
       end
   end
 
