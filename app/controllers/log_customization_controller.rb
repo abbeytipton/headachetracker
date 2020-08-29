@@ -33,7 +33,9 @@ class LogCustomizationController < ApplicationController
 
   def update
     @logcustomization = LogCustomization.find(params[:id])
-
+    if params[:trigger1] == true && params[:trigger1Name].blank?
+      params[:trigger1Name] = 'Have you experienced Custom Trigger 1 before or during the headache?'
+    end
     if @logcustomization.update(logcustomization_params)
       redirect_to '/graphs/index'
       flash[:notice] = " Log customizations updated successfully! "
@@ -41,9 +43,7 @@ class LogCustomizationController < ApplicationController
       redirect_to '/graphs/index'
 
 
-    if params[:trigger1] == true && params[:trigger1Name].blank?
-      params[:trigger1Name] = 'Have you experience Custom Trigger 1 before or during the headache?'
-    end
+
       end
   end
 
