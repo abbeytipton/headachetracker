@@ -37,22 +37,27 @@ class LogCustomizationController < ApplicationController
       params[:log_customization][:trigger1] == "1" && params[:log_customization][:trigger1Name].blank?
       redirect_to '/graphs/index'
       flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
     elsif
       params[:log_customization][:trigger2] == "1" && params[:log_customization][:trigger2Name].blank?
       redirect_to '/graphs/index'
       flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
     elsif
       params[:log_customization][:trigger3] == "1" && params[:log_customization][:trigger3Name].blank?
       redirect_to '/graphs/index'
       flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
     elsif
       params[:log_customization][:trigger4] == "1" && params[:log_customization][:trigger4Name].blank?
       redirect_to '/graphs/index'
       flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
     elsif
       params[:log_customization][:trigger5] == "1" && params[:log_customization][:trigger5Name].blank?
     redirect_to '/graphs/index'
     flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+    return
   else
     if @logcustomization.update(logcustomization_params)
       redirect_to '/graphs/index'
