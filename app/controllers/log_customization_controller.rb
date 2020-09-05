@@ -13,7 +13,7 @@ class LogCustomizationController < ApplicationController
   end
 
   def edit
-      @logcustomization = LogCustomization.find(params[:id])
+    @logcustomization = LogCustomization.find(params[:id])
   end
 
   # Creates new log instance
@@ -21,13 +21,41 @@ class LogCustomizationController < ApplicationController
     @logcustomization = LogCustomization.new
   end
 
-# Defines what new log is and saves
+  # Defines what new log is and saves
   def create
     @logcustomization = LogCustomization.new(logcustomization_params)
-    if @logcustomization.save
+    @logcustomization = LogCustomization.find(params[:id])
+    if
+      params[:log_customization][:trigger1] == "1" && params[:log_customization][:trigger1Name].blank?
+      redirect_to '/logs/index'
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
+    elsif
+      params[:log_customization][:trigger2] == "1" && params[:log_customization][:trigger2Name].blank?
+      redirect_to '/logs/index'
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
+    elsif
+      params[:log_customization][:trigger3] == "1" && params[:log_customization][:trigger3Name].blank?
+      redirect_to '/logs/index'
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
+    elsif
+      params[:log_customization][:trigger4] == "1" && params[:log_customization][:trigger4Name].blank?
+      redirect_to '/logs/index'
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
+    elsif
+      params[:log_customization][:trigger5] == "1" && params[:log_customization][:trigger5Name].blank?
+      redirect_to '/logs/index'
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
+    else
+      if @logcustomization.save
         redirect_to '/logs/index'
       else
-        redirect_to '/graphs/index'
+        redirect_to '/logs/index'
+      end
     end
   end
 
@@ -55,19 +83,17 @@ class LogCustomizationController < ApplicationController
       return
     elsif
       params[:log_customization][:trigger5] == "1" && params[:log_customization][:trigger5Name].blank?
-    redirect_to '/graphs/index'
-    flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
-    return
-  else
-    if @logcustomization.update(logcustomization_params)
       redirect_to '/graphs/index'
-      flash[:notice] = " Log customizations updated successfully! "
+      flash[:notice] = "You checked a box for a custom trigger but did not name it. Your changes have not been saved. Please try again."
+      return
     else
-      redirect_to '/graphs/index'
-
-
-end
+      if @logcustomization.update(logcustomization_params)
+        redirect_to '/graphs/index'
+        flash[:notice] = " Log customizations updated successfully! "
+      else
+        redirect_to '/graphs/index'
       end
+    end
   end
 
   # DELETE /users/1
@@ -84,10 +110,10 @@ end
   # Defines params needed for product to be set up, also allows teacher_id to come through from hidden field
   def logcustomization_params
     params.require(:log_customization).permit(:userID, :trigger1, :trigger1Name, :trigger2, :trigger2Name,
-                                :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
-                                :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
-                                :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
-                                :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine, :boolean)
-  end
+      :trigger3, :trigger3Name, :trigger4, :trigger4Name, :trigger5, :trigger5Name,
+      :trigger6, :trigger6Name, :trigger7, :trigger7Name, :trigger8, :trigger8Name, :trigger9,
+      :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
+      :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine, :boolean)
+    end
 
-end
+  end

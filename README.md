@@ -6,5 +6,3 @@ This web app is in progress. It is a tracker for headaches, in which users can l
 Left to do:
 - When creating a log, medicine checkmark isn't showing right
 - Testing, general organization
-- Mobile optimization
-- Fill custom trigger text if the user doesn't
