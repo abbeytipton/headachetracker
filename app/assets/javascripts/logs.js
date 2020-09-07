@@ -36,3 +36,15 @@ $(document).on("click", ".nextYes, .nextNo", function(e){
     $("#"+nextDiv).fadeIn(1500);
   });
 });
+
+$(document).on("click", ".medYes", function(e){
+  $("#"+currentDiv).fadeOut(function() {
+    $("#fourteenTwo").fadeIn(1500);
+  });
+});
+
+$(document).on("click", ".medNo", function(e){
+  $("#"+currentDiv).fadeOut(function() {
+    $("#fifteen").fadeIn(1500);
+  });
+});

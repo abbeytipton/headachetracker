@@ -204,18 +204,28 @@
   <% if include_medicine == 1 %>
   <div id="fourteen" class="logDivs">
     <h2>Did you take medicine for this headache?</h2>
+    <div class="flex">
+      <div class="toHide">
+        <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
+        <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'medYes' %></label>
+      </div>
+      <div>
+        <input type="checkbox" id="fourteenFieldNo" class="checkbox">
+        <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'medNo' %></label>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <% if include_medicine == 1 %>
+  <div id="fourteenTwo" class="logDivs">
+    <h2>What medicine did you take?</h2>
     <div class="textBox">
       Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
     </div>
     <div class="flex">
-      <div class="toHide">
         <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
         <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-      </div>
-      <div>
-        <input type="checkbox" id="fourteenFieldNo" class="checkbox">
-        <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-      </div>
     </div>
   </div>
   <% end %>
