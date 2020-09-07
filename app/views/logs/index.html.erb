@@ -205,10 +205,8 @@
   <div id="fourteen" class="logDivs">
     <h2>Did you take medicine for this headache?</h2>
     <div class="flex">
-      <div class="toHide">
         <input type="checkbox" id="fourteenFieldYes" class="checkbox">
         <label for="fourteenFieldYes"><%= image_tag 'iconYes.png', class: 'medYes' %></label>
-      </div>
       <div>
         <input type="checkbox" id="fourteenFieldNo" class="checkbox">
         <label for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'medNo' %></label>
@@ -232,7 +230,7 @@
 
   <% if include_trigger1 == 1 %>
     <div id="fifteen" class="logDivs">
-      <h2><%= user_trigger1 %></h2>
+      <h2>Did you experience <%= user_trigger1 %> before or during the headache?</h2>
       <div class="flex">
         <div>
           <%= f.check_box :custom1, id: 'fifteenFieldYes', class: 'checkbox' %>
@@ -248,7 +246,7 @@
 
   <% if include_trigger2 == 1 %>
     <div id="sixteen" class="logDivs">
-      <h2><%= user_trigger2 %></h2>
+      <h2>Did you experience <%= user_trigger2 %> before or during the headache?</h2>
       <div class="flex">
         <div>
           <%= f.check_box :custom2, id: 'sixteenFieldYes', class: 'checkbox' %>
@@ -264,7 +262,7 @@
 
   <% if include_trigger3 == 1 %>
     <div id="seventeen" class="logDivs">
-      <h2><%= user_trigger3 %></h2>
+      <h2>Did you experience <%= user_trigger3 %> before or during the headache?</h2>
       <div class="flex">
         <div>
           <%= f.check_box :custom3, id: 'seventeenFieldYes', class: 'checkbox' %>
@@ -280,7 +278,7 @@
 
   <% if include_trigger4 == 1 %>
     <div id="eighteen" class="logDivs">
-      <h2><%= user_trigger4 %></h2>
+      <h2>Did you experience <%= user_trigger4 %> before or during the headache?</h2>
       <div class="flex">
         <div>
           <%= f.check_box :custom4, id: 'eighteenFieldYes', class: 'checkbox' %>
@@ -296,7 +294,7 @@
 
   <% if include_trigger5 == 1 %>
     <div id="nineteen" class="logDivs">
-      <h2><%= user_trigger5 %></h2>
+      <h2>Did you experience <%= user_trigger5 %> before or during the headache?</h2>
       <div class="flex">
         <div>
           <%= f.check_box :custom5, id: 'nineteenFieldYes', class: 'checkbox' %>
