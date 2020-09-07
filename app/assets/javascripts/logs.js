@@ -38,13 +38,13 @@ $(document).on("click", ".nextYes, .nextNo", function(e){
 });
 
 $(document).on("click", ".medYes", function(e){
-  $("#"+currentDiv).fadeOut(function() {
+  $("#fourteen").fadeOut(function() {
     $("#fourteenTwo").fadeIn(1500);
   });
 });
 
 $(document).on("click", ".medNo", function(e){
-  $("#"+currentDiv).fadeOut(function() {
+  $("#fourteen").fadeOut(function() {
     $("#fifteen").fadeIn(1500);
   });
 });
