@@ -221,13 +221,14 @@
   <div id="fourteenTwo" class="logDivs">
     <h2>What medicine did you take?</h2>
     <div class="flex">
-    <div class="textBox">
+    <div>
       Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
     </div>
     <div>
         <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
         <label for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
     </div>
+  </div>
   </div>
   <% end %>
 
