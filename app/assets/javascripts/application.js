@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function() {
           if($this.attr('href').indexOf(current) !== -1){
               $this.parent().addClass('active');
           }
-      })
+      });
 
   // Get each trigger //
   var total = $('#total').text();
