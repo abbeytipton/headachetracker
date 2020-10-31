@@ -9,13 +9,13 @@
 
   <!-- This div holds the label and text box for the email next to each other -->
   <div class="flexLabels">
-    <div class="flexLabelsLeft"><%= label_tag :email %>:</div>
+    <div class="flexLabelChild"><%= label_tag :email %>:</div>
     <div><%= text_field_tag :email, '', :required => true %></div>
   </div>
 
   <!-- This div holds the label and the text box for the password next to each other -->
   <div class="flexLabels">
-    <div class="flexLabelsLeft"><%= label_tag :password %>:</div>
+    <div class="flexLabelChild"><%= label_tag :password %>:</div>
     <div><%= password_field_tag :password, '', :required => true %></div>
   </div>
 

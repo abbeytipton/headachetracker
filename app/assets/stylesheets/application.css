@@ -12,7 +12,7 @@
   h1 {
     color: #00bd9c;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 
   h2 {
@@ -121,6 +121,11 @@
   justify-content: flex-start;
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.flexLabelChild {
+  text-align: left;
+  width: 60%;
 }
 
 .flexLabelsLeft {
@@ -239,14 +244,6 @@ a.button {
 
 .child {
   margin-right: 50px;
-}
-
-/* Width of the labels and alignment */
-.label {
-  text-align: left;
-  width: 150px;
-  font-size: 16px;
-  margin-right: 10%;
 }
 
 /* Aligning items on the view account page */
