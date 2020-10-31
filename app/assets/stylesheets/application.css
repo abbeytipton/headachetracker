@@ -4,7 +4,9 @@
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    color: #000;
    font-size: 18px;
-   text-align: center;
+   margin:0px;
+   margin-top: 60px;
+   padding: 0px;
  }
 
   h1 {
@@ -22,6 +24,12 @@
     text-align: center;
   }
 
+  .content {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
  /* Nav bar styling */
  .navbar {
    display: flex;
@@ -31,13 +39,17 @@
    background-color: #2b3e51;
    overflow: auto;
    height: auto;
-   padding: 10px;
+   text-align: left;
  }
 
  .left-links{
     flex:1 1 200px;
  }
- 
+
+ .right-links {
+   margin-right: 100px;
+ }
+
  .links {
     display: inline-block;
     text-align: center;
