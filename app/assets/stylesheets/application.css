@@ -44,14 +44,14 @@
  }
 
  li a {
-   display: block;
+   display: fixed;
    color: white;
    text-align: center;
-   padding-right: 14px 16px;
+   padding: 14px 16px;
    text-decoration: none;
    font-size: 18px;
    height: 100%;
-   margin-right: 20px;
+   right: 50px;
  }
 
  li a:hover:not(.active) {
