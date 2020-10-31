@@ -13,6 +13,7 @@
     color: #00bd9c;
     text-align: center;
     margin-top: 50px;
+    padding-top: 20px;
   }
 
   h2 {
@@ -48,6 +49,7 @@
 
  .left-links{
     flex:1 1 200px;
+    margin-left: 60px;
  }
 
  .right-links {
@@ -61,6 +63,7 @@
     text-decoration: none;
     font-size: 18px;
     margin-right: 10px;
+    padding-right: 20px;
     border-bottom: 2px solid transparent;
  }
  .links:hover {
@@ -125,7 +128,7 @@
 
 .flexLabelChild {
   text-align: left;
-  width: 60%;
+  width: 20%;
 }
 
 .flexLabelsLeft {
