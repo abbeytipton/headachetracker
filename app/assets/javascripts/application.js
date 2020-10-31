@@ -18,15 +18,6 @@
 
 $(document).on('turbolinks:load', function() {
 
-  var current = location.pathname;
-      $('.right-links a').each(function(){
-          var $this = $(this);
-          // if the current path is like this link, make it active
-          if($this.attr('href').indexOf(current) !== -1){
-              $this.parent().addClass('active');
-          }
-      });
-
   // Get each trigger //
   var total = $('#total').text();
   var chocolate = Math.floor($('#chocolate').text() / total * 100);
