@@ -29,11 +29,11 @@
 
     <!-- Right side links depend on if the user is logged in; if they are, they will see their account or log out, otherwise they will see signup or login -->
     <% if current_user %>
-        <li style="float:right"><a href="/users/edit">Account</a></li>
         <li style="float:right"><%= link_to 'Log Out', logout_path %></li>
+        <li style="float:right" class="endOfNav"><a href="/users/edit">Account</a></li>
     <% else %>
         <li style="float:right"><%= link_to 'Sign Up', signup_path %></li>
-       <li style="float:right"><%= link_to 'Log In', login_path %></li>
+       <li style="float:right" class="endOfNav"><%= link_to 'Log In', login_path %></li>
     <% end %>
   <!-- End of nav bar -->
   </ul>

@@ -1,13 +1,9 @@
-/*
- *= require_tree .
- *= require_self
- */
-
  /* Page styling */
  body {
    background: #fff;
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    color: #000;
+   font-size: 18px;
  }
 
   h1 {
@@ -20,20 +16,23 @@
     margin-right: 10px;
   }
 
- /* Nav bar styling */
+  h3 {
+    font-size: 24px;
+  }
 
+ /* Nav bar styling */
  ul {
    list-style-type: none;
    margin: 0;
    padding-left: 20px;
-   padding-right: 20px;
+   padding-top: 15px;
    overflow: hidden;
    background-color: #2b3e51;
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    position: fixed;
    top: 0;
    left: 0;
-   height: 80px;
+   height: 60px;
    width: 100%;
    color: #fff;
  }
@@ -48,10 +47,16 @@
    text-align: center;
    padding: 14px 16px;
    text-decoration: none;
+   font-size: 18px;
+   height: 100%;
  }
 
  li a:hover:not(.active) {
    background-color: #95a5a6;
+ }
+
+ .endOfNav {
+   padding-right: 25px;
  }
 
  .navText {
@@ -59,6 +64,7 @@
    margin-right: 10px;
    margin-left: 10px;
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: 18px;
  }
 
  /* Main div for all content */
@@ -271,7 +277,7 @@ input {
 /* Changes h2 for this page */
 h2 {
   background: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #9fa9a3;
 }
 
