@@ -121,7 +121,7 @@
 .flexLabels {
   display: flex;
   width: 50%;
-  margin-left: 25%;
+  margin-left: 45%;
   justify-content: flex-start;
   font-size: 16px;
   margin-bottom: 10px;
@@ -215,12 +215,16 @@
   outline: none;
   margin-left: 60%;
   margin-right: 10%;
-  font-size: 16px;
-  padding: 8px;
+  font-size: 18px;
+  padding: 12px;
   margin-top: 10px;
   border: none;
   cursor: pointer;
   color: black;
+}
+
+.btn:hover {
+  background-color: #008a72;
 }
 
 /* Adding to width of input boxes */
