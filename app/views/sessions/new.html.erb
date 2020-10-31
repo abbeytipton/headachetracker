@@ -9,23 +9,22 @@
 
   <!-- This div holds the label and text box for the email next to each other -->
   <div class="flexLabels">
-    <div class="label"><%= label_tag :email %></div>
+    <div><%= label_tag :email %>:</div>
     <div><%= text_field_tag :email, '', :required => true %></div>
   </div>
 
   <!-- This div holds the label and the text box for the password next to each other -->
   <div class="flexLabels">
-    <div class="label"><%= label_tag :password %></div>
+    <div><%= label_tag :password %>:</div>
     <div><%= password_field_tag :password, '', :required => true %></div>
   </div>
 
   <!-- Alert for wrong email/password combo, this will show between the boxes and the button when it does show -->
   <p id='alert'><%= alert %></p>
-
+</div>
   <!-- Button to submit form -->
   <div class='actions'>
     <%= submit_tag 'Login', :class => 'btn' %>
   </div>
 
 <% end %>
-</div>
