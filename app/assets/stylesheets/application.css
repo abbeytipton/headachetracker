@@ -121,7 +121,7 @@
 .flexLabels {
   display: flex;
   width: 50%;
-  margin-left: 45%;
+  margin-left: 35%;
   justify-content: flex-start;
   font-size: 16px;
   margin-bottom: 10px;
@@ -129,7 +129,7 @@
 
 .flexLabelChild {
   text-align: left;
-  width: 10%;
+  width: 15%;
 }
 
 .flexLabelsLeft {
@@ -210,13 +210,13 @@
 /* Button styling */
 .btn {
   background-color: #00bd9c;
-  width: 100px;
+  width: auto;
   border-radius: 8px;
   outline: none;
   margin-left: 60%;
   margin-right: 10%;
   font-size: 18px;
-  padding: 12px;
+  padding: 12px 25px;
   margin-top: 10px;
   border: none;
   cursor: pointer;
