@@ -5,9 +5,9 @@
 
  /* Page styling */
  body {
-   background: #f0f0f0;
-   font-family: 'Poppins', sans-serif;
-   color: #9fa9a3;
+   background: #fff;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: #000;
  }
 
   h1 {
@@ -27,10 +27,12 @@
    margin: 0;
    padding: 0;
    overflow: hidden;
-   background-color: #e3e0cc;
-   font-family: 'Poppins', sans-serif;
+   background-color: #2b3e51;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    position: fixed;
    top: 0;
+   left: 0;
+   height: 40px;
    width: 100%;
  }
 
@@ -47,30 +49,31 @@
  }
 
  li a:hover:not(.active) {
-   background-color: #e4d1d1;
+   background-color: #95a5a6;
  }
 
  .navText {
    padding-top: 13px;
    margin-right: 10px;
    margin-left: 10px;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
  }
 
  /* Main div for all content */
  .body {
    padding: 10px;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    width: 90%;
    margin-left: 5%;
    margin-right: 5%;
+   color: black;
  }
 
  /* Flash notices */
  .notice {
    color: #000000;
    text-align: center;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    font-size: 14px;
    margin-top: 10px;
    margin-bottom: 20px;
