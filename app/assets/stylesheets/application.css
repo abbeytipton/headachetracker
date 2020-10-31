@@ -40,6 +40,9 @@
    overflow: auto;
    height: auto;
    text-align: left;
+   padding: 20px;
+   color: white;
+   font-size: 24px;
  }
 
  .left-links{
@@ -47,23 +50,23 @@
  }
 
  .right-links {
-   margin-right: 100px;
+   margin-right: 50px;
  }
 
  .links {
     display: inline-block;
     text-align: center;
-    padding: 14px;
+    padding: 20px;
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 17px;
+    font-size: 24px;
     font-weight: bolder;
  }
  .links:hover {
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid #f59d00;
  }
  .selected {
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid #f59d00;
  }
 
  /* Flash notices */
@@ -214,7 +217,6 @@ input {
   padding: 10px;
   font-size: 16px;
 }
-
 
 /* Flex div make everything line up horizontally */
 .flex-horizontal {
