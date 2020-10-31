@@ -4,6 +4,7 @@
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
    color: #000;
    font-size: 18px;
+   text-align: center;
  }
 
   h1 {
@@ -18,6 +19,7 @@
 
   h3 {
     font-size: 24px;
+    text-align: center;
   }
 
  /* Nav bar styling */
@@ -45,10 +47,11 @@
    display: block;
    color: white;
    text-align: center;
-   padding: 14px 16px;
+   padding-right: 14px 16px;
    text-decoration: none;
    font-size: 18px;
    height: 100%;
+   margin-right: 20px;
  }
 
  li a:hover:not(.active) {
@@ -202,12 +205,6 @@
   font-size: 12px;
 }
 
-/* Width of the labels and alignment */
-.label {
-  text-align: left;
-  width: 100px;
-}
-
 /* Button styling */
 .btn {
   background-color: #00bd9c;
@@ -226,7 +223,9 @@
 
 /* Adding to width of input boxes */
 input {
-  width: 200px;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
 }
 
 
@@ -250,35 +249,12 @@ a.button {
   margin-right: 50px;
 }
 
-.label {
-  margin-right: 10px;
-  width: 250px;
-}
-
 /* Width of the labels and alignment */
 .label {
   text-align: left;
   width: 150px;
   font-size: 16px;
   margin-right: 10%;
-}
-
-a:hover {
-  background-color: #e4d1d1;
-  color: black;
-}
-
-/* Adding to width of input boxes */
-input {
-  width: 200px;
-  margin-right: 15%;
-}
-
-/* Changes h2 for this page */
-h2 {
-  background: #f0f0f0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #9fa9a3;
 }
 
 /* Aligning items on the view account page */
