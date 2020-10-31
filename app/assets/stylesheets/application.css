@@ -10,8 +10,9 @@
  }
 
   h1 {
-    color: #c5d5c5;
+    color: #00bd9c;
     text-align: center;
+    margin-top: 20px;
   }
 
   h2 {
@@ -42,7 +43,7 @@
    text-align: left;
    padding: 20px;
    color: white;
-   font-size: 24px;
+   font-size: 18px;
  }
 
  .left-links{
@@ -50,7 +51,7 @@
  }
 
  .right-links {
-   margin-right: 50px;
+   margin-right: 60px;
  }
 
  .links {
@@ -58,7 +59,8 @@
     text-align: center;
     color: #fff;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 18px;
+    margin-right: 10px;
     border-bottom: 2px solid transparent;
  }
  .links:hover {
@@ -114,7 +116,7 @@
 
 .flexLabels {
   display: flex;
-  width: 50%;
+  width: 90%;
   margin-left: 25%;
   justify-content: flex-start;
   font-size: 16px;
