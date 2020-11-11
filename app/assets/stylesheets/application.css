@@ -118,6 +118,12 @@
   outline: none;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flexLabels {
   display: flex;
   width: 50%;
