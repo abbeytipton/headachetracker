@@ -2,8 +2,6 @@
 <h1>Login</h1>
 <h3>Enter your information below to login to your account.</h3>
 
-<!-- Flex div holds everything in the center of the screen, next to each other -->
-<div class="flex">
 <!-- Start of form to log in -->
 <%= form_tag sessions_path do |form| %>
 
@@ -21,7 +19,7 @@
 
   <!-- Alert for wrong email/password combo, this will show between the boxes and the button when it does show -->
   <p id='alert'><%= alert %></p>
-</div>
+
   <!-- Button to submit form -->
   <div class='actions'>
     <%= submit_tag 'Login', :class => 'btn' %>
