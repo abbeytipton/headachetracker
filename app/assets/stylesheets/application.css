@@ -121,7 +121,8 @@
 .flex {
   display: flex;
   justify-content: center;
-  align-items: space-between;
+  align-items: space-around;
+  width: 90%;
 }
 
 .flexLabels {
