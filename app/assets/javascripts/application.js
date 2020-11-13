@@ -3,7 +3,7 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require_tree ./js_library
 
 
 $(document).on('turbolinks:load', function() {
