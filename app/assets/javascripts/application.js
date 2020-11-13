@@ -3,7 +3,7 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree ./js_library
+//= require logs.js
 
 
 $(document).on('turbolinks:load', function() {
