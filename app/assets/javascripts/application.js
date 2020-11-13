@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require_self
 //= require logs.js
 //= require graphs.js
 
