@@ -1,6 +1,8 @@
 /* ...
 *= require_self
 *= require log.scss
+*= require log_customization.scss
+*= require graphs.scss
 */
 
  /* Page styling */

@@ -4,6 +4,7 @@
 //= require activestorage
 //= require turbolinks
 //= require logs.js
+//= require graphs.js
 
 
 $(document).on('turbolinks:load', function() {
