@@ -63,8 +63,8 @@ $(document).on('turbolinks:load', function() {
                         marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin', 'tomato']},
                         hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>" }],
       layoutAllSymptoms = { plot_bgcolor: "transparent", paper_bgcolor: "transparent", autosize: false,
-                            width: 600, height: 500, font: {family: 'Poppins'}, title: "All Triggers",
-                            hovermode: "closest", hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+                            width: 600, height: 500, font: {family: 'Helvetica Neue'}, title: "All Triggers",
+                            hovermode: "closest", hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Helvetica Neue'}},
                             yaxis: { fixedrange: true, range: [0, 100], showTickLabels: false, tickmode: "linear", showgrid: false,
                             tick0: 0, dtick: 10, automargin: true,
                             title: "Percentage of the Time This Trigger<br> Was Present Before or During a Headache<br>"  },
@@ -132,7 +132,7 @@ $(document).on('turbolinks:load', function() {
           case "Over Exercising":
             title = "Over Exercising";
             labels = ['You were over exercising before the headache', 'You weren\'t over exercising before the headache'];
-            values = [exercising, no_exercise];
+            values = [exercise, no_exercise];
             break;
           case "During Period":
             title = "During Period";
@@ -190,9 +190,9 @@ $(document).on('turbolinks:load', function() {
         traces.push({ values: values, labels: labels, type: 'pie', textinfo: 'none', hovertemplate: "%{label} %{value}% of the time <extra></extra>",
                       marker: { colors: ['purple', 'teal']} });
         var layout = { height: 500, width: 600, hovermode: "closest", xaxis: { domain: 550 },
-                      hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Poppins'}},
+                      hoverlabel: {	width: 75, height: 150, bgcolor: "#e3e0cc", bordercolor: "#e3e0cc", font: {color: 'black', family: 'Helvetica Neue'}},
                       plot_bgcolor: "transparent", paper_bgcolor: "transparent", autosize: false, showlegend: true,
-                      legend: {"orientation": "h"}, font: {family: 'Poppins'}, title: title };
+                      legend: {"orientation": "h"}, font: {family: 'Helvetica Neue'}, title: title };
         var options = { displaylogo: false, };
         Plotly.newPlot(clickedDiv, traces, layout, options);
       };
