@@ -149,7 +149,8 @@
 
 .flexLabelChild {
   text-align: left;
-  width: 20%;
+  width: 30%;
+  border: 2px solid orange;
 }
 
 .flexLabelsLeft {
