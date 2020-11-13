@@ -1,4 +1,5 @@
-<script src='/assets/javascripts/logs.js'></script>
+  <%= javascript_include_tag "logs.js" %>
+<%= stylesheet_link_tag "log.scss" %>
 <!-- Form for adding a new headache, connects to logs controller -->
 <%= form_for :logs, url: logs_path do |f| %>
 
