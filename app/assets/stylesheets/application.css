@@ -1,5 +1,7 @@
 /* ...
 *= require_tree .
+*= require_self
+*= require log.scss
 */
 
  /* Page styling */
