@@ -1,9 +1,4 @@
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag "logs.js" %>
-<% end %>
-<% content_for :css do
-    stylesheet_link_tag 'log'
-end %>
+
 <!-- Form for adding a new headache, connects to logs controller -->
 <%= form_for :logs, url: logs_path do |f| %>
 
