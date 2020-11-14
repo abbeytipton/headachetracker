@@ -150,7 +150,10 @@
 .flexLabelChild {
   text-align: left;
   width: 100%;
-  border: 2px solid orange;
+}
+
+.flexLabel {
+  width: 50%;
 }
 
 .flexLabelChild input{
