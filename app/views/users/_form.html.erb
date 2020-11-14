@@ -10,28 +10,28 @@
   <% end %>
 
 <!-- Each div for each piece of information -->
-  <div class="flex">
-    <div class="label"><%= form.label :email %></div>
+  <div class="flexLabels">
+    <div class="flexLabelChild"><%= form.label :email %></div>
     <div><%= form.text_field :email, :required => true  %></div>
   </div>
 
-  <div class="flex">
-    <div class="label"><%= form.label :username %></div>
+  <div class="flexLabels">
+    <div class="flexLabelChild"><%= form.label :username %></div>
     <div><%= form.text_field :username, :required => true  %></div>
   </div>
 
-  <div class="flex">
-    <div class="label"><%= form.label :password %></div>
+  <div class="flexLabels">
+    <div class="flexLabelChild"><%= form.label :password %></div>
     <div><%= form.password_field :password, :required => true  %></div>
   </div>
 
-  <div class="flex">
-    <div class="label"><%= form.label :password_confirmation %></div>
+  <div class="flexLabels">
+    <div class="flexLabelChild"><%= form.label :password_confirmation %></div>
     <div><%= form.password_field :password_confirmation, :required => true  %></div>
   </div>
 
   <!-- Submit button -->
   <div class="actions">
-    <%= form.submit 'Complete', :class => 'btn' %>
+    <%= form.submit 'Submit!', :class => 'btn' %>
   </div>
 <% end %>
