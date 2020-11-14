@@ -141,7 +141,7 @@
 .flexLabels {
   display: flex;
   width: 70%;
-  margin-left: 35%;
+  margin-left: 15%;
   justify-content: flex-start;
   font-size: 16px;
   margin-bottom: 10px;
@@ -150,6 +150,7 @@
 .flexLabelChild {
   text-align: left;
   width: 30%;
+  border: 2px solid orange;
 }
 
 .flexLabelsLeft {
