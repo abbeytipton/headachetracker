@@ -145,13 +145,15 @@
   justify-content: flex-start;
   font-size: 16px;
   margin-bottom: 10px;
-  border: 2px solid green;
 }
 
 .flexLabelChild {
   text-align: left;
   width: 50%;
-  border: 2px solid orange;
+}
+
+.flexLabelChildInput {
+  width: 100%;
 }
 
 .flexLabelsLeft {
