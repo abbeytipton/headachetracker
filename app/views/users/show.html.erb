@@ -3,25 +3,25 @@
 <br>
 
 <!-- Flex divs hold everything in the middle and line up the labels and user info -->
-<div class="flex">
-  <div class="label title">Email: </div>
-  <div class="label info"><%= @user.email %></div>
+<div class="flexLabels">
+  <div class="flexLabel">Email: </div>
+  <div class="flexLabelChild"><%= @user.email %></div>
 </div>
 
-<div class="flex">
-  <div class="label title">Username: </div>
-  <div class="label info"><%= @user.email %></div>
+<div class="flexLabels">
+  <div class="flexLabel">Username: </div>
+  <div class="flexLabelChild"><%= @user.email %></div>
 </div>
 
-<div class="flex">
-  <div class="label title">Members Since: </div>
+<div class="flexLabels">
+  <div class="flexLabel">Members Since: </div>
   <!-- Get the sign up date for the user and parse it to be just the month/day/year -->
-  <div class="label info"><%= ActiveSupport::TimeZone["Central Time (US & Canada)"].parse(@user.created_at.to_s).utc.to_date.strftime("%m/%d/%Y") %></div>
+  <div class="flexLabelChild"><%= ActiveSupport::TimeZone["Central Time (US & Canada)"].parse(@user.created_at.to_s).utc.to_date.strftime("%m/%d/%Y") %></div>
 </div>
 
-<div class="flex">
-  <div class="label title">Headaches Logged: </div>
-  <div class="label info"><%= user_headaches %></div>
+<div class="flexLabels">
+  <div class="flexLabel">Headaches Logged: </div>
+  <div class="flexLabelChild"><%= user_headaches %></div>
 </div>
 
 <!-- Link to edit the account -->

@@ -32,6 +32,10 @@
     text-align: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .content {
     width: 90%;
     margin-left: 5%;
