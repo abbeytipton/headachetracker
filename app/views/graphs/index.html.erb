@@ -1,8 +1,3 @@
-<!-- Flash notice because this is the landing page after a headache is added -->
-<% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-
   <% if user_headaches < 2 %>
   <h2>Please log more than one headache to see your graphs.</h2>
   <% else %>
