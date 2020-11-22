@@ -163,16 +163,21 @@ label img {
 }
 
 .editTable {
-  width: 50%;
+  width: 30%;
   text-align: left;
   padding: 10px;
   border: 2px solid orange;
-  margin-left: 25%;
+  margin-left: 35%;
   margin-top: 0;
+  vertical-align: top;
 }
 
 .editTable td, .editTable tr{
   text-align: left;
+}
+
+table h4 {
+  float: left;
 }
 
 table .editCheckbox, table .editDate {
