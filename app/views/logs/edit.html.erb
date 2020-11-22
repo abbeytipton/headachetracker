@@ -1,7 +1,7 @@
 <h1>Edit Log</h1>
 
 <%= form_for @logs do |f| %>
-<table>
+<table class="graphTable">
 <tr>
   <td><h4>Date Started</h4></td>
   <td><%= f.datetime_field :date_started, required: true, class: 'editDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></td><br>
