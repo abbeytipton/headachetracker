@@ -60,7 +60,7 @@ $(document).on('turbolinks:load', function() {
     var AllSymptoms = document.getElementById('allSymptoms'),
     dataAllSymptoms = [{ x: xAllSymptoms, y: yAllSymptoms, type: 'bar',
                         transforms: [{ type: 'filter', target: 'y', operation: '>', value: 1}],
-                        marker:{ color: ['red', 'green', 'blue', 'orange', 'white', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin', 'tomato']},
+                        marker:{ color: ['red', 'green', 'blue', 'orange', 'limegreen', 'pink', 'purple', 'brown', 'grey', 'teal', 'black', 'coral', 'darkorchid', 'gold', 'moccasin', 'tomato']},
                         hovertemplate: "You experienced %{x} before or during a headache %{y}% of the time.<extra></extra>" }],
       layoutAllSymptoms = { plot_bgcolor: "transparent", paper_bgcolor: "transparent", autosize: false,
                             width: 600, height: 500, font: {family: 'Helvetica Neue'}, title: "All Triggers",

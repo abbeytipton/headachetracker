@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # Logs routes
   get 'logs/index'
-  resources :logs, only: [:index, :show, :new, :create, :edit, :update]
+  resources :logs, only: [:index, :show, :new, :create, :edit, :update, :delete]
   get 'logs/edit'
   get 'newlog', to: 'logs#new', as: 'newlog'
   post "logs/:id/edit", :to => "logs#edit"

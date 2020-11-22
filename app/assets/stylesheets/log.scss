@@ -59,11 +59,12 @@ h2 {
 }
 
 // These fields are input fields and need different settings //
-.oneField, .twoField {
+.oneField, .twoField, .editDate {
   font-size: 14px;
   border: 1px solid black;
   padding: 5px;
   margin-left: 10%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 // The next buttons (look like a hand) //
