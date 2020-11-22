@@ -1,6 +1,7 @@
 
 .graphTable {
   max-width: 100%;
+  min-width: 100%;
   border: 2px solid black;
   margin-top: 20px;
 }
@@ -11,7 +12,7 @@
   font-family: Trebuchet MS;
   font-size: 12px;
   width: auto;
-  padding: 5px;
+  padding: 8px;
 }
 
 .graphTable td {
@@ -20,6 +21,7 @@
   font-size: 12px;
   width: auto;
   text-align: center;
+  padding: 8px;
 }
 
 .graphTable td img {
