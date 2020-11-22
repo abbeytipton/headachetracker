@@ -91,7 +91,7 @@ h2, h4 {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #e3e0cc;
+  background-color: #2b3e51;
   min-width: 250px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -100,13 +100,13 @@ h2, h4 {
 
 /* Links inside the dropdown */
 .dropdown-content span {
-  color: black;
+  color: white;
   display: block;
   text-decoration: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  font-size: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 14px;
   cursor: pointer;
   margin-left: 10px;
 }
@@ -114,57 +114,10 @@ h2, h4 {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-
-/* Modal styling for popup of instructions and total headaches logged */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #e3e0cc;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 30%;
-  color: black;
-  border-radius: 11px;
-  font-size: 13px;
-}
-
-#pInsideModal {
-  font-size: 13px;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .dropdownLi a:hover, .dropdownLi a, .dropdownLi a:active, .dropdownLi a:visited {
   text-decoration: none;
   background: transparent;
-  color: black;
+  color: white;
   outline: none;
   text-align: left;
   cursor: pointer;
