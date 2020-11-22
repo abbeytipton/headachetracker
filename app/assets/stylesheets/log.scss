@@ -166,9 +166,8 @@ label img {
   width: 30%;
   text-align: left;
   padding: 10px;
-  border: 2px solid orange;
   margin-left: 35%;
-  margin-top: -200px;
+  margin-top: -400px;
   vertical-align: top;
 }
 
@@ -176,10 +175,11 @@ label img {
   text-align: left;
 }
 
-table h4 {
+table h4, table .editCheckbox, table .editDate  {
   float: left;
 }
 
-table .editCheckbox, table .editDate {
-  float: left;
+table .editCheckbox
+{
+  margin-left: 10px;
 }
