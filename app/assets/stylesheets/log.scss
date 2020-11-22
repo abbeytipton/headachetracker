@@ -166,8 +166,9 @@ label img {
   width: 50%;
   text-align: left;
   padding: 10px;
-  border: 0;
+  border: 2px solid orange;
   margin-left: 25%;
+  margin-top: 0;
 }
 
 .editTable td {
@@ -175,5 +176,5 @@ label img {
 }
 
 .editCheckbox {
-  margin-left: 40px;
+  float: right;
 }
