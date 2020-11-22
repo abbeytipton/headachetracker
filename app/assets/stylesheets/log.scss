@@ -171,10 +171,10 @@ label img {
   margin-top: 0;
 }
 
-.editTable td {
+.editTable td, .editTable tr{
   text-align: left;
 }
 
-.editCheckbox {
+table .editCheckbox, table .editDate {
   float: right;
 }

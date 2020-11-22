@@ -1,7 +1,7 @@
-<h1>Edit Log</h1>
 
 <%= form_for @logs do |f| %>
 <table class="editTable">
+  <h1>Edit Log</h1>
 <tr>
   <td><h4>Date Started</h4></td>
   <td><%= f.datetime_field :date_started, required: true, class: 'editDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></td><br>
@@ -77,7 +77,7 @@
   </tr>
   <tr>
       <td><h4>Medicine Taken</h4></td>
-      <td><%= f.text_field :medicine %></td><br>
+      <td><%= f.text_field :medicine, :class => 'editCheckbox' %></td><br>
   <% end %>
 </tr>
 <tr>
