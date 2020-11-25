@@ -3,7 +3,6 @@ class LogsController < ApplicationController
   # Require user login before these pages can be viewed #
   before_action :require_user, only: [:index]
 
-
   def index
     if customized == 0
       redirect_to '/log_customization/create'
@@ -30,12 +29,14 @@ class LogsController < ApplicationController
     end
   end
 
+# Deletes a log
   def destroy
     Logs.find(params[:id]).destroy
     flash[:delete] = " Log deleted successfully! "
     redirect_to '/logs/index'
   end
 
+# Edits a log
   def edit
     @logs = Logs.find(params[:id])
   end
@@ -44,19 +45,17 @@ class LogsController < ApplicationController
     @logs = Logs.find(params[:id])
     if @logs.update(logs_params)
       redirect_to '/logs/show'
-      flash[:notice] = " Log updated successfully! "
+      flash[:notice] = " The log was updated successfully! "
     else
       redirect_to '/logs/show'
     end
   end
 
   private
-
   # Defines params needed for product to be set up, also allows teacher_id to come through from hidden field
   def logs_params
     params.require(:logs).permit(:userid, :date_started, :date_ended, :period, :dehydration,
                                 :exercise, :eye_strain, :lights, :sleep, :stress, :overeating,
                                 :medicine, :medicine_helped, :weather, :alcohol, :chocolate, :custom1, :custom2, :custom3, :custom4, :custom5)
   end
-
 end

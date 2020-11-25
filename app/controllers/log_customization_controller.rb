@@ -1,7 +1,9 @@
 class LogCustomizationController < ApplicationController
 
+# Requires user login before allowing access to these pages #
   before_action :require_user, only: [:new]
 
+# If the user has already customized their logs, then they need to be redirected to the logs index page #
   def index
     if customized == 1
       redirect_to '/logs/index'
@@ -16,15 +18,16 @@ class LogCustomizationController < ApplicationController
     @logcustomization = LogCustomization.find(params[:id])
   end
 
-  # Creates new log instance
+  # Creates new log customization instance
   def new
     @logcustomization = LogCustomization.new
   end
 
-  # Defines what new log is and saves
+  # Defines what new log customization is and saves
   def create
     @logcustomization = LogCustomization.new(logcustomization_params)
     @logcustomization = LogCustomization.find(params[:id])
+    # Check that the user didn't check any boxes for custom triggers and then not enter a name for them #
     if
       params[:log_customization][:trigger1] == "1" && params[:log_customization][:trigger1Name].blank?
       redirect_to '/logs/index'
@@ -59,8 +62,10 @@ class LogCustomizationController < ApplicationController
     end
   end
 
+# Update customizations #
   def update
     @logcustomization = LogCustomization.find(params[:id])
+    # Check that the user didn't check any boxes for custom triggers and then not enter a name for them #
     if
       params[:log_customization][:trigger1] == "1" && params[:log_customization][:trigger1Name].blank?
       redirect_to '/graphs/index'
@@ -96,8 +101,6 @@ class LogCustomizationController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @logcustomization.destroy
     respond_to do |format|
@@ -115,5 +118,4 @@ class LogCustomizationController < ApplicationController
       :trigger9Name, :trigger10, :trigger10Name, :alcohol, :overeating, :stress, :sleep,
       :lights, :eyestrain, :exercise, :period, :chocolate, :dehydrated, :medicine, :boolean)
     end
-
   end

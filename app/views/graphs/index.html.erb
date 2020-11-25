@@ -1,62 +1,71 @@
-  <% if user_headaches < 2 %>
+<!-- If the user has not logged 2 headaches, the graphs won't render right. So, show this message if that's the case -->
+<% if user_headaches < 2 %>
   <h2>Please log more than one headache to see your graphs.</h2>
-  <% else %>
+<% else %>
 
-<!-- Charts -->
-<!-- Flex for dropdown menu and header of all triggers graph -->
-<div class="flexMenuAndTitle">
-  <!-- Drop down more menu -->
-  <div class="dropdown">
-    <%= image_tag('iconMore.png', id: 'moreClick', class: 'moreClick') %>
-    <div id="dropdownMenu" class="dropdown-content">
-        <span id="listClick" class="dropdownLi"><a href="/logs/show">Edit Logs</a></span>
-        <span id="listClick" class="dropdownLi"><%= link_to 'Edit Triggers', edit_log_customization_path(user_triggers.id) %></span>
+  <!-- Charts -->
+  <!-- Flex for dropdown menu and header of all triggers graph -->
+  <div class="FlexMenuAndTitle">
+    <!-- Drop down more menu -->
+    <div class="Dropdown">
+      <%= image_tag('iconMore.png', id: 'MoreClick', class: 'MoreClick') %>
+      <div id="DropdownMenu" class="DropdownContent">
+        <!-- Links to edit logs and triggers -->
+        <span id="ListClick" class="DropdownLi">
+          <a href="/logs/show">Edit Logs</a>
+        </span>
+        <span id="ListClick" class="DropdownLi"><%= link_to 'Edit Triggers', edit_log_customization_path(user_triggers.id) %></span>
+      </div>
+    </div>
+
+    <!-- Now the regular page view -->
+    <div class="Header">
+      <h2>Your Graphs</h2>
+      <h4>You have logged
+        <%= user_headaches %>
+        headaches so far.</h4>
+    </div>
+    <div class="right"></div>
+    <!-- End of flex graph for the menu and title -->
+  </div>
+
+  <!-- This chart is always shown on page load -->
+  <div class="Flexgraphs">
+    <div class="Children" id="TriggerHolder">
+      <!-- This div will be filled from the JS with the all triggers graph -->
+      <div id="AllTriggers" style="height: 370px"></div>
+    </div>
+    <div class="Children" id="ClickedDiv">
+      <div id="ClickedGraph" style="height: 370px;"></div>
     </div>
   </div>
-<div class="header">
-  <h2>Your Graphs</h2>
-  <h4>You have logged <%= user_headaches %> headaches so far.</h4>
-</div>
-  <div class="right"></div>
-<!-- End of flex graph for the menu and title -->
-</div>
-
-<!-- This chart is always show on page load -->
-<div class="flexgraphs">
-<div class="children" id="triggerHolder">
-  <div id="allSymptoms" style="height: 370px"></div>
-</div>
-<div class="children" id="clickedDiv">
-  <div id="clickedGraph" style="height: 370px;"></div>
-</div>
-</div>
 
 <% end %>
 
 <!-- These spans hold the user's info so it can be accessed by the JS file, they are hidden by CSS -->
-<span class="toHide" id="alcohol"><%= user_alcohol %></span>
-<span class="toHide" id="overeating"><%= user_overeating %></span>
-<span class="toHide" id="stressed"><%= user_stressed %></span>
-<span class="toHide" id="sleep"><%= user_sleep %></span>
-<span class="toHide" id="lights"><%= user_lights %></span>
-<span class="toHide" id="eye_strain"><%= user_eye_strain %></span>
-<span class="toHide" id="exercise"><%= user_exercise %></span>
-<span class="toHide" id="period"><%= user_period %></span>
-<span class="toHide" id="chocolate"><%= user_chocolate %></span>
-<span class="toHide" id="dehydrated"><%= user_dehydrated %></span>
-<span class="toHide" id="total"><%= user_headaches %></span>
-<span class="toHide" id="medicine"><%= user_medicine %></span>
-<span class="toHide" id="medicine_helped"><%= user_medicine_helped %></span>
-<span class="toHide" id="custom1"><%= user_custom1 %></span>
-<span class="toHide" id="custom2"><%= user_custom2 %></span>
-<span class="toHide" id="custom3"><%= user_custom3 %></span>
-<span class="toHide" id="custom4"><%= user_custom4 %></span>
-<span class="toHide" id="custom5"><%= user_custom5 %></span>
-<span class="toHide" id="trigger1Name"><%= user_trigger1 %></span>
-<span class="toHide" id="trigger2Name"><%= user_trigger2 %></span>
-<span class="toHide" id="trigger3Name"><%= user_trigger3 %></span>
-<span class="toHide" id="trigger4Name"><%= user_trigger4 %></span>
-<span class="toHide" id="trigger5Name"><%= user_trigger5 %></span>
+<span class="ToHide" id="Alcohol"><%= user_alcohol %></span>
+<span class="ToHide" id="Overeating"><%= user_overeating %></span>
+<span class="ToHide" id="Stressed"><%= user_stressed %></span>
+<span class="ToHide" id="Sleep"><%= user_sleep %></span>
+<span class="ToHide" id="Lights"><%= user_lights %></span>
+<span class="ToHide" id="Eyestrain"><%= user_eye_strain %></span>
+<span class="ToHide" id="Exercise"><%= user_exercise %></span>
+<span class="ToHide" id="Period"><%= user_period %></span>
+<span class="ToHide" id="Chocolate"><%= user_chocolate %></span>
+<span class="ToHide" id="Dehydrated"><%= user_dehydrated %></span>
+<span class="ToHide" id="Total"><%= user_headaches %></span>
+<span class="ToHide" id="Medicine"><%= user_medicine %></span>
+<span class="ToHide" id="MedicineHelped"><%= user_medicine_helped %></span>
+<span class="ToHide" id="CustomTriggerOne"><%= user_custom1 %></span>
+<span class="ToHide" id="CustomTriggerTwo"><%= user_custom2 %></span>
+<span class="ToHide" id="CustomTriggerThree"><%= user_custom3 %></span>
+<span class="ToHide" id="CustomTriggerFour"><%= user_custom4 %></span>
+<span class="ToHide" id="CustomTriggerFive"><%= user_custom5 %></span>
+<span class="ToHide" id="TriggerOneName"><%= user_trigger1 %></span>
+<span class="ToHide" id="TriggerTwoName"><%= user_trigger2 %></span>
+<span class="ToHide" id="TriggerThreeName"><%= user_trigger3 %></span>
+<span class="ToHide" id="TriggerFourName"><%= user_trigger4 %></span>
+<span class="ToHide" id="TriggerFiveName"><%= user_trigger5 %></span>
 
 <!-- Include the jQuery plugins -->
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>

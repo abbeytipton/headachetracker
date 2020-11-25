@@ -1,327 +1,340 @@
-
 <!-- Form for adding a new headache, connects to logs controller -->
 <%= form_for :logs, url: logs_path do |f| %>
 
 <!-- Question divs start next, they fade in and out as the user answers them, so only one shows at a time -->
 
-<div id="start" class="logDivs">
-    <div class="leftDiv">
-        <h2>Are you ready to log your headache?</h2><br>
-        <div id="startNext" class="button"><%= image_tag 'start.png', class: 'rotate' %></div>
-      </div>
+<!-- Start div -->
+<div id="Start" class="LogDivs">
+  <div class="LeftDiv">
+    <h2>Are you ready to log your headache?</h2><br>
+    <div id="StartNext" class="Button"><%= image_tag 'start.png', class: 'Rotate' %></div>
+  </div>
 </div>
 
-  <div id="one" class="logDivs">
-    <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconStart.png") %>
-      </div>
-      <div>
-        <h2>When did this headache start?</h2>
-        <%= f.datetime_field :date_started, required: true, class: 'oneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
-      </div>
+<!-- Start and end date, always shown -->
+<div id="one" class="LogDivs">
+  <div class="Flex">
+    <div class="LeftDiv">
+      <%= image_tag("iconStart.png") %>
     </div>
-    <div class="rightDiv">
-      <div id="oneNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
+    <div>
+      <h2>When did this headache start?</h2>
+      <%= f.datetime_field :date_started, required: true, class: 'OneField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M') %><br/>
     </div>
   </div>
+  <div class="RightDiv">
+    <div id="OneNext" class="Button"><%= image_tag 'iconNext.png', class: 'Button' %></div>
+  </div>
+</div>
 
-  <div id="two" class="logDivs">
-    <div class="flex">
-      <div class="leftDiv">
-        <%= image_tag("iconStart.png") %>
-      </div>
-      <div>
-        <h2>When did this headache end?</h2>
-        <%= f.datetime_field :date_ended, required: true, class: 'twoField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M')%><br/>
-      </div>
+<div id="Two" class="LogDivs">
+  <div class="Flex">
+    <div class="LeftDiv">
+      <%= image_tag("iconStart.png") %>
     </div>
-    <div class="rightDiv">
-      <div id="twoNext" class="button"><%= image_tag 'iconNext.png', class: 'button' %></div>
+    <div>
+      <h2>When did this headache end?</h2>
+      <%= f.datetime_field :date_ended, required: true, class: 'TwoField', value: DateTime.now.strftime('%Y-%m-%dT%H:%M')%><br/>
     </div>
   </div>
+  <div class="RightDiv">
+    <div id="TwoNext" class="Button"><%= image_tag 'iconNext.png', class: 'Button' %></div>
+  </div>
+</div>
 
-  <% if include_period == 1 %>
-  <div id="three" class="logDivs">
+<!-- All triggers only show if the user has them enabled -->
+<% if include_period == 1 %>
+  <div id="Three" class="LogDivs">
     <h2>Were you on your period during this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :period, id: 'threeFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="threeFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :period, id: 'ThreeFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="ThreeFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="threeFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="threeFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo'%></label>
+        <input type="Checkbox" id="ThreeFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="ThreeFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo'%></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_dehydrated == 1 %>
-  <div id="four" class="logDivs">
+<% if include_dehydrated == 1 %>
+  <div id="Four" class="LogDivs">
     <h2>Were you dehydrated during this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :dehydration, id: 'fourFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="fourFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :dehydration, id: 'FourFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="FourFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="fourFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="fourFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="FourFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="FourFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
- <% end %>
+<% end %>
 
-  <% if include_exercise == 1 %>
-  <div id="five" class="logDivs">
+<% if include_exercise == 1 %>
+  <div id="Five" class="LogDivs">
     <h2>Did you exercise the day of, or the day before, this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :exercise, id: 'fiveFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="fiveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :exercise, id: 'FiveFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="FiveFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="fiveFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="fiveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="FiveFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="FiveFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_eyestrain == 1 %>
-  <div id="six" class="logDivs">
+<% if include_eyestrain == 1 %>
+  <div id="Six" class="LogDivs">
     <h2>Is it possible you experienced eye strain prior to this headache? (Were you using a device for more than 2 hours?)</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :eye_strain, id: 'sixFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="sixFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :eye_strain, id: 'SixFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="SixFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="sixFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="sixFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="SixFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="SixFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_lights == 1 %>
-  <div id="seven" class="logDivs">
+<% if include_lights == 1 %>
+  <div id="Seven" class="LogDivs">
     <h2>Did you experience bright or fluorescent lights for more than 2 hours prior to this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :lights, id: 'sevenFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="sevenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :lights, id: 'SevenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="SevenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="sevenFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="sevenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-      </div>
-    </div>
-  </div>
-  <% end %>
-
-  <% if include_sleep == 1 %>
-  <div id="eight" class="logDivs">
-    <h2>Did you get seven or more hours of sleep the night before this headache?</h2>
-    <div class="flex">
-      <div>
-        <%= f.check_box :sleep, id: 'eightFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="eightFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-      </div>
-      <div>
-        <input type="checkbox" id="eightFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="eightFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="SevenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="SevenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_stress == 1 %>
-  <div id="nine" class="logDivs">
+<% if include_sleep == 1 %>
+  <div id="Eight" class="LogDivs">
+    <h2>Did you get Seven or more hours of sleep the night before this headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :sleep, id: 'EightFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="EightFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="EightFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="EightFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if include_stress == 1 %>
+  <div id="Nineteen" class="LogDivs">
     <h2>Have you been under more stress than usual?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :stress, id: 'nineFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="nineFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :stress, id: 'NineteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="NineteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="nineFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="nineFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="NineteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="NineteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_overeating == 1 %>
-  <div id="ten" class="logDivs">
+<% if include_overeating == 1 %>
+  <div id="Ten" class="LogDivs">
     <h2>Have you been overeating the day of, or the day before, this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :overeating, id: 'tenFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="tenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :overeating, id: 'TenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="TenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="tenFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="tenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="TenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="TenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_alcohol == 1 %>
-  <div id="twelve" class="logDivs">
+<% if include_alcohol == 1 %>
+  <div id="Twelve" class="LogDivs">
     <h2>Did you consume more than one glass of alcohol the day of, or the day before, this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :alcohol, id: 'twelveFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="twelveFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :alcohol, id: 'TwelveFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="TwelveFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="twelveFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="twelveFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="TwelveFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="TwelveFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_chocolate == 1 %>
-  <div id="thirteen" class="logDivs">
+<% if include_chocolate == 1 %>
+  <div id="Thirteen" class="LogDivs">
     <h2>Did you consume more than one piece of chocolate the day of, or the day before, this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <%= f.check_box :chocolate, id: 'thirteenFieldYes', class: 'checkbox' %>
-        <label class="checkboxLabel" for="thirteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
+        <%= f.check_box :chocolate, id: 'ThirteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="ThirteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
       <div>
-        <input type="checkbox" id="thirteenFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="thirteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
+        <input type="Checkbox" id="ThirteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="ThirteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_medicine == 1 %>
-  <div id="fourteen" class="logDivs">
+<% if include_medicine == 1 %>
+  <div id="Fourteen" class="LogDivs">
     <h2>Did you take medicine for this headache?</h2>
-    <div class="flex">
+    <div class="Flex">
       <div>
-        <input type="checkbox" id="fourteenFieldYes" class="checkbox">
-        <label class="checkboxLabel" for="fourteenFieldYes"><%= image_tag 'iconYes.png', class: 'medYes' %></label>
-        </div>
+        <input type="Checkbox" id="FourteenFieldYes" class="Checkbox">
+        <label class="CheckboxLabel" for="FourteenFieldYes"><%= image_tag 'iconYes.png', class: 'MedYes' %></label>
+      </div>
       <div>
-        <input type="checkbox" id="fourteenFieldNo" class="checkbox">
-        <label class="checkboxLabel" for="fourteenFieldNo"><%= image_tag 'iconNo.png', class: 'medNo' %></label>
+        <input type="Checkbox" id="FourteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="FourteenFieldNo"><%= image_tag 'iconNo.png', class: 'MedNo' %></label>
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
-  <% if include_medicine == 1 %>
-  <div id="fourteenTwo" class="logDivs">
+<% if include_medicine == 1 %>
+  <div id="FourteenTwo" class="LogDivs">
     <h2>What medicine did you take?</h2>
-    <div class="flex">
-    <div>
-      Medicine Type: <%= f.text_field :medicine, id: "fourteenField" %><br>
-    </div>
-    <div>
-        <input type="checkbox" id="fourteenFieldYesIcon" class="checkbox">
-        <label class="checkboxLabel" for="fourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-    </div>
-  </div>
-  </div>
-  <% end %>
-
-  <% if include_trigger1 == 1 %>
-    <div id="fifteen" class="logDivs">
-      <h2>Did you experience <%= user_trigger1 %> before or during the headache?</h2>
-      <div class="flex">
-        <div>
-          <%= f.check_box :custom1, id: 'fifteenFieldYes', class: 'checkbox' %>
-          <label class="checkboxLabel" for="fifteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="fifteenFieldNo" class="checkbox">
-          <label class="checkboxLabel" for="fifteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if include_trigger2 == 1 %>
-    <div id="sixteen" class="logDivs">
-      <h2>Did you experience <%= user_trigger2 %> before or during the headache?</h2>
-      <div class="flex">
-        <div>
-          <%= f.check_box :custom2, id: 'sixteenFieldYes', class: 'checkbox' %>
-          <label class="checkboxLabel" for="sixteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="sixteenFieldNo" class="checkbox">
-          <label class="checkboxLabel" for="sixteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if include_trigger3 == 1 %>
-    <div id="seventeen" class="logDivs">
-      <h2>Did you experience <%= user_trigger3 %> before or during the headache?</h2>
-      <div class="flex">
-        <div>
-          <%= f.check_box :custom3, id: 'seventeenFieldYes', class: 'checkbox' %>
-          <label class="checkboxLabel" for="seventeenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="seventeenFieldNo" class="checkbox">
-          <label class="checkboxLabel" for="seventeenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if include_trigger4 == 1 %>
-    <div id="eighteen" class="logDivs">
-      <h2>Did you experience <%= user_trigger4 %> before or during the headache?</h2>
-      <div class="flex">
-        <div>
-          <%= f.check_box :custom4, id: 'eighteenFieldYes', class: 'checkbox' %>
-          <label class="checkboxLabel" for="eighteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="eighteenFieldNo" class="checkbox">
-          <label class="checkboxLabel" for="eighteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if include_trigger5 == 1 %>
-    <div id="nineteen" class="logDivs">
-      <h2>Did you experience <%= user_trigger5 %> before or during the headache?</h2>
-      <div class="flex">
-        <div>
-          <%= f.check_box :custom5, id: 'nineteenFieldYes', class: 'checkbox' %>
-          <label class="checkboxLabel" for="nineteenFieldYes"><%= image_tag 'iconYes.png', class: 'nextYes' %></label>
-        </div>
-        <div>
-          <input type="checkbox" id="nineteenFieldNo" class="checkbox">
-          <label class="checkboxLabel" for="nineteenFieldNo"><%= image_tag 'iconNo.png', class: 'nextNo' %></label>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <div id="twenty" class="logDivs">
-    <div class="flex">
-      <div class="leftDiv">
+    <div class="Flex">
+      <div>
+        Medicine Type:
+        <%= f.text_field :medicine, id: "FourteenField" %><br>
       </div>
       <div>
-        <%= f.hidden_field :userid, :value => current_user.id %>
-        <!-- Submit button and end of ERB -->
-        <h1>Save this log!</h1>
-        <%= image_submit_tag('iconFinish.png', class: 'finishButton') %>
-        <% end %>
+        <input type="Checkbox" id="FourteenFieldYesIcon" class="Checkbox">
+        <label class="CheckboxLabel" for="FourteenFieldYesIcon"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
       </div>
     </div>
   </div>
+<% end %>
+
+<% if include_trigger1 == 1 %>
+  <div id="Fifteen" class="LogDivs">
+    <h2>Did you experience
+      <%= user_trigger1 %>
+      before or during the headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :custom1, id: 'FifteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="FifteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="FifteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="FifteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if include_trigger2 == 1 %>
+  <div id="Sixteen" class="LogDivs">
+    <h2>Did you experience
+      <%= user_trigger2 %>
+      before or during the headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :custom2, id: 'SixteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="SixteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="SixteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="SixteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if include_trigger3 == 1 %>
+  <div id="Seventeen" class="LogDivs">
+    <h2>Did you experience
+      <%= user_trigger3 %>
+      before or during the headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :custom3, id: 'SeventeenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="SeventeenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="SeventeenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="SeventeenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if include_trigger4 == 1 %>
+  <div id="Eighteen" class="LogDivs">
+    <h2>Did you experience
+      <%= user_trigger4 %>
+      before or during the headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :custom4, id: 'EighteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="EighteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="EighteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="EighteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if include_trigger5 == 1 %>
+  <div id="Nineteen" class="LogDivs">
+    <h2>Did you experience
+      <%= user_trigger5 %>
+      before or during the headache?</h2>
+    <div class="Flex">
+      <div>
+        <%= f.check_box :custom5, id: 'NineteenFieldYes', class: 'Checkbox' %>
+        <label class="CheckboxLabel" for="NineteenFieldYes"><%= image_tag 'iconYes.png', class: 'NextYes' %></label>
+      </div>
+      <div>
+        <input type="Checkbox" id="NineteenFieldNo" class="Checkbox">
+        <label class="CheckboxLabel" for="NineteenFieldNo"><%= image_tag 'iconNo.png', class: 'NextNo' %></label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!-- Finish div -->
+<div id="Twenty" class="LogDivs">
+  <div class="Flex">
+    <div class="LeftDiv"></div>
+    <div>
+      <%= f.hidden_field :userid, :value => current_user.id %>
+      <!-- Submit Button and end of ERB -->
+      <h1>Save this log!</h1>
+      <%= image_submit_tag('iconFinish.png', class: 'finishButton') %>
+    <% end %>
+  </div>
+</div>
+</div>

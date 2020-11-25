@@ -1,93 +1,127 @@
+<!-- Welcome message -->
 <h1>Edit Triggers</h1>
 
 <%= form_for @logcustomization do |f| %>
+<!-- Table holds everything next to each other on the page -->
+<table class="EditTable">
+  <h3>Check the items you would like to include:</h3>
 
-<table class="editTable">
-<h3>Check the items you would like to include:</h3>
+  <!-- Show each option and the checkbox that goes with it -->
+  <tr>
+    <td>
+      <h4>Alcohol</h4>
+    </td>
+    <td><%= f.check_box :alcohol, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Alcohol</h4></td>
-  <td><%= f.check_box :alcohol, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Overeating</h4>
+    </td>
+    <td><%= f.check_box :overeating, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Overeating</h4></td>
-  <td><%= f.check_box :overeating, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Stress</h4>
+    </td>
+    <td><%= f.check_box :stress, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Stress</h4></td>
-  <td><%= f.check_box :stress, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Lack of Sleep</h4>
+    </td>
+    <td><%= f.check_box :sleep, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Lack of Sleep</h4></td>
-  <td><%= f.check_box :sleep, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Bright Lights</h4>
+    </td>
+    <td><%= f.check_box :lights, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Bright Lights</h4></td>
-  <td><%= f.check_box :lights, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Eye Strain</h4>
+    </td>
+    <td><%= f.check_box :eyestrain, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Eye Strain</h4></td>
-  <td><%= f.check_box :eyestrain, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Exercise</h4>
+    </td>
+    <td><%= f.check_box :exercise, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Exercise</h4></td>
-  <td><%= f.check_box :exercise, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Period</h4>
+    </td>
+    <td><%= f.check_box :period, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Period</h4></td>
-  <td><%= f.check_box :period, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Chocolate</h4>
+    </td>
+    <td><%= f.check_box :chocolate, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Chocolate</h4></td>
-  <td><%= f.check_box :chocolate, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Dehydration</h4>
+    </td>
+    <td><%= f.check_box :dehydrated, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Dehydration</h4></td>
-  <td><%= f.check_box :dehydrated, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4>Medicine</h4>
+    </td>
+    <td><%= f.check_box :medicine, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4>Medicine</h4></td>
-  <td><%= f.check_box :medicine, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4><%= f.text_field :trigger1Name %></h4>
+    </td>
+    <td><%= f.check_box :trigger1, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4><%= f.text_field :trigger1Name %></h4></td>
-  <td><%= f.check_box :trigger1, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4><%= f.text_field :trigger2Name %></h4>
+    </td>
+    <td><%= f.check_box :trigger2, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4><%= f.text_field :trigger2Name %></h4></td>
-  <td><%= f.check_box :trigger2, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4><%= f.text_field :trigger3Name %></h4>
+    </td>
+    <td><%= f.check_box :trigger3, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4><%= f.text_field :trigger3Name %></h4></td>
-  <td><%= f.check_box :trigger3, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4><%= f.text_field :trigger4Name %></h4>
+    </td>
+    <td><%= f.check_box :trigger4, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
-<tr>
-  <td><h4><%= f.text_field :trigger4Name %></h4></td>
-  <td><%= f.check_box :trigger4, :class => 'editCheckbox' %></td><br>
-</tr>
-
-<tr>
-  <td><h4><%= f.text_field :trigger5Name %></h4></td>
-  <td><%= f.check_box :trigger5, :class => 'editCheckbox' %></td><br>
-</tr>
+  <tr>
+    <td>
+      <h4><%= f.text_field :trigger5Name %></h4>
+    </td>
+    <td><%= f.check_box :trigger5, :class => 'EditCheckbox' %></td><br>
+  </tr>
 
 </table>
-
-<%= f.submit "Save Triggers", :class => 'btn' %>
+<!-- Submit button -->
+<%= f.submit "Save Triggers", :class => 'Btn' %>
 <% end %>
 
 <br><br><br>

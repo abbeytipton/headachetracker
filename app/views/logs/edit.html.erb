@@ -1,117 +1,164 @@
+<!-- Page to edit a log -->
+
 <h1>Edit Log</h1>
 <%= form_for @logs do |f| %>
-<table class="editTable">
 
-<tr>
-  <td><h4>Date Started</h4></td>
-  <td><%= f.datetime_field :date_started, required: true, class: 'editDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></td><br>
-</tr>
-<tr>
-  <td><h4>Date Ended</h4></td>
-  <td><%= f.datetime_field :date_ended, required: true, class: 'editDate', value: @logs.date_ended.strftime('%Y-%m-%dT%H:%M') %></td><br>
-</tr>
-<tr>
-<% if include_period == 1 %>
-    <td><h4>On or Near Period</h4></td>
-    <td><%= f.check_box :period, :class => 'editCheckbox' %></td><br>
-<% end %>
-</tr>
-<tr>
-  <% if include_dehydrated == 1 %>
-    <td><h4>Dehydration</h4></td>
-    <td><%= f.check_box :dehydration, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_exercise == 1 %>
-    <td><h4>Over Exercising</h4></td>
-    <td><%= f.check_box :exercise, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_eyestrain == 1 %>
-    <td><h4>Eye Strain</h4></td>
-    <td><%= f.check_box :eye_strain, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_lights == 1 %>
-    <td><h4>Bright Lights</h4></td>
-    <td><%= f.check_box :lights, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_sleep == 1 %>
-    <td><h4>Lack of Sleep</h4></td>
-    <td><%= f.check_box :sleep, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_stress == 1 %>
-    <td><h4>Stress</h4></td>
-    <td><%= f.check_box :stress, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_overeating == 1 %>
-    <td><h4>Overeating</h4></td>
-    <td><%= f.check_box :overeating, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_alcohol == 1 %>
-    <td><h4>Alcohol</h4></td>
-    <td><%= f.check_box :alcohol, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_chocolate == 1 %>
-    <td><h4>Chocolate</h4></td>
-    <td><%= f.check_box :chocolate, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_medicine == 1 %>
-  <td><h4>Medicine Helped</h4></td>
-  <td><%= f.check_box :medicine_helped, :class => 'editCheckbox' %></td><br>
+<!-- Table holds everything next to each other -->
+<table class="EditTable">
+
+  <!-- Date started/ended are always shown -->
+  <tr>
+    <td>
+      <h4>Date Started</h4>
+    </td>
+    <td><%= f.datetime_field :date_started, required: true, class: 'EditDate', value: @logs.date_started.strftime('%Y-%m-%dT%H:%M') %></td><br>
   </tr>
   <tr>
-      <td><h4>Medicine Taken</h4></td>
-      <td><%= f.text_field :medicine, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_trigger1 == 1 %>
-    <td><h4><%= user_trigger1 %></h4></td>
-    <td><%= f.check_box :custom1, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_trigger2 == 1 %>
-    <td><h4><%= user_trigger2 %></h4></td>
-    <td><%= f.check_box :custom2, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_trigger3 == 1 %>
-    <td><h4><%= user_trigger3 %></h4></td>
-    <td><%= f.check_box :custom3, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_trigger4 == 1 %>
-    <td><h4><%= user_trigger4 %></h4></td>
-    <td><%= f.check_box :custom4, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
-<tr>
-  <% if include_trigger5 == 1 %>
-    <td><h4><%= user_trigger5 %></h4></td>
-    <td><%= f.check_box :custom5, :class => 'editCheckbox' %></td><br>
-  <% end %>
-</tr>
+    <td>
+      <h4>Date Ended</h4>
+    </td>
+    <td><%= f.datetime_field :date_ended, required: true, class: 'EditDate', value: @logs.date_ended.strftime('%Y-%m-%dT%H:%M') %></td><br>
+  </tr>
+
+  <!-- All the remaining triggers are only shown if the user has them enabled -->
+  <tr>
+    <% if include_period == 1 %>
+      <td>
+        <h4>On or Near Period</h4>
+      </td>
+      <td><%= f.check_box :period, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_dehydrated == 1 %>
+      <td>
+        <h4>Dehydration</h4>
+      </td>
+      <td><%= f.check_box :dehydration, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_exercise == 1 %>
+      <td>
+        <h4>Over Exercising</h4>
+      </td>
+      <td><%= f.check_box :exercise, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_eyestrain == 1 %>
+      <td>
+        <h4>Eye Strain</h4>
+      </td>
+      <td><%= f.check_box :eye_strain, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_lights == 1 %>
+      <td>
+        <h4>Bright Lights</h4>
+      </td>
+      <td><%= f.check_box :lights, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_sleep == 1 %>
+      <td>
+        <h4>Lack of Sleep</h4>
+      </td>
+      <td><%= f.check_box :sleep, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_stress == 1 %>
+      <td>
+        <h4>Stress</h4>
+      </td>
+      <td><%= f.check_box :stress, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_overeating == 1 %>
+      <td>
+        <h4>Overeating</h4>
+      </td>
+      <td><%= f.check_box :overeating, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_alcohol == 1 %>
+      <td>
+        <h4>Alcohol</h4>
+      </td>
+      <td><%= f.check_box :alcohol, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_chocolate == 1 %>
+      <td>
+        <h4>Chocolate</h4>
+      </td>
+      <td><%= f.check_box :chocolate, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_medicine == 1 %>
+      <td>
+        <h4>Medicine Helped</h4>
+      </td>
+      <td><%= f.check_box :medicine_helped, :class => 'EditCheckbox' %></td><br>
+    </tr>
+    <tr>
+      <td>
+        <h4>Medicine Taken</h4>
+      </td>
+      <td><%= f.text_field :medicine, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_trigger1 == 1 %>
+      <td>
+        <h4><%= user_trigger1 %></h4>
+      </td>
+      <td><%= f.check_box :custom1, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_trigger2 == 1 %>
+      <td>
+        <h4><%= user_trigger2 %></h4>
+      </td>
+      <td><%= f.check_box :custom2, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_trigger3 == 1 %>
+      <td>
+        <h4><%= user_trigger3 %></h4>
+      </td>
+      <td><%= f.check_box :custom3, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_trigger4 == 1 %>
+      <td>
+        <h4><%= user_trigger4 %></h4>
+      </td>
+      <td><%= f.check_box :custom4, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
+  <tr>
+    <% if include_trigger5 == 1 %>
+      <td>
+        <h4><%= user_trigger5 %></h4>
+      </td>
+      <td><%= f.check_box :custom5, :class => 'EditCheckbox' %></td><br>
+    <% end %>
+  </tr>
 </table>
-  <%= f.submit "Save Log", :class => 'btn' %>
+
+<!-- Submit button -->
+<%= f.submit "Save Log", :class => 'btn' %>
 <% end %>
 
 <br><br><br>

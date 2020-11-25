@@ -4,111 +4,113 @@
 *= require log_customization.scss
 *= require graphs.scss
 */
+/* Page styling */
+body {
+  background: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #000;
+  font-size: 18px;
+  margin: 0px;
+  margin-top: 60px;
+  padding: 0px;
+}
 
- /* Page styling */
- body {
-   background: #fff;
-   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   color: #000;
-   font-size: 18px;
-   margin:0px;
-   margin-top: 60px;
-   padding: 0px;
- }
+h1 {
+  color: #00bd9c;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
 
-  h1 {
-    color: #00bd9c;
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 20px;
-    margin-bottom: 0;
-  }
+h2 {
+  font-size: 18px;
+}
 
-  h2 {
-    font-size: 18px;
-  }
+h3 {
+  font-size: 24px;
+  text-align: center;
+}
 
-  h3 {
-    font-size: 24px;
-    text-align: center;
-  }
+a {
+  text-decoration: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+.Content {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
-  .content {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+/* Nav bar styling */
+.Navbar {
+  display: Flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #2b3e51;
+  overflow: auto;
+  height: auto;
+  text-align: left;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+}
 
- /* Nav bar styling */
- .navbar {
-   display: flex;
-   position: fixed;
-   top:0;
-   width: 100%;
-   background-color: #2b3e51;
-   overflow: auto;
-   height: auto;
-   text-align: left;
-   padding: 20px;
-   color: white;
-   font-size: 18px;
- }
+.LeftLinks {
+  Flex: 1 1 200px;
+  margin-left: 60px;
+}
 
- .left-links{
-    flex:1 1 200px;
-    margin-left: 60px;
- }
+.RightLinks {
+  margin-right: 60px;
+}
 
- .right-links {
-   margin-right: 60px;
- }
+.Links {
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 2px solid transparent;
+}
 
- .links {
-    display: inline-block;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-bottom: 2px solid transparent;
- }
- .links:hover {
-    border-bottom: 2px solid #f59d00;
- }
- .selected {
-    border-bottom: 2px solid #f59d00;
- }
+.Links:hover {
+  border-bottom: 2px solid #f59d00;
+}
 
- /* Flash notices */
- .notice {
-   color: #000000;
-   text-align: center;
-   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   margin-top: 10px;
-   margin-bottom: 20px;
- }
+.Selected {
+  border-bottom: 2px solid #f59d00;
+}
 
- .toHide {
-   display: none;
- }
+/* Flash notices */
+.Notice {
+  color: #000000;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
- #allSymptoms .modebar {
+.ToHide {
+  display: none;
+}
+
+/* All symptoms graphs */
+#AllTriggers .modebar {
   background: transparent;
 }
 
-#allSymptoms .modebar:hover {
- background: transparent;
+#AllTriggers .modebar:hover {
+  background: transparent;
 }
 
 /* Divs for log custom page */
-.customDiv {
+.CustomDiv {
   margin: 0 auto;
   width: 45%;
   padding: 15px;
@@ -116,11 +118,11 @@
   text-align: justify;
 }
 
-.customDiv h3 {
+.CustomDiv h3 {
   text-align: justify;
 }
 
-.tableBtns {
+.TableBtns {
   width: auto;
   border: 0;
   padding: 0;
@@ -129,8 +131,9 @@
   outline: none;
 }
 
-.flex {
-  display: flex;
+/* Master Flex div */
+.Flex {
+  display: Flex;
   justify-content: space-evenly;
   align-items: center;
   width: 90%;
@@ -138,105 +141,67 @@
   margin-left: 5%;
 }
 
-.flexChild {
+.FlexChild {
   width: 30%;
   text-align: center;
 }
 
-.flexLabels {
-  display: flex;
+.FlexLabels {
+  display: Flex;
   width: 50%;
   margin-left: 25%;
-  justify-content: flex-start;
+  justify-content: Flex-start;
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-.flexLabelChild {
+.FlexLabelChild {
   text-align: left;
   width: 80%;
 }
 
-.flexLabel {
+.FlexLabel {
   width: 40%;
 }
 
-.flexLabelChild input{
+.FlexLabelChild input {
   width: 100%;
 }
 
-.flexLabelsLeft {
-  display: flex;
+.FlexLabelsLeft {
+  display: Flex;
   width: 60%;
   justify-content: space-around;
   text-align: left;
 }
 
-.flexLabels h4 {
+.FlexLabels h4 {
   font-size: 16px;
   text-align: left;
   margin-top: 15px;
 }
 
-.editDate {
-    width: auto;
-    font-size: 12px;
-    margin-bottom: 10px;
+.EditDate {
+  width: auto;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
-.flexCheck {
+.FlexCheck {
   text-align: left;
   float: left;
   width: 100%;
 }
 
-/* The Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* Modal Content*/
-.modal-content {
-  background-color: #e3e0cc;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /* Alert styling - needs to be red since it's a danger alert */
-#alert {
+#Alert {
   text-align: center;
   color: red;
   font-size: 12px;
 }
 
 /* Button styling */
-.btn {
+.Btn {
   background-color: #00bd9c;
   width: auto;
   border-radius: 8px;
@@ -251,7 +216,7 @@
   color: black;
 }
 
-.btn:hover {
+.Btn:hover {
   background-color: #008a72;
 }
 
@@ -262,31 +227,31 @@ input {
 }
 
 /* Flex div make everything line up horizontally */
-.flex-horizontal {
+.FlexHorizontal {
   display: flex;
-  flex-direction: row;
+  Flex-direction: row;
   justify-content: center;
   margin-top: 50px;
   align-content: center;
 }
 
 /* Removes hover from button pictures */
-a.button {
+a.Button {
   &:hover {
     background: none;
   }
 }
 
-.child {
+.Child {
   margin-right: 50px;
 }
 
 /* Aligning items on the view account page */
-.title {
+.Title {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-.info {
+.Info {
   font-size: 16px;
 }

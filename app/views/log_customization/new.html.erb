@@ -1,119 +1,133 @@
-
+<!-- Page for setting up customizations for the first time -->
 <%= form_for :log_customization, url: log_customization_index_path do |f| %>
 
 <!-- Introduction div -->
-<div id="startDiv" class="customDiv">
-    <h3>When you have a headace, you can come here to log information about it. You will also be asked a series
-        of questions about different triggers. After you've logged
-        a few headaches, you will see graphs of these triggers showing how often they appeared before a headache.<br><br>
-        Before we log your first headache, let's take the time to look at the list of suggested triggers and make
-        sure you want to include all of them. You will also be able to add up to 10 of your own triggers.
-    </h3>
+<div id="StartDiv" class="CustomDiv">
+  <h3>When you have a headace, you can come here to log information about it. You will also be asked a series of Questions about different Triggers. After you've logged a few headaches, you will see graphs of these Triggers showing how often they
+    appeared before a headache.<br><br>
+    Before we log your first headache, let's take the time to look at the list of suggested Triggers and make sure you want to include all of them. You will also be able to add up to 10 of your own Triggers.
+  </h3>
 
-<h2>Let's get started!</h2><br>
-  <div id="startBtn" class="button">
-    <%= image_tag 'start.png', class: 'rotate' %>
+  <!-- Start button -->
+  <h2>Let's get started!</h2><br>
+  <div id="StartBtn" class="Button">
+    <%= image_tag 'start.png', class: 'Rotate' %>
   </div>
 </div>
 
-<div id="questions" class="logDivs">
+<div id="Questions" class="LogDivs">
   <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
-    <!-- This div holds the text and question -->
+  <div class="Flex">
+    <!-- This div holds the text and Question -->
     <div>
-      <h2 id="question">Do you want to include drinking alcohol as a trigger?</h2>
-      <p id="triggerTextBoxP">
-        <div id="trigger1NameText"><%= f.text_field :trigger1Name, class: 'customInput' %></div>
-        <div id="trigger2NameText"><%= f.text_field :trigger2Name, class: 'customInput' %></div>
-        <div id="trigger3NameText"><%= f.text_field :trigger3Name, class: 'customInput' %></div>
-        <div id="trigger4NameText"><%= f.text_field :trigger4Name, class: 'customInput' %></div>
-        <div id="trigger5NameText"><%= f.text_field :trigger5Name, class: 'customInput' %></div>
+      <h2 id="Question">Do you want to include drinking alcohol as a Trigger?</h2>
+      <p id="TriggerTextBoxP">
+        <div id="Trigger1NameText"><%= f.text_field :Trigger1Name, class: 'CustomInput' %></div>
+        <div id="Trigger2NameText"><%= f.text_field :Trigger2Name, class: 'CustomInput' %></div>
+        <div id="Trigger3NameText"><%= f.text_field :Trigger3Name, class: 'CustomInput' %></div>
+        <div id="Trigger4NameText"><%= f.text_field :Trigger4Name, class: 'CustomInput' %></div>
+        <div id="Trigger5NameText"><%= f.text_field :Trigger5Name, class: 'CustomInput' %></div>
       </p>
-      <!-- Rails form connected question, required before moving on -->
-      <div class="flex">
-        <%= image_tag 'iconWait.png', id: 'waitIcon' %>
-        <div id="checkboxDiv">
-          <%= f.check_box :alcohol, id: 'checkBox1', class: 'checkbox' %>
-          <label for="checkBox1" class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+      <!-- Rails form connected Question, required before moving on -->
+      <div class="Flex">
+        <%= image_tag 'iconWait.png', id: 'WaitIcon' %>
+        <div id="CheckboxDiv">
+          <%= f.check_box :alcohol, id: 'CheckBox1', class: 'Checkbox' %>
+          <label for="CheckBox1" class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB2">
-          <%= f.check_box :overeating, id: 'checkBox2', class: 'checkbox' %>
-          <label for='checkBox2' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+
+        <!-- These divs are hidden and are shown as the next button is clicked -->
+        <div id="HiddenERB2">
+          <%= f.check_box :overeating, id: 'CheckBox2', class: 'Checkbox' %>
+          <label for='CheckBox2' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB3">
-          <%= f.check_box :stress, id: 'checkBox3', class: 'checkbox' %><label for='checkBox3' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB3">
+          <%= f.check_box :stress, id: 'CheckBox3', class: 'Checkbox' %>
+          <label for='CheckBox3' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB4">
-          <%= f.check_box :sleep, id: 'checkBox4', class: 'checkbox' %><label for='checkBox4' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB4">
+          <%= f.check_box :sleep, id: 'CheckBox4', class: 'Checkbox' %>
+          <label for='CheckBox4' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB5">
-          <%= f.check_box :lights, id: 'checkBox5', class: 'checkbox' %><label for='checkBox5' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB5">
+          <%= f.check_box :lights, id: 'CheckBox5', class: 'Checkbox' %>
+          <label for='CheckBox5' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB6">
-          <%= f.check_box :eyestrain, id: 'checkBox6', class: 'checkbox' %><label for='checkBox6' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB6">
+          <%= f.check_box :eyestrain, id: 'CheckBox6', class: 'Checkbox' %>
+          <label for='CheckBox6' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB7">
-          <%= f.check_box :exercise, id: 'checkBox7', class: 'checkbox' %><label for='checkBox7' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB7">
+          <%= f.check_box :exercise, id: 'CheckBox7', class: 'Checkbox' %>
+          <label for='CheckBox7' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB8">
-          <%= f.check_box :period, id: 'checkBox8', class: 'checkbox' %><label for='checkBox8' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB8">
+          <%= f.check_box :period, id: 'CheckBox8', class: 'Checkbox' %>
+          <label for='CheckBox8' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB9">
-          <%= f.check_box :chocolate, id: 'checkBox9', class: 'checkbox' %><label for='checkBox9' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB9">
+          <%= f.check_box :chocolate, id: 'CheckBox9', class: 'Checkbox' %>
+          <label for='CheckBox9' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB10">
-          <%= f.check_box :dehydrated, id: 'checkBox10', class: 'checkbox' %><label for='checkBox10' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB10">
+          <%= f.check_box :dehydrated, id: 'CheckBox10', class: 'Checkbox' %>
+          <label for='CheckBox10' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB11">
-          <%= f.check_box :medicine, id: 'checkBox11', class: 'checkbox' %><label for='checkBox11' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB11">
+          <%= f.check_box :medicine, id: 'CheckBox11', class: 'Checkbox' %>
+          <label for='CheckBox11' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB12">
-          <%= f.check_box :trigger1, id: 'checkBox12', class: 'checkbox' %><label for='checkBox12' class="logLabel"><%= image_tag 'iconYes.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB12">
+          <%= f.check_box :Trigger1, id: 'CheckBox12', class: 'Checkbox' %>
+          <label for='CheckBox12' class="LogLabel"><%= image_tag 'iconYes.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB13">
-          <%= f.check_box :trigger2, id: 'checkBox13', class: 'checkbox' %><label for='checkBox13' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB13">
+          <%= f.check_box :Trigger2, id: 'CheckBox13', class: 'Checkbox' %>
+          <label for='CheckBox13' class="LogLabel"><%= image_tag 'iconAddAnother.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB14">
-          <%= f.check_box :trigger3, id: 'checkBox14', class: 'checkbox' %><label for='checkBox14' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB14">
+          <%= f.check_box :Trigger3, id: 'CheckBox14', class: 'Checkbox' %>
+          <label for='CheckBox14' class="LogLabel"><%= image_tag 'iconAddAnother.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB15">
-          <%= f.check_box :trigger4, id: 'checkBox15', class: 'checkbox' %><label for='checkBox15' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB15">
+          <%= f.check_box :Trigger4, id: 'CheckBox15', class: 'Checkbox' %>
+          <label for='CheckBox15' class="LogLabel"><%= image_tag 'iconAddAnother.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="hiddenERB16">
-          <%= f.check_box :trigger5, id: 'checkBox16', class: 'checkbox' %><label for='checkBox16' class="logLabel"><%= image_tag 'iconAddAnother.png', id: 'nextYes', class: 'rotate' %></label>
+        <div id="HiddenERB16">
+          <%= f.check_box :Trigger5, id: 'CheckBox16', class: 'Checkbox' %>
+          <label for='CheckBox16' class="LogLabel"><%= image_tag 'iconAddAnother.png', id: 'NextYes', class: 'Rotate' %></label>
         </div>
-        <div id="checkboxNoOriginal">
-          <input type="checkbox" id="checkBoxNo" class="checkbox">
-          <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconNo.png', id: 'nextNo', class: 'rotate' %></label>
+        <!-- Original checkbox for no -->
+        <div id="CheckboxNoOriginal">
+          <input type="Checkbox" id="CheckBoxNo" class="Checkbox">
+          <label for="CheckBoxNo" class="LogLabel"><%= image_tag 'iconNo.png', id: 'NextNo', class: 'Rotate' %></label>
         </div>
-          <div id="checkboxNoReplacementCustom">
-            <input type="checkbox" id="checkBoxNo" class="checkbox">
-            <label for="checkBoxNo" class="logLabel"><%= image_tag 'iconGoToEnd.png', id: 'nextNo', class: 'rotate' %></label>
-          </div>
+        <!-- Replacement no checkbox, used in the JS as the questions start being asked -->
+        <div id="CheckboxNoReplacementCustom">
+          <input type="Checkbox" id="CheckBoxNo" class="Checkbox">
+          <label for="CheckBoxNo" class="LogLabel"><%= image_tag 'iconGoToEnd.png', id: 'NextNo', class: 'Rotate' %></label>
+        </div>
 
       </div>
     </div>
   </div>
 </div>
 
-<!-- Main div to hold the question -->
-<div id="finish">
+<!-- Last question -->
+<div id="Finish">
   <!-- Flex div to hold the next two divs next to each other -->
-  <div class="flex">
+  <div class="Flex">
     <!-- Left div holds the image -->
-    <div class="leftDiv">
-    </div>
-    <!-- This div holds the text and question -->
+    <div class="LeftDiv"></div>
+    <!-- This div holds the text and Question -->
     <div>
       <!-- Hidden field sets the userid of the headache to the current logged in user's id -->
       <%= f.hidden_field :userID, :value => current_user.id %>
       <%= f.hidden_field :boolean, :value => current_user.id %>
       <!-- Submit button and end of ERB -->
       <h1>Save and start logging!</h1>
-      <%= image_submit_tag('iconFinish.png', class: 'finishButton') %>
-
+      <%= image_submit_tag('iconFinish.png', class: 'FinishButton') %>
     <% end %>
-    </div>
   </div>
-  <!-- This div is under the previous two divs, holds the next image and button -->
+</div>
 </div>

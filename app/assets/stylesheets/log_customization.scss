@@ -1,79 +1,39 @@
+// Label for the logs //
 
-// This section is for the checkboxes - they look like a round check or a round x - these settings make them seem to turn green or red when clicked //
-.checkbox {
-  display: none;
-}
-
-.logLabel {
+.LogLabel {
   cursor: pointer;
-  width: 0%;
+  width: 0;
   margin-left: 20%;
 }
-
-.finishButton {
+// Finish button styling //
+.FinishButton {
   width: 50px;
   height: 67px;
   margin-left: 40%;
   margin-right: 40%;
   outline: none;
 }
-
-// This field needs a little margin //
-.textBox {
-  text-align: center;
-}
-
-// This section handles the hourglass rotation for the start button //
-.rotate {
-	-webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-
-    overflow: hidden;
-    margin-left: 45%;
-    margin-right: 45%;
-}
-
-.rotate:hover {
-	-webkit-transform:rotate(180deg);
-    -moz-transform:rotate(180deg);
-    -o-transform:rotate(180deg);
-}
-
-// Hides the medicine yes check box - it is shown only if the user types in information in the proceeding text box //
-.toHide {
-  display: none;
-}
-
-.customInput {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 75%;
-}
-
-.customTriggerText {
-  margin-right: 8%;
-  width: 250px;
-}
-
-#nextNo{
+// Hide and give margin to these fields //
+#NextNo {
   margin-right: 20%;
 }
 
-#questions, #hiddenERB2, #hiddenERB3, #checkboxNoReplacement, #hiddenERB4, #hiddenERB5, #waitIcon, #hiddenERB6, #hiddenERB7, #hiddenERB8, #hiddenERB9, #hiddenERB10, #hiddenERB11, #hiddenERB12, #trigger1NameText, #trigger2NameText, #hiddenERB13, #trigger3NameText, #trigger4NameText, #trigger5NameText, #trigger6NameText, #trigger7NameText, #trigger8NameText, #trigger9NameText, #trigger10NameText, #hiddenERB14, #hiddenERB15, #hiddenERB16, #hiddenERB17, #hiddenERB18, #hiddenERB19, #hiddenERB20, #hiddenERB21 {
+#HiddenERB13,
+#HiddenERB14,
+#HiddenERB15,
+#HiddenERB16,
+#HiddenERB17,
+#HiddenERB18,
+#HiddenERB19,
+#HiddenERB20,
+#HiddenERB21,
+#Trigger2NameText,
+#Trigger3NameText,
+#Trigger4NameText,
+#Trigger5NameText {
   display: none;
 }
 
-#questions {
-  margin-top: 100px;
-}
-
-#finish {
+#Finish {
   margin-top: 150px;
 }

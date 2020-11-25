@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -11,12 +12,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/welcome/index'
     else
-      flash.now[:alert] = "Email or password is invalid"
+      flash.now[:alert] = "Email or password is invalid. Please try again."
       render "new"
     end
   end
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url, notice: "You are logged out!"
   end
 end

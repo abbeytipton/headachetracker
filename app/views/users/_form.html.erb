@@ -1,37 +1,39 @@
+<!-- Form to edit/signup -->
+
 <!-- Begins form -->
 <%= form_with(model: user, local: true) do |form| %>
-  <!-- Adds errors to the top of the page if they are encountered -->
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <% user.errors.full_messages.each do |message| %>
-        <h2><%= message %>.</h2>
-      <% end %>
-    </div>
-  <% end %>
+<!-- Adds errors to the top of the page if they are encountered -->
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <% user.errors.full_messages.each do |message| %>
+      <h2><%= message %>.</h2>
+    <% end %>
+  </div>
+<% end %>
 
 <!-- Each div for each piece of information -->
-  <div class="flexLabels">
-    <div class="flexLabel"><%= form.label :email %></div>
-    <div class="flexLabelChild"><%= form.text_field :email, :required => true  %></div>
-  </div>
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= form.label :email %></div>
+  <div class="FlexLabelChild"><%= form.text_field :email, :required => true %></div>
+</div>
 
-  <div class="flexLabels">
-    <div class="flexLabel"><%= form.label :username %></div>
-    <div class="flexLabelChild"><%= form.text_field :username, :required => true  %></div>
-  </div>
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= form.label :username %></div>
+  <div class="FlexLabelChild"><%= form.text_field :username, :required => true %></div>
+</div>
 
-  <div class="flexLabels">
-    <div class="flexLabel"><%= form.label :password %></div>
-    <div class="flexLabelChild"><%= form.password_field :password, :required => true  %></div>
-  </div>
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= form.label :password %></div>
+  <div class="FlexLabelChild"><%= form.password_field :password, :required => true %></div>
+</div>
 
-  <div class="flexLabels">
-    <div class="flexLabel"><%= form.label :password_confirmation %></div>
-    <div class="flexLabelChild"><%= form.password_field :password_confirmation, :required => true  %></div>
-  </div>
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= form.label :password_confirmation %></div>
+  <div class="FlexLabelChild"><%= form.password_field :password_confirmation, :required => true %></div>
+</div>
 
-  <!-- Submit button -->
-  <div class="actions">
-    <%= form.submit 'Submit!', :class => 'btn' %>
-  </div>
+<!-- Submit button -->
+<div class="Actions">
+  <%= form.submit 'Submit!', :class => 'Btn' %>
+</div>
 <% end %>

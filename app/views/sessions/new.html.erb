@@ -1,28 +1,28 @@
-
+<!-- Login page -->
 <h1>Login</h1>
 <h3>Enter your information below to login to your account.</h3>
 
 <!-- Start of form to log in -->
 <%= form_tag sessions_path do |form| %>
 
-  <!-- This div holds the label and text box for the email next to each other -->
-  <div class="flexLabels">
-    <div class="flexLabel"><%= label_tag :email %></div>
-    <div class="flexLabelChild"><%= text_field_tag :email, '', :required => true %></div>
-  </div>
+<!-- This div holds the label and text box for the email next to each other -->
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= label_tag :email %></div>
+  <div class="FlexLabelChild"><%= text_field_tag :email, '', :required => true %></div>
+</div>
 
-  <!-- This div holds the label and the text box for the password next to each other -->
-  <div class="flexLabels">
-    <div class="flexLabel"><%= label_tag :password %></div>
-    <div class="flexLabelChild"><%= password_field_tag :password, '', :required => true %></div>
-  </div>
+<!-- This div holds the label and the text box for the password next to each other -->
+<div class="FlexLabels">
+  <div class="FlexLabel"><%= label_tag :password %></div>
+  <div class="FlexLabelChild"><%= password_field_tag :password, '', :required => true %></div>
+</div>
 
-  <!-- Alert for wrong email/password combo, this will show between the boxes and the button when it does show -->
-  <p id='alert'><%= alert %></p>
+<!-- Alert for wrong email/password combo, this will show between the boxes and the button when it does show -->
+<p id='Alert'><%= alert %></p>
 
-  <!-- Button to submit form -->
-  <div class='actions'>
-    <%= submit_tag 'Login', :class => 'btn' %>
-  </div>
+<!-- Button to submit form -->
+<div class='Actions'>
+  <%= submit_tag 'Login', :class => 'Btn' %>
+</div>
 
 <% end %>

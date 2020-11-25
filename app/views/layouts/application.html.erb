@@ -2,44 +2,47 @@
 <html>
   <head>
     <title>Headache Tracker</title>
+    <!-- Include tags for scripts and CSS -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-   <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-   <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turboLinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turboLinks-track' => true %>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   </head>
 
-<!-- Top navigation bar begins -->
-<div class="navbar">
-  <div class="left-links">
-  <% if current_user %>
-  Welcome to Headache Tracker, <%= current_user.username %>!
-  <% else %>
-  Welcome to Headache Tracker!
-<% end %>
-</div>
-<div class="right-links">
-<!-- Right side links depend on if the user is logged in; if they are, they will see their account or log out, otherwise they will see signup or login -->
-<% if current_user %>
-<a class="links" href="/welcome/index">Home</a>
-<a class="links" href="/logs/index">Log</a>
-<a class="links" href="/graphs/index">Graphs</a>
-<a class="links" href="/users/edit">Account</a>
-<%= link_to 'Log Out', logout_path, class: 'links' %>
-<% else %>
-    <%= link_to 'Sign Up', signup_path, class: 'links' %>
-    <%= link_to 'Log In', login_path, class: 'links' %>
-<% end %>
-</div>
-</div>
+  <!-- Top navigation bar begins -->
+  <div class="Navbar">
+    <div class="LeftLinks">
+      <!-- If this is the current user, show the welcome message with their username -->
+      <% if current_user %>
+        Welcome to Headache Tracker,
+        <%= current_user.username %>!
+        <!-- Otherwise, show generic message -->
+      <% else %>
+        Welcome to Headache Tracker!
+      <% end %>
+    </div>
 
+    <div class="RightLinks">
+      <!-- Right side Links depend on if the user is logged in; if they are, they will see their account or log out, otherwise they will see signup or login -->
+      <% if current_user %>
+        <a class="Links" href="/welcome/index">Home</a>
+        <a class="Links" href="/logs/index">Log</a>
+        <a class="Links" href="/graphs/index">Graphs</a>
+        <a class="Links" href="/users/edit">Account</a>
+        <%= link_to 'Log Out', logout_path, class: 'Links' %>
+      <% else %>
+        <%= link_to 'Sign Up', signup_path, class: 'Links' %>
+        <%= link_to 'Log In', login_path, class: 'Links' %>
+      <% end %>
+    </div>
+  </div>
 
   <body>
-
     <!-- Styled div for main content -->
-    <div class="content">
-        <%= yield %>
+    <div class="Content">
+      <%= yield %>
     </div>
 
   </body>

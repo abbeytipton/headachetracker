@@ -1,74 +1,92 @@
-
 // All the image buttons have this class //
-.button {
+
+.Button {
   outline: none;
   border: none;
   background: none;
   cursor: pointer;
 }
-
-
 // This field needs a little margin //
-#fourteenField {
+#FourteenField {
   margin-left: 10px;
 }
-
-// Hides the question divs until they are clicked on //
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #seventeen, #eighteen, #nineteen, #twenty, #twentyone, #twentytwo, #finish, #fourteenTwo {
+// Hides the question divs until they are clicked on and add margin to all //
+#Eight,
+#Eighteen,
+#Eleven,
+#Fifteen,
+#Finish,
+#Five,
+#Four,
+#Fourteen,
+#FourteenTwo,
+#Nine,
+#Nineteen,
+#One,
+#Seven,
+#Seventeen,
+#Six,
+#Sixteen,
+#Ten,
+#Thirteen,
+#Three,
+#Twelve,
+#Twenty,
+#TwentyOne,
+#TwentyTwo,
+#Two {
   display: none;
-}
-
-// Sets a margin at the top of all the question divs to move them down the page a little //
-#start, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #seventeen, #eighteen, #nineteen, #twenty, #twentyone, #twentytwo, #finish, #fourteenTwo {
   margin-top: 80px;
 }
 
+#Start {
+  margin-top: 80px;
+}
 // h2 and h3 settings //
-h2, h3 {
+h2,
+h3 {
   text-align: center;
 }
 
 h2 {
   line-height: 1.5;
 }
-
 // The question divs //
-.logDivs {
+.LogDivs {
   margin: 0 auto;
   width: 40%;
   padding: 15px;
   border-radius: 8px;
 }
-
 // Flex divs and then left and right divs, hold the images and questions next to each other //
-.flex {
+.Flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.leftDiv {
+.LeftDiv {
   margin-right: 25px;
   margin-top: 30px;
 }
 
-.rightDiv {
+.RightDiv {
   margin-left: 80%;
   border: none;
   margin-top: 5px;
 }
-
 // These fields are input fields and need different settings //
-.oneField, .twoField, .editDate {
+.EditDate,
+.OneField,
+.TwoField {
   font-size: 14px;
   border: 1px solid black;
   padding: 5px;
   margin-left: 10%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 // The next buttons (look like a hand) //
-.nextBtns {
+.NextBtns {
   margin-left: 38%;
   margin-top: 10px;
   padding: 10px;
@@ -80,13 +98,12 @@ h2 {
   background-color: #c5d5c5;
   font-size: 14px;
 }
-
-// This section is for the checkboxes - they look like a round check or a round x - these settings make them seem to turn green or red when clicked //
-.checkbox {
+// This section is for the checkboxes - they look like a round check or a round x rather than default checkbox ..
+.Checkbox {
   display: none;
 }
 
-.checkboxLabel {
+.CheckboxLabel {
   padding: 10px;
   display: block;
   position: relative;
@@ -99,70 +116,80 @@ label img {
   transition-duration: 0.1s;
   transform-origin: 50% 50%;
 }
-// This field needs a little margin //
-.textBox {
+// Textboxes with centered text //
+.TextBox {
   text-align: center;
 }
-
 // The final button has a background image and needed to be done differently because it's the final submit button //
-.button_with_image_save {
-    background: url("/assets/iconFinish.png") no-repeat;
-    height: 120px;
-    width: 120px;
-    outline: none;
-    border: 0;
-    display:block;
-    cursor: pointer;
-    margin-left: 30%;
+.ButtonWithImage {
+  background: url("/assets/iconFinish.png") no-repeat;
+  height: 120px;
+  width: 120px;
+  outline: none;
+  border: 0;
+  display: block;
+  cursor: pointer;
+  margin-left: 30%;
 }
-
 // This section handles the hourglass rotation for the start button //
-.rotate {
-	-webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-
-    overflow: hidden;
-    margin-left: 45%;
-    margin-right: 45%;
+.Rotate {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  overflow: hidden;
+  margin-left: 45%;
+  margin-right: 45%;
 }
 
-.rotate:hover {
-	-webkit-transform:rotate(180deg);
-    -moz-transform:rotate(180deg);
-    -o-transform:rotate(180deg);
+.Rotate:hover {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
-
 // Hides the medicine yes check box - it is shown only if the user types in information in the proceeding text box //
-.toHide {
+.ToHide {
   display: none;
 }
-
-.customInput {
+// Custom trigger text inputs neext margin //
+.CustomInput {
   margin-left: 30%;
   margin-right: 30%;
 }
 
-.customTriggerText {
+.CustomTriggerText {
   margin-right: 8%;
   width: 250px;
 }
-
-#questions, #hiddenERB2, #hiddenERB3, #checkboxNoReplacement, #hiddenERB4, #hiddenERB5, #waitIcon, #hiddenERB6, #hiddenERB7, #hiddenERB8, #hiddenERB9, #hiddenERB10, #hiddenERB11, #hiddenERB12, #trigger1NameText, #checkboxNoReplacementCustom {
+// Hide these fields //
+#CheckboxNoReplacement,
+#CheckboxNoReplacementCustom,
+#HiddenERB10,
+#HiddenERB11,
+#HiddenERB12,
+#HiddenERB2,
+#HiddenERB3,
+#HiddenERB4,
+#HiddenERB5,
+#HiddenERB6,
+#HiddenERB7,
+#HiddenERB8,
+#HiddenERB9,
+#Questions,
+#Trigger1NameText,
+#WaitIcon {
   display: none;
 }
 
-#questions {
+#Questions {
   margin-top: 50px;
 }
-
-.editTable {
+// This is the table seen on the edit log page, it holds everything next to each other //
+.EditTable {
   width: 30%;
   text-align: left;
   padding: 10px;
@@ -171,10 +198,13 @@ label img {
   vertical-align: top;
 }
 
-.editTable td, .editTable tr{
+.EditTable td,
+.EditTable tr {
   text-align: left;
 }
 
-table h4, table .editCheckbox, table .editDate  {
+table .EditCheckbox,
+table .EditDate,
+table h4 {
   float: left;
 }

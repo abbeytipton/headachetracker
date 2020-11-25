@@ -1,20 +1,21 @@
 <!-- Welcome, calls user by name -->
-<h1>Welcome, <%= current_user.username %>!</h1>
+<h1>Welcome,
+  <%= current_user.username %>!</h1>
 
-<!-- Horizontal flex div holds the pictures and labels next to each other, in the center of the page -->
-<div class="flex-horizontal">
+<!-- Horizontal Flex div holds the pictures and labels next to each other, in the center of the page -->
+<div class="FlexHorizontal">
 
-<!-- Each div holds a picture and a label underneath -->
-  <div class="child">
-      <%= link_to image_tag("homeLogs.png", border: 0), {action: 'index', controller: 'logs'}, {class: 'button'} %>
+  <!-- Each div holds a picture and a label underneath -->
+  <div class="Child">
+    <%= link_to image_tag("homeLogs.png", border: 0), {action: 'index', controller: 'logs'}, {class: 'Button'} %>
   </div>
 
-  <div class="child">
-      <%= link_to image_tag("homeGraphs.png", border: 0), {action: 'index', controller: 'graphs'}, {class: 'button'} %>
+  <div class="Child">
+    <%= link_to image_tag("homeGraphs.png", border: 0), {action: 'index', controller: 'graphs'}, {class: 'Button'} %>
   </div>
 
   <div>
-    <%= link_to image_tag("homeAccount.png", border: 0), {action: 'edit', controller: 'users'}, {class: 'button'} %>
+    <%= link_to image_tag("homeAccount.png", border: 0), {action: 'edit', controller: 'users'}, {class: 'Button'} %>
   </div>
 
 </div>

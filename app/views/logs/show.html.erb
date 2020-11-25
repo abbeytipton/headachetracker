@@ -1,13 +1,15 @@
-<br><br><div>
+<!-- Table to show all logs so far -->
+<br><br>
+<div>
   <h2>Edit Logs</h2>
 </div>
 
-<!-- This table is hidden unless the user chooses to look at it in the more menu -->
-<table class="graphTable">
+<table class="GraphTable">
   <tr>
     <th>Headache Started</th>
     <th>Headache Ended</th>
 
+    <!-- Only show headers if the user has them enabled -->
     <% if include_period == 1 %>
       <th>On or Near Period</th>
     <% end %>
@@ -79,180 +81,185 @@
     <th>Edit</th>
   </tr>
   <tr>
+    <!-- Get all the logs for the user and loop to place them in the table -->
     <% @Logs = Logs.all %>
-    <% @Logs.order('id DESC') %>
-    <% @Logs.each do |log| %>
-    <% if log[:userid] == current_user.id %>
+      <% @Logs.order('id DESC') %>
+        <% @Logs.each do |log| %>
+          <% if log[:userid] == current_user.id %>
 
-    <td><%= log.date_started.strftime("%m/%d/%Y") %><br><%= log.date_started.strftime("%I:%M %p") %></td>
-    <td><%= log.date_ended.strftime("%m/%d/%Y") %><br><%= log.date_ended.strftime("%I:%M %p") %></td>
+            <!-- Format start date and time -->
+            <td><%= log.date_started.strftime("%m/%d/%Y") %><br><%= log.date_started.strftime("%I:%M %p") %></td>
+            <td><%= log.date_ended.strftime("%m/%d/%Y") %><br><%= log.date_ended.strftime("%I:%M %p") %></td>
 
-    <% if include_period == 1 %>
-      <td>
-        <% if log.period == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
+            <!-- Only show each trigger if the user has it enabled -->
+            <% if include_period == 1 %>
+              <td>
+                <!-- For each of these, show the yes image if the user logged in during this log and otherwise show the no picture -->
+                <% if log.period == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_dehydrated == 1 %>
+              <td>
+                <% if log.dehydration == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_exercise == 1 %>
+              <td>
+                <% if log.exercise == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_eyestrain == 1 %>
+              <td>
+                <% if log.eye_strain == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_lights == 1 %>
+              <td>
+                <% if log.lights == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_sleep == 1 %>
+              <td>
+                <% if log.sleep == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_stress == 1 %>
+              <td>
+                <% if log.stress == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_overeating == 1 %>
+              <td>
+                <% if log.overeating == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_alcohol == 1 %>
+              <td>
+                <% if log.alcohol == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_chocolate == 1 %>
+              <td>
+                <% if log.chocolate == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_medicine == 1 %>
+              <td><%= log.medicine %></td>
+              <td>
+                <% if log.medicine_helped == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_trigger1 == 1 %>
+              <td>
+                <% if log.custom1 == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_trigger2 == 1 %>
+              <td>
+                <% if log.custom2 == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_trigger3 == 1 %>
+              <td>
+                <% if log.custom3 == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_trigger4 == 1 %>
+              <td>
+                <% if log.custom4 == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if include_trigger5 == 1 %>
+              <td>
+                <% if log.custom5 == true %>
+                  <%= image_tag("yes.png") %>
+                <% else %>
+                  <%= image_tag("no.png") %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <!-- Link to edit the log -->
+            <td>
+              <%= button_to 'Edit Log', edit_log_path(log), class: 'TableBtns' %>
+            </td>
+          </tr>
         <% end %>
-      </td>
-    <% end %>
-
-    <% if include_dehydrated == 1 %>
-    <td>
-      <% if log.dehydration == true %>
-        <%= image_tag("yes.png") %>
-      <% else %>
-        <%= image_tag("no.png") %>
       <% end %>
-    </td>
-    <% end %>
 
-    <% if include_exercise == 1 %>
-      <td>
-        <% if log.exercise == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_eyestrain == 1 %>
-      <td>
-        <% if log.eye_strain == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_lights == 1 %>
-      <td>
-        <% if log.lights == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_sleep == 1 %>
-      <td>
-        <% if log.sleep == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_stress == 1 %>
-      <td>
-        <% if log.stress == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_overeating == 1 %>
-      <td>
-        <% if log.overeating == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_alcohol == 1 %>
-      <td>
-        <% if log.alcohol == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_chocolate == 1 %>
-      <td>
-        <% if log.chocolate == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_medicine == 1 %>
-      <td><%= log.medicine %></td>
-      <td>
-        <% if log.medicine_helped == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_trigger1 == 1 %>
-      <td>
-        <% if log.custom1 == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_trigger2 == 1 %>
-      <td>
-        <% if log.custom2 == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_trigger3 == 1 %>
-      <td>
-        <% if log.custom3 == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_trigger4 == 1 %>
-      <td>
-        <% if log.custom4 == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <% if include_trigger5 == 1 %>
-      <td>
-        <% if log.custom5 == true %>
-          <%= image_tag("yes.png") %>
-        <% else %>
-          <%= image_tag("no.png") %>
-        <% end %>
-      </td>
-    <% end %>
-
-    <td>
-      <%= button_to 'Edit Log', edit_log_path(log), class: 'tableBtns' %>
-    </td>
-    </tr>
-    <% end %>
-    <% end %>
-
-</table>
+    </table>

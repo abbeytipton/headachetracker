@@ -1,50 +1,55 @@
-
-
-
 // Click functions for the next buttons that make the logging form visible item by item to the user //
 
-$(document).on("click", "#startNext", function(e){
-  $("#start").fadeOut(function() {
-    $("#one").fadeIn(1500);
+// The start button //
+$(document).on("click", "#StartNext", function(e) {
+  $("#Start").fadeOut(function() {
+    $("#One").fadeIn(1500);
   });
 });
 
-$(document).on("click", "#oneNext", function(e){
+// Next one (special b/c of datetime field) //
+$(document).on("click", "#OneNext", function(e) {
   // Checking for null values //
-  if ($(".oneField").val() != "") {
-    $("#one").fadeOut(function() {
-      $("#two").fadeIn(1500);
+  if ($(".OneField").val() != "") {
+    $("#One").fadeOut(function() {
+      $("#Two").fadeIn(1500);
     });
   }
 });
 
-$(document).on("click", "#twoNext", function(e){
+// Next two (special b/c of datetime field) //
+$(document).on("click", "#TwoNext", function(e) {
   // Checking for null values //
-  if ($(".twoField").val() != "") {
+  if ($(".TwoField").val() != "") {
+    // Get the next div - might not be three because user might not have three enabled //
     var currentDiv = $(this).parent().parent().attr('id');
-    var nextDiv = $("#"+currentDiv).next().attr('id');
-    $("#two").fadeOut(function() {
-      $("#"+nextDiv).fadeIn(1500);
+    var nextDiv = $("#" + currentDiv).next().attr('id');
+    $("#Two").fadeOut(function() {
+      $("#" + nextDiv).fadeIn(1500);
     });
   }
 });
 
-$(document).on("click", ".nextYes, .nextNo", function(e){
+// All checkbox divs next functions //
+$(document).on("click", ".NextYes, .NextNo", function(e) {
+  // Get next div //
   var currentDiv = $(this).parent().parent().parent().parent().attr('id');
-  var nextDiv = $("#"+currentDiv).next().attr('id');
-  $("#"+currentDiv).fadeOut(function() {
-    $("#"+nextDiv).fadeIn(1500);
+  var nextDiv = $("#" + currentDiv).next().attr('id');
+  $("#" + currentDiv).fadeOut(function() {
+    $("#" + nextDiv).fadeIn(1500);
   });
 });
 
-$(document).on("click", ".medYes", function(e){
-  $("#fourteen").fadeOut(function() {
-    $("#fourteenTwo").fadeIn(1500);
+// Medicine yes button - we have to show the "what medicine" text field after //
+$(document).on("click", ".MedYes", function(e) {
+  $("#Fourteen").fadeOut(function() {
+    $("#FourteenTwo").fadeIn(1500);
   });
 });
 
-$(document).on("click", ".medNo", function(e){
-  $("#fourteen").fadeOut(function() {
-    $("#fifteen").fadeIn(1500);
+// Medicine no button - skip the "what medicine" text field //
+$(document).on("click", ".MedNo", function(e) {
+  $("#Fourteen").fadeOut(function() {
+    $("#Fifteen").fadeIn(1500);
   });
 });

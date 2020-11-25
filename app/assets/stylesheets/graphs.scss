@@ -1,14 +1,13 @@
+// This section is for the table of logs where users can see them all and choose to edit certain ones //
 
-
-
-.graphTable {
+.GraphTable {
   max-width: 100%;
   min-width: 100%;
   border: 2px solid black;
   margin-top: 20px;
 }
 
-.graphTable th {
+.GraphTable th {
   background-color: #c5d5c5;
   height: 10px;
   font-family: Trebuchet MS;
@@ -17,7 +16,7 @@
   padding: 8px;
 }
 
-.graphTable td {
+.GraphTable td {
   height: 10px;
   font-family: Trebuchet MS;
   font-size: 12px;
@@ -26,14 +25,14 @@
   padding: 8px;
 }
 
-.graphTable td img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25px;
+.GraphTable td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25px;
 }
 
-.flexgraphs {
+.Flexgraphs {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +41,7 @@
   padding: 0;
 }
 
-.flexMenuAndTitle {
+.FlexMenuAndTitle {
   display: flex;
   align-content: center;
   align-items: center;
@@ -50,56 +49,50 @@
   margin-top: 80px;
 }
 
-.right {
-}
-
-.children {
+.Children {
   width: 50%;
   margin: 0 auto;
 }
 
-#clickedDiv {
+#ClickedDiv {
   display: none;
 }
 
-.fadeMessage {
+.FadeMessage {
   text-align: center;
   font-size: 16px;
 }
 
-h2, h4 {
+h2,
+h4 {
   text-align: center;
   margin: 0 auto;
 }
-
 /* Dropdown Button */
-.moreClick {
+.MoreClick {
   background-color: transparent;
   color: white;
   border: none;
   cursor: pointer;
 }
-
 /* The container */
-.dropdown {
+.Dropdown {
   position: relative;
   display: inline-block;
   margin-right: 50px;
 }
-
 /* Dropdown content - hidden until clicked */
-.dropdown-content {
+.DropdownContent {
   display: none;
   position: absolute;
   background-color: #2b3e51;
   min-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 8px;
 }
-
 /* Links inside the dropdown */
-.dropdown-content span {
+.DropdownContent span {
   color: white;
   display: block;
   text-decoration: none;
@@ -110,11 +103,15 @@ h2, h4 {
   cursor: pointer;
   margin-left: 10px;
 }
+/* Show the dropdown menu container */
+.Show {
+  display: block;
+}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
-
-.dropdownLi a:hover, .dropdownLi a, .dropdownLi a:active, .dropdownLi a:visited {
+.DropdownLi a:hover,
+.dropdownLi a,
+.dropdownLi a:active,
+.dropdownLi a:visited {
   text-decoration: none;
   background: transparent;
   color: white;
@@ -126,14 +123,13 @@ h2, h4 {
   padding: 0;
 }
 
-.graphsHeader {
+.GraphsHeader {
   text-align: left;
   width: 100%;
   margin-left: 0;
-
 }
 
-.triggerBody {
+.TriggerBody {
   width: 50%;
   margin: 0 auto;
 }
